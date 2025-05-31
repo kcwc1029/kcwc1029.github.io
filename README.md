@@ -40,6 +40,7 @@
 ## 📚 公開發表 Publication
 
 -   **[2023 國科會 運用人工智慧與擴增實境技術提升小學生 STEAM 能力與學習動機之研究：以繪圖色彩認知為例](./AR色彩眼鏡/README.md)**
+-   **[透過檢索增強生成技術提升學習成效：應用於大學計算機概論課程的教育聊天機器人](./RAG聊天機器人/README.md)**
 
 ## 🧪 實習與助教經歷 Teaching & Internship
 
@@ -57,4 +58,4 @@
 
 ## 💡 專案與成果 Projects & Achievements
 
-QQQQQQQQQQQQQQQ
+-   **[育秀杯 應用 Muto RS 六足機器人於危險場域之傷患搜救](./育秀杯%20六足機器人/README.md)**
