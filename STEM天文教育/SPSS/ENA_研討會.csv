@@ -1,0 +1,61 @@
+﻿學生 ID,學習模式,Conversation,Collaborative Learning,Problem Solving,Learning Self-Confidence,Learning Motivation,Learning Adaptability
+EG_01,Experimental group,AI 的回饋很即時，這讓我在學習上更有信心。,1,0,1,1,0
+EG_02,Experimental group,我發現自己開始習慣依賴 AI，遇到問題會先問 AI 而不是自己思考。,1,1,1,0,1
+EG_03,Experimental group,與 AI 互動時，我會不斷調整我的學習策略。,1,0,1,0,1
+EG_04,Experimental group,我發現使用 AI 後，我更敢於嘗試不同的方法來解決問題。,1,1,1,1,0
+EG_05,Experimental group,學習 AI 讓我更有動力去探索新的知識。,1,0,0,1,0
+EG_06,Experimental group,我發現使用 AI 後，我更敢於嘗試不同的方法來解決問題。,0,0,0,1,1
+EG_07,Experimental group,AI 的回饋很即時，這讓我在學習上更有信心。,1,0,0,1,0
+EG_08,Experimental group,傳統學習方式比較慢，但我覺得這樣理解比較深刻。,1,1,1,0,1
+EG_09,Experimental group,相比於 AI，我還是更喜歡向同學請教。,1,0,1,1,1
+EG_10,Experimental group,與 AI 互動時，我會不斷調整我的學習策略。,0,1,0,1,1
+EG_11,Experimental group,我發現使用 AI 後，我更敢於嘗試不同的方法來解決問題。,0,1,0,1,1
+EG_12,Experimental group,我發現使用 AI 後，我更敢於嘗試不同的方法來解決問題。,1,1,0,1,0
+EG_13,Experimental group,與 AI 互動時，我會不斷調整我的學習策略。,0,1,1,0,0
+EG_14,Experimental group,當 AI 提供答案時，我仍然會去查證它是否正確。,0,1,1,0,1
+EG_15,Experimental group,AI 的回饋很即時，這讓我在學習上更有信心。,1,0,0,0,1
+EG_16,Experimental group,當 AI 提供答案時，我仍然會去查證它是否正確。,0,1,1,1,1
+EG_17,Experimental group,相比於 AI，我還是更喜歡向同學請教。,1,0,1,1,1
+EG_18,Experimental group,AI 的回饋很即時，這讓我在學習上更有信心。,1,0,1,0,0
+EG_19,Experimental group,AI 的回饋很即時，這讓我在學習上更有信心。,1,1,1,0,1
+EG_20,Experimental group,AI 的回饋很即時，這讓我在學習上更有信心。,0,0,1,0,1
+EG_21,Experimental group,學習 AI 讓我更有動力去探索新的知識。,1,1,0,1,0
+EG_22,Experimental group,學習 AI 讓我更有動力去探索新的知識。,1,1,0,1,1
+EG_23,Experimental group,我發現自己開始習慣依賴 AI，遇到問題會先問 AI 而不是自己思考。,0,1,0,0,1
+EG_24,Experimental group,AI 的回饋很即時，這讓我在學習上更有信心。,1,0,1,1,1
+EG_25,Experimental group,我發現使用 AI 後，我更敢於嘗試不同的方法來解決問題。,1,1,0,0,0
+EG_26,Experimental group,當 AI 提供答案時，我仍然會去查證它是否正確。,1,1,1,1,0
+EG_27,Experimental group,傳統學習方式比較慢，但我覺得這樣理解比較深刻。,1,0,1,0,1
+EG_28,Experimental group,AI 的回饋很即時，這讓我在學習上更有信心。,1,1,0,1,0
+EG_29,Experimental group,AI 的回饋很即時，這讓我在學習上更有信心。,1,0,1,1,1
+EG_30,Experimental group,當 AI 提供答案時，我仍然會去查證它是否正確。,1,1,0,1,0
+CG_01,control group,當 AI 提供答案時，我仍然會去查證它是否正確。,0,1,1,0,1
+CG_02,control group,我發現自己開始習慣依賴 AI，遇到問題會先問 AI 而不是自己思考。,0,1,1,0,1
+CG_03,control group,學習 AI 讓我更有動力去探索新的知識。,0,1,1,1,1
+CG_04,control group,傳統學習方式比較慢，但我覺得這樣理解比較深刻。,1,0,1,1,1
+CG_05,control group,學習 AI 讓我更有動力去探索新的知識。,1,0,1,0,0
+CG_06,control group,傳統學習方式比較慢，但我覺得這樣理解比較深刻。,0,1,1,1,0
+CG_07,control group,相比於 AI，我還是更喜歡向同學請教。,0,1,1,0,0
+CG_08,control group,學習 AI 讓我更有動力去探索新的知識。,0,1,1,1,1
+CG_09,control group,AI 的回饋很即時，這讓我在學習上更有信心。,1,1,0,1,1
+CG_10,control group,我發現使用 AI 後，我更敢於嘗試不同的方法來解決問題。,1,0,1,1,0
+CG_11,control group,我發現自己開始習慣依賴 AI，遇到問題會先問 AI 而不是自己思考。,1,1,1,0,1
+CG_12,control group,傳統學習方式比較慢，但我覺得這樣理解比較深刻。,1,1,1,0,1
+CG_13,control group,傳統學習方式比較慢，但我覺得這樣理解比較深刻。,0,0,0,1,1
+CG_14,control group,當 AI 提供答案時，我仍然會去查證它是否正確。,1,1,0,0,0
+CG_15,control group,當 AI 提供答案時，我仍然會去查證它是否正確。,0,1,1,1,1
+CG_16,control group,學習 AI 讓我更有動力去探索新的知識。,1,1,1,0,1
+CG_17,control group,我發現自己開始習慣依賴 AI，遇到問題會先問 AI 而不是自己思考。,0,0,1,1,1
+CG_18,control group,傳統學習方式比較慢，但我覺得這樣理解比較深刻。,1,1,1,0,1
+CG_19,control group,當 AI 提供答案時，我仍然會去查證它是否正確。,0,0,1,0,1
+CG_20,control group,AI 的回饋很即時，這讓我在學習上更有信心。,0,1,1,1,1
+CG_21,control group,相比於 AI，我還是更喜歡向同學請教。,1,0,1,1,0
+CG_22,control group,AI 的回饋很即時，這讓我在學習上更有信心。,1,1,0,0,0
+CG_23,control group,學習 AI 讓我更有動力去探索新的知識。,1,0,1,1,1
+CG_24,control group,我發現自己開始習慣依賴 AI，遇到問題會先問 AI 而不是自己思考。,1,1,0,1,1
+CG_25,control group,我發現使用 AI 後，我更敢於嘗試不同的方法來解決問題。,1,1,0,1,1
+CG_26,control group,當 AI 提供答案時，我仍然會去查證它是否正確。,0,1,1,1,0
+CG_27,control group,與 AI 互動時，我會不斷調整我的學習策略。,0,1,1,1,0
+CG_28,control group,我發現使用 AI 後，我更敢於嘗試不同的方法來解決問題。,1,0,1,1,1
+CG_29,control group,與 AI 互動時，我會不斷調整我的學習策略。,1,0,0,1,1
+CG_30,control group,AI 的回饋很即時，這讓我在學習上更有信心。,0,1,1,0,0
