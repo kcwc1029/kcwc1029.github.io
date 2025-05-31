@@ -60,7 +60,7 @@
 
 ## 💡 專案與成果 Projects & Achievements
 
--   **[育秀杯 應用 Muto RS 六足機器人於危險場域之傷患搜救](./育秀杯%20六足機器人/README.md)**
+-   **[育秀杯 應用 Muto RS 六足機器人於危險場域之傷患搜救](./育秀杯六足機器人/README.md)**
 
 ## 🧩 其他 other
 
