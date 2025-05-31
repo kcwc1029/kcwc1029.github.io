@@ -60,6 +60,8 @@
 -   **[成大工科 碩士班 工程科學暨創新概論 ESP32](https://github.com/kcwc1029/blog-esp32)**
     設計 ESP32 基礎與進階應用課程，包含 GPIO 控制、序列通訊、PWM、ADC/DAC 資料處理。
 
+-   **[113 學年度 國立成功大學附屬臺南工業高級中學 BIM 數位建設科技應用實驗班 機器學習簡介](./南工機器學習簡介/機器學習&LLM&RAG.pdf)**
+
 ## 💡 專案與成果 Projects & Achievements
 
 -   **[育秀杯 應用 Muto RS 六足機器人於危險場域之傷患搜救](./育秀杯六足機器人/README.md)**
