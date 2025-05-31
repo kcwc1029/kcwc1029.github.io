@@ -1,0 +1,112 @@
+.tab-content {
+  border: 1px solid #DDD;
+  padding:5px;
+  overflow-x:auto;
+}
+
+h1 {
+ font-size:22px;
+}
+
+h2 {
+ margin-top:25px;
+ font-size:20px;
+}
+
+h3 {
+ margin-top:25px;
+ font-size:18px;
+}
+
+h4 {
+ margin-top:25px;
+ font-size:16px;
+}
+
+th {
+ font-size: 14px;
+ white-space:nowrap;
+}
+
+td {
+ font-size: 14px;
+}
+
+/* Graphs */
+div.graph {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+/* Model Graphic */
+div.modelGraphic {
+	padding-top:20px;
+	padding-left:0px;
+	padding-bottom:20px;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+}
+
+/* Sidebar Navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-size: 13px;
+  white-space:nowrap;
+}
+
+.nav-sidebar > li > a.section {
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 15px;
+  white-space:nowrap;
+  color:#339900;
+}
+
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+.nav-sidebar > .active > a.section,
+.nav-sidebar > .active > a.section:hover,
+.nav-sidebar > .active > a.section:focus {
+  font-size:15px;
+  color: #fff;
+  background-color: #339900;
+}
+
+/* Content */
+.main {
+   padding-right: 40px;
+   padding-left: 40px;
+}
+
+.main .page-header {
+  margin-top: 0;
+}
