@@ -6,7 +6,13 @@
 <img src="https://img.shields.io/badge/View%20PDF-FF0000?logo=adobeacrobatreader&logoColor=white&style=for-the-badge" alt="View PDF">
 </a>
 
+<!-- <a href="./22屆郁秀杯_佳作.pdf" target="_blank" rel="noopener noreferrer"><strong>獎狀</strong></a> -->
+
 <a href="./決賽簡報.pdf" target="_blank" rel="noopener noreferrer"><strong>決賽簡報</strong></a>
+
+<div style="">
+    <img src="./image/郁秀盃獎狀.jpg" alt="團隊合照" style="width: 50%;">
+</div>
 
 <div style="">
     <img src="./image/個人照.jpg" alt="團隊合照" style="width: 70%;">
