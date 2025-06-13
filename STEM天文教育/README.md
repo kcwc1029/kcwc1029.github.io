@@ -10,6 +10,14 @@ This study explores the application of generative AI tools and Python-based data
   <img src="https://img.shields.io/badge/View%20PDF-FF0000?logo=adobeacrobatreader&logoColor=white&style=for-the-badge" alt="View PDF">
 </a>
 
+<div style="">
+    <img src="./image/最佳論文獎.png" alt="補充圖1" style="">
+</div>
+
+<a href="./運用生成式AI輔助Python程式設計於STEM教育：以天文現象之資料視覺化為例_研討會.pdf" target="_blank">
+  <img src="https://img.shields.io/badge/View%20PDF-FF0000?logo=adobeacrobatreader&logoColor=white&style=for-the-badge" alt="View PDF">
+</a>
+
 <br>
 
 <div style="">
