@@ -3,6 +3,11 @@
 -   [26. Remove Duplicates from Sorted Array](./Array/26.remove-duplicates-from-sorted-array.md)
 -   [27. Remove Element](./Array/27.remove-element.md)
 
+## Matrix
+
+-   [36. Valid Sudoku](./Matrix/36.valid-sudoku.md)
+-   [48. Rotate Image](./Matrix/48.rotate-image.md)
+
 ## Hash Table
 
 -   [1. Two Sum](./Hash-Table/1.two-sum.md)
@@ -29,6 +34,7 @@
 ## String
 
 -   [6. Zigzag Conversion](./String/6.zigzag-conversion.md)
+-   [38. Count and Say](./String/38.count-and-say.md)
 
 ### 前墜合
 
@@ -71,3 +77,7 @@ void backtrack(大集合(最後要返回的), 當前收集的小字串, 進度�
 
 -   [17. Letter Combinations of a Phone Number](./Backtracking/17.letter-combinations-of-a-phone-number.md)
 -   [22. Generate Parentheses](./Backtracking/22.generate-parentheses.md)
+-   [39. Combination Sum](./Backtracking/39.combination-sum.md)
+-   [40. Combination Sum II](./Backtracking/40.combination-sum-ii.md)
+-   [46. Permutations](./Backtracking/46.permutations.md)
+-   [47. Permutations II](./Backtracking/47.permutations-ii.md)
