@@ -2,6 +2,11 @@
 
 -   [26. Remove Duplicates from Sorted Array](./Array/26.remove-duplicates-from-sorted-array.md)
 -   [27. Remove Element](./Array/27.remove-element.md)
+-   [66. Plus One](./Array/66.plus-one.md)
+
+## Binary Search
+
+-   [69. Sqrt(x)](./Binary-Search/69.sqrt.md)
 
 ## Matrix
 
@@ -14,6 +19,7 @@
 
 -   [1. Two Sum](./Hash-Table/1.two-sum.md)
 -   [49. Group Anagrams](./Hash-Table/49.group-anagrams.md)
+-   [73. Set Matrix Zeroes](./Hash-Table/73.set-matrix-zeroes.md)
 
 ## Binary Search
 
@@ -39,6 +45,7 @@
 -   [6. Zigzag Conversion](./String/6.zigzag-conversion.md)
 -   [38. Count and Say](./String/38.count-and-say.md)
 -   [58. Length of Last Word](./String/58.length-of-last-word.md)
+-   [67. Add Binary](./String/67.add-binary.md)
 
 ### 前墜合
 
@@ -91,3 +98,5 @@ void backtrack(大集合(最後要返回的), 當前收集的小字串, 進度�
 -   [53. Maximum Subarray](./DP/53.maximum-subarray.md)
 -   [62. Unique Paths](./DP/62.unique-paths.md)
 -   [64. Minimum Path Sum](./DP/64.minimum-path-sum.md)
+-   [70. Climbing Stairs](./DP/70.climbing-stairs.md)
+-   [72. Edit Distance](./DP/72.edit-distance.md)
