@@ -82,7 +82,7 @@
 
 ## Bit Manipulation
 
--   [89. Gray Code](./Bit-Manipulation./89.gray-code.md)
+-   [89. Gray Code](./Bit-Manipulation/89.gray-code.md)
 
 ## Backtracking
 
