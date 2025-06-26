@@ -1,6 +1,7 @@
 ## Array
 
 -   [26. Remove Duplicates from Sorted Array](./Array/26.remove-duplicates-from-sorted-array.md)
+-   [80. Remove Duplicates from Sorted Array II](./Array/80.remove-duplicates-from-sorted-array-ii.md)
 -   [27. Remove Element](./Array/27.remove-element.md)
 -   [66. Plus One](./Array/66.plus-one.md)
 
@@ -25,9 +26,20 @@
 
 -   [35. Search Insert Position](./Binary-Search/35.search-insert-position.md)
 
+## Sort
+
+-   [75. Sort Colors](./Sort/75.sort-colors.md)
+-   [88. Merge Sorted Array](./Sort/88.merge-sorted-array.md)
+
+## DFS
+
+-   [94. Binary Tree Inorder Traversal](./DFS/94.binary-tree-inorder-traversal.md)
+
 ## Stack
 
 -   [20. Valid Parentheses](./Stack/20.valid-parentheses.md)
+
+## BFS
 
 ## Linked List
 
@@ -35,6 +47,8 @@
 -   [19. Remove Nth Node From End of List](./Linked-List/19.remove-nth-node-from-end-of-list.md)
 -   [21. Merge Two Sorted Lists](./Linked-List/21.merge-two-sorted-lists.md)
 -   [24. Swap Nodes in Pairs](./Linked-List/24.swap-nodes-in-pairs.md)
+-   [83. Remove Duplicates from Sorted List](./Linked-List/83.remove-duplicates-from-sorted-list.md)
+-   [86. Partition List](./Linked-List/86.partition-list.md)
 
 ## Sliding Window
 
@@ -66,6 +80,10 @@
 
 -   [11. Container With Most Water](./Greddy/11.container-with-most-water.md)
 
+## Bit Manipulation
+
+-   [89. Gray Code](./Bit-Manipulation./89.gray-code.md)
+
 ## Backtracking
 
 ```cpp
@@ -92,6 +110,8 @@ void backtrack(大集合(最後要返回的), 當前收集的小字串, 進度�
 -   [40. Combination Sum II](./Backtracking/40.combination-sum-ii.md)
 -   [46. Permutations](./Backtracking/46.permutations.md)
 -   [47. Permutations II](./Backtracking/47.permutations-ii.md)
+-   [77. Combinations](./Backtracking/77.combinations.md)
+-   [78. Subsets](./Backtracking/78.subsets.md)
 
 ## DP
 

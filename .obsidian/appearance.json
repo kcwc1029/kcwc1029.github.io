@@ -1,0 +1,9 @@
+{
+  "baseFontSizeAction": true,
+  "interfaceFontFamily": "",
+  "baseFontSize": 25,
+  "textFontFamily": "Times New Roman,標楷體",
+  "enabledCssSnippets": [
+    "page-width"
+  ]
+}
