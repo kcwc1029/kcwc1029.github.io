@@ -327,8 +327,58 @@ A：Client–Server 架構清楚但依賴中心節點；P2P 沒有中心節點�
 |可擴展性|中心可能成為瓶頸|容易擴展|
 |範例|Web, Email|BitTorrent, Skype|
 
+### 12.12. Q11：
+Q：How do clustered systems differ from multiprocessor systems? What is required for two machines belonging to a cluster to cooperate to provide a highly available service?
 
+A：
+- Clustered systems 是由多台獨立的電腦組成，透過網路連線共同執行工作。
+- Multiprocessor systems 是單一機器中有多個處理器，共用記憶體和其他硬體資源。
 
+### 12.13. Q12：
+Q：Consider a computing cluster consisting of two nodes running a database. Describe two ways in which the cluster software can manage access to the data on the disk. Discuss the benefits and disadvantages  of each.
+
+A：
+- Shared Disk： 兩台機器共同存取同一個磁碟。透過鎖機制避免資料衝突。
+	- 優點：資料一致性高，快速轉移任務。
+	- 缺點：需嚴格同步，容易造成 bottleneck。
+- Shared Nothing： 每台機器有自己磁碟，各自處理部分資料。
+	- 優點：擴展性佳。
+	- 缺點：資料同步困難，容錯較複雜。
+
+### 12.14. Q13：
+Q：What is the purpose of interrupts? How does an interrupt differ from a trap? Can traps be generated intentionally by a user program?
+
+A：
+- Interrupt 是由硬體產生，表示需要 CPU 注意，如鍵盤按下。
+- Trap 是軟體產生的異常或請求，如除以零或系統呼叫。
+- 使用者程式可以透過 系統呼叫 主動產生 trap，例如存取檔案。
+
+### 12.15. Q14：
+Q：Direct memory access is used for high-speed I/O devices in order to avoid increasing the CPU’s execution load.
+1. How does the CPU interface with the device to coordinate the transfer?
+2. How does the CPU know when the memory operations are complete?
+3. The CPU is allowed to execute other programs while the DMA  controller is transferring data. Does this process interfere with  the execution of the user programs? If so, describe what forms of  interference are caused.
+
+### 12.16. Q15：
+Q：Some computer systems do not provide a privileged mode of operation in hardware. Is it possible to construct a secure operating system for these computer systems? Give arguments both that it is and that it is not possible.
+
+A：
+- 不安全： 缺乏硬體層級保護，程式可能直接操作敏感資源。
+- 可能安全： 透過軟體層面（如 sandbox、虛擬機）進行限制
+
+### 12.17. Q16：
+Q：Many SMP systems have different levels of caches; one level is local to each processing core, and another level is shared among all processing cores. Why are caching systems designed this way?
+
+A：
+- Local cache：提供每個核心快速存取資料。
+- Shared cache：讓多核心共享資訊，避免不一致。
+
+### 12.18. Q17：
+Q：What are some advantages of peer-to-peer systems over client–server systems?
+
+A：
+- 優勢：分散資源、不需中央伺服器、容錯能力高
+- 缺點：安全與控制難、同步與資料一致性麻煩
 
 
 

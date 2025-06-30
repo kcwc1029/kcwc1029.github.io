@@ -22,13 +22,17 @@
             }
           },
           {
-            "id": "99779127465802d2",
+            "id": "c125ed273603074d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "作業系統/Overview.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新分頁"
+              "title": "Overview"
             }
           }
         ]
@@ -181,8 +185,9 @@
   },
   "active": "0a059e4068cd8e0f",
   "lastOpenFiles": [
-    "README.md",
+    "作業系統/Operating System Structures.md",
     "作業系統/Overview.md",
+    "README.md",
     "作業系統",
     "未命名.md",
     "專案進行/論文地域/~WRL0155.tmp",
