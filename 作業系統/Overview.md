@@ -226,46 +226,106 @@ System call（系統呼叫） 也是一種「軟體中斷」：用來請求 OS �
 
 ## 12. 練習：
 
-> Q：What are the three main purposes of an operating system?
-> A：作業系統有三大主要目的
-> 	1. 提供介面：讓使用者能夠與電腦互動（例如：透過 GUI 或命令列）。
-> 	2. 資源管理：管理 CPU、記憶體、儲存裝置、I/O 等硬體資源。
-> 	3. 作業控制與執行環境：讓應用程式可以安全、有效率地執行。
+### 12.1. Q01：
+Q：What are the three main purposes of an operating system?
+
+A：作業系統有三大主要目的
+1. 提供介面：讓使用者能夠與電腦互動（例如：透過 GUI 或命令列）。
+2. 資源管理：管理 CPU、記憶體、儲存裝置、I/O 等硬體資源。
+3. 作業控制與執行環境：讓應用程式可以安全、有效率地執行。
+### 12.2. Q02：
+
+Q：When is it appropriate for the OS to ‘waste’ resources? Why is such a system not really wasteful?
+
+A：當使用者體驗（UX）或可用性比效能更重要 時，"浪費資源" 是合理的 → GUI 系統浪費更多記憶體，但操作更直覺
+### 12.3. Q03：
+
+Q：What is the main difficulty in writing an OS for real-time environment?
+
+A：必須保證每個任務在「嚴格的時間限制內完成」
+- 任務延遲會造成系統失敗（例如：飛機控制系統、車用感測） → 必須設計可預測的排程與中斷管理機制
+
+### 12.4. Q04：
+
+Q：Should the OS include applications like browsers or mail clients? Argue both sides.
+A：
+- 正面:
+	- 提供更完整的「作業體驗」
+	- 減少額外安裝與整合問題（像 Windows 的 IE）
+- 反面：
+	-  OS 應該聚焦在資源與硬體管理，不應與應用程式混在一起
+	- 不利於模組化與安全性（ex: 攻擊瀏覽器可能影響整個系統）
+### 12.5. Q05：
+
+Q：How does kernel mode vs user mode function as a basic protection?
+
+A：隔離機制防止惡意或錯誤的程式傷害系統，形成基本的保護層。
+### 12.6. Q06：
+
+Q：Which of the following instructions should be privileged?
+
+A：
+
+|指令|是否為特權指令|原因|
+|---|---|---|
+|a. Set value of timer|✅|防止程式修改系統排程|
+|b. Read the clock|❌|只是讀取資料|
+|c. Clear memory|✅|可能刪除系統資料|
+|d. Issue a trap instruction|❌|Trap 是從 user mode 呼叫系統 call 的機制|
+|e. Turn off interrupts|✅|關掉中斷可能讓系統無法應變|
+|f. Modify entries in device-status table|✅|影響 I/O 控制|
+|g. Switch from user to kernel mode|✅|只能由 OS 控制進入核心模式|
+|h. Access I/O device|✅|防止亂存設備造成損壞|
+
+### 12.7. Q07：
+
+Q：What difficulties arise if OS is placed in protected memory that cannot be changed at all (even by OS itself)?
+
+A：問題：
+- 系統無法動態更新核心模組（如：驅動程式）
+- 錯誤修補變困難，無法即時修正漏洞或異常
+
+### 12.8. Q08：
+
+Q：What are two uses of CPUs with more than two modes?
+
+A：
+- 分開使用者應用程式、核心模組、驅動程式的權限（多層安全）
+  - 支援虛擬化環境（讓 guest OS 只能執行在較低等級）
 
 
-> Q：When is it appropriate for the OS to ‘waste’ resources? Why is such a system not really wasteful?
-> A：當 使用者體驗（UX）或可用性比效能更重要 時，"浪費資源" 是合理的
-> 	- GUI 系統浪費更多記憶體，但操作更直覺
+### 12.9. Q09：
+
+Q：How can timers be used to compute the current time?
+
+A：如果每 1 秒產生一個中斷，則`current_time = boot_time + interrupt_count × timer_interval`
 
 
-> Q：
+### 12.10. Q10：
 
+Q：Why are caches useful? What do they solve? What problems do they cause?
 
+A：
+- 好處：
+	- 提高效能：加速資料存取
+	- 減少主記憶體或硬碟的存取次數
+- 問題：
+	- 一致性問題（Cache 與實際資料不同步）
+	- 增加複雜性（需設計一致性協定）
+	- 成本問題：若 cache = 裝置大小？會太昂貴、不符效益（像硬碟的 cache）
 
+### 12.11. Q11：
 
-### 12.1. Q02：
+Q：Client–Server vs Peer-to-Peer Model
 
-### 12.2. Q03：
+A：Client–Server 架構清楚但依賴中心節點；P2P 沒有中心節點，因此更彈性但難以管理。
 
-### 12.3. Q04：
-
-### 12.4. Q05：
-
-
-### 12.5. Q06：
-
-### 12.6. Q07：
-
-### 12.7. Q08：
-
-### 12.8. Q09：
-
-### 12.9. Q10：
-
-### 12.10. Q11：
-
-
-
+|項目|Client–Server|Peer-to-Peer|
+|---|---|---|
+|架構|中央伺服器|每個節點都是 peer|
+|節點角色|固定：client / server|角色可互換|
+|可擴展性|中心可能成為瓶頸|容易擴展|
+|範例|Web, Email|BitTorrent, Skype|
 
 
 
