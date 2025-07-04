@@ -13,26 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "作業系統/Threads & Concurrency.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Threads & Concurrency"
             }
           },
           {
-            "id": "99779127465802d2",
+            "id": "278cf01db409a832",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "未命名.md",
+                "file": "作業系統/CPU Scheduling.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "CPU Scheduling"
             }
           }
         ],
@@ -93,7 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 250.5
   },
   "right": {
     "id": "1c61280532eaaf8f",
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "專案進行/創創AIOT/創創AIOT PPT.md",
+                "file": "作業系統/CPU Scheduling.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "創創AIOT PPT 的大綱"
+              "title": "CPU Scheduling 的大綱"
             }
           }
         ],
@@ -171,8 +171,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 336.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -185,11 +184,23 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "99779127465802d2",
+  "active": "278cf01db409a832",
   "lastOpenFiles": [
+    "作業系統/Threads & Concurrency.md",
+    "Mind/給單身男生的建議.md",
+    "Mind/處事藝術.md",
     "README.md",
+    "Mind/論文寫作檢核清單.md",
+    "Mind/你最愛的人。都教會了你甚麼.md",
+    "Mind/要對事還是對人.md",
+    "作業系統/CPU Scheduling.md",
+    "Mind",
+    "作業系統/Processes.md",
+    "作業系統/README.md",
+    "作業系統/Overview.md",
+    "作業系統/Operating System Structures.md",
+    "作業系統",
     "未命名.md",
-    "未命名",
     "專案進行/論文地域/~WRL0155.tmp",
     "專案進行/論文地域/~WRD0135.tmp",
     "專案進行/論文地域/~WRL3150.tmp",
@@ -198,7 +209,6 @@
     "專案進行/論文地域/~WRD4018.tmp",
     "專案進行/論文地域/~WRL3561.tmp",
     "專案進行/論文地域/~WRD3545.tmp",
-    "專案進行/論文地域/~WRL0003.tmp",
     "專案進行/論文地域/attachments/image-2.png",
     "專案進行/創創AIOT/創創AIOT PPT.md",
     "專案進行/四軸無人機/無人機_改版/無人機_改版.md",
@@ -221,13 +231,6 @@
     "專案封存/審稿_Effects of Educational Agents with Embedded Guidance Mechanism on Student Engagement in Self-Directed Learning/審稿.md",
     "TOEIC單字整理/B開頭.md",
     "TOEIC單字整理/A開頭.md",
-    "專案進行/淨零排放科技/2025淨零排放科技國際競賽 企劃書.md",
-    "咪聽/2025.05.22/2025.05.22咪聽.md",
-    "專案進行/淨零排放科技/碳權.md",
-    "專案進行/論文地域(backup)_舊版/論文地域_新版.md",
-    "專案進行/成大工科_程式設計_期中上機考/淨零碳排_v01_20250124/進度報告_v01_20250116.md",
-    "測試PPT.md",
-    "專案進行/護專_ARCS動機模式/ARCS動機模式.md",
-    "專案封存/審稿_Can ChatGPT Make Us Think Deeper Unveiling Usage Patterns and Perceptions in AI-Assisted Writing/審稿：Can ChatGPT Make Us Think Deeper？Unveiling Usage Patterns and Perceptions in AI-Assisted Writing.md"
+    "專案進行/淨零排放科技/2025淨零排放科技國際競賽 企劃書.md"
   ]
 }
