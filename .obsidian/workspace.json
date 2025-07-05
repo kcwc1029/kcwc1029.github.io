@@ -13,29 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "作業系統/README.md",
+                "file": "作業系統/Threads & Concurrency.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Threads & Concurrency"
             }
           },
           {
-            "id": "f929db370cac7c9a",
+            "id": "278cf01db409a832",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mind/可以發給女生的正面情緒.md",
+                "file": "作業系統/CPU Scheduling.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "可以發給女生的正面情緒"
+              "title": "CPU Scheduling"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -92,7 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 250.5
   },
   "right": {
     "id": "1c61280532eaaf8f",
@@ -156,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "作業系統/README.md",
+                "file": "作業系統/CPU Scheduling.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "README 的大綱"
+              "title": "CPU Scheduling 的大綱"
             }
           }
         ],
@@ -170,7 +171,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 336.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -183,28 +184,27 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "0a059e4068cd8e0f",
+  "active": "278cf01db409a832",
   "lastOpenFiles": [
-    "().md",
-    "作業系統/README.md",
-    "作業系統/Threads & Concurrency.md",
-    "Mind/可以問女人的話題.md",
-    "Mind/可以發給女生的正面情緒.md",
-    "Mind/你最愛的人。都教會了你甚麼.md",
-    "Mind/到底要怎樣才能過好一生.md",
     "Mind/未命名.md",
     "Mind/可以發給女生的負面情緒.md",
-    "Mind/處事藝術.md",
-    "Mind/要對事還是對人.md",
-    "Mind/聊天換句話說.md",
-    "作業系統/CPU Scheduling.md",
-    "Mind/論文寫作檢核清單.md",
+    "Mind/可以發給女生的正面情緒.md",
+    "Mind/可以問女人的話題.md",
+    "Mind/到底要怎樣才能過好一生.md",
+    "().md",
+    "作業系統/Threads & Concurrency.md",
     "Mind/給單身男生的建議.md",
+    "Mind/處事藝術.md",
+    "README.md",
+    "Mind/論文寫作檢核清單.md",
+    "Mind/你最愛的人。都教會了你甚麼.md",
+    "Mind/要對事還是對人.md",
+    "作業系統/CPU Scheduling.md",
     "Mind",
     "作業系統/Processes.md",
+    "作業系統/README.md",
     "作業系統/Overview.md",
     "作業系統/Operating System Structures.md",
-    "README.md",
     "作業系統",
     "未命名.md",
     "專案進行/論文地域/~WRL0155.tmp",
@@ -223,6 +223,7 @@
     "未整理.md",
     "給arduino.md",
     "Report.pdf.md",
+    "半導體課程.md",
     "attachments/image-12.png",
     "attachments/image-11.png",
     "attachments/image-10.png",
