@@ -8,6 +8,7 @@
 ## Binary Search
 
 -   [69. Sqrt(x)](./Binary-Search/69.sqrt.md)
+-   [35. Search Insert Position](./Binary-Search/35.search-insert-position.md)
 
 ## Matrix
 
@@ -22,10 +23,6 @@
 -   [49. Group Anagrams](./Hash-Table/49.group-anagrams.md)
 -   [73. Set Matrix Zeroes](./Hash-Table/73.set-matrix-zeroes.md)
 
-## Binary Search
-
--   [35. Search Insert Position](./Binary-Search/35.search-insert-position.md)
-
 ## Sort
 
 -   [75. Sort Colors](./Sort/75.sort-colors.md)
@@ -36,6 +33,18 @@
 -   [94. Binary Tree Inorder Traversal](./DFS/94.binary-tree-inorder-traversal.md)
 -   [100. Same Tree](./DFS/100.same-tree.md)
 -   [101. Symmetric Tree](./DFS/101.symmetric-tree.md)
+-   [104. Maximum Depth of Binary Tree](./DFS/104.maximum-depth-of-binary-tree.md)
+-   [112. Path Sum](./DFS/112.path-sum.md)
+-   [114. Flatten Binary Tree to Linked List](./DFS/114.flatten-binary-tree-to-linked-list.md)
+
+## Binary-Tree
+
+-   [108. Convert Sorted Array to Binary Search Tree](./Binary-Tree/108.convert-sorted-array-to-binary-search-tree.md)
+-   [109. Convert Sorted List to Binary Search Tree](./Binary-Tree/109.convert-sorted-list-to-binary-search-tree.md)
+-   [105. Construct Binary Tree from Preorder and Inorder Traversal(困難)](./Binary-Tree/105.construct-binary-tree-from-preorder-and-inorder-traversal.md)
+-   [106. Construct Binary Tree from Inorder and Postorder Traversal(困難)](./Binary-Tree/106.construct-binary-tree-from-inorder-and-postorder-traversal.md)
+-   [110. Balanced Binary Tree](./Binary-Tree/110.balanced-binary-tree.md)
+-   [111. Minimum Depth of Binary Tree](./Binary-Tree/111.minimum-depth-of-binary-tree.md)
 
 ## Stack
 
@@ -44,6 +53,9 @@
 ## BFS
 
 -   [102. Binary Tree Level Order Traversal](./BFS/102.binary-tree-level-order-traversal.md)
+-   [107. Binary Tree Level Order Traversal II](./BFS/107.binary-tree-level-order-traversal-ii.md)
+-   [103. Binary Tree Zigzag Level Order Traversal](./BFS/103.binary-tree-zigzag-level-order-traversal.md)
+-   [116. Populating Next Right Pointers in Each Node](./BFS/116.populating-next-right-pointers-in-each-node.md)
 
 ## Linked List
 
@@ -116,9 +128,12 @@ void backtrack(大集合(最後要返回的), 當前收集的小字串, 進度�
 -   [47. Permutations II](./Backtracking/47.permutations-ii.md)
 -   [77. Combinations](./Backtracking/77.combinations.md)
 -   [78. Subsets](./Backtracking/78.subsets.md)
+-   [113. Path Sum II](./Backtracking/113.path-sum-ii.md)
 
 ## DP
 
+-   [118. Pascal's Triangle](./DP/118.pascal's-triangle.md)
+-   [11\*. Pascal's Triangle II](./DP/119.pascal's-triangle-ii.md)
 -   [53. Maximum Subarray](./DP/53.maximum-subarray.md)
 -   [62. Unique Paths](./DP/62.unique-paths.md)
 -   [64. Minimum Path Sum](./DP/64.minimum-path-sum.md)

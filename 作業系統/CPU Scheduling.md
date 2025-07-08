@@ -41,7 +41,7 @@
 ### 1.3. Dispatcher（派遣器）
 
 主要功能：當 scheduler 選好了要執行的 process，dispatcher 負責交接 CPU 給它。
-- 儲存舊 process 的 context 到 PCB => **還原新 process 的 context**
+- 儲存舊 process 的 context 到 PCB => 還原新 process 的 context
 - 切到使用者模式
 - 跳至新程式該跑的程式碼位置
 
@@ -392,12 +392,9 @@ Affinity 的兩種形式：
 
 
   
-
 real-time 作業系統（RTOS）需要能夠即時處理重要任務。依照嚴格程度可以分為兩類：
 - soft real-time system：不保證準時執行，只保證 real-time 任務的優先權比其他任務高。
 - hard real-time system：絕對要求在 deadline 前完成工作，逾時即算失敗。
-    
-
 
 ### 7.1. 事件延遲（latency）與即時性問題
 
@@ -422,17 +419,13 @@ real-time 系統通常是事件驅動的。當事件發生後，系統必須儘�
 ![upgit_20250707_1751828602.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/07/upgit_20250707_1751828602.png)
 
 
-
-
 ### 7.2. 優先權式排程（priority-based scheduling）
-
-  
 
 real-time 系統最重要的是能在 process 需要 cpu 時立即提供。
 
 因此 real-time scheduler 通常是：
 - 基於優先權的排程
 - 可搶佔（preemptive）
-    
 
-  
+
+
