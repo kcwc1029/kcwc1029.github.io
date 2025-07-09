@@ -45,6 +45,7 @@
 -   [106. Construct Binary Tree from Inorder and Postorder Traversal(困難)](./Binary-Tree/106.construct-binary-tree-from-inorder-and-postorder-traversal.md)
 -   [110. Balanced Binary Tree](./Binary-Tree/110.balanced-binary-tree.md)
 -   [111. Minimum Depth of Binary Tree](./Binary-Tree/111.minimum-depth-of-binary-tree.md)
+-   [129. Sum Root to Leaf Numbers](./Binary-Tree/129.sum-root-to-leaf-numbers.md)
 
 ## Stack
 
@@ -76,6 +77,7 @@
 -   [38. Count and Say](./String/38.count-and-say.md)
 -   [58. Length of Last Word](./String/58.length-of-last-word.md)
 -   [67. Add Binary](./String/67.add-binary.md)
+-   [125. Valid Palindrome](./String/125.valid-palindrome.md)
 
 ### 前墜合
 
@@ -129,6 +131,7 @@ void backtrack(大集合(最後要返回的), 當前收集的小字串, 進度�
 -   [77. Combinations](./Backtracking/77.combinations.md)
 -   [78. Subsets](./Backtracking/78.subsets.md)
 -   [113. Path Sum II](./Backtracking/113.path-sum-ii.md)
+-   [131. Palindrome Partitioning](./Backtracking/131.palindrome-partitioning.md)
 
 ## DP
 
@@ -141,3 +144,5 @@ void backtrack(大集合(最後要返回的), 當前收集的小字串, 進度�
 -   [72. Edit Distance](./DP/72.edit-distance.md)
 -   [96. Unique Binary Search Trees](./DP/96.unique-binary-search-trees.md)
 -   [95. Unique Binary Search Trees II](./DP/95.unique-binary-search-trees-ii.md)
+-   [121. Best Time to Buy and Sell Stock](./DP/121.best-time-to-buy-and-sell-stock.md)
+-   [122. Best Time to Buy and Sell Stock II](./DP/122.best-time-to-buy-and-sell-stock-ii.md)

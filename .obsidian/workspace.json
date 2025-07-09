@@ -27,16 +27,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "作業系統/Synchronization Tools.md",
+                "file": "學術筆記/引用文獻.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Synchronization Tools"
+              "title": "引用文獻"
+            }
+          },
+          {
+            "id": "94d566cb1e4c0650",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "學術筆記/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應)"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -89,7 +103,8 @@
               "title": "書籤"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -157,13 +172,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "作業系統/Synchronization Tools.md",
+                "file": "學術筆記/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Synchronization Tools 的大綱"
+              "title": "Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應) 的大綱"
             }
           }
         ],
@@ -184,12 +199,19 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "beb856e3e8f24bb3",
+  "active": "a76d157580416654",
   "lastOpenFiles": [
+    "電腦視覺麵包版/團片01.png",
+    "電腦視覺麵包版/README.md",
+    "電腦視覺麵包版/Accept Letter-No.2.pdf",
+    "電腦視覺麵包版/1_IJEE_Revised Manuscript_AIOT_V5_bio_OK.pdf",
+    "電腦視覺麵包版",
+    "四軸無人機/~$人機_英文版.doc",
+    "學術筆記/引用文獻.md",
+    "學術筆記/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
     "作業系統/README.md",
     "作業系統/Synchronization Tools.md",
     "作業系統/CPU Scheduling.md",
-    "學術筆記/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
     "作業系統/Threads & Concurrency.md",
     "學術筆記",
     "站存筆記.md",
@@ -211,17 +233,10 @@
     "Mind/可以問女人的話題.md",
     "Mind/到底要怎樣才能過好一生.md",
     "Mind/給單身男生的建議.md",
-    "Mind/處事藝術.md",
-    "Mind/論文寫作檢核清單.md",
-    "Mind/你最愛的人。都教會了你甚麼.md",
     "Mind",
     "作業系統",
     "專案進行/論文地域/~WRL0155.tmp",
     "專案進行/論文地域/~WRD0135.tmp",
-    "專案進行/論文地域/~WRL3150.tmp",
-    "專案進行/論文地域/~WRD3135.tmp",
-    "專案進行/論文地域/~WRL4033.tmp",
-    "專案進行/論文地域/~WRD4018.tmp",
     "專案進行/論文地域/attachments/image-2.png",
     "專案進行/創創AIOT/attachments/image-8.png",
     "attachments/image-12.png",
