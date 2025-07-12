@@ -183,5 +183,209 @@ Context switch 時，OS 會重新載入新的 relocation 與 limit。
 
 不需要把整個 process 放在連續區域。可以把 process 分散放在不同記憶體空間中
 
+## 3. Paging(分頁管理)
+
+
+傳統記憶體管理方式要求一段連續的實體記憶體空間，這導致外部碎裂（external fragmentation）
+
+Paging 分頁是一種讓「實體記憶體可非連續配置」的技術，透過將邏輯記憶體分成等大小的 pages，實體記憶體分成 frames，解決外部碎裂與壓縮問題。
+
+實作需要硬體與作業系統的配合。
+
+### 3.1. 分頁基本方法
+
+pages：將邏輯記憶體分為固定大小的區塊
+frames：將實體記憶體分為相同大小的區塊
+
+地址轉換（使用 Page Table）： 每個 CPU 產生的邏輯位址被分為兩部分
+
+| 位址部分 | 說明               |
+| ---- | ---------------- |
+| p    | Page number 頁號   |
+| d    | Page offset 頁內偏移 |
+
+轉換過程如下：
+1. 用 p 去查 page table → 找出對應的 frame number
+2. frame number × frame 大小 + d → 得到實體位址
+
+![upgit_20250712_1752285793.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/07/upgit_20250712_1752285793.png)
+
+
+假設：
+- page size = 4 bytes
+- Logical address = 13
+- Page number = 13 / 4 = 3, offset = 1
+- 查 page table 得 page 3 → frame 2
+- 所以 physical address = (2 × 4) + 1 = 9
+
+
+| 優點                           | 缺點                    |
+| ---------------------------- | --------------------- |
+| 避免外部碎裂                       | 可能產生內部碎裂（最後一頁未滿）      |
+| 提供動態位址對應（dynamic relocation） | 需額外儲存 page table，消耗空間 |
+| 使用者程式看起來像是連續空間               |                       |
+
+
+### 3.2. 硬體支援與 TLB
+
+
+若 page table 存在主記憶體，每次要存取資料都需兩次存取（查 page table + 存取資料），效率低
+
+TLB（Translation Lookaside Buffer）：
+- 是一種小型、高速、可聯想式記憶體
+- 存常用的 page table 對應資料（頁號→框號）
+
+
+動作流程：
+1.  CPU 產生 logical address（p, d）
+2. 查 TLB 是否有對應的頁號 p
+3. 有命中（hit）：直接取得 frame → 組合成實體位址
+4. 未命中（miss）：查 page table → 更新 TLB
+
+![upgit_20250712_1752286045.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/07/upgit_20250712_1752286045.png)
+
+
+### 3.3. 分頁保護機制
+
+age table 可附加 保護位元（protection bit）：
+- 可設定頁面為「唯讀」或「可寫」
+- 防止程式誤寫資料（例如共享函式庫）
+
+有效/無效位元（valid/invalid bit）
+- 判斷該頁是否屬於該程序的合法記憶體空間
+- 若非法 → 發生陷阱（trap），交由作業系統處理
+
+![upgit_20250712_1752286100.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/07/upgit_20250712_1752286100.png)
+
+
+### 3.4. 共用頁面（Shared Pages）
+
+Reentrant code（可重入程式碼）：多個程序可共享一份代碼，例如標準 C 函式庫 libc。
+
+好處：
+- 節省實體記憶體（如 40 個程式共享 1 份 libc）
+- 每個程式仍有自己的資料區段
+
+
+![upgit_20250712_1752286129.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/07/upgit_20250712_1752286129.png)
+
+
+## 4. Structure of the Page Table：頁表的結構設計
+
+
+當程式邏輯地址空間很大（例如 32-bit 或 64-bit）時，單一平面（linear）的 page table 容易造成記憶體浪費。因此，作業系統採用以下幾種進階的頁表設計策略：
+
+
+### 4.1. Hierarchical Paging（階層式分頁）
+
+- 對於 32-bit 系統，每個程式有 4GB 邏輯空間
+- page size = 4KB → 每個程式最多需要 2^20 = 1M 頁表項目，每項 4 bytes，總共 4MB
+- 若每個 process 都要一份這麼大的 page table，太浪費
+
+
+解法：將 page table 拆分為多層，以二階層分頁 (two-level paging)為例：
+
+將 20-bit 的 page number 拆成 10-bit p1（外層）與 10-bit p2（內層）
+
+邏輯地址結構為：
+
+| p1 (10 bits) | p2 (10 bits) | offset d (12 bits) |
+| ------------ | ------------ | ------------------ |
+
+![upgit_20250712_1752286782.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/07/upgit_20250712_1752286782.png)
+
+  ![upgit_20250712_1752286834.png|517x246](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/07/upgit_20250712_1752286834.png)
+  
+### 4.2. Hashed Page Tables（雜湊頁表）
+
+適用：64-bit address space（巨大且稀疏）
+
+核心概念：
+- 使用虛擬頁號 p 做 hash → 得到 hash table index。
+- 該 index 對應一個 linked list，搜尋 list 中是否有相同的虛擬頁號。
+- 若有對應 → 回傳 frame → 加上 offset 組成 physical address。
+
+每個 list node 包含：
+- 虛擬頁號
+- 對應實體頁框號
+- 下一個節點指標
+
+
+| 好處                 |
+| ------------------ |
+| 更適合**稀疏分佈**的大型位址空間 |
+| 不需儲存完整的 page table |
+
+
+![upgit_20250712_1752286898.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/07/upgit_20250712_1752286898.png)
+
+
+### 4.3. Inverted Page Table（反向頁表）
+
+傳統方式的缺點：
+- 每個 process 各自持有一份 page table
+- 若有很多 process，就需要很多份 page table（即使每份用不到太多）
+
+反向設計：只有一份 page table，對應的是實體記憶體中的每個 frame
+
+每筆資料記錄：該 frame 對應的 `<process-id, page number>`
+搜尋方式：
+- 根據 CPU 輸入的邏輯 `<pid, p>`，找出對應的 frame i
+- 結果為 physical address `<i, offset>`
+
+
+
+
+![upgit_20250712_1752286970.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/07/upgit_20250712_1752286970.png)
+
+
+## 5. Swapping：交換技術
+
+Swapping（交換）是指將整個程序或程序的一部分從主記憶體移到備份儲存裝置（如硬碟）以釋放記憶體空間，等到需要時再搬回主記憶體。
+
+這項技術的目的是：允許實體記憶體不足的情況下，同時容納更多程序，提升多工程度（degree of multiprogramming）。
+
+
+![upgit_20250712_1752287179.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/07/upgit_20250712_1752287179.png)
+
+
+### 5.1. Standard Swapping（標準交換）
+
+
+1. 系統將整個 Process P1 swap-out 到 backing store（例如硬碟）。
+2. 騰出的空間可供其他程式如 P2 swap-in 執行。
+3. 當 P1 再次活躍時，再把它 swap-in 回來。
+
+
+
+儲存內容包括：
+- 程式本體與資料
+- Thread 的資料結構（若是多執行緒）
+- 作業系統追蹤的中介資料（metadata）
+
+
+| 優點               | 缺點                 |
+| ---------------- | ------------------ |
+| 有效利用有限的主記憶體資源    | 整體速度慢，因為搬移整個程序耗時   |
+| 非常適合用於「長時間閒置的程序」 | 在記憶體壓力不大的現代系統中已不常見 |
+### 5.2. Swapping with Paging（分頁交換）
+
+
+
+| 標準交換        | **分頁交換**                       |
+| ----------- | ------------------------------ |
+| 搬整個 process | 只搬「需要的頁面」（Page-level Swapping） |
+
+優勢
+- 效率更高 → 僅搬移活躍頁面
+- 節省 IO 開銷
+- 能與虛擬記憶體完美整合（第 10 章會深入）
+
+![upgit_20250712_1752287407.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/07/upgit_20250712_1752287407.png)
+
+
+
+
+
 
 
