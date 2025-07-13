@@ -67,7 +67,7 @@
 ## 6. 💡 專案與成果 Projects & Achievements
 
 -   **[Leetcode 筆記](./Leetcode筆記/README.md)**
--   **[Zero judge 筆記](./Zero%20Judge筆記/README.md)**
+-   **[Zero judge 筆記](./Zero_Judge筆記/README.md)**
 -   **[【佳作】育秀杯 應用 Muto RS 六足機器人於危險場域之傷患搜救](./育秀杯六足機器人/README.md)**
 -   **[數位雙生 AR](./數位雙生AR/【數位雙生AR】demo%202.1.0.pptx)**
 -   **[生成式 AI 期末專案 基於 pix2pix 的黑白漫畫上色](./生成式AI%20基於pix2pix的黑白漫畫上色/生成式AI%20基於pix2pix的黑白漫畫上色.pdf)**
