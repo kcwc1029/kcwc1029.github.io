@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.4 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.4">
   <diagram name="第1頁" id="EowKZxc--HcXkD7W-tSo">
-    <mxGraphModel dx="2049" dy="2363" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="989" dy="1746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -308,7 +308,7 @@
         <mxCell id="_RBXbxez8IwVJP6I_TuX-225" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="_RBXbxez8IwVJP6I_TuX-224" target="_RBXbxez8IwVJP6I_TuX-222">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="_RBXbxez8IwVJP6I_TuX-224" value="&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;&lt;b&gt;BERT&lt;/b&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;&lt;b&gt;Embeddings&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;dashed=1;dashPattern=8 8;" vertex="1" parent="1">
+        <mxCell id="_RBXbxez8IwVJP6I_TuX-224" value="&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;&lt;b&gt;RoBERTa Embeddings&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;dashed=1;dashPattern=8 8;" vertex="1" parent="1">
           <mxGeometry x="750" y="562.5" width="100" height="35" as="geometry" />
         </mxCell>
         <mxCell id="_RBXbxez8IwVJP6I_TuX-233" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="_RBXbxez8IwVJP6I_TuX-228">
@@ -394,18 +394,6 @@
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="704" y="753" as="sourcePoint" />
             <mxPoint x="760" y="590" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="_RBXbxez8IwVJP6I_TuX-257" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="_RBXbxez8IwVJP6I_TuX-215" target="_RBXbxez8IwVJP6I_TuX-228">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="704" y="753" as="sourcePoint" />
-            <mxPoint x="760" y="590" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="_RBXbxez8IwVJP6I_TuX-258" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="_RBXbxez8IwVJP6I_TuX-215" target="_RBXbxez8IwVJP6I_TuX-220">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="705" y="615" as="sourcePoint" />
-            <mxPoint x="760" y="700" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
