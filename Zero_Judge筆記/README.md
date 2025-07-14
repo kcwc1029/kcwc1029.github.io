@@ -93,8 +93,7 @@ int main(){
 
 {% endraw %}
 
-
-### 1.5. a009. 解碼器 
+### 1.5. a009. 解碼器
 
 {% raw %}
 
@@ -208,6 +207,7 @@ int main() {
 ### 1.8. a022. 迴文
 
 {% raw %}
+
 ```python
 def is_palindrome(s):
     return s == s[::-1]
@@ -218,6 +218,7 @@ text = input().strip()
 # 判斷並輸出結果
 print("yes" if is_palindrome(text) else "no")
 ```
+
 {% endraw %}
 
 ### 1.9. a024. 最大公因數(GCD)
@@ -595,6 +596,49 @@ int main() {
 
 其餘還有 merge sort、quick sort .etc
 
+### 9.1. a015. 矩陣的翻轉
+
+{% raw %}
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int m, n;
+    while(cin >> m >> n){
+        vector<vector<int>> num(m, vector<int>(n));
+
+        // 讀入矩陣
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                cin >> num[i][j];
+            }
+        }
+
+        // 建立轉置矩陣
+        vector<vector<int>> ans(n, vector<int>(m));
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                ans[j][i] = num[i][j];
+            }
+        }
+
+        // 輸出轉置後矩陣
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                cout << ans[i][j] << " ";
+            }
+            cout << endl;
+        }
+    }
+    return 0;
+}
+```
+
+{% endraw %}
+
 ### 1.15. a121. 質數又來囉
 
 針對每組輸入的區間 `[a, b]`（保證 b−a ≤ 1000）計算範圍內的質數個數。
@@ -713,6 +757,35 @@ int main() {
         cout << product << endl;
     }
 
+    return 0;
+}
+```
+
+{% endraw %}
+
+### 9.1. a215. 明明愛數數
+
+給兩個數字，n 跟 m。試問 n、n+1、n+2 、...，相加到多少會超過 m
+
+{% raw %}
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, m;
+    while (cin >> n >> m) {
+        int sum = 0;
+        int count = 0;
+        while(true){
+            count++;
+            sum += n;
+            n++;
+            if(sum>m) break;
+        }
+        cout << count << endl;
+    }
     return 0;
 }
 ```
