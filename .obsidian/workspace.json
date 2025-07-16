@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "學術筆記/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
+                "file": "Zero_Judge筆記/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應)"
+              "title": "README"
             }
           }
         ],
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "學術筆記/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
+                "file": "Zero_Judge筆記/README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應) 的大綱"
+              "title": "README 的大綱"
             }
           }
         ],
@@ -184,8 +184,11 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "278cf01db409a832",
+  "active": "df356c4d134452fb",
   "lastOpenFiles": [
+    "學術筆記/AAS-v0.7.docx",
+    "學術筆記/~$S-v0.6.docx",
+    "學術筆記/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
     "學術筆記/AAS-v0.6.docx",
     "作業系統/CPU Scheduling.md",
     "學術筆記/~$S-v0.5.docx",
@@ -201,8 +204,6 @@
     "Python_Tutor/README.md",
     "Python_Tutor",
     "學術筆記/~$S-v0.3.docx",
-    "學術筆記/AAS-v0.3.docx",
-    "學術筆記/~$S-v0.2.docx",
     "作業系統/Main Memory.md",
     "作業系統/Deadlock.md",
     "電腦視覺麵包版/團片01.png",
@@ -212,7 +213,6 @@
     "小工具/給ob的設定/obsidian相關備註.md",
     "小工具/字型檔/Office字型設定.md",
     "學術筆記/引用文獻.md",
-    "學術筆記/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
     "作業系統/Synchronization Tools.md",
     "Leetcode筆記/String/125.valid-palindrome.md",
     "Leetcode筆記/DP/122.best-time-to-buy-and-sell-stock-ii.md",
