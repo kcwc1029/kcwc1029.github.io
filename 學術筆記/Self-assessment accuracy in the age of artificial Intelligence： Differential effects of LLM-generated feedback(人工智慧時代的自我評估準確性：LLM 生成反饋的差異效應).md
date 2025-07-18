@@ -22,6 +22,7 @@ keyword：self-assessment accuracy (SAA)
 > 我們加入以下兩個變數：(1)學生初始表現。(2)學生原本的 SAA 準不準
 
 ## 3. Hypothesis Testing
+<<<<<<< HEAD
 
 為了檢驗本研究假設，我們進行三層次的階層迴歸分析，結果如表 X 與表 Y 所示。
 
@@ -54,3 +55,5 @@ keyword：self-assessment accuracy (SAA)
 Model 1 僅納入組別變項（LLM feedback 組 vs. 控制組）
 Model 2 加入兩個前測變項：初始表現（IP）與初始 SAA（ISAA）；
 Model 3 在前兩層基礎上進一步納入兩個交互作用項（LLMF × IP 與 LLMF × ISAA），以檢驗調節效果。
+=======
+>>>>>>> 0ae3a4cf148761fee81cb5c5a3834209858c1456

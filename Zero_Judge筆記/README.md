@@ -151,7 +151,106 @@ int main() {
 
 {% endraw %}
 
-### 1.7. a020. 身分證檢驗
+### 1.7. a013. 羅馬數字
+
+說明：把羅馬數字轉十進位整數，算出兩個數字差的絕對值，再把答案轉回羅馬數字
+
+{% raw %}
+
+```cpp
+#include <iostream>
+#include <string>
+#include <map>
+#include <cmath>
+using namespace std;
+
+// 羅馬字串轉整數
+int romanToInt(const string& s) {
+    map<char, int> roman = {
+        {'I', 1}, {'V', 5}, {'X', 10},
+        {'L', 50}, {'C', 100}, {'D', 500}, {'M', 1000}
+    };
+
+    int total = 0, prev = 0;
+    for (int i = s.length() - 1; i >= 0; --i) {
+        int val = roman[s[i]];
+        if (val < prev) total -= val;
+        else {
+            total += val;
+            prev = val;
+        }
+    }
+    return total;
+}
+
+// 整數轉羅馬字串
+string intToRoman(int num) {
+    int values[] = {
+        1000, 900, 500, 400,
+        100, 90, 50, 40,
+        10, 9, 5, 4, 1
+    };
+    string symbols[] = {
+        "M", "CM", "D", "CD",
+        "C", "XC", "L", "XL",
+        "X", "IX", "V", "IV", "I"
+    };
+
+    string result;
+    for (int i = 0; i < 13; ++i) {
+        while (num >= values[i]) {
+            result += symbols[i];
+            num -= values[i];
+        }
+    }
+    return result;
+}
+
+int main() {
+    string a, b;
+    while (cin >> a >> b) {
+        int diff = abs(romanToInt(a) - romanToInt(b));
+        if (diff == 0)
+            cout << "ZERO" << endl;
+        else
+            cout << intToRoman(diff) << endl;
+    }
+    return 0;
+}
+
+```
+
+{% endraw %}
+### 1.8. a015. 矩陣的翻轉
+
+
+{% raw %}
+```cpp
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    int r,c;
+    while(cin>>r>>c){
+        vector<vector<int>>matrix(105,vector<int>(105));
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                cin>>matrix[i][j];
+            }
+        }
+        for(int i=0;i<c;i++){
+            for(int j=0;j<r;j++){
+                cout<<matrix[j][i]<<" ";  //注意是 [j][i] 不是 [i][j] !
+            }
+            cout<<"\n";
+        }
+    }
+    return 0;
+}
+```
+{% endraw %}
+
+### 1.9. a020. 身分證檢驗
 
 說明：身分證號碼檢查如下：(假設是 T112663836)
 
@@ -204,7 +303,7 @@ int main() {
 
 {% endraw %}
 
-### 1.8. a022. 迴文
+### 1.10. a022. 迴文
 
 {% raw %}
 
@@ -221,7 +320,7 @@ print("yes" if is_palindrome(text) else "no")
 
 {% endraw %}
 
-### 1.9. a024. 最大公因數(GCD)
+### 1.11. a024. 最大公因數(GCD)
 
 找出最大公因數 => 輾轉相除法
 
@@ -284,7 +383,7 @@ int main() {
 
 {% endraw %}
 
-### 1.10. a034. 二進位制轉換
+### 1.12. a034. 二進位制轉換
 
 將 10 進為轉成 2 進位
 
@@ -322,7 +421,7 @@ int main() {
 
 {% endraw %}
 
-### 1.11. a058. MOD3
+### 1.13. a058. MOD3
 
 一行輸出三個整數（空格分開），依序是：
 
@@ -363,7 +462,7 @@ int main() {
 
 {% endraw %}
 
-### 1.12. a059. 完全平方和
+### 1.14. a059. 完全平方和
 
 給你一個範圍 a 到 b ，請你找出 a 與 b 之間所有完全平方數的和。
 
@@ -398,7 +497,7 @@ int main() {
 
 {% endraw %}
 
-### 1.13. a065. 提款卡密碼
+### 1.15. a065. 提款卡密碼
 
 {% raw %}
 
@@ -423,13 +522,13 @@ int main() {
 
 {% endraw %}
 
-### 1.14. a104. 排序
+### 1.16. a104. 排序
 
 這一題可以去延伸演算法中的排序相關演算法，這邊先示範比較基礎的
 
 未來我們可以在【演算法】中去討論
 
-#### 1.14.1. 解法 01：用 bubble sort 去解
+#### 1.16.1. 解法 01：用 bubble sort 去解
 
 Bubble Sort：重複走訪數列，每次比較相鄰兩個元素，如果順序錯了就交換，最大的值會被「冒」到後面，像泡泡往上浮。
 
@@ -505,7 +604,7 @@ int main() {
 
 {% endraw %}
 
-#### 1.14.2. 解法 02：用 insert sort 去解
+#### 1.16.2. 解法 02：用 insert sort 去解
 
 就像打撲克牌時整理手牌：每次將新牌插入前面已排序的牌堆中。
 
@@ -596,7 +695,7 @@ int main() {
 
 其餘還有 merge sort、quick sort .etc
 
-### 9.1. a015. 矩陣的翻轉
+### 1.17. a015. 矩陣的翻轉
 
 {% raw %}
 
@@ -639,7 +738,7 @@ int main() {
 
 {% endraw %}
 
-### 1.15. a121. 質數又來囉
+### 1.18. a121. 質數又來囉
 
 針對每組輸入的區間 `[a, b]`（保證 b−a ≤ 1000）計算範圍內的質數個數。
 
@@ -676,7 +775,7 @@ int main() {
 
 {% endraw %}
 
-### 1.16. a147. Print it all
+### 1.19. a147. Print it all
 
 會有多組整數 n，每組一行
 
@@ -705,7 +804,7 @@ int main() {
 
 {% endraw %}
 
-### 1.17. a148. You Cannot Pass?!
+### 1.20. a148. You Cannot Pass?!
 
 {% raw %}
 
@@ -733,7 +832,7 @@ int main() {
 
 {% endraw %}
 
-### 1.18. a149. 乘乘樂
+### 1.21. a149. 乘乘樂
 
 {% raw %}
 
@@ -763,7 +862,7 @@ int main() {
 
 {% endraw %}
 
-### 9.1. a215. 明明愛數數
+### 1.22. a215. 明明愛數數
 
 給兩個數字，n 跟 m。試問 n、n+1、n+2 、...，相加到多少會超過 m
 
@@ -791,6 +890,216 @@ int main() {
 ```
 
 {% endraw %}
+
+### 1.23. a248. 新手訓練 ~ 陣列應用
+
+{% raw %}
+```cpp
+
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+void divide(int a, int b, int N) {
+    string result;
+    int integerPart = a / b;
+    result = to_string(integerPart) + ".";
+
+    a = a % b;
+    for (int i = 0; i < N; ++i) {
+        a *= 10;
+        int digit = a / b;
+        result += to_string(digit);
+        a = a % b;
+    }
+
+    cout << result << endl;
+}
+
+int main() {
+    int a, b, N;
+    while (cin >> a >> b >> N) {
+        divide(a, b, N);
+    }
+    return 0;
+}
+
+```
+{% endraw %}
+
+
+
+### 1.24. 	a528. 大數排序
+
+
+{% raw %}
+```cpp
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+// 自訂比較函式：用來比較兩個大整數的字串 a 和 b，判斷 a 是否比 b 小
+bool compare(const string &a, const string &b) {
+    // 判斷兩個字串是否為負數
+    bool negA = a[0] == '-';
+    bool negB = b[0] == '-';
+
+    // 如果 a 是負數、b 是正數，那 a < b → 回傳 true
+    if (negA && !negB) return true;
+
+    // 如果 a 是正數、b 是負數，那 a > b → 回傳 false
+    if (!negA && negB) return false;
+
+    // 去掉負號，只保留數字部分來比較大小
+    string aa = negA ? a.substr(1) : a;
+    string bb = negB ? b.substr(1) : b;
+
+    // 如果數字長度不同（例如 "123" vs "4567"）
+    if (aa.length() != bb.length()) {
+        // 如果是負數：長度越長代表數值越小 → 越後面
+        // 如果是正數：長度越長代表數值越大 → 越後面
+        return negA ? (aa.length() > bb.length()) : (aa.length() < bb.length());
+    }
+
+    // 長度相同 → 比較字典序（逐字比較）
+    // 若是負數，要反過來比大小（數字越大 → 實際越小）
+    return negA ? (aa > bb) : (aa < bb);
+}
+
+int main() {
+    int N;
+
+    // 讀取每一組測資，直到輸入結束（EOF）
+    while (cin >> N) {
+        vector<string> nums(N); // 儲存每組的大整數（用字串表示）
+
+        // 讀取 N 個數字
+        for (int i = 0; i < N; ++i) {
+            cin >> nums[i];
+        }
+
+        // 使用自訂的 compare 函式對字串進行排序（從小到大）
+        sort(nums.begin(), nums.end(), compare);
+
+        // 輸出排序後的結果
+        for (const string &s : nums) {
+            cout << s << "\n";
+        }
+    }
+
+    return 0;
+}
+```
+{% endraw %}
+
+### 1.25. a417. 螺旋矩陣
+
+{% raw %}
+```cpp
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+const int MAXN = 100;
+int matrix[MAXN][MAXN];
+int dx1[4] = {0, 1, 0, -1}; // 順時針方向（右、下、左、上）
+int dy1[4] = {1, 0, -1, 0};
+
+int dx2[4] = {1, 0, -1, 0}; // 逆時針方向（下、右、上、左）
+int dy2[4] = {0, 1, 0, -1};
+
+int main() {
+    int T;
+    cin >> T;
+    while (T--) {
+        int N, M;
+        cin >> N >> M;
+
+        // 初始化矩陣
+        for (int i = 0; i < N; ++i)
+            for (int j = 0; j < N; ++j)
+                matrix[i][j] = 0;
+
+        int x = 0, y = 0, dir = 0;
+        for (int num = 1; num <= N * N; ++num) {
+            matrix[x][y] = num;
+
+            // 預測下一格位置
+            int nx = x + (M == 1 ? dx1[dir] : dx2[dir]);
+            int ny = y + (M == 1 ? dy1[dir] : dy2[dir]);
+
+            // 若超出邊界或已填過，就轉向
+            if (nx < 0 || ny < 0 || nx >= N || ny >= N || matrix[nx][ny] != 0) {
+                dir = (dir + 1) % 4;
+                nx = x + (M == 1 ? dx1[dir] : dx2[dir]);
+                ny = y + (M == 1 ? dy1[dir] : dy2[dir]);
+            }
+
+            x = nx;
+            y = ny;
+        }
+
+        // 輸出矩陣（寬度 5）
+        for (int i = 0; i < N; ++i) {
+            for (int j = 0; j < N; ++j) {
+                cout << setw(5) << matrix[i][j];
+            }
+            cout << "\n";
+        }
+    }
+
+    return 0;
+}
+```
+{% endraw %}
+
+
+### 1.26. b367. 翻轉世界
+{% raw %}
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+
+    while (t--) {
+        int n, m;
+        cin >> n >> m;
+
+        vector<vector<int>> a; // 原始矩陣
+        vector<vector<int>> b; // 180 度翻轉後的矩陣
+
+        for (int i = 0; i < n; ++i) {
+            vector<int> row(m);
+            for (int j = 0; j < m; ++j) {
+                cin >> row[j];
+            }
+            a.push_back(row);
+
+            // 反轉每列後插入到 b 的開頭 → 等同於 Python 的 insert(0, arr[::-1])
+            reverse(row.begin(), row.end());
+            b.insert(b.begin(), row);
+        }
+
+        if (a == b)
+            cout << "go forward" << endl;
+        else
+            cout << "keep defending" << endl;
+    }
+
+    return 0;
+}
+```
+{% endraw %}
+
 
 ---
 
