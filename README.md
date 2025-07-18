@@ -70,8 +70,10 @@
 -   **[Zero judge 筆記](./Zero_Judge筆記/README.md)**
 -   **[【佳作】育秀杯 應用 Muto RS 六足機器人於危險場域之傷患搜救](./育秀杯六足機器人/README.md)**
 -   **[數位雙生 AR](./數位雙生AR/【數位雙生AR】demo%202.1.0.pptx)**
+-   **[以深度學習與數位雙生建構林百貨契約容量決策系統](./創創林百貨/2025創創科技挑戰競賽v4.3.pdf)**
 -   **[生成式 AI 期末專案 基於 pix2pix 的黑白漫畫上色](./生成式AI%20基於pix2pix的黑白漫畫上色/生成式AI%20基於pix2pix的黑白漫畫上色.pdf)**
--   **[Python Tutor](./Python_Tutor/README.md)**
+-   **[【企劃書】淨零排放科技](./淨零排放科技/2025淨零排放科技國際競賽%20企劃書v0.3.pdf)**
+<!-- -   **[Python Tutor](./Python_Tutor/README.md)** -->
 
 ## 7. 🧩 其他 other
 
