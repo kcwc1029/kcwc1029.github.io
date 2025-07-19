@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Zero_Judge筆記/README.md",
+                "file": "學術筆記/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應)"
             }
           }
         ],
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Zero_Judge筆記/README.md",
+                "file": "學術筆記/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "README 的大綱"
+              "title": "Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應) 的大綱"
             }
           }
         ],
@@ -184,32 +184,31 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "df356c4d134452fb",
+  "active": "278cf01db409a832",
   "lastOpenFiles": [
-    "學術筆記/AAS-v1.0.docx",
-    "學術筆記/~WRL2701.tmp",
-    "學術筆記/~WRD2690.tmp",
-    "學術筆記/~WRL2398.tmp",
-    "學術筆記/~WRD2382.tmp",
-    "學術筆記/~WRL0300.tmp",
-    "學術筆記/~WRD0288.tmp",
-    "學術筆記/~WRL2045.tmp",
-    "學術筆記/~WRD2033.tmp",
-    "學術筆記/~WRL0416.tmp",
-    "學術筆記/~WRD0404.tmp",
+    "~$面試簡報-2025.07.18.pptx",
+    "面試簡報-2025.07.18.pptx",
     "淨零排放科技/attachments/image.png",
+    "淨零排放科技/淨零排放科技.drawio",
+    "淨零排放科技/檔案下載.txt",
     "淨零排放科技/messageImage_1747662623577.jpg",
     "淨零排放科技/messageImage_1747403737560.jpg",
+    "淨零排放科技/attachments",
+    "淨零排放科技/2025淨零排放科技國際競賽 企劃書v0.3.pdf",
+    "淨零排放科技/2025淨零排放科技國際競賽 企劃書v0.3.docx",
+    "淨零排放科技",
+    "學術筆記/AAS-v1.0.docx",
+    "學士畢業資料/10911221歷年成績單-已標注名次.pdf",
+    "創創林百貨/請款/創創AIOT行程.pdf",
     "創創林百貨/實作照片/S__13901846.jpg",
-    "創創林百貨/實作照片/S__13901844_0.jpg",
     "創創林百貨/實作照片/S__13901845.jpg",
+    "創創林百貨/實作照片/S__13901844_0.jpg",
     "創創林百貨/實作照片/S__13901843_0.jpg",
     "創創林百貨/實作照片/S__13901842_0.jpg",
     "創創林百貨/實作照片/S__13901841_0.jpg",
     "創創林百貨/實作照片/S__13901840_0.jpg",
     "創創林百貨/創創AIOT.md",
     "創創林百貨/創創AIOT PPT.md",
-    "學術筆記/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
     "作業系統/CPU Scheduling.md",
     "作業系統/Virtual Memory.md",
     "Zero_Judge筆記/README.md",
@@ -224,6 +223,7 @@
     "小工具/給ob的設定/obsidian相關備註.md",
     "小工具/字型檔/Office字型設定.md",
     "學術筆記/引用文獻.md",
+    "學術筆記/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
     "作業系統/Synchronization Tools.md",
     "Leetcode筆記/String/125.valid-palindrome.md",
     "Leetcode筆記/DP/122.best-time-to-buy-and-sell-stock-ii.md",
