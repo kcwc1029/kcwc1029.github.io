@@ -1,7 +1,7 @@
 
 scienceDirect
 
-[使用聚類分析來識別翻轉課堂中的拖延和學生學習策略 - ScienceDirect --- Using cluster analysis to identify procrastination and student learning strategies in a flipped classroom - ScienceDirect](https://www.sciencedirect.com/science/article/pii/S1472811724000077)
+
 
 (可以拿來當主架構)
 [將基於 AI 的自適應學習整合到翻轉課堂模式中，以提高參與度和學習成果 - ScienceDirect --- Integrating AI-based adaptive learning into the flipped classroom model to enhance engagement and learning outcomes - ScienceDirect](https://www.sciencedirect.com/science/article/pii/S2666920X25000323)
@@ -25,12 +25,6 @@ IEEE的
 [基於技術的等長變換翻轉課堂學習策略在提高學生高階思維技能方面的有效性 |IEEE 期刊和雜誌 |IEEE Xplore --- The Effectiveness of a Technology-Based Isometrical Transformation Flipped Classroom Learning Strategy in Improving Students’ Higher Order Thinking Skills | IEEE Journals & Magazine | IEEE Xplore](https://ieeexplore.ieee.org/document/9992238)
 
 [釋放 ChatGPT 的力量：通過提示工程優化翻轉課堂資訊檢索的案例研究 |IEEE 期刊和雜誌 |IEEE Xplore --- Unleashing ChatGPT's Power: A Case Study on Optimizing Information Retrieval in Flipped Classrooms via Prompt Engineering | IEEE Journals & Magazine | IEEE Xplore](https://ieeexplore.ieee.org/document/10285884)
-
-
-Sage Journals的(可以看文獻)
-
-[翻轉課堂學習中學生學習方法、學習環境感知與學業成績的關係：自我報告與過程數據的證據 - 韓飛飛，2023 --- Relations between Students’ Study Approaches, Perceptions of the Learning Environment, and Academic Achievement in Flipped Classroom Learning: Evidence from Self-Reported and Process Data - Feifei Han, 2023](https://journals.sagepub.com/doi/full/10.1177/07356331231162823)
-
 
 
 
