@@ -4,7 +4,7 @@
 -   [Processes](./作業系統：Processes.pdf)
 -   [Threads & Concurrency](./作業系統：Threads%20&%20Concurrency.pdf)
 -   [CPU Scheduling](./作業系統：CPU%20Scheduling.pdf)
--   [Synchronization Tools](./Synchronization%20Tools.md)
+-   [Synchronization Tools](./作業系統：Synchronization%20Tools.pdf)
 -   [Deadlock](./Deadlock.md)
 -   [Main Memory](./Main%20Memory.md)
 -   [Virtual Memory](./Virtual%20Memory.md)
