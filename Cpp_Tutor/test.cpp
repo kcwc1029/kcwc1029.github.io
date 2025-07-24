@@ -1,10 +1,18 @@
-// test.cpp
 #include <iostream>
 using namespace std;
 
-extern int counter;  // 告訴編譯器：變數定義在別處
-
 int main() {
-    cout << "Counter = " << counter << endl; // Counter = 42
+    int a[3][4] = {
+        {1,  2,  3,  4},
+        {5,  6,  7,  8},
+        {9, 10, 11, 12}
+    };
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 4; j++) {
+            cout << &a[i][j] << "\t";
+        }
+        cout << endl;
+    }
     return 0;
 }
