@@ -41,16 +41,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "作業系統/Deadlock.md",
+                "file": "CoT/參考的paper.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Deadlock"
+              "title": "參考的paper"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "作業系統/Deadlock.md",
+                "file": "作業系統/README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Deadlock 的大綱"
+              "title": "README 的大綱"
             }
           }
         ],
@@ -198,21 +198,24 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "15bb3382aafc1997",
+  "active": "7b0acf550e3cdbee",
   "lastOpenFiles": [
-    "Cpp_Tutor/~WRL3831.tmp",
-    "Cpp_Tutor/~WRD3812.tmp",
-    "AAS/~WRL2890.tmp",
-    "AAS/~WRD2867.tmp",
-    "AAS/~WRL2289.tmp",
-    "AAS/~WRD2278.tmp",
-    "AAS/~WRL0669.tmp",
-    "AAS/~WRD0649.tmp",
-    "四軸無人機/~$人機_英文版.doc",
-    "AAS/~WRL0280.tmp",
-    "AAS/~WRD0265.tmp",
+    "作業系統/~WRL3705.tmp",
+    "作業系統/~WRD3682.tmp",
+    "作業系統/~WRL2728.tmp",
+    "作業系統/~WRD2713.tmp",
+    "作業系統/~WRL0005.tmp",
+    "作業系統/~WRD0004.tmp",
+    "作業系統/~WRL0003.tmp",
+    "作業系統/~WRD0002.tmp",
+    "作業系統/Main Memory.md",
+    "作業系統/~$系統：Overview.docx",
+    "作業系統/作業系統：Main Memory.pdf",
+    "作業系統/mso5DF0.tmp",
     "作業系統/README.md",
+    "作業系統/Deadlock.md",
     "CoT/參考的paper.md",
+    "Mind/你最愛的人。都教會了你甚麼.md",
     "Cpp_Tutor/README.md",
     "面試簡報轉照片-2025.07.18/投影片8.JPG",
     "面試簡報轉照片-2025.07.18/投影片7.JPG",
@@ -228,8 +231,6 @@
     "作業系統/Virtual Memory.md",
     "作業系統/Threads & Concurrency.md",
     "作業系統/Synchronization Tools.md",
-    "作業系統/Main Memory.md",
-    "作業系統/Deadlock.md",
     "作業系統/CPU Scheduling.md",
     "學術筆記/AAS/引用文獻.md",
     "學術筆記/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
@@ -244,7 +245,6 @@
     "Operating-System/CPU Scheduling.md",
     "淨零排放科技/attachments/image.png",
     "淨零排放科技/messageImage_1747662623577.jpg",
-    "創創林百貨/創創AIOT.md",
-    "創創林百貨/創創AIOT PPT.md"
+    "創創林百貨/創創AIOT.md"
   ]
 }
