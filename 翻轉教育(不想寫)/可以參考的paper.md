@@ -15,14 +15,3 @@ IEEE 的
 [數碼邏輯翻轉課堂，利用引導式反思思維機制促進學生課前準備及參與課堂活動 |IEEE 期刊和雜誌 |IEEE Xplore --- A Digital Logic Flipped Classroom for Promoting Students’ Preclass Preparation and Participation in Classroom Activities Using a Guided Reflective Thinking Mechanism | IEEE Journals & Magazine | IEEE Xplore](https://ieeexplore.ieee.org/document/10335661)
 
 [基於技術的等長變換翻轉課堂學習策略在提高學生高階思維技能方面的有效性 |IEEE 期刊和雜誌 |IEEE Xplore --- The Effectiveness of a Technology-Based Isometrical Transformation Flipped Classroom Learning Strategy in Improving Students’ Higher Order Thinking Skills | IEEE Journals & Magazine | IEEE Xplore](https://ieeexplore.ieee.org/document/9992238)
-
-[釋放 ChatGPT 的力量：通過提示工程優化翻轉課堂資訊檢索的案例研究 |IEEE 期刊和雜誌 |IEEE Xplore --- Unleashing ChatGPT's Power: A Case Study on Optimizing Information Retrieval in Flipped Classrooms via Prompt Engineering | IEEE Journals & Magazine | IEEE Xplore](https://ieeexplore.ieee.org/document/10285884)
-
-
-
-
-
-
-
-
-

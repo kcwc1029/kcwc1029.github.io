@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "翻轉教育/可以參考的paper.md",
+                "file": "CoT/參考的paper.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "可以參考的paper"
+              "title": "參考的paper"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "翻轉教育/可以參考的paper.md",
+                "file": "CoT/參考的paper.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "可以參考的paper 的大綱"
+              "title": "參考的paper 的大綱"
             }
           }
         ],
@@ -171,17 +171,22 @@
   },
   "active": "0a059e4068cd8e0f",
   "lastOpenFiles": [
-    "Cpp_Tutor/C++程式設計：陣列.pdf",
-    "Cpp_Tutor/C++程式設計：陣列.docx",
-    "Cpp_Tutor/C++程式設計：判斷式、迴圈、輸入輸出.docx",
-    "翻轉教育/~$翻轉教育v0.1.docx",
-    "Cpp_Tutor/~WRL0908.tmp",
-    "Cpp_Tutor/utils.cpp",
-    "Cpp_Tutor/C++程式設計：函數.pdf",
-    "作業系統/~$系統：Processes.docx",
-    "作業系統/作業系統：Synchronization Tools.pdf",
-    "Cpp_Tutor/~$+程式設計：函數.docx",
-    "Cpp_Tutor/test.exe",
+    "Mind/給單身男生的建議.md",
+    "CoT/~$oTv0.0.docx",
+    "AAS/~$ASv2.0.docx",
+    "翻轉教育/可以參考的paper.md",
+    "翻轉教育(不想寫)/可以參考的paper.md",
+    "翻轉教育(不想寫)/AI翻轉教育參考文獻.docx",
+    "翻轉教育(不想寫)/AI翻轉教育v0.1.docx",
+    "翻轉教育(不想寫)",
+    "四軸無人機/~$人機_英文版.doc",
+    "作業系統/作業系統：Security and Protection.docx",
+    "CoT/參考的paper.md",
+    "CoT/CoT參考文獻.docx",
+    "CoT/CoTv0.0.docx",
+    "CoT",
+    "AAS/引用文獻.md",
+    "AAS/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
     "Cpp_Tutor/README.md",
     "面試簡報轉照片-2025.07.18/投影片8.JPG",
     "面試簡報轉照片-2025.07.18/投影片7.JPG",
@@ -191,8 +196,6 @@
     "面試簡報轉照片-2025.07.18/投影片3.JPG",
     "面試簡報轉照片-2025.07.18/投影片1.JPG",
     "面試簡報轉照片-2025.07.18/投影片2.JPG",
-    "Mind/給單身男生的建議.md",
-    "翻轉教育/可以參考的paper.md",
     "我自己想投技術相關/參考的paper.md",
     "作業系統/Virtual Memory.md",
     "作業系統/Threads & Concurrency.md",
@@ -211,11 +214,7 @@
     "Operating-System/Processes.md",
     "Operating-System/Main Memory.md",
     "Operating-System/Deadlock.md",
-    "Operating-System/CPU Scheduling.md",
     "淨零排放科技/attachments/image.png",
-    "淨零排放科技/messageImage_1747662623577.jpg",
-    "創創林百貨/創創AIOT.md",
-    "創創林百貨/創創AIOT PPT.md",
-    "Zero_Judge筆記/README.md"
+    "淨零排放科技/messageImage_1747662623577.jpg"
   ]
 }

@@ -221,10 +221,11 @@ int main() {
 ```
 
 {% endraw %}
+
 ### 1.8. a015. 矩陣的翻轉
 
-
 {% raw %}
+
 ```cpp
 #include<iostream>
 #include<vector>
@@ -248,6 +249,7 @@ int main(){
     return 0;
 }
 ```
+
 {% endraw %}
 
 ### 1.9. a020. 身分證檢驗
@@ -894,6 +896,7 @@ int main() {
 ### 1.23. a248. 新手訓練 ~ 陣列應用
 
 {% raw %}
+
 ```cpp
 
 #include <iostream>
@@ -926,14 +929,13 @@ int main() {
 }
 
 ```
+
 {% endraw %}
 
-
-
-### 1.24. 	a528. 大數排序
-
+### 1.24. a528. 大數排序
 
 {% raw %}
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -994,11 +996,13 @@ int main() {
     return 0;
 }
 ```
+
 {% endraw %}
 
 ### 1.25. a417. 螺旋矩陣
 
 {% raw %}
+
 ```cpp
 #include <iostream>
 #include <iomanip>
@@ -1055,11 +1059,13 @@ int main() {
     return 0;
 }
 ```
+
 {% endraw %}
 
-
 ### 1.26. b367. 翻轉世界
+
 {% raw %}
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -1098,8 +1104,8 @@ int main() {
     return 0;
 }
 ```
-{% endraw %}
 
+{% endraw %}
 
 ---
 
