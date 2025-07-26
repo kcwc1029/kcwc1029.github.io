@@ -13,3 +13,11 @@
 
 
 [使用語言模型進行思維鏈提示，以準確解決數學問題 |IEEE 會議出版物 |IEEE Xplore --- Chain-of-Thoughts Prompting with Language Models for Accurate Math Problem-Solving | IEEE Conference Publication | IEEE Xplore](https://ieeexplore.ieee.org/document/10534945)
+
+## 1. **🔁 Polling（輪詢）**
+
+
+
+
+
+
