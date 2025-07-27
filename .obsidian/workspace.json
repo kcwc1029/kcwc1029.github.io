@@ -49,8 +49,7 @@
               "title": "參考的paper"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -171,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "作業系統/README.md",
+                "file": "CoT/參考的paper.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "README 的大綱"
+              "title": "參考的paper 的大綱"
             }
           }
         ],
@@ -198,21 +197,22 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "7b0acf550e3cdbee",
+  "active": "0a059e4068cd8e0f",
   "lastOpenFiles": [
-    "CoT/~$oTv0.0.docx",
-    "CoT/~WRL3420.tmp",
-    "CoT/~WRD3413.tmp",
-    "CoT/~WRL2526.tmp",
-    "CoT/~WRD2522.tmp",
-    "CoT/~WRL1956.tmp",
-    "CoT/~WRD1948.tmp",
-    "CoT/~$oT參考文獻.docx",
-    "CoT/~WRL0259.tmp",
-    "CoT/~WRD0255.tmp",
-    "CoT/~WRL3835.tmp",
-    "作業系統/Main Memory.md",
+    "CoT/模仿02.pdf",
+    "CoT/模仿01.pdf",
+    "CoT/模仿01.pdf.crdownload",
+    "CoT/~WRL2685.tmp",
+    "CoT/~WRD2681.tmp",
+    "CoT/~WRL0005.tmp",
+    "CoT/~WRD0004.tmp",
     "作業系統/README.md",
+    "CoT/~$oTv0.0.docx",
+    "作業系統/~WRL1687.tmp",
+    "作業系統/~WRD1675.tmp",
+    "作業系統/~WRL3856.tmp",
+    "作業系統/Virtual Memory.md",
+    "作業系統/Main Memory.md",
     "作業系統/Deadlock.md",
     "CoT/參考的paper.md",
     "Mind/你最愛的人。都教會了你甚麼.md",
@@ -228,7 +228,6 @@
     "Mind/給單身男生的建議.md",
     "翻轉教育/可以參考的paper.md",
     "我自己想投技術相關/參考的paper.md",
-    "作業系統/Virtual Memory.md",
     "作業系統/Threads & Concurrency.md",
     "作業系統/Synchronization Tools.md",
     "作業系統/CPU Scheduling.md",
