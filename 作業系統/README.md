@@ -10,8 +10,3 @@
 -   [Virtual Memory](./Virtual%20Memory.md)
 -   [Storage Management](./作業系統：Storage%20Management.pdf)
 -   [File System](./作業系統：File%20System.pdf)
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 3bdefe966c90ff6f0291da6f68b3f3657a25018b
