@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+\usepackage{xcolor}
+\usepackage{listings}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{codegrey}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+
+\lstdefinelanguage{json}{
+  basicstyle=\ttfamily\small,
+  showstringspaces=false,
+  breaklines=true,
+  frame=tb,
+  numbers=left,
+  numberstyle=\tiny\color{black},
+  string=[s]{"}{"},
+  stringstyle=\color{codepurple},
+  commentstyle=\color{dkgreen},
+  keywordstyle=\color{blue},
+  morecomment=[l][\color{magenta}]{:},
+  morestring=[b]',
+}
+
+\lstset{
+  backgroundcolor=\color{white},
+  extendedchars=true,
+  aboveskip=3mm,
+  belowskip=3mm,
+  tabsize=2
+}
+
+\begin{document}
+
+以下為小模型預測與標註的資料範例：
+
+\begin{lstlisting}
+[
+  {
+    "code": "void* add(void* arg) {\n  for (int i = 0; i < 1000; i++) {\n    pthread_mutex_lock(&lock);\n    count++;\n    pthread_mutex_unlock(&lock);\n  }\n  return NULL;\n}",
+    "Small model Prediction": "critical_section (Confidence: 88.50%)",
+    "True label": "critical_section"
+  },
+  {
+    "code": "void run_no_lock(void* arg) {\n  for (int i = 0; i < 1000; i++) {\n    count++;\n  }\n}",
+    "Small model Prediction": "unrelated (Confidence: 91.30%)",
+    "True label": "unrelated"
+  },
+  {
+    "code": "void* modify_balance(void* arg) {\n  pthread_mutex_lock(&mutex);\n  balance += 100;\n  pthread_mutex_unlock(&mutex);\n  return NULL;\n}",
+    "Small model Prediction": "critical_section (Confidence: 84.20%)",
+    "True label": "critical_section"
+  }
+]
+\end{lstlisting}
+
+\end{document}
