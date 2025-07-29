@@ -20,34 +20,6 @@
               "icon": "lucide-file",
               "title": "參考的paper"
             }
-          },
-          {
-            "id": "7b0acf550e3cdbee",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "作業系統/README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
-            "id": "15bb3382aafc1997",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CoT/參考的paper.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "參考的paper"
-            }
           }
         ]
       }
@@ -200,22 +172,22 @@
   "active": "0a059e4068cd8e0f",
   "lastOpenFiles": [
     "CoT/~$oTv0.0.docx",
-    "CoT/~WRL1386.tmp",
-    "CoT/~WRD1374.tmp",
-    "CoT/~WRL1164.tmp",
-    "CoT/~WRD1140.tmp",
-    "CoT/~WRL1206.tmp",
-    "CoT/~WRD1187.tmp",
-    "CoT/~WRL2628.tmp",
-    "CoT/~WRD2604.tmp",
-    "CoT/~WRL0120.tmp",
-    "CoT/~WRD0097.tmp",
-    "作業系統/README.md",
-    "作業系統/Virtual Memory.md",
-    "作業系統/Main Memory.md",
-    "作業系統/Deadlock.md",
+    "作業系統/~$系統：Main Memory.docx",
+    "AAS/AASv2.3.pdf",
+    "AAS/AASv2.3.docx",
+    "Latex生成程式碼/mind.tex",
+    "Latex生成程式碼/mind.synctex.gz",
+    "Latex生成程式碼/mind.pdf",
+    "Latex生成程式碼",
+    "CoT/畫圖.pptx",
+    "CoT/未命名圖表.drawio",
+    "作業系統/~$系統：CPU Scheduling.docx",
+    "Mind/給單身男生的建議.md",
+    "翻轉教育/可以參考的paper.md",
+    "翻轉教育(不想寫)/可以參考的paper.md",
     "CoT/參考的paper.md",
-    "Mind/你最愛的人。都教會了你甚麼.md",
+    "AAS/引用文獻.md",
+    "AAS/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
     "Cpp_Tutor/README.md",
     "面試簡報轉照片-2025.07.18/投影片8.JPG",
     "面試簡報轉照片-2025.07.18/投影片7.JPG",
@@ -225,11 +197,13 @@
     "面試簡報轉照片-2025.07.18/投影片3.JPG",
     "面試簡報轉照片-2025.07.18/投影片1.JPG",
     "面試簡報轉照片-2025.07.18/投影片2.JPG",
-    "Mind/給單身男生的建議.md",
-    "翻轉教育/可以參考的paper.md",
     "我自己想投技術相關/參考的paper.md",
+    "作業系統/Virtual Memory.md",
     "作業系統/Threads & Concurrency.md",
     "作業系統/Synchronization Tools.md",
+    "作業系統/README.md",
+    "作業系統/Main Memory.md",
+    "作業系統/Deadlock.md",
     "作業系統/CPU Scheduling.md",
     "學術筆記/AAS/引用文獻.md",
     "學術筆記/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
@@ -241,9 +215,7 @@
     "Operating-System/Processes.md",
     "Operating-System/Main Memory.md",
     "Operating-System/Deadlock.md",
-    "Operating-System/CPU Scheduling.md",
     "淨零排放科技/attachments/image.png",
-    "淨零排放科技/messageImage_1747662623577.jpg",
-    "創創林百貨/創創AIOT.md"
+    "淨零排放科技/messageImage_1747662623577.jpg"
   ]
 }
