@@ -1,2 +1,1 @@
-// utils.cpp
 int counter = 42;  // 實際定義變數

@@ -1,17 +1,31 @@
 #include <iostream>
 using namespace std;
+bool flag = true;
 
-// 接收一個指向含有 5 個 int 的陣列指標
-void printArray(int (*p)[5]) {
-    for (int i = 0; i < 5; ++i) {
-        cout << (*p)[i] << " "; // 取陣列的值
-        // cout << *p[i] << " "; // 為定義行為
+bool func(int n){ // n = 49
+    if (n == 1){
+        return false;
+    } 
+
+
+    for (int i=2 ; i<n; i++){
+        if(n % i ==0){
+            return true;
+        }
     }
-    cout << endl;
+    return false;
 }
 
-int main() {
-    int arr[5] = {1, 2, 3, 4, 5};
-    printArray(&arr);  // 傳整個陣列的位址
+
+int main(){
+    int N = 13;
+    // cin >>N;
+    
+    if (func(N) == true) {
+        cout << "Yes" <<endl;
+    }
+    else{
+        cout << "No" << endl;
+    }
     return 0;
 }

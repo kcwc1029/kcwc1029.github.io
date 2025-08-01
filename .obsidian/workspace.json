@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CoT/參考的paper.md",
+                "file": "作業系統/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "參考的paper"
+              "title": "README"
             }
           },
           {
@@ -170,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CoT/參考的paper.md",
+                "file": "作業系統/README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "參考的paper 的大綱"
+              "title": "README 的大綱"
             }
           }
         ],
@@ -199,22 +199,22 @@
   },
   "active": "0a059e4068cd8e0f",
   "lastOpenFiles": [
-    "Cpp_Tutor/~WRL1466.tmp",
-    "Cpp_Tutor/~WRD1446.tmp",
-    "Cpp_Tutor/~WRL1465.tmp",
-    "Cpp_Tutor/~WRD1445.tmp",
-    "Cpp_Tutor/~WRL3652.tmp",
-    "Cpp_Tutor/~WRD3637.tmp",
-    "Cpp_Tutor/~WRL1579.tmp",
-    "Cpp_Tutor/~WRD1564.tmp",
-    "Cpp_Tutor/~WRL2728.tmp",
-    "Cpp_Tutor/~WRD2709.tmp",
-    "Cpp_Tutor/~WRL0131.tmp",
-    "作業系統/README.md",
+    "CoT/~WRL2186.tmp",
+    "CoT/~WRD2178.tmp",
+    "CoT/~$oTv0.2.docx",
+    "CoT/~WRL1987.tmp",
+    "CoT/~WRD1959.tmp",
+    "CoT/CoTv0.2.docx",
+    "CoT/~WRL2526.tmp",
+    "CoT/~WRD2503.tmp",
+    "CoT/~WRL1479.tmp",
+    "CoT/~WRD1460.tmp",
+    "CoT/~WRL1661.tmp",
     "作業系統/Virtual Memory.md",
+    "CoT/參考的paper.md",
+    "作業系統/README.md",
     "作業系統/Main Memory.md",
     "作業系統/Deadlock.md",
-    "CoT/參考的paper.md",
     "Mind/你最愛的人。都教會了你甚麼.md",
     "Cpp_Tutor/README.md",
     "面試簡報轉照片-2025.07.18/投影片8.JPG",
