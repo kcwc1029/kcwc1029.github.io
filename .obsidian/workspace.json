@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "作業系統/README.md",
+                "file": "站存筆記.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "站存筆記"
             }
           },
           {
@@ -49,7 +49,8 @@
               "title": "參考的paper"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -197,8 +198,25 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "0a059e4068cd8e0f",
+  "active": "7b0acf550e3cdbee",
   "lastOpenFiles": [
+    "Cpp_Tutor/C++程式設計：記憶體簡介/~WRL0815.tmp",
+    "Cpp_Tutor/C++程式設計：記憶體簡介/~WRD0799.tmp",
+    "Cpp_Tutor/C++程式設計：記憶體簡介/~WRL0005.tmp",
+    "Cpp_Tutor/C++程式設計：記憶體簡介/~WRD0004.tmp",
+    "Cpp_Tutor/C++程式設計：記憶體簡介/~WRL0003.tmp",
+    "Cpp_Tutor/C++程式設計：記憶體簡介/~WRD0002.tmp",
+    "Cpp_Tutor/C++程式設計：記憶體簡介/~WRL0001.tmp",
+    "Cpp_Tutor/C++程式設計：記憶體簡介/~WRD0000.tmp",
+    "Cpp_Tutor/C++程式設計：記憶體簡介/~$+程式設計：記憶體簡介.docx",
+    "Cpp_Tutor/C++程式設計：記憶體簡介/C++程式設計：記憶體簡介.docx",
+    "Cpp_Tutor/C++程式設計：記憶體簡介/C++程式設計：遞迴.docx",
+    "IEEE Access：TIPS框架/attachments/image.png",
+    "Expert Systems：AAS/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
+    "Expert Systems：AAS/引用文獻.md",
+    "作業系統/README.md",
+    "站存筆記.md",
+    "IEEE Access TIPS框架/attachments/image.png",
     "Leetcode筆記/Linked-List/148.sort-list.md",
     "Leetcode筆記/DFS/145.binary-tree-postorder-traversal.md",
     "Leetcode筆記/DFS/144.binary-tree-preorder-traversal.md",
@@ -207,16 +225,6 @@
     "Leetcode筆記/Linked-List/141.linked-list-cycle.md",
     "Leetcode筆記/Array/137.single-numbe-ii.md",
     "Leetcode筆記/Array/136.single-numbe.md",
-    "AAS/~WRL0361.tmp",
-    "AAS/~WRD0337.tmp",
-    "創創林百貨/2025_創創最牛啤 (佳作).pdf",
-    "AAS/~WRL2676.tmp",
-    "AAS/~WRD2656.tmp",
-    "AAS/~WRL3562.tmp",
-    "AAS/~WRD3550.tmp",
-    "AAS/~WRL2015.tmp",
-    "AAS/~WRD1996.tmp",
-    "AAS/~WRL0787.tmp",
     "護理教育/attachments/image.png",
     "護理教育/參考的paper.md",
     "CoT - 複製/attachments/image.png",
@@ -224,7 +232,6 @@
     "CoT/attachments/image.png",
     "作業系統/Virtual Memory.md",
     "CoT/參考的paper.md",
-    "作業系統/README.md",
     "作業系統/Main Memory.md",
     "作業系統/Deadlock.md",
     "Mind/你最愛的人。都教會了你甚麼.md",
@@ -234,16 +241,10 @@
     "面試簡報轉照片-2025.07.18/投影片6.JPG",
     "面試簡報轉照片-2025.07.18/投影片5.JPG",
     "面試簡報轉照片-2025.07.18/投影片4.JPG",
-    "面試簡報轉照片-2025.07.18/投影片3.JPG",
-    "面試簡報轉照片-2025.07.18/投影片1.JPG",
     "Mind/給單身男生的建議.md",
     "翻轉教育/可以參考的paper.md",
     "我自己想投技術相關/參考的paper.md",
     "作業系統/Threads & Concurrency.md",
-    "作業系統/Synchronization Tools.md",
-    "作業系統/CPU Scheduling.md",
-    "學術筆記/AAS/引用文獻.md",
-    "學術筆記/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
-    "學術筆記/AAS/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md"
+    "作業系統/Synchronization Tools.md"
   ]
 }
