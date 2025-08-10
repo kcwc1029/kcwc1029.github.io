@@ -1,13 +1,12 @@
 ## 1. 課程方向
 
 -   [課前討論](./課前討論/課前討論.pdf)
-<!--
--   基本 python([類似方向](https://www.books.com.tw/products/0010961496?sloc=main))
--   資料結構([類似方向](https://www.books.com.tw/products/E050254313?sloc=main))
--   演算法([類似方向](https://www.books.com.tw/products/0010998927?sloc=main))
--   機器學習([類似方向](https://www.books.com.tw/products/0011016130?sloc=main))
--   深度學習([類似方向](https://www.books.com.tw/products/0010901055?sloc=main))
--   -->
+
+<!-- -   基本 python([類似方向](https://www.books.com.tw/products/0010961496?sloc=main)) -->
+<!-- -   資料結構([類似方向](https://www.books.com.tw/products/E050254313?sloc=main)) -->
+<!-- -   演算法([類似方向](https://www.books.com.tw/products/0010998927?sloc=main)) -->
+<!-- -   機器學習([類似方向](https://www.books.com.tw/products/0011016130?sloc=main)) -->
+<!-- -   深度學習([類似方向](https://www.books.com.tw/products/0010901055?sloc=main)) -->
 
 ## 2. 章節
 
