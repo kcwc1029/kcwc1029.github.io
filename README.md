@@ -47,7 +47,7 @@
 -   **[敘事視角轉換在蘭嶼永續教育中的應用：數位遊戲對學習者同理心與行動意圖的影響](./阿虎的心願/README.md)**
 -   **[從遊戲中學習：基於 ChatGPT 支援開發的行動式嚴肅遊戲促進國小學童永續數位素養與 AI 遊戲自我效能](./資安遊戲/README.md)**
 -   **[透過結構方程模型評估小學生對於教學中生成式 AI 應用的態度](./國小線性回歸/README.md)**
--   **[TIPS: A Prompt Engineering Framework for Code Classification and Generation on Resource-Constrained Systems](./IEEE%20Access%20TIPS框架/IEEE%20Access%20TIPS框架.pdf)**
+-   **[TIPS: A Prompt Engineering Framework for Code Classification and Generation on Resource-Constrained Systems](./IEEE%20Access：TIPS框架/IEEE%20Access%20TIPS框架.pdf)**
 
 ## 5. 🧪 實習與助教經歷 Teaching & Internship
 
@@ -89,3 +89,4 @@
 
 -   [OS Tutor](./作業系統/README.md)
 -   [Cpp Tutor](./Cpp_Tutor/README.md)
+-   [Python Tutor](./Python_Tutor/README.md)

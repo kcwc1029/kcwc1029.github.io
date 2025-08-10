@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "作業系統/README.md",
+                "file": "站存筆記.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "站存筆記"
             }
           },
           {
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "作業系統/README.md",
+                "file": "站存筆記.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "README 的大綱"
+              "title": "站存筆記 的大綱"
             }
           }
         ],
@@ -200,21 +200,22 @@
   },
   "active": "7b0acf550e3cdbee",
   "lastOpenFiles": [
-    "Cpp_Tutor/C++程式設計：記憶體簡介/~WRL0815.tmp",
-    "Cpp_Tutor/C++程式設計：記憶體簡介/~WRD0799.tmp",
-    "Cpp_Tutor/C++程式設計：記憶體簡介/~WRL0005.tmp",
-    "Cpp_Tutor/C++程式設計：記憶體簡介/~WRD0004.tmp",
-    "Cpp_Tutor/C++程式設計：記憶體簡介/~WRL0003.tmp",
-    "Cpp_Tutor/C++程式設計：記憶體簡介/~WRD0002.tmp",
-    "Cpp_Tutor/C++程式設計：記憶體簡介/~WRL0001.tmp",
-    "Cpp_Tutor/C++程式設計：記憶體簡介/~WRD0000.tmp",
-    "Cpp_Tutor/C++程式設計：記憶體簡介/~$+程式設計：記憶體簡介.docx",
-    "Cpp_Tutor/C++程式設計：記憶體簡介/C++程式設計：記憶體簡介.docx",
-    "Cpp_Tutor/C++程式設計：記憶體簡介/C++程式設計：遞迴.docx",
+    "Python_Tutor/Python程式設計：資料型態/~WRL2847.tmp",
+    "Python_Tutor/Python程式設計：資料型態/~WRD2832.tmp",
+    "Python_Tutor/Python程式設計：資料型態/Python程式設計：資料型態.pdf",
+    "Python_Tutor/Python程式設計：資料型態/msoDE1F.tmp",
+    "Python_Tutor/Python程式設計：資料型態/msoDA45.tmp",
+    "Python_Tutor/Python程式設計：資料型態/~WRL3331.tmp",
+    "Python_Tutor/Python程式設計：資料型態/~WRD3311.tmp",
+    "Python_Tutor/Python程式設計：資料型態/~WRL3401.tmp",
+    "Python_Tutor/Python程式設計：資料型態/~WRD3385.tmp",
+    "Python_Tutor/Python程式設計：資料型態/~WRL0886.tmp",
+    "Python_Tutor/Python程式設計：資料型態/~WRD0878.tmp",
+    "README.md",
+    "作業系統/README.md",
     "IEEE Access：TIPS框架/attachments/image.png",
     "Expert Systems：AAS/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
     "Expert Systems：AAS/引用文獻.md",
-    "作業系統/README.md",
     "站存筆記.md",
     "IEEE Access TIPS框架/attachments/image.png",
     "Leetcode筆記/Linked-List/148.sort-list.md",
@@ -244,7 +245,6 @@
     "Mind/給單身男生的建議.md",
     "翻轉教育/可以參考的paper.md",
     "我自己想投技術相關/參考的paper.md",
-    "作業系統/Threads & Concurrency.md",
-    "作業系統/Synchronization Tools.md"
+    "作業系統/Threads & Concurrency.md"
   ]
 }
