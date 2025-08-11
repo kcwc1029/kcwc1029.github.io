@@ -4,53 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "9d015d795a6b10e8",
+        "id": "0106df8219bebe01",
         "type": "tabs",
         "children": [
           {
-            "id": "0a059e4068cd8e0f",
+            "id": "b1042a946a637f6d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "站存筆記.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "站存筆記"
-            }
-          },
-          {
-            "id": "7b0acf550e3cdbee",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "站存筆記.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "站存筆記"
-            }
-          },
-          {
-            "id": "15bb3382aafc1997",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CoT/參考的paper.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "參考的paper"
+              "title": "新分頁"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -171,13 +138,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "站存筆記.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "站存筆記 的大綱"
+              "title": "大綱"
             }
           }
         ],
@@ -198,25 +164,24 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "7b0acf550e3cdbee",
+  "active": "b1042a946a637f6d",
   "lastOpenFiles": [
-    "Python_Tutor/Python程式設計：資料型態/~WRL2847.tmp",
-    "Python_Tutor/Python程式設計：資料型態/~WRD2832.tmp",
-    "Python_Tutor/Python程式設計：資料型態/Python程式設計：資料型態.pdf",
-    "Python_Tutor/Python程式設計：資料型態/msoDE1F.tmp",
-    "Python_Tutor/Python程式設計：資料型態/msoDA45.tmp",
-    "Python_Tutor/Python程式設計：資料型態/~WRL3331.tmp",
-    "Python_Tutor/Python程式設計：資料型態/~WRD3311.tmp",
-    "Python_Tutor/Python程式設計：資料型態/~WRL3401.tmp",
-    "Python_Tutor/Python程式設計：資料型態/~WRD3385.tmp",
-    "Python_Tutor/Python程式設計：資料型態/~WRL0886.tmp",
-    "Python_Tutor/Python程式設計：資料型態/~WRD0878.tmp",
+    "站存筆記.md",
+    "Power Shell/Power Shell：/~WRL2377.tmp",
+    "Power Shell/Power Shell：/~WRD2362.tmp",
+    "Power Shell/Power Shell：/~WRL0343.tmp",
+    "Power Shell/Power Shell：/~WRD0327.tmp",
+    "Power Shell/Power Shell：/~WRL0160.tmp",
+    "Power Shell/Power Shell：/~WRD0144.tmp",
+    "Power Shell/Power Shell：/~WRL0094.tmp",
+    "Power Shell/Power Shell：/~WRD0082.tmp",
+    "Power Shell/Power Shell：/~WRL0291.tmp",
+    "Power Shell/Power Shell：/~WRD0280.tmp",
     "README.md",
     "作業系統/README.md",
     "IEEE Access：TIPS框架/attachments/image.png",
     "Expert Systems：AAS/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
     "Expert Systems：AAS/引用文獻.md",
-    "站存筆記.md",
     "IEEE Access TIPS框架/attachments/image.png",
     "Leetcode筆記/Linked-List/148.sort-list.md",
     "Leetcode筆記/DFS/145.binary-tree-postorder-traversal.md",
