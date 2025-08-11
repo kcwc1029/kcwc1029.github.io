@@ -3,3 +3,9 @@
 [通過結構化提示培訓增強數據分析和程式設計技能：生成式人工智慧對工程教育的影響 - ScienceDirect --- Enhancing data analysis and programming skills through structured prompt training: The impact of generative AI in engineering education - ScienceDirect](https://www.sciencedirect.com/science/article/pii/S2666920X25000207)
 
 [使用語言模型進行思維鏈提示，以準確解決數學問題 |IEEE 會議出版物 |IEEE Xplore --- Chain-of-Thoughts Prompting with Language Models for Accurate Math Problem-Solving | IEEE Conference Publication | IEEE Xplore](https://ieeexplore.ieee.org/document/10534945)
+
+
+
+
+
+
