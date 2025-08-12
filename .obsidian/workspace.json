@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CoT/參考的paper.md",
+                "file": "Python_Tutor/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "參考的paper"
+              "title": "README"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CoT/參考的paper.md",
+                "file": "Python_Tutor/README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "參考的paper 的大綱"
+              "title": "README 的大綱"
             }
           }
         ],
@@ -172,22 +172,33 @@
   },
   "active": "0a059e4068cd8e0f",
   "lastOpenFiles": [
-    "CoT/CoTv0.3.docx",
-    "CoT/CoTv0.2拷貝.docx",
-    "CoT/~$oTv0.2.docx",
-    "作業系統/作業系統：Virtual Memory.pdf",
-    "Cpp_Tutor/C++程式設計：指標.pdf",
-    "Cpp_Tutor/C++程式設計：函數(有答案.docx",
-    "CoT/CoTv0.2.docx",
-    "CoT/CoTv0.1.docx",
-    "AAS/~$ASv2.3.docx",
+    "站存筆記.md",
+    "CoT/參考的paper.md",
+    "護理教育/護理教育.docx",
+    "護理教育",
+    "計算機結構/計算機結構：抽象化與科技.pdf",
+    "計算機結構/計算機結構：抽象化與科技.docx",
+    "計算機結構",
+    "創創林百貨/2025_創創最牛啤 (佳作).pdf",
+    "word模板/C++程式設計：遞迴.docx",
+    "word模板",
+    "Python_Tutor/課前討論/課前討論.pdf",
+    "Python_Tutor/課前討論/課前討論.docx",
+    "Leetcode筆記/Linked-List/148.sort-list.md",
+    "Leetcode筆記/Linked-List/143.reorder-list.md",
+    "Leetcode筆記/Linked-List/142.linked-list-cycle-ii.md",
+    "Leetcode筆記/Linked-List/141.linked-list-cycle.md",
+    "Leetcode筆記/DFS/145.binary-tree-postorder-traversal.md",
+    "Leetcode筆記/DFS/144.binary-tree-preorder-traversal.md",
+    "Leetcode筆記/Array/137.single-numbe-ii.md",
+    "Leetcode筆記/Array/136.single-numbe.md",
+    "IEEE Access：TIPS框架/attachments/image.png",
+    "Expert Systems：AAS/引用文獻.md",
+    "Expert Systems：AAS/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
     "CoT/attachments/image.png",
-    "CoT/attachments",
-    "CoT/~$oTv0.0.docx",
     "Mind/給單身男生的建議.md",
     "翻轉教育/可以參考的paper.md",
     "翻轉教育(不想寫)/可以參考的paper.md",
-    "CoT/參考的paper.md",
     "AAS/引用文獻.md",
     "AAS/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
     "Cpp_Tutor/README.md",
@@ -206,17 +217,6 @@
     "作業系統/README.md",
     "作業系統/Main Memory.md",
     "作業系統/Deadlock.md",
-    "作業系統/CPU Scheduling.md",
-    "學術筆記/AAS/引用文獻.md",
-    "學術筆記/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
-    "學術筆記/AAS/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
-    "Operating-System/Virtual Memory.md",
-    "Operating-System/Threads & Concurrency.md",
-    "Operating-System/Synchronization Tools.md",
-    "Operating-System/README.md",
-    "Operating-System/Processes.md",
-    "Operating-System/Main Memory.md",
-    "Operating-System/Deadlock.md",
-    "淨零排放科技/attachments/image.png"
+    "作業系統/CPU Scheduling.md"
   ]
 }

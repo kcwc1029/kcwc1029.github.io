@@ -4,6 +4,8 @@
 -   [80. Remove Duplicates from Sorted Array II](./Array/80.remove-duplicates-from-sorted-array-ii.md)
 -   [27. Remove Element](./Array/27.remove-element.md)
 -   [66. Plus One](./Array/66.plus-one.md)
+-   [136. Single Number](./Array/136.single-numbe.md)
+-   [137. Single Number II](./Array/137.single-numbe-ii.md)
 
 ## Binary Search
 
@@ -30,12 +32,23 @@
 
 ## DFS
 
--   [94. Binary Tree Inorder Traversal](./DFS/94.binary-tree-inorder-traversal.md)
 -   [100. Same Tree](./DFS/100.same-tree.md)
 -   [101. Symmetric Tree](./DFS/101.symmetric-tree.md)
 -   [104. Maximum Depth of Binary Tree](./DFS/104.maximum-depth-of-binary-tree.md)
 -   [112. Path Sum](./DFS/112.path-sum.md)
 -   [114. Flatten Binary Tree to Linked List](./DFS/114.flatten-binary-tree-to-linked-list.md)
+
+### 中序排序
+
+-   [94. Binary Tree Inorder Traversal](./DFS/94.binary-tree-inorder-traversal.md)
+
+### 前序排序
+
+-   [144. Binary Tree Preorder Traversal](./DFS/144.binary-tree-preorder-traversal.md)
+
+### 後序排序
+
+-   [145. Binary Tree Postorder Traversal](./DFS/145.binary-tree-postorder-traversal.md)
 
 ## Binary-Tree
 
@@ -66,6 +79,10 @@
 -   [24. Swap Nodes in Pairs](./Linked-List/24.swap-nodes-in-pairs.md)
 -   [83. Remove Duplicates from Sorted List](./Linked-List/83.remove-duplicates-from-sorted-list.md)
 -   [86. Partition List](./Linked-List/86.partition-list.md)
+-   [141. Linked List Cycle](./Linked-List/141.linked-list-cycle.md)
+-   [142. Linked List Cycle II](./Linked-List/142.linked-list-cycle-ii.md)
+-   [143. Reorder List](./Linked-List/143.reorder-list.md)
+-   [148. Sort List](./Linked-List/148.sort-list.md)
 
 ## Sliding Window
 

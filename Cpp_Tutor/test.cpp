@@ -1,31 +1,17 @@
 #include <iostream>
 using namespace std;
-bool flag = true;
 
-bool func(int n){ // n = 49
-    if (n == 1){
-        return false;
-    } 
-
-
-    for (int i=2 ; i<n; i++){
-        if(n % i ==0){
-            return true;
-        }
-    }
-    return false;
+template <typename T>
+T findMax(T* arr, int size) {
+    T max = arr[0];
+    for (int i = 1; i < size; ++i)
+        if (arr[i] > max)
+            max = arr[i];
+    return max;
 }
 
 
 int main(){
-    int N = 13;
-    // cin >>N;
-    
-    if (func(N) == true) {
-        cout << "Yes" <<endl;
-    }
-    else{
-        cout << "No" << endl;
-    }
-    return 0;
+    float arr[] = {1.5, 3.2, 2.7};
+    cout << findMax(arr, 3) << endl;   // 輸出：3.2
 }
