@@ -11,10 +11,14 @@
             "id": "b1042a946a637f6d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "站存筆記.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新分頁"
+              "title": "站存筆記"
             }
           }
         ]
@@ -138,12 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "站存筆記.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大綱"
+              "title": "站存筆記 的大綱"
             }
           }
         ],
@@ -166,18 +171,19 @@
   },
   "active": "b1042a946a637f6d",
   "lastOpenFiles": [
-    "站存筆記.md",
-    "Power Shell/Power Shell：/~WRL2377.tmp",
-    "Power Shell/Power Shell：/~WRD2362.tmp",
-    "Power Shell/Power Shell：/~WRL0343.tmp",
-    "Power Shell/Power Shell：/~WRD0327.tmp",
-    "Power Shell/Power Shell：/~WRL0160.tmp",
-    "Power Shell/Power Shell：/~WRD0144.tmp",
-    "Power Shell/Power Shell：/~WRL0094.tmp",
-    "Power Shell/Power Shell：/~WRD0082.tmp",
-    "Power Shell/Power Shell：/~WRL0291.tmp",
-    "Power Shell/Power Shell：/~WRD0280.tmp",
+    "Power Shell/Power Shell：/~WRL3514.tmp",
+    "Power Shell/Power Shell：/~WRD3494.tmp",
+    "Power Shell/Power Shell：/~WRL2670.tmp",
+    "Power Shell/Power Shell：/~WRD2655.tmp",
+    "Power Shell/Power Shell：/~WRL0877.tmp",
+    "Power Shell/Power Shell：/~WRD0862.tmp",
+    "Power Shell/Power Shell：/~WRL0545.tmp",
+    "Power Shell/Power Shell：/~WRD0526.tmp",
+    "Power Shell/Power Shell：/~WRL3550.tmp",
+    "Power Shell/Power Shell：/~WRD3534.tmp",
+    "Power Shell/Power Shell：/~WRL0615.tmp",
     "README.md",
+    "站存筆記.md",
     "作業系統/README.md",
     "IEEE Access：TIPS框架/attachments/image.png",
     "Expert Systems：AAS/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
