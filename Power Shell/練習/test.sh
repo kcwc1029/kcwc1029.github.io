@@ -1,5 +1,5 @@
 #!/bin/bash
-for i in 1 2 3 4 5
-do
-    echo $((RANDOM % 10 + 1))
-done
+
+/sbin/ifconfig | grep "inet addr:" | awk '{print $2}' | cut -f2 -d:
+
+echo /sbin/ifconfig | grep "inet addr:" | awk '{print $2}' | cut -f2 -d: | head -1
