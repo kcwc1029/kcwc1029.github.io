@@ -20,5 +20,6 @@ int main(){
     thread t3 = move(t1); // 5. 將 t2 的所有權轉移給 t3。t2 現在不再擁有執行緒。
     t2.join();
     t3.join();
+    // some_function is running in thread some_other_function is running in thread 0xa0002af000xa0002b000 輸出交錯或混疊
 }
 
