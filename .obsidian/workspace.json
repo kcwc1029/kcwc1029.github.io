@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Python_Tutor/README.md",
+                "file": "站存筆記.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "站存筆記"
             }
           }
         ]
@@ -74,7 +74,8 @@
               "title": "書籤"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -142,13 +143,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Python_Tutor/README.md",
+                "file": "站存筆記.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "README 的大綱"
+              "title": "站存筆記 的大綱"
             }
           }
         ],
@@ -170,8 +171,13 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "0a059e4068cd8e0f",
+  "active": "e8f4a2c46531f887",
   "lastOpenFiles": [
+    "Python_Tutor/README.md",
+    "作業系統/C++並行程式設計/C++並行程式設計.docx",
+    "作業系統/C++並行程式設計",
+    "Python_Tutor/Python程式設計：基本輸入輸出/Python程式設計：基本輸入輸出.docx",
+    "Python_Tutor/Python程式設計：基本輸入輸出",
     "站存筆記.md",
     "CoT/參考的paper.md",
     "護理教育/護理教育.docx",
@@ -180,10 +186,6 @@
     "計算機結構/計算機結構：抽象化與科技.docx",
     "計算機結構",
     "創創林百貨/2025_創創最牛啤 (佳作).pdf",
-    "word模板/C++程式設計：遞迴.docx",
-    "word模板",
-    "Python_Tutor/課前討論/課前討論.pdf",
-    "Python_Tutor/課前討論/課前討論.docx",
     "Leetcode筆記/Linked-List/148.sort-list.md",
     "Leetcode筆記/Linked-List/143.reorder-list.md",
     "Leetcode筆記/Linked-List/142.linked-list-cycle-ii.md",
@@ -216,7 +218,6 @@
     "作業系統/Synchronization Tools.md",
     "作業系統/README.md",
     "作業系統/Main Memory.md",
-    "作業系統/Deadlock.md",
-    "作業系統/CPU Scheduling.md"
+    "作業系統/Deadlock.md"
   ]
 }
