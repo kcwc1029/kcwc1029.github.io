@@ -22,9 +22,11 @@
 
 <!-- -   2025.07.14：文件【[先備知識](./先備知識.md)】、【[判斷式](./判斷式.md)】、a001(講解)、a002(HW)、a003(HW)、a004(HW)、a006(HW) -->
 
-## 花些時間看看
+## 3. 花些時間看看
 
 -   [Py 嬸的異想世界](https://www.youtube.com/playlist?list=PLL0pENo5JAxSZu6ez7bvDdKicRC_7spL-)
+<!-- - https://www.youtube.com/watch?v=-MSLJKjH8U0 -->
+
 
 ---
 

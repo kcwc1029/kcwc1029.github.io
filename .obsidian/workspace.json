@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "0106df8219bebe01",
+        "id": "9d015d795a6b10e8",
         "type": "tabs",
         "children": [
           {
-            "id": "b1042a946a637f6d",
+            "id": "0a059e4068cd8e0f",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -74,7 +74,8 @@
               "title": "書籤"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -156,7 +157,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 294.5
+    "width": 294.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -169,53 +171,53 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "b1042a946a637f6d",
+  "active": "0a059e4068cd8e0f",
   "lastOpenFiles": [
-    "Power Shell/Power Shell：/~WRL3514.tmp",
-    "Power Shell/Power Shell：/~WRD3494.tmp",
-    "Power Shell/Power Shell：/~WRL2670.tmp",
-    "Power Shell/Power Shell：/~WRD2655.tmp",
-    "Power Shell/Power Shell：/~WRL0877.tmp",
-    "Power Shell/Power Shell：/~WRD0862.tmp",
-    "Power Shell/Power Shell：/~WRL0545.tmp",
-    "Power Shell/Power Shell：/~WRD0526.tmp",
-    "Power Shell/Power Shell：/~WRL3550.tmp",
-    "Power Shell/Power Shell：/~WRD3534.tmp",
-    "Power Shell/Power Shell：/~WRL0615.tmp",
-    "README.md",
+    "attachments/image.png",
+    "attachments",
+    "護理教育/~$理教育 調查.docx",
+    "護理教育/護理教育 調查.docx",
+    "護理教育/C++程式設計：遞迴.docx",
+    "護理教育/word模板/C++程式設計：遞迴.docx",
+    "護理教育/word模板",
+    "護理教育/~$護理教育.docx",
+    "Python_Tutor/Python程式設計：海龜畫圖/~$thon程式設計：海龜畫圖.docx",
+    "Python_Tutor/out_b.txt",
+    "Python_Tutor/out_a.txt",
+    "Python_Tutor/README.md",
     "站存筆記.md",
-    "作業系統/README.md",
-    "IEEE Access：TIPS框架/attachments/image.png",
-    "Expert Systems：AAS/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
-    "Expert Systems：AAS/引用文獻.md",
-    "IEEE Access TIPS框架/attachments/image.png",
+    "CoT/參考的paper.md",
     "Leetcode筆記/Linked-List/148.sort-list.md",
-    "Leetcode筆記/DFS/145.binary-tree-postorder-traversal.md",
-    "Leetcode筆記/DFS/144.binary-tree-preorder-traversal.md",
     "Leetcode筆記/Linked-List/143.reorder-list.md",
     "Leetcode筆記/Linked-List/142.linked-list-cycle-ii.md",
     "Leetcode筆記/Linked-List/141.linked-list-cycle.md",
+    "Leetcode筆記/DFS/145.binary-tree-postorder-traversal.md",
+    "Leetcode筆記/DFS/144.binary-tree-preorder-traversal.md",
     "Leetcode筆記/Array/137.single-numbe-ii.md",
     "Leetcode筆記/Array/136.single-numbe.md",
-    "護理教育/attachments/image.png",
-    "護理教育/參考的paper.md",
-    "CoT - 複製/attachments/image.png",
-    "CoT - 複製/參考的paper.md",
+    "IEEE Access：TIPS框架/attachments/image.png",
+    "Expert Systems：AAS/引用文獻.md",
+    "Expert Systems：AAS/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
     "CoT/attachments/image.png",
-    "作業系統/Virtual Memory.md",
-    "CoT/參考的paper.md",
-    "作業系統/Main Memory.md",
-    "作業系統/Deadlock.md",
-    "Mind/你最愛的人。都教會了你甚麼.md",
+    "Mind/給單身男生的建議.md",
+    "翻轉教育/可以參考的paper.md",
+    "翻轉教育(不想寫)/可以參考的paper.md",
+    "AAS/引用文獻.md",
+    "AAS/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
     "Cpp_Tutor/README.md",
     "面試簡報轉照片-2025.07.18/投影片8.JPG",
     "面試簡報轉照片-2025.07.18/投影片7.JPG",
     "面試簡報轉照片-2025.07.18/投影片6.JPG",
     "面試簡報轉照片-2025.07.18/投影片5.JPG",
     "面試簡報轉照片-2025.07.18/投影片4.JPG",
-    "Mind/給單身男生的建議.md",
-    "翻轉教育/可以參考的paper.md",
+    "面試簡報轉照片-2025.07.18/投影片3.JPG",
+    "面試簡報轉照片-2025.07.18/投影片1.JPG",
+    "面試簡報轉照片-2025.07.18/投影片2.JPG",
     "我自己想投技術相關/參考的paper.md",
-    "作業系統/Threads & Concurrency.md"
+    "作業系統/Virtual Memory.md",
+    "作業系統/Threads & Concurrency.md",
+    "作業系統/Synchronization Tools.md",
+    "作業系統/README.md",
+    "作業系統/Main Memory.md"
   ]
 }
