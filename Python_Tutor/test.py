@@ -1,4 +1,12 @@
-numbers = [3, 1, 4, 2, 5]
-sorted_numbers = sorted(numbers)
-print(f"原串列: {numbers}") # 輸出: 原串列: [3, 1, 4, 2, 5]
-print(f"新排序後串列: {sorted_numbers}") # 輸出: 新排序後串列: [1, 2, 3, 4, 5]
+name = '我今年3歲'
+name_bytes = name.encode('utf-8')
+print(name_bytes)
+
+# -----------------------
+
+tt = name_bytes.decode('utf-8')
+
+
+print(tt)
+# print(name_bytes)         # b'\xe6\x88\x91\xe4\xbb\x8a\xe5\xb9\xb43\xe6\xad\xb2'
+# print(len(name_bytes))    # 13
