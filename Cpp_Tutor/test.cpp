@@ -1,25 +1,57 @@
-#include <iostream>
-#include <thread>
 
+#include <iostream>
 using namespace std;
 
-void some_function() {
-    cout << "some_function is running in thread " << this_thread::get_id() << endl;
+// 這邊都是用語法糖
+void f1(int arr[]) {
+    // 位移運算
+    for (int i = 0; i < 5; ++i) {
+        cout << arr+i << " "; // 取地址
+    }
+    cout << "\n";
+    for (int i = 0; i < 5; ++i) {
+        cout << *(arr+i) << " "; // 取值
+    }
+    cout << "\n";
+
+    // 語法糖
+    for (int i = 0; i < 5; ++i) {
+        cout << arr[i] << " "; // 取值
+    }
+    cout << "\n";
+    for (int i = 0; i < 5; ++i) {
+        cout << &arr[i] << " "; // 取地址
+    }
+    cout << "\n";
 }
 
-void some_other_function() {
-    cout << "some_other_function is running in thread " << this_thread::get_id() << endl;
+void f2(int* arr) {
+    // 位移運算
+    for (int i = 0; i < 5; ++i) {
+        cout << arr + i << " "; // 取地址
+    }
+    cout << "\n";
+    for (int i = 0; i < 5; ++i) {
+        cout << *(arr + i) << " "; // 取值
+    }
+    cout << "\n";
+
+    // 語法糖
+    for (int i = 0; i < 5; ++i) {
+        cout << arr[i] << " "; // 取值
+    }
+    cout << "\n";
+    for (int i = 0; i < 5; ++i) {
+        cout << &arr[i] << " "; // 取地址
+    }
+    cout << "\n";
 }
 
+int main() {
+    int arr[5] = {1, 2, 3, 4, 5};
+    f1(arr);
 
-int main(){
-    thread t1(some_function);  // 建立 t1，擁有一個執行緒
-    thread t2 = move(t1); // 2. 將 t1 的所有權轉移給 t2。t1 現在不再擁有執行緒。
-
-    t1 = thread(some_other_function); // 3. 重新為 t1 建立一個新的執行緒，t1 又重新擁有執行緒了。
-    thread t3 = move(t1); // 5. 將 t2 的所有權轉移給 t3。t2 現在不再擁有執行緒。
-    t2.join();
-    t3.join();
-    // some_function is running in thread some_other_function is running in thread 0xa0002af000xa0002b000 輸出交錯或混疊
+    cout << "========================\n";
+    f2(arr);
+    return 0;
 }
-
