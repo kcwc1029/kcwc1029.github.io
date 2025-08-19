@@ -1,7 +1,3 @@
-from wordcloud import WordCloud
-
-
-text = '''
 You seem like the type to love 'em and leave 'em
 And disappear right after this song
 So give me the night to show you, hold you
@@ -15,12 +11,3 @@ I wish our hearts could come together as one
 Shorty is a eenie-meenie-miney-mo lover
 Shorty is a eenie-meenie-miney-mo lover
 Shorty is a eenie-meenie-miney-mo lover, oh
-'''
-
-
-# with open("data19_1.txt") as fp:  # 英文字的文字檔
-#     text = fp.read()              # 讀取檔案
-
-wd = WordCloud().generate(text)   # 由txt文字產生WordCloud物件
-imageCloud = wd.to_image()       # 由WordCloud物件建立詞雲影像檔
-imageCloud.show()                # 顯示詞雲影像檔
