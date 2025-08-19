@@ -1,8 +1,5 @@
 from wordcloud import WordCloud
 
-
-
-
 with open("./Eenie Meenie歌詞.txt") as fp:  # 英文字的文字檔
     text = fp.read()              # 讀取檔案
 
