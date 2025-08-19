@@ -1,0 +1,100 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.4 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.4">
+  <diagram name="第1頁" id="2MoKcfylDRxrsPpjR48M">
+    <mxGraphModel dx="819" dy="478" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zMohh09HtMj3qJh0CnUw-108" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry x="54.5" y="322.5" width="179" height="137.5" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-101" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry x="408" y="252" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-100" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry x="54.5" y="252" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-89" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;gradientColor=light-dark(#FAF3DD,#EDEDED);fillColor=#FFD966;gradientDirection=radial;" vertex="1" parent="1">
+          <mxGeometry x="263.5" y="300" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-84" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;The elderly&lt;/font&gt;&lt;/b&gt;" style="ellipse;html=1;fillColor=#fff2cc;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="323.5" y="360" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-85" value="Professional Medical&lt;div&gt;Institutions&lt;/div&gt;" style="ellipse;html=1;fillColor=#ffe6cc;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry x="310.5" y="270" width="66" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-86" value="Community &amp;amp;&amp;nbsp;&lt;div&gt;Home Care&lt;/div&gt;" style="ellipse;html=1;fillColor=#dae8fc;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry x="250" y="386" width="67" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-87" value="Pharmaceutical &amp;amp;&amp;nbsp;&lt;div&gt;Ancillary Services&lt;/div&gt;" style="ellipse;html=1;fillColor=#d5e8d4;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry x="370" y="389" width="66" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-90" value="Clinic" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="89.5" y="510" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-92" value="Physician, Family Doctor" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B8F2E6;gradientColor=light-dark(#ffffff, #ededed);gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="474.5" y="264" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-93" value="Outpatient Service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFA69E;gradientColor=light-dark(#ffffff, #ededed);gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="474.5" y="284" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-94" value="Clinic" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="440.5" y="272" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-95" value="Specialist,&amp;nbsp;Nurse,&amp;nbsp;Physician" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B8F2E6;gradientColor=light-dark(#ffffff, #ededed);gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="62.5" y="263" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-96" value="Inpatient Service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFA69E;gradientColor=light-dark(#ffffff, #ededed);gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="62.5" y="283" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-97" value="Hospital" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="189.5" y="267" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-98" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/png,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;" vertex="1" parent="1">
+          <mxGeometry x="236" y="260" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-99" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/png,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;" vertex="1" parent="1">
+          <mxGeometry x="421" y="264" width="37" height="37" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-102" value="Community Service Staffs" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B8F2E6;gradientColor=light-dark(#ffffff, #ededed);gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="68.5" y="345.5" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-103" value="Community Care Services" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFA69E;gradientColor=light-dark(#ffffff, #ededed);gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="68.5" y="365.5" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-104" value="Community Health Services" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="55.5" y="322.5" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-105" value="Informal Caregivers,&amp;nbsp;Family" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B8F2E6;gradientColor=light-dark(#ffffff, #ededed);gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="68.5" y="409" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-106" value="Home Bed Service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFA69E;gradientColor=light-dark(#ffffff, #ededed);gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="68.5" y="429" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-107" value="Home Care" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="99.5" y="386" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-117" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry x="458" y="322.5" width="179" height="137.5" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-118" value="Pharmacist" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B8F2E6;gradientColor=light-dark(#ffffff, #ededed);gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="472" y="345.5" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-119" value="Medicine Consultation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFA69E;gradientColor=light-dark(#ffffff, #ededed);gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="472" y="365.5" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-120" value="Pharmacy" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="504" y="322.5" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-121" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Third-party Service Providers&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B8F2E6;gradientColor=light-dark(#ffffff, #ededed);gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="467" y="409" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-122" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Consultation &amp;amp; Insurance Service&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFA69E;gradientColor=light-dark(#ffffff, #ededed);gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="467" y="429" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="zMohh09HtMj3qJh0CnUw-123" value="Third-party Services" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="478" y="386" width="130" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

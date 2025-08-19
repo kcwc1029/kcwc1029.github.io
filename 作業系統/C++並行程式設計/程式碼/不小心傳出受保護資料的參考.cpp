@@ -3,16 +3,14 @@
 #include <string>
 #include <thread>
 #include <stdexcept>
-#include <chrono>
+#include <chrono> // 處理時間和時間間隔的
 
 // 1. 定義我們的資料結構
 class some_data {
 public:
     int a;
     std::string b;
-
     void do_something() {
-        // 這裡可以放一些模擬操作，例如列印資料
         std::cout << "Data: a = " << a << ", b = " << b << std::endl;
     }
 };
