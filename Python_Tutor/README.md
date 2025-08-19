@@ -14,6 +14,7 @@
 -   [Python 程式設計：資料型態](./Python程式設計：資料型態/Python程式設計：資料型態.pdf)
 -   [基本輸入輸出](./Python程式設計：基本輸入輸出/Python程式設計：基本輸入輸出.pdf)
 -   [判斷式](./Python程式設計：判斷式/Python程式設計：判斷式.pdf)
+-   [陣列](./Python程式設計：陣列/Python程式設計：陣列.pdf)
 -   [海龜畫圖](./Python程式設計：海龜畫圖/Python程式設計：海龜畫圖.pdf)
 
 <!-- 從6開始 -->
@@ -26,7 +27,6 @@
 
 -   [Py 嬸的異想世界](https://www.youtube.com/playlist?list=PLL0pENo5JAxSZu6ez7bvDdKicRC_7spL-)
 <!-- - https://www.youtube.com/watch?v=-MSLJKjH8U0 -->
-
 
 ---
 

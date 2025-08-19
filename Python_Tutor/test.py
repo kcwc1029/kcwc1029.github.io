@@ -1,4 +1,6 @@
-numbers = [3, 1, 4, 2, 5]
-sorted_numbers = sorted(numbers)
-print(f"原串列: {numbers}") # 輸出: 原串列: [3, 1, 4, 2, 5]
-print(f"新排序後串列: {sorted_numbers}") # 輸出: 新排序後串列: [1, 2, 3, 4, 5]
+num = 0
+while num < 10:
+    num += 1
+    if num % 2 != 0:
+        continue # 如果是奇數，跳過本次迴圈
+    print(num)
