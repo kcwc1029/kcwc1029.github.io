@@ -1,77 +1,16 @@
-<<<<<<< HEAD
-
-#include <iostream>
-using namespace std;
-
-// 這邊都是用語法糖
-void f1(int arr[]) {
-    // 位移運算
-    for (int i = 0; i < 5; ++i) {
-        cout << arr+i << " "; // 取地址
-    }
-    cout << "\n";
-    for (int i = 0; i < 5; ++i) {
-        cout << *(arr+i) << " "; // 取值
-    }
-    cout << "\n";
-
-    // 語法糖
-    for (int i = 0; i < 5; ++i) {
-        cout << arr[i] << " "; // 取值
-    }
-    cout << "\n";
-    for (int i = 0; i < 5; ++i) {
-        cout << &arr[i] << " "; // 取地址
-    }
-    cout << "\n";
-}
-
-void f2(int* arr) {
-    // 位移運算
-    for (int i = 0; i < 5; ++i) {
-        cout << arr + i << " "; // 取地址
-    }
-    cout << "\n";
-    for (int i = 0; i < 5; ++i) {
-        cout << *(arr + i) << " "; // 取值
-    }
-    cout << "\n";
-
-    // 語法糖
-    for (int i = 0; i < 5; ++i) {
-        cout << arr[i] << " "; // 取值
-    }
-    cout << "\n";
-    for (int i = 0; i < 5; ++i) {
-        cout << &arr[i] << " "; // 取地址
-    }
-    cout << "\n";
-}
-
-int main() {
-    int arr[5] = {1, 2, 3, 4, 5};
-    f1(arr);
-
-    cout << "========================\n";
-    f2(arr);
-    return 0;
-}
-=======
 #include <iostream>
 #include <mutex>
 #include <string>
 #include <thread>
 #include <stdexcept>
-#include <chrono>
+#include <chrono> // 處理時間和時間間隔的
 
 // 1. 定義我們的資料結構
 class some_data {
 public:
     int a;
     std::string b;
-
     void do_something() {
-        // 這裡可以放一些模擬操作，例如列印資料
         std::cout << "Data: a = " << a << ", b = " << b << std::endl;
     }
 };
@@ -182,4 +121,3 @@ int main() {
 
 
 
->>>>>>> a2422bd8d43b9dd0c078003ddbadcca94bf63c7b
