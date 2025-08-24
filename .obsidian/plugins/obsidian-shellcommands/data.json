@@ -26,7 +26,8 @@
     {
       "id": "k9h9qx0vph",
       "platform_specific_commands": {
-        "default": "D:\\upgit\\upgit.exe :clipboard -f markdown"
+        "default": "D:\\upgit\\upgit.exe :clipboard -f markdown",
+        "darwin": "/Users/chenweicheng/bin/upgit :clipboard -f markdown"
       },
       "shells": {},
       "alias": "upgit",
