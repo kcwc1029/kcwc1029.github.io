@@ -74,8 +74,7 @@
               "title": "書籤"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -171,7 +170,7 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "0a059e4068cd8e0f",
+  "active": "df356c4d134452fb",
   "lastOpenFiles": [
     "Cpp_Tutor/test.cpp",
     "Python_Tutor/Python程式設計：詞雲/~$thon程式設計：詞雲.docx",
