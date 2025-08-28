@@ -16,16 +16,16 @@
 -   [判斷式](./Python程式設計：判斷式/Python程式設計：判斷式.pdf)
 -   [陣列](./Python程式設計：陣列/Python程式設計：陣列.pdf)
 -   [迴圈](./Python程式設計：迴圈/Python程式設計：迴圈.pdf)
+-   [QRcode](https://colab.research.google.com/drive/1W95VR6H-ikQJ3qv9s1X8sfw-EeLJmzav?usp=sharing)
 -   [海龜畫圖](./Python程式設計：海龜畫圖/Python程式設計：海龜畫圖.pdf)
 -   [元組](./Python程式設計：元組/Python程式設計：元組.pdf)
 -   [字典](./Python程式設計：字典/Python程式設計：字典.pdf)
 -   [函數](./Python程式設計：函數/Python程式設計：函數.pdf)
 -   [詞雲](./Python程式設計：詞雲/README.md)
 -   [Pillow 影像處裡](./Python程式設計：Pillow影像處裡/README.md)
--   [QRcode](./Python程式設計：QRcode/README.md)
 -   [Pytesseract 車牌辨識](./Python程式設計：Pytesseract車牌辨識/Python程式設計：Pytesseract車牌辨識.pdf)
-
-<!-- ## 3. 作業 -->
+-   [物件導向程式設計](./Python程式設計：物件導向程式設計/Python程式設計：物件導向程式設計.pdf)
+-   <!-- ## 3. 作業 -->
 
 ## 3. 花些時間看看
 

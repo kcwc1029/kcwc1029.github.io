@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>測謊儀</title>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+      background-color: #b2fffe;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="myCanvas" width="1000" height="500"
+    style="border:3px solid #d3d3d3c5;"></canvas>
+  <script>
+    var bg_color = '#b2fffe';
+    function canvas_arrow(context, fromx, fromy, tox, toy) {
+      var headlen = 250; // length of head in pixels
+      var angle = Math.atan2(toy - fromy, tox - fromx);
+
+      context.beginPath();
+      context.moveTo(fromx, fromy);
+      context.arc(
+        fromx, fromy, 180,
+        degreesToRadians(180), degreesToRadians(360), false);
+      context.closePath();
+      context.fillStyle = '#ffffaa';
+      context.fill();
+
+      context.beginPath();
+      context.moveTo(fromx, fromy);
+      ctx.rect(fromx - 300, fromy, 600, 20);
+      context.closePath();
+      context.fillStyle = bg_color;
+      context.fill();
+
+      context.beginPath();
+      context.moveTo(fromx, fromy);
+      context.lineTo(
+        tox - headlen * Math.cos(angle - Math.PI / 76),
+        toy - headlen * Math.sin(angle - Math.PI / 76));
+      context.lineTo(tox, toy);
+      context.lineTo(
+        tox - headlen * Math.cos(angle + Math.PI / 76),
+        toy - headlen * Math.sin(angle + Math.PI / 76));
+      context.lineTo(fromx, fromy);
+      context.closePath();
+      context.fillStyle = '#4d4d4d';
+      context.fill();
+
+      context.beginPath();
+      context.moveTo(fromx, fromy);
+      context.arc(
+        fromx, fromy, 10,
+        0, degreesToRadians(360), false);
+      context.closePath();
+      context.fillStyle = '#4d4d4d';
+      context.fill();
+
+      context.beginPath();
+      context.moveTo(fromx, fromy);
+      context.arc(
+        fromx, fromy, 6,
+        0, degreesToRadians(360), false);
+      context.closePath();
+      context.fillStyle = bg_color;
+      context.fill();
+    }
+
+    function degreesToRadians(degrees) {
+      return (degrees * Math.PI) / 180;
+    }
+
+    function circley(circlex, a, b, r) {
+      return b - Math.sqrt((r * r) - ((circlex - a) * (circlex - a)));
+    }
+
+    function harmonicX(r, t, h) {
+      return r * Math.cos(degreesToRadians(t)) + h;
+    }
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+    var centerX = 500;
+    var centerY = 350;
+    var radius = 300;
+    var arrowX = 180;
+    var data = 180;
+
+    function draw_sector(ctx, centerX, centerY, radius, start, end, color) {
+      ctx.beginPath();
+      ctx.moveTo(centerX, centerY);
+      ctx.arc(centerX, centerY, radius, start, end, false);
+      ctx.closePath();
+      ctx.lineWidth = 5;
+      ctx.fillStyle = color;
+      ctx.fill();
+    }
+
+    function inipanel() {
+      draw_sector(
+        ctx, centerX, centerY, radius,
+        degreesToRadians(180), degreesToRadians(225), '#379bff');
+      draw_sector(
+        ctx, centerX, centerY, radius,
+        degreesToRadians(225), degreesToRadians(270), '#00f47a');
+      draw_sector(
+        ctx, centerX, centerY, radius,
+        degreesToRadians(270), degreesToRadians(315), '#ffac00');
+      draw_sector(
+        ctx, centerX, centerY, radius,
+        degreesToRadians(315), degreesToRadians(360), '#f3510c');
+
+    }
+    inipanel();
+
+    function draw_text(ctx, text, x, y, color, halo, halo_color) {
+      ctx.font = "35px Microsoft JhengHei";
+      if (halo) {
+        ctx.strokeStyle = halo_color;
+        ctx.textAlign = "center";
+        ctx.strokeText(text, x, y);
+      }
+      ctx.fillStyle = color;
+      ctx.textAlign = "center";
+      ctx.fillText(text, x, y);
+    }
+
+    function drawarrow() {
+      inipanel();
+      if (arrowX < data) {
+        arrowX++;
+      } else if (arrowX > data) {
+        arrowX--;
+      }
+      canvas_arrow(
+        ctx, centerX, centerY,
+        harmonicX(250, arrowX, centerX),
+        circley(harmonicX(250, arrowX, centerX),
+        centerX, centerY, radius - 50));
+      if (arrowX <= 225) {
+        draw_text(ctx, '實話', 150, 350, 'red', true, '#ffffd9');
+      } else {
+        draw_text(ctx, '實話', 150, 350, 'red', true, bg_color);
+      }
+      if (arrowX >= 315) {
+        draw_text(ctx, '謊話', 850, 350, 'green', true, '#ffffd9');
+      } else {
+        draw_text(ctx, '謊話', 850, 350, 'green', true, bg_color);
+      }
+    }
+
+    function loadXMLDoc() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          data = parseInt(this.responseText);
+        }
+      };
+      xhttp.open("GET", "/lie", true);
+      xhttp.send();
+      // data = 350;
+    }
+    window.setInterval(function () {
+      drawarrow();
+    }, 1);
+    window.setInterval(function () {
+      loadXMLDoc();
+    }, 10);
+    draw_text(ctx, '實話', 150, 350, 'red', false);
+    draw_text(ctx, '謊話', 850, 350, 'green', false);
+  </script>
+</body>
+
+</html>
