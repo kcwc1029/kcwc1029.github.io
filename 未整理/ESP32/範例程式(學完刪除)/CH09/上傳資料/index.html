@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>即時體溫計</title>
+  <style type="text/css">
+    body {
+      background: rgb(42, 42, 42);
+      font-family: Microsoft JhengHei;
+    }
+
+    .button {
+      background-color: #919191;
+      border: none;
+      width: 180px;
+      height: 90px;
+      color: white;
+
+      text-align: center;
+      font-size: 50px;
+
+      cursor: pointer;
+      border-radius: 50px;
+      margin-top: 50px;
+    }
+
+    .preventcopy {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    p {
+      font-size: 70px;
+      font-family: Microsoft JhengHei;
+      color: white;
+      margin-bottom: 0px;
+      margin-top: 0px;
+    }
+
+    .num {
+      font-family: Microsoft JhengHei;
+      color: rgb(231, 251, 44);
+      font-size: 100px;
+    }
+
+    .face {
+      font-size: 100px;
+      margin-top: 50px;
+      margin-bottom: 20px;
+    }
+
+    div {
+      text-align: center;
+    }
+
+    .container {
+      margin: auto;
+      height: 10px;
+      width: 60%; /* Full width */
+      background-color: #ddd; /* Grey background */
+    }
+
+    .temp {
+      height: 8px;
+      color: white; /* White text color */
+      width: 50%;
+      background-color: #f03131;
+      border-radius: 5%;
+    }
+  </style>
+
+  <script type="text/javascript">
+    var val_temp = 36.5;
+    var percent = 50;
+    var isrun = false;
+
+    function Floor(val) {
+      var out_val = parseInt(val * 10);
+      out_val /= 10;
+      out_val = out_val.toFixed(1)
+      return out_val;
+    }
+
+    function scaler(val, in_min, in_max) {
+      var out_val = 0;
+      if (val < in_min) {
+        out_val = 0;
+      }
+      else if (val > in_max) {
+        out_val = 100;
+      }
+      else {
+        out_val = parseInt((val - in_min)/(in_max - in_min)*100);
+      }
+      return out_val; 
+    }
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        val_temp = parseFloat(this.responseText);
+        val_temp = Floor(val_temp);
+
+        document.getElementById("snum").innerHTML = val_temp;
+        if (val_temp >= 37.5) {
+          facestate.innerHTML = "🤒";
+        } else if (val_temp < 35) {
+          facestate.innerHTML = "🥶";
+        } else {
+          facestate.innerHTML = "😃";
+        }
+
+        var width = scaler(val_temp, 30, 40);
+        if (percent < width) {
+          percent ++;
+        }
+        else if(percent > width) {
+          percent --;
+        }
+        var elem_bar = document.getElementById("bar");
+        elem_bar.style.width = percent + "%";
+
+        if (isrun) {
+          window.setTimeout(function () {
+            getvalue();
+          }, 100);
+        }
+      }
+
+    };
+
+    function getvalue() {
+      if (isrun) {
+        xhttp.open("GET", "/measure", true);
+        xhttp.send();
+      }
+    }
+
+    function start() {
+      if (isrun) {
+        isrun = false;
+        document.getElementById("switch").innerHTML = "▷";
+      } else {
+        isrun = true;
+        document.getElementById("switch").innerHTML = "▢";
+        getvalue();
+      }
+    }
+
+    //window.setInterval(function () {
+    //  getvalue();
+    //}, 100);
+  </script>
+
+</head>
+
+<body class="preventcopy" ondragstart="return false" oncontextmenu="return false" onselectstart="return false">
+  <div>
+    <p class="face" id="facestate">😃</p>
+    <p><span id="snum" class="num">--.-</span>°C</p>
+    <div class="container">
+      <div class="temp" id="bar"></div>
+    </div>
+    <button type="button" class="button" onclick='start()'><span id="switch">▷</span></button>
+  </div>
+</body>
+
+</html>

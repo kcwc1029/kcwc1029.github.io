@@ -1,0 +1,42 @@
+///// 在伺服器電腦上安裝 Mosquitto Broker /////
+
+// 安裝 Mosquitto Broker
+sudo apt update
+sudo apt install mosquitto mosquitto-clients
+
+// 檢查 Mosquitto 是否運行
+sudo systemctl status mosquitto
+
+// 開啟並啟動 Mosquitto
+sudo systemctl enable mosquitto
+sudo systemctl start mosquitto
+
+// 防火牆開啟1883 port
+sudo ufw allow 1883/tcp
+sudo ufw enable
+sudo ufw status
+
+// 配置 Mosquitto Broker 接受所有外部連接
+sudo nano /etc/mosquitto/mosquitto.conf
+// 添加以下配置
+listener 1883 0.0.0.0
+allow_anonymous true
+
+// 保存並退出文件，然後重啟 Mosquitto
+sudo systemctl restart mosquitto
+
+
+
+
+///// 在客戶端電腦上安裝 Mosquitto 客戶端 /////
+sudo apt install mosquitto-clients
+
+
+
+///// 在伺服器和客戶端之間發佈和訂閱訊息 /////
+// 訂閱訊息
+mosquitto_sub -h 192.168.1.100 -t test/topic
+
+// 發布訊息
+mosquitto_pub -h 192.168.1.100 -t test/topic -m "Hello from Client"
+

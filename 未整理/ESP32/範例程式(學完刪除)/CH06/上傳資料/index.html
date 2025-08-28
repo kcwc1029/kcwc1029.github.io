@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>心跳測量</title>
+  <style>
+    body {
+      background: rgb(42, 42, 42);
+      font-family: Microsoft JhengHei;
+    }
+
+    div.set {
+      margin: auto;
+      width: 80%;
+      text-align: center;
+    }
+
+    div.bpm {
+      width: 50%;
+      display: inline-block;
+    }
+
+    div.bar {
+      margin: auto;
+      width: 100%;
+      text-align: center;
+    }
+
+    .button {
+      border: none;
+      padding: 2px 10px;
+      margin-left: 0%;
+      margin-right: 5%;
+      margin-top: auto;
+      margin-bottom: 15px;
+      font-size: 25px;
+      font-family: Microsoft JhengHei;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      background-color: #a3e8ff;
+      border-radius: 10px;
+      color: rgb(45, 45, 45);
+    }
+
+    p {
+      font-size: 25px;
+      font-family: Microsoft JhengHei;
+      margin-top: auto;
+      margin-bottom: 5px;
+      color: white;
+    }
+    
+    p1 {
+      font-size: 15px;
+      font-family: Microsoft JhengHei;
+      margin-top: auto;
+      margin-bottom: 5px;
+      color: rgb(208, 194, 241);
+    }
+
+    canvas {
+      width: 80%;
+      min-height: 300px;
+      max-height: 500px;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+
+    .slidecontainer {
+      width: 100%;
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      width: 80%;
+      height: 13px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+
+    .slider:hover {
+      opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 13px;
+      height: 25px;
+      border-radius: 20%;
+      background: #54f304;
+      cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+      width: 13px;
+      height: 25px;
+      border-radius: 20%;
+      background: #54f304;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="myCanvas" width="800" height="500" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+  <script>
+    var isrun = false;
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    var init_step = 0;
+    var linex = 0;
+    var liney = 300;
+    var rawliney = 300;
+    var oldliney = 300;
+
+    var max_val = 0;
+    var min_val = 99999;
+    var max_tmp = 0;
+    var min_tmp = 99999;
+
+    var scrollx = 5;
+    var scrolly = 9;
+    
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, 800, 500);
+
+    function loadXMLDoc() {
+      if (isrun) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("hr").innerHTML =
+              this.responseText;
+          }
+        };
+        xhttp.open("GET", "/hr", true);
+        xhttp.send();
+      }
+    }
+
+    function heartbeat1() {
+      if (isrun) {
+        document.getElementById("hearttype").innerHTML =
+          "💗";
+      }
+    }
+
+    function heartbeat2() {
+      if (isrun) {
+        document.getElementById("hearttype").innerHTML =
+          "❤️";
+      }
+    }
+
+    function scaler(val, in_min, in_max, out_min, out_max) {
+      return (val - in_min)/(in_max - in_min)*(out_max - out_min) + out_min;
+    }
+
+    function drawline() {
+      if (isrun) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            rawliney = parseInt(this.responseText);
+
+            if (init_step >= 20) {
+              if (rawliney > max_tmp) {
+                max_tmp = rawliney;
+              }
+              if (rawliney < min_tmp) {
+                min_tmp = rawliney;
+              }
+
+              ctx.clearRect(linex, 0, 50, 500);
+              ctx.beginPath();
+              ctx.fillStyle = "black";
+              ctx.fillRect(linex, 0, 50, 500);
+              ctx.moveTo(linex, oldliney);
+
+              scrollx = parseInt(document.getElementById("scrollxdata").value);
+              linex += scrollx;
+
+              scrolly = parseInt(document.getElementById("scrollydata").value);
+              liney = scaler(
+                rawliney, min_val, max_val,
+                50, 100 + 16*scrolly);
+              liney = 500 - liney;
+
+              ctx.lineTo(linex, liney);
+              ctx.lineWidth = 2;
+              ctx.strokeStyle = '#80ffff';
+              ctx.stroke();
+
+              if (linex >= 800) {
+                linex = 0;
+                max_val = max_tmp;
+                min_val = min_tmp;
+                min_tmp = 99999;
+                max_tmp = 0;
+              }
+            }
+            else {
+              init_step ++;
+              if (rawliney > max_val) {
+                max_val = rawliney;
+              }
+              if (rawliney < min_val) {
+                min_val = rawliney;
+              }
+            }
+            oldliney = liney;
+          }
+        }
+      };
+      xhttp.open("GET", "/line", true);
+      xhttp.send();
+    }
+
+    function start() {
+      isrun = true;
+    }
+
+    function stop() {
+      isrun = false;
+    }
+    window.setInterval(function() {
+      heartbeat1();
+      setTimeout(heartbeat2, 1000);
+    }, 2000);
+    window.setInterval(function() {
+      loadXMLDoc();
+    }, 10000);
+    window.setInterval(function() {
+      drawline();
+    }, 100);
+  </script>
+  <div class="set">
+    <button type="button" class="button loc" onclick='start()'>開始</button>
+    <button type="button" class="button loc" onclick='stop()'>停止</button>
+    <div class="bpm">
+      <p><span id="hr">--.-</span>次/分<span id="hearttype">❤️</span></p>
+    </div>
+  </div>
+  <div class="bar">
+    </br><p1>水平 </p1><input type="range" min="1" max="25" value="5" class="slider" id="scrollxdata">
+    </br><p1>垂直 </p1><input type="range" min="0" max="25" value="9" class="slider" id="scrollydata">
+  </div>
+</body>
+</html>

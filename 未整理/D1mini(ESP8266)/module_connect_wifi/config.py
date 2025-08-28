@@ -1,0 +1,7 @@
+WIFI_SSID="ALHC-guest"
+WIFI_PASSWORD="ALHCguest"
+EMAIL_APPLICATION_PASSWORD="ezoeymvwzuuwondr"
+SEND_EMAIL="3331363@gmail.com"
+SEND_NAME="ESP8266-Micropython"
+RECIVE_EMAIL="3331363@gmail.com"
+EMAIL_SUBJECT="警告: Witty Cloud開發板的光敏電阻值"
