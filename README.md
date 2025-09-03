@@ -37,7 +37,7 @@
 -   協助 Kasavakan 部落資訊網站建置及部落草地便當訂購平台開發
 -   傳統祭儀系統資料、特色植物與部落照片之蒐集與整理(包含影片拍攝)
 
-## 7. 🧩 證照&證書 other
+## 4. 🧩 證照&證書 other
 
 -   [CPE 大學程式能力檢定](./證照證書/CPE/CPE證書中文.jpg)
 -   [TQC python 檢定](./證照證書/TQC/TQCPython.jpg)
@@ -47,7 +47,7 @@
 -   [臺灣學術倫理教育資源中心 修課證明](./倫理修課證明/臺灣學術倫理教育資源中心%20修課證明.pdf)
 -   [成大南工 課程協同講師證明](./南工機器學習簡介/成大南工課程協同講師證明.pdf)
 
-## 4. 📚 公開發表 Publication
+## 5. 📚 公開發表 Publication
 
 <!-- -   **[2023 國科會 運用人工智慧與擴增實境技術提升小學生 STEAM 能力與學習動機之研究：以繪圖色彩認知為例](./AR色彩眼鏡/README.md)** -->
 
@@ -59,7 +59,7 @@
 -   **[透過結構方程模型評估小學生對於教學中生成式 AI 應用的態度](./國小線性回歸/README.md)**
 -   **[TIPS: A Prompt Engineering Framework for Code Classification and Generation on Resource-Constrained Systems](./IEEE%20Access：TIPS框架/IEEE%20Access%20TIPS框架.pdf)**
 
-## 5. 🧪 實習與助教經歷 Teaching & Internship
+## 6. 🧪 實習與助教經歷 Teaching & Internship
 
 -   **[成大工科 碩士班 C 語言程式設計](https://github.com/kcwc1029/blog-c-cpp)**
 
@@ -79,7 +79,7 @@
 
 -   **[113 學年度 國立成功大學附屬臺南工業高級中學 BIM 數位建設科技應用實驗班 機器學習簡介](./南工機器學習簡介/成大南工課程協同講師證明.pdf)**
 
-## 6. 💡 專案與成果 Projects & Achievements
+## 7. 💡 專案與成果 Projects & Achievements
 
 -   **[Leetcode 筆記](./Leetcode筆記/README.md)**
 -   **[Zero judge 筆記](./Zero_Judge筆記/README.md)**
@@ -90,8 +90,11 @@
 -   **[【企劃書】淨零排放科技](./淨零排放科技/2025淨零排放科技國際競賽%20企劃書v0.3.pdf)**
 -   [【2025 鐵人賽】淺談作業系統](https://ithelp.ithome.com.tw/users/20177764/articles?page=1)
 
-## 筆記
+## 8. 筆記
 
 -   [OS Tutor](./作業系統/README.md)
 -   [Cpp Tutor](./Cpp_Tutor/README.md)
 -   [Python Tutor](./Python_Tutor/README.md)
+
+
+
