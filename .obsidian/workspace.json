@@ -167,6 +167,7 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
+<<<<<<< HEAD
   "active": "91d44f1401133a95",
   "lastOpenFiles": [
     "站存筆記.md",
@@ -199,9 +200,38 @@
     "TIPS框架/attachments/image.png",
     "成大南工 機器學習/README.md",
     "未整理/sqlite基本操作.md",
+=======
+  "active": "df356c4d134452fb",
+  "lastOpenFiles": [
+    "Python_Tutor/Python程式設計：字典/~$thon程式設計：字典.docx",
+    "Python_Tutor/Python程式設計：元組/Python程式設計：元組.pdf.zip",
+    "Python_Tutor/Python程式設計：元組/~$thon程式設計：元組.docx",
+    "證照證書/倫理修課證明/臺灣學術倫理教育資源中心 修課證明.pdf",
+    "證照證書/低碳實務工作坊/低碳實務工作坊_證書.pdf",
+    "證照證書/人才培訓媒合計畫服務證明/中衛發展中心服務證明.jpg",
+    "證照證書/TQC/TQC人工智慧應用與技術.jpg",
+    "證照證書/TQC/TQCPython.jpg",
+    "證照證書/CPE/CPE證書英文.jpg",
+    "證照證書/CPE/CPE證書中文.jpg",
+    "證照證書/倫理修課證明",
+    "證照證書/低碳實務工作坊",
+    "證照證書/人才培訓媒合計畫服務證明",
+    "證照證書/TQC",
+    "證照證書/CPE",
+    "證照證書",
+    "論文地域/論文地域_新版.md",
+    "論文地域/MaUWB_ESP32S3-with-STM32/圖片/測試UWB在小桌子.png",
+    "論文地域/MaUWB_ESP32S3-with-STM32/圖片/S__6176782_0.jpg",
+    "論文地域/MaUWB_ESP32S3-with-STM32/圖片/S__6176780_0.jpg",
+    "論文地域/attachments/image.png",
+    "論文地域/attachments/image-3.png",
+    "未整理/ubuntu/Linux Training 2024/README.md",
+>>>>>>> bcddc6fdac842d75e9e6755fd6f9267b8b1243ab
     "未整理/ESP32/mail_ESP32_LODIND32/README.md",
+    "未整理/ubuntu/ubuntu.md",
     "未整理/ESP32/README.md",
     "未整理/D1mini(ESP8266)/README.md",
+<<<<<<< HEAD
     "未整理/ubuntu/Linux Training 2024/README.md",
     "未整理/ubuntu/ubuntu.md",
     "論文地域/論文地域_新版.md",
@@ -209,10 +239,30 @@
     "Python_Tutor/Python程式設計：Pytesseract車牌辨識/README.md",
     "Python_Tutor/Python程式設計：QRcode/README.md",
     "Python_Tutor/Python程式設計：Pillow影像處裡/README.md",
+=======
+    "未整理/sqlite基本操作.md",
+    "未命名.md",
+>>>>>>> bcddc6fdac842d75e9e6755fd6f9267b8b1243ab
     "Python_Tutor/Python程式設計：詞雲/README.md",
+    "Python_Tutor/Python程式設計：Pillow影像處裡/README.md",
     "Python_Tutor/README.md",
+    "站存筆記.md",
     "CoT/參考的paper.md",
     "Leetcode筆記/Linked-List/148.sort-list.md",
+<<<<<<< HEAD
     "Leetcode筆記/Linked-List/143.reorder-list.md"
+=======
+    "Leetcode筆記/Linked-List/143.reorder-list.md",
+    "Leetcode筆記/Linked-List/142.linked-list-cycle-ii.md",
+    "Leetcode筆記/Linked-List/141.linked-list-cycle.md",
+    "Leetcode筆記/DFS/145.binary-tree-postorder-traversal.md",
+    "Leetcode筆記/DFS/144.binary-tree-preorder-traversal.md",
+    "Leetcode筆記/Array/137.single-numbe-ii.md",
+    "Leetcode筆記/Array/136.single-numbe.md",
+    "Expert Systems：AAS/引用文獻.md",
+    "Expert Systems：AAS/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
+    "Mind/給單身男生的建議.md",
+    "翻轉教育/可以參考的paper.md"
+>>>>>>> bcddc6fdac842d75e9e6755fd6f9267b8b1243ab
   ]
 }
