@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0a059e4068cd8e0f",
+            "id": "ad7701de0ee69f14",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -161,6 +161,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:建立新的 base": false,
       "switcher:開啟快速切換": false,
       "graph:查看關聯圖": false,
       "canvas:建立新畫布": false,
@@ -170,26 +171,28 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "0a059e4068cd8e0f",
+  "active": "ad7701de0ee69f14",
   "lastOpenFiles": [
+    "README.md",
+    "## IEEE 修改.canvas",
+    "站存筆記.md",
+    "智慧物聯網系統設計與實作/Lab02/N96144250_Lab02.pdf",
+    "智慧物聯網系統設計與實作/Lab02/N96144250_Lab02.docx",
+    "智慧物聯網系統設計與實作/Lab02/MCAS-2025-IOT",
+    "智慧物聯網系統設計與實作/Lab01/N96144250_Lab01.pdf",
+    "智慧物聯網系統設計與實作/Lab01/N96144250_Lab01.docx",
+    "智慧物聯網系統設計與實作/Lab02",
+    "智慧物聯網系統設計與實作/Lab01",
+    "智慧物聯網系統設計與實作",
+    "咪聽2025.09.17.pptx",
     "網頁/product_page.html",
-    "網頁/index.html",
-    "網頁",
     "護理教育/reliability_analysis_line_filled.png",
-    "護理教育/reliability_analysis_line_filled.pdf",
     "護理教育/reliability_analysis_line.png",
-    "護理教育/reliability_analysis_line.pdf",
     "護理教育/model_efficacy_line_comparison.png",
     "護理教育/model_efficacy_comparison.png",
     "護理教育/model_efficacy_bar_top.png",
     "護理教育/model_efficacy_bar_bottom.png",
     "護理教育/decision_making_efficacy_comparison.png",
-    "研究所獎學金/維-研究生獎學金申請表.doc",
-    "研究所獎學金/科林科技獎學金/科林科技獎學金.docx",
-    "研究所獎學金/科林科技獎學金/收據_2025-09-11_154039.pdf",
-    "研究所獎學金/科林科技獎學金/在學證明.pdf",
-    "研究所獎學金/科林科技獎學金/organized.pdf",
-    "研究所獎學金/科林科技獎學金/113年度第二學期成績單.pdf",
     "國科會計畫：淨零碳排/圖片/生成式 AI 驅動之數位孿生碳排決策模擬平台.png",
     "國科會計畫：淨零碳排/圖片/本研究實作畫面02.png",
     "國科會計畫：淨零碳排/圖片/本研究實作畫面01.png",
@@ -204,7 +207,6 @@
     "Python_Tutor/Python程式設計：詞雲/README.md",
     "Python_Tutor/Python程式設計：Pillow影像處裡/README.md",
     "Python_Tutor/README.md",
-    "站存筆記.md",
     "CoT/參考的paper.md",
     "Leetcode筆記/Linked-List/148.sort-list.md",
     "Leetcode筆記/Linked-List/143.reorder-list.md",
@@ -216,7 +218,6 @@
     "Leetcode筆記/Array/136.single-numbe.md",
     "Expert Systems：AAS/引用文獻.md",
     "Expert Systems：AAS/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
-    "Mind/給單身男生的建議.md",
-    "翻轉教育/可以參考的paper.md"
+    "Mind/給單身男生的建議.md"
   ]
 }
