@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "6b5c4c6d4a7b3fe9",
+    "id": "74c5d72287bd0552",
     "type": "split",
     "children": [
       {
-        "id": "9d015d795a6b10e8",
+        "id": "76580623a5281887",
         "type": "tabs",
         "children": [
           {
-            "id": "ad7701de0ee69f14",
+            "id": "bdca5887c2be5ac0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "站存筆記.md",
+                "file": "使用電腦要做的事情.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "站存筆記"
+              "title": "使用電腦要做的事情"
             }
           }
         ]
@@ -27,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "28581b41b9df44fe",
+    "id": "2e9047f040f7012c",
     "type": "split",
     "children": [
       {
-        "id": "bf597811048bcd81",
+        "id": "397153940ec9bb4b",
         "type": "tabs",
         "children": [
           {
-            "id": "df356c4d134452fb",
+            "id": "cb2600d22ce9b594",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +48,7 @@
             }
           },
           {
-            "id": "e8f4a2c46531f887",
+            "id": "a1b5b51a3dd77524",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +65,7 @@
             }
           },
           {
-            "id": "b185970b456ad1da",
+            "id": "8ace48028b95fb18",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -78,24 +78,24 @@
       }
     ],
     "direction": "horizontal",
-    "width": 250.5
+    "width": 246.5
   },
   "right": {
-    "id": "1c61280532eaaf8f",
+    "id": "bb905c113e003ac0",
     "type": "split",
     "children": [
       {
-        "id": "c3dcf77448819935",
+        "id": "1ae056bbfa4fa402",
         "type": "tabs",
         "children": [
           {
-            "id": "f84ed20d4fd4fdfb",
+            "id": "35a9c145885989cc",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "專案進行/論文地域/論文地域_新版.md",
-                "collapseAll": true,
+                "file": "未命名.md",
+                "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -104,25 +104,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "論文地域_新版 的反向連結"
+              "title": "未命名 的反向連結"
             }
           },
           {
-            "id": "eef1503ef1978bcc",
+            "id": "d4971a0d07786f84",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "專案進行/四軸無人機/無人機_改版/無人機_改版.md",
+                "file": "未命名.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "無人機_改版 的對外連結"
+              "title": "未命名 的對外連結"
             }
           },
           {
-            "id": "e3cdb3e92d7aedd2",
+            "id": "5d5389aa52ea8d34",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,87 +137,54 @@
             }
           },
           {
-            "id": "a76d157580416654",
+            "id": "010b20318d7b9b2a",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "所有屬性"
+            }
+          },
+          {
+            "id": "b161e4f618c005b7",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "站存筆記.md",
+                "file": "未命名.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "站存筆記 的大綱"
+              "title": "未命名 的大綱"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 294.5,
+    "width": 300,
     "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:建立新的 base": false,
       "switcher:開啟快速切換": false,
       "graph:查看關聯圖": false,
       "canvas:建立新畫布": false,
+      "daily-notes:開啟今天的每日筆記": false,
       "templates:插入模板": false,
       "command-palette:開啟命令面板": false,
-      "markdown-importer:開啟 Markdown 格式轉換器": false,
-      "obsidian-advanced-slides:Show Slide Preview": false
+      "bases:建立新的 base": false
     }
   },
-  "active": "ad7701de0ee69f14",
+  "active": "bdca5887c2be5ac0",
   "lastOpenFiles": [
-    "README.md",
-    "## IEEE 修改.canvas",
-    "站存筆記.md",
-    "智慧物聯網系統設計與實作/Lab02/N96144250_Lab02.pdf",
-    "智慧物聯網系統設計與實作/Lab02/N96144250_Lab02.docx",
-    "智慧物聯網系統設計與實作/Lab02/MCAS-2025-IOT",
-    "智慧物聯網系統設計與實作/Lab01/N96144250_Lab01.pdf",
-    "智慧物聯網系統設計與實作/Lab01/N96144250_Lab01.docx",
-    "智慧物聯網系統設計與實作/Lab02",
-    "智慧物聯網系統設計與實作/Lab01",
-    "智慧物聯網系統設計與實作",
-    "咪聽2025.09.17.pptx",
-    "網頁/product_page.html",
-    "護理教育/reliability_analysis_line_filled.png",
-    "護理教育/reliability_analysis_line.png",
-    "護理教育/model_efficacy_line_comparison.png",
-    "護理教育/model_efficacy_comparison.png",
-    "護理教育/model_efficacy_bar_top.png",
-    "護理教育/model_efficacy_bar_bottom.png",
-    "護理教育/decision_making_efficacy_comparison.png",
-    "國科會計畫：淨零碳排/圖片/生成式 AI 驅動之數位孿生碳排決策模擬平台.png",
-    "國科會計畫：淨零碳排/圖片/本研究實作畫面02.png",
-    "國科會計畫：淨零碳排/圖片/本研究實作畫面01.png",
-    "論文地域/論文地域_新版.md",
-    "未整理/ubuntu/Linux Training 2024/README.md",
-    "未整理/ESP32/mail_ESP32_LODIND32/README.md",
-    "未整理/ubuntu/ubuntu.md",
-    "未整理/ESP32/README.md",
-    "未整理/D1mini(ESP8266)/README.md",
-    "未整理/sqlite基本操作.md",
-    "未命名.md",
-    "Python_Tutor/Python程式設計：詞雲/README.md",
-    "Python_Tutor/Python程式設計：Pillow影像處裡/README.md",
-    "Python_Tutor/README.md",
-    "CoT/參考的paper.md",
-    "Leetcode筆記/Linked-List/148.sort-list.md",
-    "Leetcode筆記/Linked-List/143.reorder-list.md",
-    "Leetcode筆記/Linked-List/142.linked-list-cycle-ii.md",
-    "Leetcode筆記/Linked-List/141.linked-list-cycle.md",
-    "Leetcode筆記/DFS/145.binary-tree-postorder-traversal.md",
-    "Leetcode筆記/DFS/144.binary-tree-preorder-traversal.md",
-    "Leetcode筆記/Array/137.single-numbe-ii.md",
-    "Leetcode筆記/Array/136.single-numbe.md",
-    "Expert Systems：AAS/引用文獻.md",
-    "Expert Systems：AAS/Self-assessment accuracy in the age of artificial Intelligence： Differential effects of LLM-generated feedback(人工智慧時代的自我評估準確性：LLM 生成反饋的差異效應).md",
-    "Mind/給單身男生的建議.md"
+    "使用電腦要做的事情.md"
   ]
 }
