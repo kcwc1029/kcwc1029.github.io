@@ -1,0 +1,1023 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、學習筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/web-mkdocs/python-notebooks/Seaborn/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Seaborn - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#seaborn" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Seaborn
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../teaching/cpp.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../notes/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  學習筆記
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  日記
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teaching/cpp.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    學習筆記
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三個套件如何分工？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        先分清楚兩大資料型態
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        資料讀取與健檢
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seaborn_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seaborn 的共同語法
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#axes-level-figure-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        axes-level 與 figure-level
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#countplot-barplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        類別資料：countplot 與 barplot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="類別資料：countplot 與 barplot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#countplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        countplot：數一數有幾筆
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#barplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        barplot：先統計，再畫柱子
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#histplot-kdeplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        數值分布：histplot 與 kdeplot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        散佈圖：兩個數值的關係
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        迴歸圖：用一條線摘要趨勢
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        箱型圖與小提琴圖：平均值之外的故事
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pairplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pairplot：一次探索多個欄位
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相關係數與熱圖
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分面圖：把人群拆開比較
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        美化不是裝飾，是降低閱讀成本
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="美化不是裝飾，是降低閱讀成本">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主題與情境大小
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        好顏色的原則
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="seaborn">Seaborn<a class="headerlink" href="#seaborn" title="Permanent link">&para;</a></h1>
+<p>想像主管交給你一份 Excel，裡面有幾百筆顧客、訂單或學員紀錄，然後問：</p>
+<ul>
+<li>哪一群人的表現最好？</li>
+<li>成績不好，是不是因為通勤太久或手機用太多？</li>
+<li>哪種飲料最受歡迎，應該多準備哪一種？</li>
+<li>哪一組的資料差異最大，平均值會不會騙人？</li>
+<li>我要在三分鐘內報告，怎樣讓主管一眼看懂？</li>
+</ul>
+<p>只把 DataFrame 印出來，人腦很難一次比較數十列數字。圖表的工作，就是把「數字之間的關係」翻譯成人類容易理解的形狀、位置與顏色。</p>
+<h2 id="_1">三個套件如何分工？<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>套件</th>
+<th>生活比喻</th>
+<th>本課工作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pandas</td>
+<td>整理資料的試算表高手</td>
+<td>讀 CSV、篩選、分組、計算</td>
+</tr>
+<tr>
+<td>Matplotlib</td>
+<td>畫布與畫筆</td>
+<td>建立畫布、標題、座標軸、儲存圖片</td>
+</tr>
+<tr>
+<td>Seaborn</td>
+<td>懂統計與配色的設計師</td>
+<td>用少量程式碼畫美觀的統計圖</td>
+</tr>
+</tbody>
+</table>
+<p>Seaborn 建立在 Matplotlib 上。因此常見寫法是 Seaborn 負責主要圖形，Matplotlib 負責標題、尺寸與輸出。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># `sns` 與 `plt` 只是社群慣用縮寫，不是 Python 規定。</span>
+</code></pre></div>
+<h2 id="_2">先分清楚兩大資料型態<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>數值型資料可以做加減與平均，例如通勤分鐘、睡眠小時、測驗分數。類別型資料是名稱或群組，例如班別、居住地、是否取得證照。編號雖然由數字組成，卻只是識別名稱，計算「平均編號」沒有意義。</p>
+<table>
+<thead>
+<tr>
+<th>問題</th>
+<th>X</th>
+<th>Y</th>
+<th>建議圖表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>哪種飲料人數最多？</td>
+<td>一個類別</td>
+<td>無</td>
+<td><code>countplot</code></td>
+</tr>
+<tr>
+<td>三班平均成績誰較高？</td>
+<td>類別</td>
+<td>數值</td>
+<td><code>barplot</code></td>
+</tr>
+<tr>
+<td>手機時間集中在哪？</td>
+<td>一個數值</td>
+<td>無</td>
+<td><code>histplot</code></td>
+</tr>
+<tr>
+<td>自習與成績有關嗎？</td>
+<td>數值</td>
+<td>數值</td>
+<td><code>scatterplot</code></td>
+</tr>
+<tr>
+<td>各通勤方式差異大嗎？</td>
+<td>類別</td>
+<td>數值分布</td>
+<td><code>boxplot</code></td>
+</tr>
+<tr>
+<td>多個數值誰和誰較相關？</td>
+<td>多個數值</td>
+<td>多個數值</td>
+<td><code>heatmap</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">資料讀取與健檢<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Seaborn_datasets/職訓生活與學習紀錄.csv&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>           <span class="c1"># (72, 16)：72 列、16 欄</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>          <span class="c1"># 前五筆</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>          <span class="c1"># 欄位、資料型態、非空值數量</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>    <span class="c1"># 各欄缺值數</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>      <span class="c1"># 數值欄的統計摘要</span>
+</code></pre></div>
+<h2 id="seaborn_1">Seaborn 的共同語法<a class="headerlink" href="#seaborn_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="c1"># 資料從哪張表來。</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;每週自習小時&quot;</span><span class="p">,</span> <span class="c1"># 水平方向放哪個欄位。</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;課後測驗&quot;</span><span class="p">,</span> <span class="c1"># 垂直方向放哪個欄位。</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;組別&quot;</span><span class="p">,</span> <span class="c1"># 依某欄位改變顏色，多呈現一層資訊。</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="c1"># `style`：依類別改變點的形狀。</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="c1"># `size`：依數值改變點的大小。</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="c1"># `palette`：選擇配色。</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="c1"># `order`：指定類別順序，而不是接受預設順序。</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1"># 這種把資料欄位對應到視覺特徵的做法，叫做 visual encoding。位置通常最容易精準比較，其次是長度；面積與顏色較適合輔助，不適合塞太多資訊。</span>
+</code></pre></div>
+<h2 id="axes-level-figure-level">axes-level 與 figure-level<a class="headerlink" href="#axes-level-figure-level" title="Permanent link">&para;</a></h2>
+<p>這是新手常卡住的地方：</p>
+<ul>
+<li><code>scatterplot</code>、<code>histplot</code>、<code>boxplot</code> 等 axes-level 函式，畫在某一個座標軸 <code>ax</code> 上，適合 <code>plt.subplots()</code> 組合儀表板。</li>
+<li><code>relplot</code>、<code>displot</code>、<code>catplot</code>、<code>lmplot</code>、<code>pairplot</code> 等 figure-level 函式，會自己管理整張圖，方便用 <code>row</code>、<code>col</code> 拆分面板。</li>
+</ul>
+<p>figure-level 函式回傳的通常不是 <code>Axes</code>，而是 <code>FacetGrid</code> 或 <code>PairGrid</code>。所以設定總標題常寫：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">grid</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;組別&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;課後測驗&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">grid</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;各班成績&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.03</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="countplot-barplot">類別資料：countplot 與 barplot<a class="headerlink" href="#countplot-barplot" title="Permanent link">&para;</a></h2>
+<h3 id="countplot">countplot：數一數有幾筆<a class="headerlink" href="#countplot" title="Permanent link">&para;</a></h3>
+<p><code>countplot</code> 不需要先算人數，它會直接計算每個類別出現幾次。適合回答人氣、件數、訂單數、缺陷數等問題。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;最常買飲料&quot;</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><a href="Seaborn_src/%E9%A1%9E%E5%88%A5%E8%B3%87%E6%96%99_countplot.py">類別資料_countplot.py</a></li>
+</ul>
+<h3 id="barplot">barplot：先統計，再畫柱子<a class="headerlink" href="#barplot" title="Permanent link">&para;</a></h3>
+<p><code>barplot</code> 的每根柱子預設代表該組 <code>y</code> 的平均值，不是資料筆數。這是它與 <code>countplot</code> 最大的差別。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;組別&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;課後測驗&quot;</span><span class="p">,</span> <span class="n">errorbar</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+<p>預設可能出現誤差線，它表示估計值的不確定程度，不是裝飾。如果課程初期只想專注平均值，可用 <code>errorbar=None</code>；正式分析則應說明是否顯示信賴區間。</p>
+<p>課堂陷阱題：柱子最高的班是否代表每位學生都比較高？不一定。平均值會隱藏個別差異，下一節的箱型圖會補足這個問題。</p>
+<ul>
+<li><a href="Seaborn_src/%E9%A1%9E%E5%88%A5%E8%B3%87%E6%96%99_barplot%E5%B9%B3%E5%9D%87%E5%80%BC%E8%88%87%E8%AA%A4%E5%B7%AE%E7%B7%9A.py">類別資料_barplot平均值與誤差線.py</a></li>
+</ul>
+<h2 id="histplot-kdeplot">數值分布：histplot 與 kdeplot<a class="headerlink" href="#histplot-kdeplot" title="Permanent link">&para;</a></h2>
+<p>直方圖會把連續數值切成數個區間，再計算每個區間有幾筆。它和長條圖看似相同，但意義不同：</p>
+<ul>
+<li>長條圖的 X 軸是獨立類別，順序未必有距離意義。</li>
+<li>直方圖的 X 軸是連續數值，柱子相鄰，區間有固定範圍。</li>
+</ul>
+<p><code>bins=10</code> 就像把考卷依分數放進十個箱子。箱子太少會抹掉細節，太多則會顯得零碎，因此應試不同 bins，確認結論是否穩定。</p>
+<p>KDE 是平滑的密度估計線，可以想像在每個觀察值上堆一小座土丘，再把所有土丘疊加。它適合觀察形狀，但線高不是人數，且可能在不合理範圍延伸，所以不能盲信。</p>
+<ul>
+<li><a href="Seaborn_src/%E6%95%B8%E5%80%BC%E5%88%86%E5%B8%83_histplot_kdeplot.py">數值分布_histplot_kdeplot.py</a></li>
+</ul>
+<h2 id="_4">散佈圖：兩個數值的關係<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>每一個點代表一位學員。點的水平位置是自習時間，垂直位置是課後成績。如果點群大致由左下往右上，稱為正向關係；由左上往右下是負向關係；像一團雲則可能沒有明顯線性關係。</p>
+<ul>
+<li><a href="Seaborn_src/%E6%95%A3%E4%BD%88%E5%9C%96_scatterplot.py">散佈圖_scatterplot.py</a></li>
+</ul>
+<h2 id="_5">迴歸圖：用一條線摘要趨勢<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p><code>regplot</code> 在單一座標軸畫散佈點與迴歸線；<code>lmplot</code> 能用 <code>col</code> 或 <code>row</code> 分面。迴歸線不是把所有點連起來，而是尋找一條能概括整體關係的線。</p>
+<p>線周圍的半透明帶通常是信賴區間：根據現有樣本，估計趨勢線可能落在哪個範圍。樣本少或資料分散時通常較寬。它不是「95% 的點都會在帶內」。</p>
+<p>注意：直線只摘要線性趨勢。若資料明顯呈 U 形，一條平坦的直線可能錯誤暗示沒有關係。</p>
+<ul>
+<li><a href="Seaborn_src/%E8%BF%B4%E6%AD%B8%E5%9C%96_regplot_lmplot.py">迴歸圖_regplot_lmplot.py</a></li>
+</ul>
+<h2 id="_6">箱型圖與小提琴圖：平均值之外的故事<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>先把數字排序，四分位數把資料切成四等份：</p>
+<ul>
+<li>Q1：25% 的資料在它以下。</li>
+<li>中位數 Q2：一半在下、一半在上。</li>
+<li>Q3：75% 的資料在它以下。</li>
+<li>IQR = Q3 - Q1：中間 50% 資料的跨度。</li>
+</ul>
+<p>箱型圖的箱子從 Q1 到 Q3，箱內線是中位數。鬚通常延伸到 Q1−1.5×IQR 與 Q3+1.5×IQR 範圍內的最遠資料，外側點是值得檢查的潛在離群值。</p>
+<p>離群值不是錯誤值。通勤 90 分鐘可能是真實情況，若直接刪掉，可能正好刪除最需要遠距協助的學員。正確流程是回頭核對，再決定保留、修正或排除並留下說明。</p>
+<p>小提琴圖的寬度代表該位置附近的資料密度，能看到箱型圖看不到的多峰形狀；但資料太少時，平滑外形可能讓人誤判。</p>
+<ul>
+<li><a href="Seaborn_src/%E7%AE%B1%E5%9E%8B%E5%9C%96%E8%88%87%E5%B0%8F%E6%8F%90%E7%90%B4%E5%9C%96.py">箱型圖與小提琴圖.py</a></li>
+</ul>
+<h2 id="pairplot">pairplot：一次探索多個欄位<a class="headerlink" href="#pairplot" title="Permanent link">&para;</a></h2>
+<p><code>pairplot</code> 會產生矩陣：對角線顯示每個變數自身的分布，其他格顯示兩欄之間的散佈關係。它適合探索階段快速找線索，不適合直接塞進簡報，因為欄位一多會變得巨大。</p>
+<p>若放入 10 個數值欄位，最多會形成 10×10 個格子。先依問題挑選 3～5 個重要欄位，通常更容易閱讀。</p>
+<ul>
+<li><a href="Seaborn_src/%E5%A4%9A%E8%AE%8A%E9%87%8F_pairplot.py">多變量_pairplot.py</a></li>
+</ul>
+<h2 id="_7">相關係數與熱圖<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>Pearson 相關係數介於 -1 到 1：</p>
+<ul>
+<li>接近 1：強正向線性關係。</li>
+<li>接近 -1：強負向線性關係。</li>
+<li>接近 0：沒有明顯線性關係。</li>
+</ul>
+<p>正負號表示方向，絕對值表示線性關係強弱。不要機械式宣稱 0.7 以上就一定重要；不同領域、樣本數與風險情境的判準不同。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">numeric_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">correlation</span> <span class="o">=</span> <span class="n">numeric_df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">correlation</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdBu_r&quot;</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+<p>熱圖只是用顏色顯示數值矩陣，本身沒有創造新的統計結果。一定要搭配格內數字、色條與清楚標題，並記住：</p>
+<ul>
+<li>相關不等於因果。</li>
+<li>離群值可能大幅改變相關係數。</li>
+<li>接近 0 仍可能有曲線關係。</li>
+<li>
+<p>同一資料重複看很多關係，可能偶然找到看似很強的結果。</p>
+</li>
+<li>
+<p><a href="Seaborn_src/%E7%9B%B8%E9%97%9C%E4%BF%82%E6%95%B8%E7%86%B1%E5%9C%96.py">相關係數熱圖.py</a></p>
+</li>
+</ul>
+<h2 id="_8">分面圖：把人群拆開比較<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>整體資料可能看不出差別，但分班後才發現各班模式不同。分面圖讓每個子群使用相同座標尺度與圖形規則，方便公平比較。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;是否取得證照&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;作業完成率&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">col</span><span class="o">=</span><span class="s2">&quot;組別&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">)</span>
+</code></pre></div>
+<p>分面過多會產生「郵票牆」。若地區有十幾種，應先合併、篩選，或改用互動式工具。</p>
+<ul>
+<li><a href="Seaborn_src/%E5%88%86%E9%9D%A2%E5%9C%96_catplot.py">分面圖_catplot.py</a></li>
+</ul>
+<h2 id="_9">美化不是裝飾，是降低閱讀成本<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="_10">主題與情境大小<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="s2">&quot;notebook&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># - `style=&quot;whitegrid&quot;`：水平格線幫助比較數值。</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># - `context=&quot;talk&quot;`：簡報字體較大。</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># - `context=&quot;paper&quot;`：報告用字體較緊湊。</span>
+</code></pre></div>
+<h3 id="_11">好顏色的原則<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>類別：用色相不同的離散色盤，如 <code>Set2</code>。</li>
+<li>低到高：用單向漸層，如 <code>Blues</code>。</li>
+<li>負到正：用雙向色盤，如 <code>RdBu_r</code>，並設 <code>center=0</code>。</li>
+<li>同一類別在所有圖中盡量使用同一顏色。</li>
+<li>不只靠紅綠區分，兼顧色覺差異使用者。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "toc.follow", "navigation.instant", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

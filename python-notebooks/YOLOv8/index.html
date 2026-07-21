@@ -1,0 +1,1012 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、學習筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/web-mkdocs/python-notebooks/YOLOv8/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>YOLOv8 - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#yolov8" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              YOLOv8
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../teaching/cpp.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../notes/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  學習筆記
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  日記
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teaching/cpp.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    學習筆記
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        電腦如何看圖片
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YOLO 到底是什麼
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        邊界框座標
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iou-nms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IoU 與 NMS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IoU 與 NMS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iou-intersection-over-union" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IoU (Intersection over Union)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IoU (Intersection over Union)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        範例：完全沒有重疊
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        範例：部分重疊
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        範例：完全重合
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nms-non-maximum-suppression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NMS (Non-Maximum Suppression)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nms-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NMS 門檻值(Threshold)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一階段：基礎偵測
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COCO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov8_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YOLOv8教室人數統計
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov8_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YOLOv8即時車流辨識
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov8-youtube" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YOLOv8東京街頭散步-Youtube行人影像辨識
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov8-youtube_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YOLOv8大稻埕碼頭-Youtube直播行人辨識
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov8_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YOLOv8火災與濃煙辨識(未撰寫)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov8_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YOLOv8球賽人員辨識
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov8_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YOLOv8危險區域警示
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov8-pose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YOLOv8-Pose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov8-yolov8-pose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YOLOv8 + YOLOv8-Pose 危險刀具偵測系統
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="yolov8">YOLOv8<a class="headerlink" href="#yolov8" title="Permanent link">&para;</a></h1>
+<p>YOLOv8 很像一位看過大量圖片的「快速盤點員」。給它一張影像，它可以回答：</p>
+<ul>
+<li>畫面裡有哪些已學過的物件？</li>
+<li>每個物件大概在哪裡？</li>
+<li>它對答案有多大把握？</li>
+</ul>
+<p>但 YOLOv8 不會自動知道所有商業規則。例如「這個人進入禁區了」「這台車停超過五分鐘」「這位顧客已經計數過」都需要 Python、OpenCV、追蹤器或其他模型協助。</p>
+<h2 id="_1">電腦如何看圖片<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>人看到的是「教室裡有三個人」。電腦先看到的是很多數字。</p>
+<p>一張彩色圖片可以想成一張超大的方格紙。每一格是 pixel，也就是像素。OpenCV 通常把每個像素記成三個數字：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[藍色, 綠色, 紅色]
+</code></pre></div>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[0, 0, 0]       黑色
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>[255, 255, 255] 白色
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>[0, 0, 255]     紅色
+</code></pre></div>
+<p>假設圖片尺寸是 <code>1280 x 720</code>，代表橫向 1280 個像素、縱向 720 個像素。彩色圖片在 NumPy 中的形狀通常是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="mi">720</span><span class="p">,</span> <span class="mi">1280</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<p>順序是高度、寬度、色彩通道。這也是初學者常把 x、y、寬、高弄反的地方。</p>
+<h2 id="yolo">YOLO 到底是什麼<a class="headerlink" href="#yolo" title="Permanent link">&para;</a></h2>
+<p>YOLO 是 You Only Look Once 的縮寫。核心精神是讓神經網路一次處理整張圖並直接預測物件位置與類別，因此適合需要速度的即時應用。</p>
+<p>可以把模型推論想成考試：</p>
+<ol>
+<li>圖片先縮放成模型需要的尺寸。</li>
+<li>神經網路把像素逐層轉換成特徵。</li>
+<li>模型提出很多候選框。</li>
+<li>每個候選框有類別與信心分數。</li>
+<li>NMS 清除大量重複框。</li>
+<li>程式取得最後結果。</li>
+</ol>
+<p>「模型權重」就是它從訓練資料中學到的大量參數。<code>yolov8n.pt</code> 中：</p>
+<ul>
+<li><code>yolov8</code>：模型世代。</li>
+<li><code>n</code>：nano，小而快，適合入門。</li>
+<li><code>.pt</code>：PyTorch 權重檔。</li>
+</ul>
+<p>YOLOv8 常見尺寸由小到大為 <code>n</code>、<code>s</code>、<code>m</code>、<code>l</code>、<code>x</code>。模型越大通常需要更多記憶體與運算時間，不保證在每個專案都比較好。職訓教室先用 nano 把流程跑通，再比較其他尺寸。</p>
+<blockquote>
+<p>Ultralytics 已持續推出其他世代模型。本教材刻意使用 <code>yolov8n.pt</code>，因為課程主題是 YOLOv8，不把「套件有更新」誤說成「YOLOv8 不存在」。</p>
+</blockquote>
+<h2 id="_2">邊界框座標<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>程式推論常讀到 <code>xyxy</code>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>x1, y1, x2, y2
+</code></pre></div>
+<ul>
+<li><code>(x1, y1)</code>：左上角。</li>
+<li><code>(x2, y2)</code>：右下角。</li>
+</ul>
+<p>框的寬高：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">width</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">height</span> <span class="o">=</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span>
+</code></pre></div>
+<p>框的中心：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">center_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">center_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">y1</span> <span class="o">+</span> <span class="n">y2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+</code></pre></div>
+<p>YOLO 標註檔則使用：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>class_id x_center y_center width height
+</code></pre></div>
+<p>而且四個幾何數字都要除以圖片寬高，變成 <code>0</code> 到 <code>1</code>。這麼做是為了讓標註不綁死在某個解析度。</p>
+<h2 id="iou-nms">IoU 與 NMS<a class="headerlink" href="#iou-nms" title="Permanent link">&para;</a></h2>
+<p>當 YOLO 偵測物件時，並不是一開始就只畫出一個框。實際上，模型會先產生很多個候選框(Candidate Boxes)。</p>
+<p>例如畫面中有一個人，模型可能同時給出：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>框A：信心值 95%
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>框B：信心值 88%
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>框C：信心值 81%
+</code></pre></div>
+<p>三個框其實都在框同一個人。</p>
+<p>如果全部保留，畫面就會變成：人 → 被畫三個框，看起來非常混亂。因此需要兩個重要機制：</p>
+<ul>
+<li>IoU (Intersection over Union)</li>
+<li>NMS (Non-Maximum Suppression)</li>
+</ul>
+<p><img alt="" src="YOLOv8_assets/IoU%26NMS.png" /></p>
+<h3 id="iou-intersection-over-union">IoU (Intersection over Union)<a class="headerlink" href="#iou-intersection-over-union" title="Permanent link">&para;</a></h3>
+<p>IoU 可以理解成「兩個框有多像？」，或者說「兩個框重疊了多少？」</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>IoU=聯集面積/交集面積​
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a># 交集(Intersection) = 兩個框共同覆蓋的區域
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a># 聯集(Union) = 兩個框合併後的總面積
+</code></pre></div>
+<h4 id="_3">範例：完全沒有重疊<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>┌─────┐     ┌─────┐
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>│  A  │     │  B  │
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>└─────┘     └─────┘
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a># A 和 B 完全分開。
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a># IoU = 0 -&gt; 完全不像
+</code></pre></div>
+<h4 id="_4">範例：部分重疊<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>┌─────────┐
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>│    A    │
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>│   ┌─────┼────┐
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>└───┼─────┘ B  │
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    └──────────┘
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a># A 與 B 有部分重疊。A 與 B 有部分重疊。
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a># IoU ≈ 0.4 -&gt; 有點像，但不完全相同
+</code></pre></div>
+<h4 id="_5">範例：完全重合<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>┌─────────┐
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>│    A    │
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>│    B    │
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>└─────────┘
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a># 兩個框完全一樣。
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a># IoU = 1 -&gt; 100%重疊。
+</code></pre></div>
+<h3 id="nms-non-maximum-suppression">NMS (Non-Maximum Suppression)<a class="headerlink" href="#nms-non-maximum-suppression" title="Permanent link">&para;</a></h3>
+<p>其實概念超簡單：同一個物件只留下一個最好的框。</p>
+<p>假設 YOLO 偵測到：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>框A：95%
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>框B：88%
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>框C：82%
+</code></pre></div>
+<p>而且三個框都框在同一個人身上。</p>
+<ol>
+<li>找出最高分的框並保留 -&gt; 框A：95%</li>
+<li>計算：IoU(A, B)跟IoU(A, C)，假設IoU(A,B)=0.85、IoU(A,C)=0.79，代表高度重疊，很可能是在描述同一個人。</li>
+<li>把較低分的框刪除</li>
+</ol>
+<h3 id="nms-threshold">NMS 門檻值(Threshold)<a class="headerlink" href="#nms-threshold" title="Permanent link">&para;</a></h3>
+<p>通常會設定一個 IoU 門檻。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>IoU &gt; 0.5：認為是同一個物件
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>IoU ≤ 0.5：認為是不同物件
+</code></pre></div>
+<h2 id="_6">第一階段：基礎偵測<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="YOLOv8_src/%E8%AE%80%E5%8F%96%E9%A1%9E%E5%88%A5%E3%80%81%E4%BF%A1%E5%BF%83%E5%88%86%E6%95%B8%E8%88%87%E9%82%8A%E7%95%8C%E6%A1%86%E5%BA%A7%E6%A8%99.py">範例：讀取類別、信心分數與邊界框座標</a></li>
+<li><a href="YOLOv8_src/YOLOv8%E5%81%B5%E6%B8%AC%E4%B8%80%E5%BC%B5%E8%A1%97%E6%99%AF%E5%9C%96%E7%89%87.py">範例：YOLOv8偵測一張街景圖片</a></li>
+<li><a href="YOLOv8_src/YOLOv8%E5%81%B5%E6%B8%AC%E8%A1%97%E6%99%AF%E5%BD%B1%E7%89%87.py">範例：YOLOv8偵測街景影片</a></li>
+<li><a href="https://www.pexels.com/zh-tw/video/8915716/">下載：車流影片素材</a></li>
+<li><a href="YOLOv8_src/YOLOv8%E5%8D%B3%E6%99%82%E6%94%9D%E5%BD%B1%E6%A9%9F%E5%81%B5%E6%B8%AC.py">範例：YOLOv8即時攝影機偵測</a></li>
+</ul>
+<h2 id="coco"><a href="https://cocodataset.org/#home">COCO</a><a class="headerlink" href="#coco" title="Permanent link">&para;</a></h2>
+<p>COCO 全名Common Objects in Context，中文可以翻成「情境中的常見物件資料集」。
+COCO 裡面有33萬張以上圖片，以及250萬個以上標註物件</p>
+<h2 id="yolov8_1"><a href="YOLOv8_src/YOLOv8%E6%95%99%E5%AE%A4%E4%BA%BA%E6%95%B8%E7%B5%B1%E8%A8%88.py">YOLOv8教室人數統計</a><a class="headerlink" href="#yolov8_1" title="Permanent link">&para;</a></h2>
+<p>程式每一幀偵測 <code>person</code>，把框數當作當下人數，並每秒寫一筆 CSV。</p>
+<p>這個方法的限制：</p>
+<ul>
+<li>遮擋嚴重會漏人。</li>
+<li>海報或螢幕中的人可能被誤認。</li>
+<li>人走出畫面後人數會下降，這是「當下畫面人數」，不是「今天到過的人數」。</li>
+<li>同一個人是否曾經出現過，需要追蹤或身分辨識，不能只靠單幀偵測。</li>
+</ul>
+<h2 id="yolov8_2">YOLOv8即時車流辨識<a class="headerlink" href="#yolov8_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://tntcc.tainan.gov.tw/">臺南市即時交通資訊服務網</a>：選取一個路口監視器，複製圖片網址。</li>
+<li><a href="YOLOv8_src/YOLOv8%E5%8D%B3%E6%99%82%E8%BB%8A%E6%B5%81%E8%BE%A8%E8%AD%98.py">範例：YOLOv8即時車流辨識</a></li>
+<li><a href="YOLOv8_src/YOLOv8%E5%8D%B3%E6%99%82%E8%BB%8A%E6%B5%81%E8%BE%A8%E8%AD%98-%E5%8F%AA%E4%BF%9D%E7%95%99%E8%BB%8A%E8%BC%9B%E9%A1%9E%E5%88%A5%E5%8F%AA%E4%BF%9D%E7%95%99%E8%BB%8A%E8%BC%9B%E9%A1%9E%E5%88%A5.py">範例：YOLOv8即時車流辨識-只保留車輛類別</a></li>
+<li><a href="YOLOv8_src/YOLOv8%E5%8D%B3%E6%99%82%E8%BB%8A%E6%B5%81%E8%BE%A8%E8%AD%98-%E8%BB%8A%E6%B5%81%E9%87%8F%E7%B5%B1%E8%A8%88.py">範例：YOLOv8即時車流辨識-車流量統計</a></li>
+<li><a href="YOLOv8_src/YOLOv8%E5%8D%B3%E6%99%82%E8%BB%8A%E6%B5%81%E8%BE%A8%E8%AD%98-%E8%BB%8A%E6%B5%81%E8%B6%A8%E5%8B%A2%E5%9C%96.py">範例：YOLOv8即時車流辨識-車流趨勢圖(CSV + Matplotlib)</a></li>
+</ul>
+<h2 id="yolov8-youtube"><a href="YOLOv8_src/YOLOv8%E6%9D%B1%E4%BA%AC%E8%A1%97%E9%A0%AD%E6%95%A3%E6%AD%A5-Youtube%E8%A1%8C%E4%BA%BA%E5%BD%B1%E5%83%8F%E8%BE%A8%E8%AD%98.py">YOLOv8東京街頭散步-Youtube行人影像辨識</a><a class="headerlink" href="#yolov8-youtube" title="Permanent link">&para;</a></h2>
+<h2 id="yolov8-youtube_1"><a href="YOLOv8_src/YOLOv8%E5%A4%A7%E7%A8%BB%E5%9F%95%E7%A2%BC%E9%A0%AD-Youtube%E7%9B%B4%E6%92%AD%E8%A1%8C%E4%BA%BA%E8%BE%A8%E8%AD%98.py">YOLOv8大稻埕碼頭-Youtube直播行人辨識</a><a class="headerlink" href="#yolov8-youtube_1" title="Permanent link">&para;</a></h2>
+<h2 id="yolov8_3"><a href="./YOLOv8_src/YOLOv8火災與濃煙辨識.py">YOLOv8火災與濃煙辨識(未撰寫)</a><a class="headerlink" href="#yolov8_3" title="Permanent link">&para;</a></h2>
+<h2 id="yolov8_4"><a href="YOLOv8_src/YOLOv8%E7%90%83%E8%B3%BD%E4%BA%BA%E5%93%A1%E8%BE%A8%E8%AD%98.py">YOLOv8球賽人員辨識</a><a class="headerlink" href="#yolov8_4" title="Permanent link">&para;</a></h2>
+<p>COCO 80 類別中：
+| 類別 | ID |
+| ------------ | -- |
+| person | 0 |
+| sports ball | 32 |
+| baseball bat | 34 |</p>
+<p>因此可以針對棒球相關物件進行偵測。</p>
+<h2 id="yolov8_5"><a href="YOLOv8_src/YOLOv8%E5%8D%B1%E9%9A%AA%E5%8D%80%E5%9F%9F%E8%AD%A6%E7%A4%BA.py">YOLOv8危險區域警示</a><a class="headerlink" href="#yolov8_5" title="Permanent link">&para;</a></h2>
+<h2 id="yolov8-pose">YOLOv8-Pose<a class="headerlink" href="#yolov8-pose" title="Permanent link">&para;</a></h2>
+<p>YOLOv8 主要用來做物件偵測(Object Detection)。例如：人、汽車、貓、狗、手機</p>
+<p>模型會回傳：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>類別(class)
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>信心值(confidence)
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>邊界框(bbox)
+</code></pre></div>
+<p>YOLOv8-Pose則是用來分析跌倒偵測、深蹲計數、揮手辨識、運動分析、姿勢評分。</p>
+<p>可以理解為物件偵測 + 人體姿態估計。</p>
+<ul>
+<li><a href="YOLOv8_src/YOLOv8-Pose%E5%9C%96%E7%89%87%E5%A7%BF%E6%85%8B%E8%BE%A8%E8%AD%98.py">範例：YOLOv8-Pose圖片姿態辨識</a></li>
+<li><a href="YOLOv8_src/YOLOv8-Pose_Webcam%E5%8D%B3%E6%99%82%E5%A7%BF%E6%85%8B%E8%BE%A8%E8%AD%98.py">範例：YOLOv8-Pose Webcam 即時姿態辨識(還未撰寫)</a></li>
+<li><a href="YOLOv8_src/YOLOv8-pose%2BWebcam%2BLINE_Messaging_API%E9%80%9A%E7%9F%A5.py">範例：YOLOv8-pose + Webcam + LINE Messaging API 通知</a></li>
+<li><a href="YOLOv8_src/YOLOv8-Pose%E6%A3%92%E7%90%83%E8%B3%BD%E5%88%86%E6%9E%90.py">範例：YOLOv8-Pose棒球賽分析</a></li>
+<li><a href="YOLOv8_src/YOLOv8-Pose_YouTube%E8%A1%97%E6%99%AF%E7%9B%B4%E6%92%AD.py">範例：YOLOv8-Pose YouTube 街景直播(實測會較卡)</a></li>
+</ul>
+<!-- ## 第三階段：事件偵測 -->
+
+<h2 id="yolov8-yolov8-pose"><a href="YOLOv8_src/YOLOv8%2BYOLOv8-Pose%E5%8D%B1%E9%9A%AA%E5%88%80%E5%85%B7%E5%81%B5%E6%B8%AC%E7%B3%BB%E7%B5%B1.py">YOLOv8 + YOLOv8-Pose 危險刀具偵測系統</a><a class="headerlink" href="#yolov8-yolov8-pose" title="Permanent link">&para;</a></h2>
+<ul>
+<li>LINE 不能直接讀你電腦本機圖片，所以截圖要先放到一個公開網址。教學上最簡單就是用 Flask + ngrok 把截圖資料夾公開出去。</li>
+</ul>
+<!-- ## 第四階段：工安應用 -->
+
+<!-- ## 第五階段：智慧交通 -->
+
+<!-- ## 第六階段：零售商店 -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "toc.follow", "navigation.instant", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

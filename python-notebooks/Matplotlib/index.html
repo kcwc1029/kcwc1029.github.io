@@ -1,0 +1,1020 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、學習筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/web-mkdocs/python-notebooks/Matplotlib/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Matplotlib - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#matplotlib" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Matplotlib
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../teaching/cpp.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../notes/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  學習筆記
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  日記
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teaching/cpp.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    學習筆記
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        為什麼職場會需要圖表？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pyplot 是什麼？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        中文字型問題
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        教材資料集
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        折線圖
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        長條圖
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        直方圖
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        散佈圖
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        圓餅圖
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多子圖儀表板
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        輸出圖片與報表
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        練習題目
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="matplotlib">Matplotlib<a class="headerlink" href="#matplotlib" title="Permanent link">&para;</a></h1>
+<p>Matplotlib 是 Python 裡最常用的「資料視覺化」套件。</p>
+<p>如果 Pandas 像是可以用程式控制的 Excel，Matplotlib 就像是可以用程式控制的圖表工具。</p>
+<ul>
+<li>Excel：選資料、插入圖表、調整標題、調整顏色。</li>
+<li>Matplotlib：用 Python 指令把資料畫成折線圖、長條圖、直方圖、散佈圖、圓餅圖，並且可以自動輸出圖片。</li>
+</ul>
+<blockquote>
+<p>Matplotlib 的核心價值不是「畫漂亮的圖」而已，而是把一堆數字變成別人看得懂的訊息。</p>
+</blockquote>
+<h2 id="_1">為什麼職場會需要圖表？<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>職場裡很多事情不是只有「知道答案」，還要「讓別人相信你看到的重點」。</p>
+<p>假設你在公司做資料助理、行政助理、電商助理、行銷助理、門市管理、客服主管，常見任務可能是：</p>
+<ul>
+<li>每週整理銷售量。</li>
+<li>每月整理客訴原因。</li>
+<li>比較不同商品銷售表現。</li>
+<li>分析履歷投遞與面試結果。</li>
+<li>製作主管要看的簡報圖片。</li>
+<li>自動輸出固定格式的報表。</li>
+</ul>
+<p>只丟一張 CSV 給主管，主管通常不想看。</p>
+<p>如果你可以把資料整理成圖：</p>
+<ul>
+<li>哪裡變好，一眼看出來。</li>
+<li>哪裡變差，一眼看出來。</li>
+<li>哪個項目最重要，一眼看出來。</li>
+</ul>
+<p>這就是資料視覺化的價值。</p>
+<h2 id="pyplot">pyplot 是什麼？<a class="headerlink" href="#pyplot" title="Permanent link">&para;</a></h2>
+<p>Matplotlib 很常這樣匯入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</code></pre></div>
+<p>可以把 <code>pyplot</code> 想成「畫圖用的遙控器」。</p>
+<p>你按不同按鈕，它就做不同事情：</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>白話理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>plt.figure()</code></td>
+<td>準備一張新的畫布</td>
+</tr>
+<tr>
+<td><code>plt.plot()</code></td>
+<td>畫折線圖</td>
+</tr>
+<tr>
+<td><code>plt.bar()</code></td>
+<td>畫長條圖</td>
+</tr>
+<tr>
+<td><code>plt.hist()</code></td>
+<td>畫直方圖</td>
+</tr>
+<tr>
+<td><code>plt.scatter()</code></td>
+<td>畫散佈圖</td>
+</tr>
+<tr>
+<td><code>plt.pie()</code></td>
+<td>畫圓餅圖</td>
+</tr>
+<tr>
+<td><code>plt.title()</code></td>
+<td>加標題</td>
+</tr>
+<tr>
+<td><code>plt.xlabel()</code></td>
+<td>設定 x 軸名稱</td>
+</tr>
+<tr>
+<td><code>plt.ylabel()</code></td>
+<td>設定 y 軸名稱</td>
+</tr>
+<tr>
+<td><code>plt.grid()</code></td>
+<td>加格線</td>
+</tr>
+<tr>
+<td><code>plt.show()</code></td>
+<td>把圖顯示出來</td>
+</tr>
+<tr>
+<td><code>plt.savefig()</code></td>
+<td>把圖存成圖片</td>
+</tr>
+</tbody>
+</table>
+<p>最基本流程通常是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">60</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">90</span><span class="p">])</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;成績變化&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;週次&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;分數&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<p>可以用高中程度這樣解釋：</p>
+<ul>
+<li><code>x</code> 軸像地圖的左右方向。</li>
+<li><code>y</code> 軸像地圖的上下方向。</li>
+<li>一個點就是一組座標，例如 <code>(第 1 週, 60 分)</code>。</li>
+<li>折線圖就是把很多點依照順序連起來。</li>
+<li>連起來之後，人類眼睛就很容易看出「上升、下降、持平」。</li>
+</ul>
+<h2 id="_2">中文字型問題<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Matplotlib 預設環境不一定知道怎麼顯示中文，所以有時候圖表會出現方框。</p>
+<p>電腦不是看得懂「中文」才顯示中文，而是要找到支援中文字的字型檔。Matplotlib 如果找不到中文字型，就像你拿到一本沒有中文字模的印章簿，蓋出來就會變成方框。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;font.family&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Microsoft JhengHei&quot;</span> <span class="c1"># 設定中文字型</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;axes.unicode_minus&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># 解決負號無法正常顯示</span>
+</code></pre></div>
+<h2 id="_3">教材資料集<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="Matplotlib_datasets/%E8%81%B7%E8%A8%93%E7%94%9F%E6%B4%BB%E8%A7%80%E5%AF%9F.csv">職訓生活觀察.csv</a></li>
+</ul>
+<p>資料共有 70 筆，內容是職訓班常見情境：</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>日期</td>
+<td>紀錄日期</td>
+</tr>
+<tr>
+<td>週次</td>
+<td>第幾週</td>
+</tr>
+<tr>
+<td>學員姓名</td>
+<td>學員代稱</td>
+</tr>
+<tr>
+<td>班別</td>
+<td>參訓班別</td>
+</tr>
+<tr>
+<td>學習時數</td>
+<td>當天學習時數</td>
+</tr>
+<tr>
+<td>練習題數</td>
+<td>當天練習題數</td>
+</tr>
+<tr>
+<td>作業分數</td>
+<td>作業成績</td>
+</tr>
+<tr>
+<td>投遞履歷數</td>
+<td>當天投遞履歷數</td>
+</tr>
+<tr>
+<td>面試邀約數</td>
+<td>當天收到面試邀約數</td>
+</tr>
+<tr>
+<td>求職目標</td>
+<td>想找的工作</td>
+</tr>
+<tr>
+<td>期待薪資</td>
+<td>期待月薪</td>
+</tr>
+<tr>
+<td>通勤分鐘</td>
+<td>預估通勤時間</td>
+</tr>
+<tr>
+<td>飲料類別</td>
+<td>茶類、咖啡、奶茶、果茶</td>
+</tr>
+<tr>
+<td>飲料名稱</td>
+<td>常點飲料</td>
+</tr>
+<tr>
+<td>飲料杯數</td>
+<td>當天購買杯數</td>
+</tr>
+<tr>
+<td>城市</td>
+<td>居住或活動城市</td>
+</tr>
+<tr>
+<td>心情狀態</td>
+<td>當天學習心情</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">折線圖<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>折線圖適合看「時間變化」。例如：</p>
+<ul>
+<li>每週學習時數</li>
+<li>每月收入</li>
+<li>每天飲料銷量</li>
+<li>每週體重</li>
+<li>
+<p>每月網站流量</p>
+</li>
+<li>
+<p><a href="Matplotlib_src/%E6%8A%98%E7%B7%9A%E5%9C%96_%E9%80%B1%E6%AC%A1_%E5%AD%B8%E7%BF%92%E6%99%82%E6%95%B8.py">範例：折線圖<em>週次</em>學習時數.py</a></p>
+</li>
+<li><a href="Matplotlib_src/%E6%8A%98%E7%B7%9A%E5%9C%96_%E7%8F%AD%E4%B8%8A%E6%AF%8F%E6%97%A5%E9%A3%B2%E6%96%99%E6%9D%AF%E6%95%B8%E8%AE%8A%E5%8C%96.py">範例：折線圖_班上每日飲料杯數變化.py</a>(真實工作通常不是自己手打 list，而是讀 CSV)。</li>
+</ul>
+<h2 id="_5">長條圖<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>長條圖適合比較「不同類別誰比較多」。例如：</p>
+<ul>
+<li>哪位學員投最多履歷？</li>
+<li>哪個商品賣最多？</li>
+<li>哪個縣市訂單最多？</li>
+<li>哪個課程報名最多人？</li>
+</ul>
+<p>長條圖的重點是「比較高低」。柱子越高，數字越大。人類眼睛很擅長比較長度，所以長條圖很適合排名。</p>
+<p><code>sort_values(ascending=False)</code> 的意思是由大到小排序，讓最多的排前面。</p>
+<ul>
+<li><a href="Matplotlib_src/%E9%95%B7%E6%A2%9D%E5%9C%96_%E5%90%84%E5%AD%B8%E5%93%A1%E7%B4%AF%E7%A9%8D%E6%8A%95%E9%81%9E%E5%B1%A5%E6%AD%B7%E6%95%B8.py">範例：長條圖_各學員累積投遞履歷數.py</a></li>
+</ul>
+<h2 id="_6">直方圖<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>直方圖和長條圖長得像，但用途不同。</p>
+<table>
+<thead>
+<tr>
+<th>圖表</th>
+<th>適合問題</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>長條圖</td>
+<td>比較不同類別，例如小安、小婷、阿哲誰投最多</td>
+</tr>
+<tr>
+<td>直方圖</td>
+<td>看一批數字集中在哪裡，例如薪資大多落在哪個區間</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a href="Matplotlib_src/%E7%9B%B4%E6%96%B9%E5%9C%96_%E5%AD%B8%E5%93%A1%E6%9C%9F%E5%BE%85%E8%96%AA%E8%B3%87%E5%88%86%E5%B8%83.py">範例：直方圖_學員期待薪資分布.py</a></li>
+</ul>
+<h2 id="_7">散佈圖<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>散佈圖適合看「兩個數字之間有沒有關係」。例如：</p>
+<ul>
+<li>學習時數越多，作業分數會越高嗎？</li>
+<li>通勤越久，期待薪資會越高嗎？</li>
+<li>投遞履歷越多，面試邀約會越多嗎？</li>
+<li>
+<p>廣告預算越高，訂單數會越高嗎？</p>
+</li>
+<li>
+<p><a href="Matplotlib_src/%E6%95%A3%E4%BD%88%E5%9C%96_%E9%80%9A%E5%8B%A4%E6%99%82%E9%96%93%E8%88%87%E6%9C%9F%E5%BE%85%E8%96%AA%E8%B3%87%E9%97%9C%E4%BF%82.py">範例：散佈圖_通勤時間與期待薪資關係.py</a></p>
+</li>
+</ul>
+<h2 id="_8">圓餅圖<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>圓餅圖適合看「比例」。例如：</p>
+<ul>
+<li>飲料類別占比</li>
+<li>客訴原因占比</li>
+<li>商品分類銷售占比</li>
+<li>
+<p>學員求職方向占比</p>
+</li>
+<li>
+<p><a href="Matplotlib_src/%E5%9C%93%E9%A4%85%E5%9C%96_%E9%A3%B2%E6%96%99%E9%A1%9E%E5%88%A5.py">範例：圓餅圖_飲料類別.py</a></p>
+</li>
+</ul>
+<h2 id="_9">多子圖儀表板<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>有時候一張圖不夠，因為我們想同時看多個角度。例如職訓班老師可能想看：</p>
+<ul>
+<li>每週平均學習時數</li>
+<li>每週平均作業分數</li>
+<li>每週總投遞履歷數</li>
+<li>每週總面試邀約數</li>
+</ul>
+<p>核心寫法：</p>
+<p><code>plt.subplots(2, 2)</code> 就像把一張 A4 紙切成 2 列 2 欄，總共有 4 個小區塊，每個區塊都可以放一張圖。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>┌─────────────┬─────────────┐
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>│ axes[0, 0]  │ axes[0, 1]  │
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├─────────────┼─────────────┤
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│ axes[1, 0]  │ axes[1, 1]  │
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>└─────────────┴─────────────┘
+</code></pre></div>
+<ul>
+<li><a href="Matplotlib_src/%E5%A4%9A%E5%AD%90%E5%9C%96%E5%84%80%E8%A1%A8%E6%9D%BF.py">範例：多子圖儀表板.py</a></li>
+</ul>
+<h2 id="_10">輸出圖片與報表<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>上課畫圖通常用 <code>plt.show()</code>，工作上更常需要把圖存下來。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 核心寫法：</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;各學員平均作業分數.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># `summary.to_csv()` 可以把整理後的表格輸出。</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># `plt.savefig()` 可以把圖表輸出。</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># `plt.show()` 是把圖拿到螢幕上看。`plt.savefig()` 是把圖存成圖片檔，之後可以放進 Word、PowerPoint、LINE 群組、報告或主管簡報。</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1"># 這就是自動化報表的雛形：讀資料、整理資料、畫圖、存檔。</span>
+</code></pre></div>
+<ul>
+<li><a href="Matplotlib_src/%E8%BC%B8%E5%87%BA%E5%9C%96%E7%89%87%E8%88%87%E5%A0%B1%E8%A1%A8.py">範例：輸出圖片與報表.py</a></li>
+</ul>
+<h2 id="_11"><a href="Matplotlib_exercise/%E7%B7%B4%E7%BF%92%E9%A1%8C%E7%9B%AE/">練習題目</a><a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "toc.follow", "navigation.instant", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

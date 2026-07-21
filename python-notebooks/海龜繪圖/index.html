@@ -1,0 +1,1303 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、學習筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/web-mkdocs/python-notebooks/%E6%B5%B7%E9%BE%9C%E7%B9%AA%E5%9C%96/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Python程式設計：海龜繪圖 - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python程式設計：海龜繪圖
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../teaching/cpp.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../notes/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  學習筆記
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  日記
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teaching/cpp.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    學習筆記
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        建立畫布與海龜
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="建立畫布與海龜">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        範例：畫正方形
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="python">Python程式設計：海龜繪圖<a class="headerlink" href="#python" title="Permanent link">&para;</a></h1>
+<p>海龜繪圖模組 (turtle) 是 Python 內建的，不需要額外安裝，可以直接使用 import turtle 來匯入。
+:::danger
+伽碩的學生，若電腦版IDE無法執行的話，就用線上網頁的方式完成
+https://www.w3cschool.cn/tools/index?name=pythonturtle
+:::
+<img alt="image" src="https://hackmd.io/_uploads/SkLTcxTple.png" /></p>
+<p>海龜繪圖的核心是</p>
+<ul>
+<li>位置與坐標：以 (0, 0) 為中心，向右為 x 軸正向，向上為 y 軸正向 。</li>
+<li>畫筆屬性：可以設定畫筆的顏色、粗細、填充顏色等 。</li>
+<li>方向與狀態：海龜有方向性，可以前進、後退、轉彎，畫筆可以放下或抬起</li>
+</ul>
+<h2 id="_1">建立畫布與海龜<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>t = turtle.Pen() 可以建立一個海龜，並自動生成一個畫布。</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>left(angle)</td>
+<td>向左轉動指定角度</td>
+</tr>
+<tr>
+<td>right(angle)</td>
+<td>向右轉動指定角度</td>
+</tr>
+<tr>
+<td>forward(number)</td>
+<td>向前移動指定距離</td>
+</tr>
+<tr>
+<td>backward(number)</td>
+<td>向後移動指定距離</td>
+</tr>
+<tr>
+<td>penup()</td>
+<td>抬起畫筆，移動時不繪圖</td>
+</tr>
+<tr>
+<td>pendown()</td>
+<td>放下畫筆，開始繪圖</td>
+</tr>
+<tr>
+<td>goto(x, y)</td>
+<td>移動到指定座標 (x, y)</td>
+</tr>
+<tr>
+<td>speed(n)</td>
+<td>設定海龜速度，0 為最快</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">範例：畫正方形<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>```python=
+import turtle</p>
+<h1 id="import-time">import time<a class="headerlink" href="#import-time" title="Permanent link">&para;</a></h1>
+<p>t = turtle.Turtle()
+t.forward(100)</p>
+<h1 id="timesleep2">time.sleep(2)<a class="headerlink" href="#timesleep2" title="Permanent link">&para;</a></h1>
+<p>t.left(90)
+t.forward(100)</p>
+<h1 id="timesleep2_1">time.sleep(2)<a class="headerlink" href="#timesleep2_1" title="Permanent link">&para;</a></h1>
+<p>t.left(90)
+t.forward(100)</p>
+<h1 id="timesleep2_2">time.sleep(2)<a class="headerlink" href="#timesleep2_2" title="Permanent link">&para;</a></h1>
+<p>t.left(90)
+t.forward(100)
+t.left(90)
+turtle.done() # 結束後停住
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>![image](https://hackmd.io/_uploads/By3H2e6pgl.png)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>![image](https://hackmd.io/_uploads/S1JO2gapee.png)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>### 補充：內角和與外角和
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>![image](https://hackmd.io/_uploads/r1VUy-apgx.png)
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>### 範例：畫五邊形
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>```python=
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>import turtle
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>t = turtle.Turtle()
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>sides = 5
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>for x in range(sides):
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    t.forward(100)
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    t.right(360/sides)
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>turtle.done()  # 保持視窗開啟
+</code></pre></div></p>
+<h2 id="_3">練習<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="problom">Problom. 請用海龜畫一個三角形<a class="headerlink" href="#problom" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Tips.
+三角形有 3 個邊，所以我們的迴圈要讓海龜重複做 3 次動作。
+畫三角形時，海龜每次往前走完，請讓牠「向左轉 120 度」（使用 t.left(120)）。</p>
+</blockquote>
+<!--
+```python=
+import turtle
+t = turtle.Pen()
+
+# 建立一個重複 3 次的迴圈
+for x in range(3):
+    t.forward(100)  # 海龜往前走 100 步
+    t.left(120)     # 海龜向左轉 120 度
+
+turtle.done()       # 畫完後讓視窗停住，不要馬上關閉
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>--&gt;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>### Problom. 請用海龜畫一個星星
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>&gt; Tips.
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>&gt; 經典的星星有 5 個尖角，所以我們要讓迴圈重複執行 5 次
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>&gt; 畫星星的專屬祕方是「向右轉 144 度」（使用 t.right(144)），因為海龜需要轉比較大的彎才能畫出交叉的星星線條。
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>&lt;!--
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>```python=
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>import turtle
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>t = turtle.Pen()
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a># 建立一個重複 5 次的迴圈
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>for i in range(5):
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    t.forward(100)  # 海龜往前走 100 步
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    t.right(144)    # 海龜專屬的星星魔法角度：向右轉 144 度
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>turtle.done()       # 畫完後讓視窗停住，不要馬上關閉
+</code></pre></div>
+-->
+
+<h3 id="problom_1">Problom. 繪製一個長方形<a class="headerlink" href="#problom_1" title="Permanent link">&para;</a></h3>
+<p>請建立一個海龜畫筆 t，繪製一個長方形。設定寬度變數 width 為 150，高度變數 height 為 80。海龜需要前進 width 步，轉彎 90 度，再前進 height 步，重複兩次完成。</p>
+<!--
+```python=
+import turtle
+t = turtle.Pen()
+width = 150
+height = 80
+for i in range(2):
+    t.forward(width)
+    t.left(90)
+    t.forward(height)
+    t.left(90)
+turtle.done()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>--&gt;
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>### Problom. 繪製正六邊形
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>請使用迴圈繪製一個正六邊形。定義邊長變數 side 為 70。利用正多邊形外角公式（360/邊數），計算出海龜每次轉動的角度為 60 度。
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>&lt;!--
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>```python=
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>import turtle
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>t = turtle.Pen()
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>side = 70
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>for i in range(6):
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    t.forward(side)
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    t.left(60)
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>turtle.done()
+</code></pre></div>
+-->
+
+<h3 id="problom_2">Problom. 繪製虛線段<a class="headerlink" href="#problom_2" title="Permanent link">&para;</a></h3>
+<p>請繪製一段由 5 個小線段組成的虛線。設定變數 step_length 為 20。海龜先放下畫筆前進 step_length，再抬起畫筆（penup）前進 10 步，重複 5 次。</p>
+<!--
+```python=
+import turtle
+t = turtle.Pen()
+step_length = 20
+for i in range(5):
+    t.pendown()
+    t.forward(step_length)
+    t.penup()
+    t.forward(10)
+turtle.done()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>--&gt;
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>## 控制畫筆顏色與線條粗細
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>| 指令                        | 解釋                                |
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>| --------------------------- | ----------------------------------- |
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>| pencolor(color_string)      | 選擇畫筆顏色，例如 &quot;red&quot; 或 &quot;green&quot; |
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>| pencolor(r, g, b)           | 使用 RGB 值設定顏色                 |
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>| pensize(size) / width(size) | 設定畫筆粗細                        |
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>```python=
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>import turtle
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>t = turtle.Pen()
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>colors = [&#39;red&#39;, &#39;orange&#39;, &#39;yellow&#39;, &#39;green&#39;, &#39;blue&#39;, &#39;cyan&#39;, &#39;purple&#39;, &#39;violet&#39;]
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>t.width(1)# 初始畫筆寬度設為 1
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>t.speed(10)    # 設定畫筆速度為 10（接近最快）
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>for x in range(41):
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    t.pencolor(colors[x % 8])     # 循環選擇顏色（x % 8 讓顏色重複使用）
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    t.circle(x * 3)               # 畫一個半徑為 x*3 的圓
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    t.width(x * 1)             # 隨著迴圈增加畫筆寬度，讓線條漸粗
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>    t.left(90)                    # 每次畫完圓向左轉 90 度，產生旋轉效果
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>turtle.done()  # 保持視窗開啟直到手動關閉
+</code></pre></div>
+
+![image](https://hackmd.io/_uploads/rJj-ZZppee.png)
+
+### 範例：畫一個由藍色漸變到紅色的星型曲線
+
+![image](https://hackmd.io/_uploads/HyAJjZTpgg.png =80%x)
+
+要將顏色從藍色漸變成紅色，我們需要調整 t.color() 函式中的紅、綠、藍 (RGB) 分量
+
+目前的顏色設定是 t.color(0.5, 1, colorValue)，其中：
+
+- 紅色 (R) 固定為 0.5。
+- 綠色 (G) 固定為 1 (最大值)。
+- 藍色 (B) 由 colorValue 控制，從 1.0 遞減。
+
+漸變控制：
+
+- 為了從藍色到紅色，藍色分量需要從高值（例如 1.0）遞減到低值（例如 0.0）。
+- 紅色分量需要從低值（例如 0.0）遞增到高值（例如 1.0）。
+- 綠色分量可以保持固定在 0，或者給予少量值以調整色調。
+
+```python=
+import turtle
+
+t = turtle.Pen()
+t.pensize(5) # 設定畫筆的粗細為 5
+
+# 設定迴圈次數與步長。
+NUM_STEPS = 40  # 迴圈從 0 開始，執行 40 次。
+COLOR_STEP = 1.0 / NUM_STEPS # 顏色步長，確保從 1.0 到 0.0 或 0.0 到 1.0 剛好在 40 步內完成。
+
+for i in range(NUM_STEPS):
+    blue_value = 1.0 - i * COLOR_STEP # 1. 藍色分量 (B): 從 1.0 遞減到 0.0
+    red_value = i * COLOR_STEP # 2. 紅色分量 (R): 從 0.0 遞增到 1.0
+    # 3. 綠色分量 (G) 固定為 0。
+
+    t.color(red_value, 0, blue_value) # 設定畫筆顏色 (R, G, B)
+    t.forward(100)
+    t.left(100)
+
+turtle.done()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>### 範例：畫一個八邊形螺旋結構
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>![image](https://hackmd.io/_uploads/HyzZ2ba6ee.png)
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>&lt;!--
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>```python=
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>import turtle
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>t = turtle.Pen()
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>colorsList = [&#39;red&#39;, &#39;orange&#39;, &#39;yellow&#39;, &#39;green&#39;, &#39;blue&#39;, &#39;cyan&#39;, &#39;purple&#39;, &#39;violet&#39;]
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>tWidth = 1      # 最初畫筆寬度
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>for x in range(1, 41):
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    t.color(colorsList[x % 8])  # 選擇畫筆顏色
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    t.forward(2 + x * 5)        # 每次移動距離
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    t.right(45)                 # 每次旋轉角度
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    tWidth += x * 0.05          # 每次畫筆寬度遞增
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    t.width(tWidth)
+</code></pre></div>
+-->
+
+<h2 id="_4">(補充)填滿顏色<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>begin_fill()</td>
+<td>開始記錄繪製路徑以準備填色</td>
+</tr>
+<tr>
+<td>end_fill()</td>
+<td>填滿路徑內的區域</td>
+</tr>
+<tr>
+<td>fillcolor(color_string)</td>
+<td>設定填滿的顏色，例如 "red" 或 "green"</td>
+</tr>
+<tr>
+<td>fillcolor(r, g, b)</td>
+<td>使用 RGB 值設定填滿顏色</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">範例：繪製一個填滿顏色的五角形星星<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="https://hackmd.io/_uploads/H1MyR-aple.png" /></p>
+<p>```python=
+import turtle
+t = turtle.Pen()
+t.color('blue', 'yellow') # 設定畫筆和填色顏色
+t.begin_fill() # 開始記錄繪製路徑以準備填色
+for i in range(5):
+    t.forward(100)
+    t.right(144) # 720/5 (720是因為海龜在畫五角星時，需要繞著圖形的中心旋轉兩圈才能完成圖形。)
+t.end_fill() # 填滿路徑內的區域
+turtle.done()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>## 繪製圓弧形
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>| 指令                        | 解釋                                   |
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>| --------------------------- | -------------------------------------- |
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>| circle(radius, extend=None) | radius 為半徑，extend 為繪製圓弧的角度 |
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>### 範例：畫四個圓
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>![image](https://hackmd.io/_uploads/SyHGxf66ll.png)
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>```python=
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>import turtle
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>t = turtle.Pen()
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>t.color(&#39;blue&#39;)
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>t.circle(50)
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>t.circle(-50)
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>t.forward(100)
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>t.circle(50)
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>t.circle(-50)
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>turtle.done()
+</code></pre></div></p>
+<h3 id="problom_3">Problom. 繪製同心圓<a class="headerlink" href="#problom_3" title="Permanent link">&para;</a></h3>
+<p>請繪製 3 個同心圓。設定一個列表 radii 包含 [30, 60, 90]。海龜每次畫完一個圓後，需要移動位置以確保下一個圓的中心點一致，或者單純在原點畫出不同大小的圓。</p>
+<!--
+```python=
+import turtle
+t = turtle.Pen()
+radii = [30, 60, 90]
+for r in radii:
+    t.circle(r)
+    # 調整起始點讓圓心對齊 (可選)
+    t.penup()
+    t.sety(t.ycor() - 30)
+    t.pendown()
+turtle.done()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>--&gt;
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>### Problom. 繪製正方形螺旋
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>請繪製一個逐漸層展開的螺旋。使用迴圈 range(1, 31)，每次移動的距離為 i \* 5，轉彎角度固定為 90 度。這會讓正方形看起來像螺旋一樣往外擴散。
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>&lt;!--
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>```python=
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>import turtle
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>t = turtle.Pen()
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>for i in range(1, 31):
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    t.forward(i * 5)
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    t.left(90)
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>turtle.done()
+</code></pre></div>
+-->
+
+<h3 id="problom_4">Problom. 繪製十字架形狀<a class="headerlink" href="#problom_4" title="Permanent link">&para;</a></h3>
+<p>請利用海龜畫出一個「+」字形。設定每一條分支的長度 length 為 50。海龜從中心出發，前進後再後退回原點，轉 90 度後重複，共執行 4 次。</p>
+<!--
+```python=
+import turtle
+t = turtle.Pen()
+length = 50
+for i in range(4):
+    t.forward(length)
+    t.backward(length)
+    t.left(90)
+turtle.done()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>--&gt;
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>### Problom. 繪製簡易小房子
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>請結合兩個圖形繪製一間房子。下方為一個邊長 100 的正方形（牆壁），上方為一個邊長 100 的三角形（屋頂）。提示：畫完正方形後，海龜需要移動到正方形的上方邊緣再開始畫三角形。
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>&lt;!--
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>```python=
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>import turtle
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>t = turtle.Pen()
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a># 畫牆壁 (正方形)
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>for i in range(4):
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    t.forward(100)
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>    t.left(90)
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a># 移動到屋頂起始位置
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>t.left(90)
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>t.forward(100)
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>t.right(90)
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a># 畫屋頂 (三角形)
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>for i in range(3):
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>    t.forward(100)
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>    t.left(120)
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>turtle.done()
+</code></pre></div>
+-->
+
+<h2 id="_6">(補充)螢幕與海龜控制<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>screen.title(string)</td>
+<td>設定視窗標題</td>
+</tr>
+<tr>
+<td>screen.bgcolor(color_string)</td>
+<td>設定背景顏色</td>
+</tr>
+<tr>
+<td>screen.setup(width, height)</td>
+<td>設定視窗寬度和高度</td>
+</tr>
+<tr>
+<td>t.hideturtle()</td>
+<td>隱藏海龜</td>
+</tr>
+<tr>
+<td>t.showturtle()</td>
+<td>顯示海龜</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">範例：繪製一個藍色天空下的五角形星星<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="https://hackmd.io/_uploads/H18IGf66ge.png" /></p>
+<p>```python=
+import turtle
+t = turtle.Pen()
+turtle.Screen().bgcolor('blue') # 設定背景顏色為藍色
+t.color('yellow')
+t.begin_fill()
+for i in range(5):
+    t.forward(100)
+    t.right(144)
+t.end_fill()
+turtle.done()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>## 停止追蹤
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>```python=
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>turtle.tracer(0,0) # 可以停止動畫，一次顯現出來
+</code></pre></div></p>
+<h3 id="_8">範例：多邊形螺旋<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>利用turtle.tracer一次畫好</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/BJDnzGp6xg.png" /></p>
+<p>```python=
+import turtle</p>
+<p>turtle.tracer(0,0)</p>
+<p>t = turtle.Pen()</p>
+<p>colorsList = ['red', 'green', 'blue']
+for line in range(400):
+    t.color(colorsList[line % 3])
+    t.forward(line)
+    # 三角形是120度，這邊故意少一度，讓他可以重疊去畫出來
+    t.right(119)</p>
+<p>turtle.done()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>## 實作
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>- 星星：https://drive.google.com/file/d/1rGhv3OCfZ8we6uYBCLuIJrN04Aml7-9V/view?usp=sharing
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>- 蛇蛇追月亮：https://drive.google.com/file/d/19_MTdfuoRXafnnCSCtGWbDryhmTRMnux/view?usp=sharing
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>- 環狀樹枝：https://drive.google.com/file/d/1ido1cMyqHEfTQ27pWkOwsQR9L1Yv2G9T/view?usp=sharing
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>- 謝爾賓斯基三角形：https://drive.google.com/file/d/1Iq7vZThvVnanHdjmm-TjdevN84dh_Fxl/view?usp=sharing
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>- 科赫雪花：https://drive.google.com/file/d/1wSrRpcTM-RUusAQozJ3OUlVNR0dyJ3KQ/view?usp=sharing
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>- 小樹吃點點：https://drive.google.com/file/d/1_F1I3CHEuXZXvcP-I0Zr8yHiv5FatM0o/view?usp=sharing
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>## (補充)Reeborg&#39;s world：練習控制機器人走動
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>- https://reurl.cc/DOkEOO
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>  ![image](https://hackmd.io/_uploads/rkQt3HbS-l.png =60%x)
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>### Home 1/Home 2
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>```python=
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>move()
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>move()
+</code></pre></div></p>
+<h3 id="home-3">Home 3<a class="headerlink" href="#home-3" title="Permanent link">&para;</a></h3>
+<p>```python=
+move()
+move()</p>
+<p>turn_left()
+move()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>### Home 4
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>```python=
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>def turn_right():
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    turn_left()
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    turn_left()
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    turn_left()
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>for _ in range(4): # 我們將重複以上所有步驟共4次。
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    move()
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    move()
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    move()
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>    turn_left()
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>    move()
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>    move()
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>    move()
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>    if at_goal(): done()
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>    else:
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>        turn_right()
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>        move()
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>        turn_right()
+</code></pre></div></p>
+<h3 id="around-1around-1-variable">Around 1/Around 1 - Variable<a class="headerlink" href="#around-1around-1-variable" title="Permanent link">&para;</a></h3>
+<p>```python=</p>
+<h1 id="_9">這會將一個標記放置在機器人目前所在的位置，該標記稍後會使用。<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
+<p>put()</p>
+<h1 id="_10">這樣就迫使機器人向前移動一格，以免干擾下面的程式碼。<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h1>
+<p>move()
+while True: # 我們在這裡開始一個無限迴圈。
+    if object_here(): done()
+    elif front_is_clear(): move()
+    else: turn_left()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>### Around 1 - Apple
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>```python=
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>move()
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>while True: # 我們在這裡開始一個無限迴圈。
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    if object_here(): take()
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    elif at_goal(): done()
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    elif front_is_clear(): move()
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    else: turn_left()
+</code></pre></div></p>
+<h3 id="around-2">Around 2<a class="headerlink" href="#around-2" title="Permanent link">&para;</a></h3>
+<p>```python=
+put()
+move()
+while True:
+    if object_here(): done()
+    elif right_is_clear():
+        turn_left()
+        turn_left()
+        turn_left()
+        move()
+    elif wall_in_front(): turn_left()
+    else: move()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>### Around 3
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>```python=
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>put()
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>turn_left() # 這裡我們強制機器人先向左轉，然後再向前移動。
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>move()
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>while True:
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    if object_here(): done()
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    elif right_is_clear():
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>        turn_left()
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>        turn_left()
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>        turn_left()
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>        move()
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>    elif wall_in_front(): turn_left()
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>    else: move()
+</code></pre></div></p>
+<h3 id="around-4">Around 4<a class="headerlink" href="#around-4" title="Permanent link">&para;</a></h3>
+<p>```python=
+put()
+turn_left() # 我們在這裡再加一個左轉。
+turn_left()
+move()
+while True:
+    if object_here(): done()
+    elif right_is_clear():
+        turn_left()
+        turn_left()
+        turn_left()
+        move()
+    elif wall_in_front(): turn_left()
+    else: move()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>### Center 1
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>```python=
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>step = 0
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>while front_is_clear():
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    step+=1
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    move()
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>turn_left()
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>turn_left()
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>for i in range(step//2):
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>    move()
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>put()
+</code></pre></div></p>
+<h3 id="center-2">Center 2<a class="headerlink" href="#center-2" title="Permanent link">&para;</a></h3>
+<p>```python=
+step = 0</p>
+<p>while front_is_clear():
+    step+=1
+    move()
+turn_left()
+turn_left()
+for i in range(step//2):
+    move()</p>
+<p>turn_left()</p>
+<p>while front_is_clear():
+    step+=1
+    move()
+turn_left()
+turn_left()
+for i in range(step//2):
+    move()</p>
+<p>put()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>### Harvest 1/ Harvest 2
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>```python=
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a># 定義右轉，讓程式碼更好讀
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>def turn_right():
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    for _ in range(3):
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>        turn_left()
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a># 定義「撿起這格所有東西並往前走」
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>def pick_and_move():
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>    while object_here():
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>        take()
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>    if front_is_clear():
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>        move()
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a># 定義「收割完一整行」
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>def harvest_row():
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>    while front_is_clear():
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>        pick_and_move()
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>    # 處理最後一格（因為 front_is_clear 停止時，機器人還站在最後一格）
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>    while object_here():
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>        take()
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a># 主程式邏輯
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>for _ in range(4): # 根據地圖範圍重複次數
+<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>    harvest_row()
+<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>    turn_left()
+<a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>    move()
+<a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a>    turn_left()
+<a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a>
+<a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a>    harvest_row()
+<a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a>    turn_right()
+<a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a>    if front_is_clear(): # 避免最後一行撞牆
+<a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a>        move()
+<a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a>        turn_right()
+</code></pre></div></p>
+<h3 id="harvest-3">Harvest 3<a class="headerlink" href="#harvest-3" title="Permanent link">&para;</a></h3>
+<p>```python=</p>
+<h1 id="_11">定義右轉，讓路徑轉向更直覺<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h1>
+<p>def turn_right():
+    for _ in range(3):
+        turn_left()</p>
+<h1 id="_12">定義「修正單一格子」：清空並補上一顆<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h1>
+<p>def fix_spot():
+    while object_here():
+        take()
+    put()</p>
+<h1 id="6-5">定義「處理一整行」：每行 6 格，移動 5 次<a class="headerlink" href="#6-5" title="Permanent link">&para;</a></h1>
+<p>def fix_one_row():
+    for _ in range(5):
+        fix_spot()
+        move()
+    fix_spot()</p>
+<h1 id="1-3-3">1. 前往花園起點 (3, 3)<a class="headerlink" href="#1-3-3" title="Permanent link">&para;</a></h1>
+<h1 id="1-1">機器人從 (1, 1) 出發，面向東方<a class="headerlink" href="#1-1" title="Permanent link">&para;</a></h1>
+<p>for _ in range(2):
+    move()
+turn_left()
+for _ in range(2):
+    move()
+turn_right()</p>
+<h1 id="2-6">2. 以「之字形」方式處理 6 行花園<a class="headerlink" href="#2-6" title="Permanent link">&para;</a></h1>
+<h1 id="6">總共 6 行，我們每兩行為一組處理（一去一回）<a class="headerlink" href="#6" title="Permanent link">&para;</a></h1>
+<p>for i in range(3):
+    # 向東處理一行
+    fix_one_row()
+    turn_left()
+    move()
+    turn_left()</p>
+<div class="highlight"><pre><span></span><code># 向西處理下一行
+fix_one_row()
+
+# 判斷是否還有下一組要處理，避免在最後一行撞牆
+if i &lt; 2:
+    turn_right()
+    move()
+    turn_right()
+</code></pre></div>
+<p>```
+</p>
+<h3 id="hurdle-1hurdle-2hurdle-3hurdle-4">Hurdle 1/Hurdle 2/Hurdle 3/Hurdle 4<a class="headerlink" href="#hurdle-1hurdle-2hurdle-3hurdle-4" title="Permanent link">&para;</a></h3>
+<p><code>python=
+while not at_goal(): # while 迴圈將無限期地持續下去，直到達到目標為止。
+
+    if right_is_clear(): # 這裡偵測是否需要右轉，如果需要，則右轉。
+        for _ in range(3):
+            turn_left()
+        move()
+
+    elif wall_in_front(): # 這裡檢測是否需要左轉，如果需要，則左轉。
+        turn_left()
+
+    else: # 如果不需要轉彎，這裡會讓機器人往前走。
+        move()</code></p>
+<p style="text-align: center;">Copyright © 2026 Alen</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "toc.follow", "navigation.instant", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

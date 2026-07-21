@@ -1,0 +1,10 @@
+[project]
+name = "pandas-course"
+version = "0.1.0"
+description = "職業訓練 Pandas 教材範例"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib>=3.10.9",
+    "pandas>=2.2.0",
+]
+

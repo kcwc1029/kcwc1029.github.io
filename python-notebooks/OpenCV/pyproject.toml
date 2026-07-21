@@ -1,0 +1,16 @@
+[project]
+name = "opencv"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "customtkinter>=5.2.2",
+    "google-genai>=2.8.0",
+    "gradio>=6.18.0",
+    "groq>=1.4.0",
+    "numpy>=2.2.6",
+    "opencv-python>=4.13.0.92",
+    "pillow>=12.2.0",
+    "python-dotenv>=1.2.2",
+]

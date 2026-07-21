@@ -1,0 +1,11 @@
+[project]
+name = "yolov8"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "dotenv>=0.9.9",
+    "ultralytics>=8.4.67",
+    "yt-dlp>=2026.6.9",
+]

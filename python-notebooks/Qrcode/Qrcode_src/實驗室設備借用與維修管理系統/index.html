@@ -1,0 +1,942 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、學習筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/web-mkdocs/python-notebooks/Qrcode/Qrcode_src/%E5%AF%A6%E9%A9%97%E5%AE%A4%E8%A8%AD%E5%82%99%E5%80%9F%E7%94%A8%E8%88%87%E7%B6%AD%E4%BF%AE%E7%AE%A1%E7%90%86%E7%B3%BB%E7%B5%B1/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>實驗室設備借用與維修管理系統 - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              實驗室設備借用與維修管理系統
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../teaching/cpp.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../notes/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  學習筆記
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  日記
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../teaching/cpp.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../notes/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    學習筆記
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        系統角色
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="系統角色">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        管理者
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用者
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        設備資料欄位
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">實驗室設備借用與維修管理系統<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>每一台設備都會有自己的條碼，學生或助教可以用手機打開網頁，掃描設備條碼後完成：</p>
+<ul>
+<li>設備借用</li>
+<li>設備歸還</li>
+<li>維修登記</li>
+<li>維修完成</li>
+<li>查詢設備狀態</li>
+<li>查詢歷史紀錄</li>
+</ul>
+<p><img alt="" src="../../Qrcode_assets/%E5%AF%A6%E9%A9%97%E5%AE%A4%E8%A8%AD%E5%82%99%E5%80%9F%E7%94%A8%E8%88%87%E7%B6%AD%E4%BF%AE%E7%AE%A1%E7%90%86%E7%B3%BB%E7%B5%B1.png" /></p>
+<h2 id="_2">系統角色<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">管理者<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>管理者通常是老師、助教、實驗室負責人。</p>
+<p>可以做：</p>
+<ul>
+<li>新增設備</li>
+<li>修改設備資料</li>
+<li>產生設備條碼</li>
+<li>查看所有設備</li>
+<li>查看所有借用紀錄</li>
+<li>查看維修紀錄</li>
+<li>修改設備狀態</li>
+</ul>
+<h3 id="_4">使用者<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>使用者通常是學生。</p>
+<p>可以做：</p>
+<ul>
+<li>掃描設備條碼</li>
+<li>登記借用</li>
+<li>登記歸還</li>
+<li>回報設備故障</li>
+<li>查看自己借用紀錄</li>
+</ul>
+<h3 id="_5">設備資料欄位<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>每一台設備至少要有這些資料：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>設備編號
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>設備名稱
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>設備類別
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>設備品牌
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>設備型號
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>放置地點
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>目前狀態
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>購買日期
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>備註
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>條碼圖片路徑
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>建立時間
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>更新時間
+</code></pre></div>
+<p>範例：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>設備編號：LAB-PC-001
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>設備名稱：筆記型電腦
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>設備類別：電腦設備
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>設備品牌：ASUS
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>設備型號：Vivobook 15
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>放置地點：A305 實驗室
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>目前狀態：可借用
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>購買日期：2026-03-01
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>備註：附充電器
+</code></pre></div>
+<hr />
+<h1 id="_6">四、設備狀態設計<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h1>
+<p>設備狀態建議固定成這幾種：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>可借用
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>借出中
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>維修中
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>停用
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>遺失
+</code></pre></div>
+<p>不要讓學生自由輸入狀態，不然資料會亂掉。</p>
+<p>例如有人輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>維修
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>修理中
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>壞掉
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>不能用
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>故障中
+</code></pre></div>
+<p>這些其實都代表同一件事。
+系統應該用下拉選單讓使用者選。</p>
+<hr />
+<h1 id="_7">五、借用紀錄欄位<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
+<p>每一次借用都要留下紀錄。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>紀錄編號
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>設備編號
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>設備名稱
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>借用人姓名
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>借用人學號
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>借用人 Email
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>借用時間
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>預計歸還時間
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>實際歸還時間
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>借用用途
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>歸還狀態
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>備註
+</code></pre></div>
+<h2 id="_8">借用狀態<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>借用中
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>已歸還
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>逾期
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>取消
+</code></pre></div>
+<hr />
+<h1 id="_9">六、維修紀錄欄位<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
+<p>設備壞掉時，要能登記維修。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>維修編號
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>設備編號
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>設備名稱
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>回報人
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>問題描述
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>故障照片
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>回報時間
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>維修狀態
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>維修人員
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>維修完成時間
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>維修備註
+</code></pre></div>
+<h2 id="_10">維修狀態<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>待處理
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>維修中
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>已完成
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>無法修復
+</code></pre></div>
+<hr />
+<h1 id="_11">七、系統功能規格<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h1>
+<h2 id="1">功能 1：新增設備<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>管理者可以輸入設備資料。</p>
+<p>必要欄位：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>設備名稱
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>設備類別
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>品牌
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>型號
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>放置地點
+</code></pre></div>
+<p>系統自動產生：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>設備編號
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>條碼圖片
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>建立時間
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>目前狀態：可借用
+</code></pre></div>
+<p>設備編號格式建議：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>LAB-類別-流水號
+</code></pre></div>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>LAB-PC-001
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>LAB-CAM-001
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>LAB-MIC-001
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>LAB-ARD-001
+</code></pre></div>
+<hr />
+<h2 id="2">功能 2：產生條碼<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>系統使用 <code>python-barcode</code> 產生條碼圖片。</p>
+<p>條碼內容就是設備編號。</p>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>LAB-PC-001
+</code></pre></div>
+<p>產生後存到：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>barcodes/LAB-PC-001.png
+</code></pre></div>
+<p>管理者可以下載條碼圖片，列印後貼在設備上。</p>
+<hr />
+<h2 id="3">功能 3：掃描條碼查詢設備<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>學生用手機打開 Streamlit 網頁。</p>
+<p>掃描條碼後，系統顯示：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>設備名稱
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>設備編號
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>目前狀態
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>放置地點
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>是否可借用
+</code></pre></div>
+<p>如果目前狀態是「可借用」，顯示：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>我要借用
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>回報故障
+</code></pre></div>
+<p>如果目前狀態是「借出中」，顯示：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>目前借用人
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>借用時間
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>預計歸還時間
+</code></pre></div>
+<p>如果目前狀態是「維修中」，顯示：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>維修狀態
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>問題描述
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>回報時間
+</code></pre></div>
+<hr />
+<h1 id="_12">八、手機掃碼方式<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h1>
+<p>Streamlit 本身不是專門做相機掃碼的框架，所以專題可以分兩階段。</p>
+<h2 id="_13">階段一：簡化版<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>先不做即時掃碼。</p>
+<p>條碼掃描器或手機掃碼 App 掃到設備編號後，貼到輸入框。</p>
+<p>流程：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>手機掃條碼
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>取得設備編號
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>貼到 Streamlit 輸入框
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>查詢設備
+</code></pre></div>
+<p>這版最穩，也最適合初學者。</p>
+<hr />
+<h2 id="_14">階段二：進階版<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p>使用手機相機在網頁中掃碼。</p>
+<p>可以考慮：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>HTML5 QR Code
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>JavaScript
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>Streamlit components
+</code></pre></div>
+<p>不過這部分難度比較高。
+建議先用 QR Code 取代傳統條碼，因為手機掃 QR Code 比掃一維條碼穩很多。</p>
+<p>也就是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>python-barcode：產生一維條碼
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>qrcode：產生 QR Code
+</code></pre></div>
+<p>專題建議做法：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>設備貼 QR Code
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>手機直接掃
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>開啟設備頁面
+</code></pre></div>
+<p>QR Code 內容可以是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>https://你的系統網址?equipment_id=LAB-PC-001
+</code></pre></div>
+<p>這樣學生手機掃完，不用複製貼上，直接進入設備頁面。</p>
+<p>這個版本最像真的系統。</p>
+<hr />
+<h2 id="_15">九、建議系統流程<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h3 id="_16">新增設備流程<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>管理者登入系統
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>↓
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>點選新增設備
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>↓
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>輸入設備資料
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>↓
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>系統產生設備編號
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>↓
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>系統產生條碼 / QR Code
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>↓
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>管理者下載圖片
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>↓
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>列印貼在設備上
+</code></pre></div>
+<hr />
+<h3 id="_17">借用流程<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>學生掃描設備 QR Code
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>↓
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>進入設備頁面
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>↓
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>系統顯示設備狀態
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>↓
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>學生填寫姓名、學號、Email、用途、預計歸還時間
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>↓
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>按下借用
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>↓
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>系統新增借用紀錄
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>↓
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>設備狀態改成借出中
+</code></pre></div>
+<hr />
+<h2 id="_18">歸還流程<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>學生掃描設備 QR Code
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>↓
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>系統發現設備目前借出中
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>↓
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>學生點選歸還
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>↓
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>填寫歸還備註
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>↓
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>系統更新借用紀錄
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>↓
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>設備狀態改成可借用
+</code></pre></div>
+<hr />
+<h2 id="_19">維修流程<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>學生掃描設備 QR Code
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>↓
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>點選回報故障
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>↓
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>填寫問題描述
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>↓
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>上傳故障照片
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>↓
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>系統建立維修紀錄
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>↓
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>設備狀態改成維修中
+</code></pre></div>
+<h2 id="_20">開發順序<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<p>不要一開始就做掃碼。
+那會卡很久。</p>
+<p>建議同學照這個順序做：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>第 1 階段：建立資料庫
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>第 2 階段：新增設備
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>第 3 階段：顯示設備清單
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>第 4 階段：產生條碼 / QR Code
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>第 5 階段：輸入設備編號查詢
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>第 6 階段：借用功能
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>第 7 階段：歸還功能
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>第 8 階段：維修回報功能
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>第 9 階段：Dashboard 統計
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>第 10 階段：手機掃 QR Code 進入設備頁
+</code></pre></div>
+<p>這樣做比較不會崩。
+學生每完成一階段，都可以看到成果。</p>
+<h2 id="_21">進階功能<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<p>做得比較快的同學可以加：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>登入系統
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>管理者權限
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>Email 通知
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>LINE 通知
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>Google Sheets 雲端同步
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>設備照片
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>逾期提醒
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>匯出 Excel
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>維修照片上傳
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>借用紀錄搜尋
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>設備分類篩選
+</code></pre></div>
+<p>最推薦加的是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>匯出 Excel
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>逾期提醒
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>Google Sheets 同步
+</code></pre></div>
+<p>因為這三個最有實務感。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "toc.follow", "navigation.instant", "navigation.tracking"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
