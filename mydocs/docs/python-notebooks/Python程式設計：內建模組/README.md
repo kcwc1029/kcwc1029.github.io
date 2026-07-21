@@ -1,0 +1,2 @@
+- [random：隨機模組.ipynb](https://colab.research.google.com/drive/1XjlkPoi061sSFzzxclNyGJ6yqk8uT0iu)
+- [time：時間模組.ipynb](https://colab.research.google.com/drive/1d9m70WODfL6NqUHFvthobLRRVAG1V5Or)

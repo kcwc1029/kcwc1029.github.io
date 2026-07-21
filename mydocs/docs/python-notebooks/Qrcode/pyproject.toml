@@ -1,0 +1,12 @@
+[project]
+name = "my-qrcode-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "gradio>=6.15.2",
+    "pillow>=12.2.0",
+    "python-barcode>=0.16.1",
+    "qrcode",
+]

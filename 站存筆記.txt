@@ -1,0 +1,8 @@
+## 更新教材到網站
+cd D:\github\web-mkdocs\mydocs
+啟動虛擬環境(web-mkdocs)
+git push
+mkdocs gh-deploy
+
+## 網站本地瀏覽
+mkdocs serve

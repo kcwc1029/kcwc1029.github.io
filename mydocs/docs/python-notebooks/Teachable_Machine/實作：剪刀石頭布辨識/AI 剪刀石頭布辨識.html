@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 剪刀石頭布辨識</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, #60a5fa, transparent 35%),
+        radial-gradient(circle at bottom right, #c084fc, transparent 35%),
+        linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 980px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 28px;
+      padding: 24px;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      color: #cbd5e1;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    button {
+      width: 100%;
+      border: none;
+      border-radius: 18px;
+      padding: 16px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #0f172a;
+      background: linear-gradient(135deg, #93c5fd, #c4b5fd);
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(147, 197, 253, 0.35);
+    }
+
+    #webcam-container {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 24px;
+      overflow: hidden;
+      background: rgba(15, 23, 42, 0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .result-box {
+      text-align: center;
+      padding: 20px;
+      border-radius: 22px;
+      background: rgba(15, 23, 42, 0.55);
+      margin-bottom: 20px;
+    }
+
+    .result-title {
+      color: #cbd5e1;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    #top-result {
+      font-size: 42px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    #confidence {
+      font-size: 18px;
+      color: #bfdbfe;
+    }
+
+    .label-row {
+      margin-bottom: 16px;
+    }
+
+    .label-head {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .bar {
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.18);
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #38bdf8, #a78bfa);
+      transition: width 0.2s;
+    }
+
+    .hint {
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 16px;
+        align-items: flex-start;
+      }
+
+      .app {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .card {
+        padding: 20px;
+        border-radius: 24px;
+      }
+
+      #top-result {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="app">
+    <section class="card">
+      <h1>AI 剪刀石頭布辨識</h1>
+      <p class="subtitle">
+        開啟攝影機後，系統會即時判斷你的手勢，並顯示目前最可能的結果與信心分數。
+      </p>
+
+      <button onclick="init()">開始辨識</button>
+
+      <p class="hint">
+        建議把手放在鏡頭中央，背景越乾淨，辨識會越穩。
+      </p>
+    </section>
+
+    <section class="card">
+      <div id="webcam-container">
+        <span id="camera-placeholder">攝影機畫面會顯示在這裡</span>
+      </div>
+
+      <div class="result-box">
+        <div class="result-title">目前辨識結果</div>
+        <div id="top-result">尚未開始</div>
+        <div id="confidence">信心分數：0%</div>
+      </div>
+
+      <div id="label-container"></div>
+    </section>
+  </main>
+
+  <script>
+    const URL = "https://teachablemachine.withgoogle.com/models/7cWCT9-M_/";
+
+    let model;
+    let webcam;
+    let maxPredictions;
+    let isRunning = false;
+
+    async function init() {
+      if (isRunning) return;
+
+      const modelURL = URL + "model.json";
+      const metadataURL = URL + "metadata.json";
+
+      model = await tmImage.load(modelURL, metadataURL);
+      maxPredictions = model.getTotalClasses();
+
+      webcam = new tmImage.Webcam(420, 420, true);
+      await webcam.setup();
+      await webcam.play();
+
+      isRunning = true;
+      window.requestAnimationFrame(loop);
+
+      const webcamContainer = document.getElementById("webcam-container");
+      webcamContainer.innerHTML = "";
+      webcamContainer.appendChild(webcam.canvas);
+
+      const labelContainer = document.getElementById("label-container");
+      labelContainer.innerHTML = "";
+
+      for (let i = 0; i < maxPredictions; i++) {
+        const row = document.createElement("div");
+        row.className = "label-row";
+        row.innerHTML = `
+          <div class="label-head">
+            <span class="label-name">載入中</span>
+            <span class="label-score">0%</span>
+          </div>
+          <div class="bar">
+            <div class="bar-fill"></div>
+          </div>
+        `;
+        labelContainer.appendChild(row);
+      }
+    }
+
+    async function loop() {
+      webcam.update();
+      await predict();
+      window.requestAnimationFrame(loop);
+    }
+
+    async function predict() {
+      const predictions = await model.predict(webcam.canvas);
+
+      predictions.sort((a, b) => b.probability - a.probability);
+
+      const topPrediction = predictions[0];
+      const topName = topPrediction.className;
+      const topScore = Math.round(topPrediction.probability * 100);
+
+      document.getElementById("top-result").innerText = convertGestureName(topName);
+      document.getElementById("confidence").innerText = `信心分數：${topScore}%`;
+
+      const rows = document.querySelectorAll(".label-row");
+
+      predictions.forEach((prediction, index) => {
+        const percent = Math.round(prediction.probability * 100);
+
+        rows[index].querySelector(".label-name").innerText =
+          convertGestureName(prediction.className);
+
+        rows[index].querySelector(".label-score").innerText =
+          `${percent}%`;
+
+        rows[index].querySelector(".bar-fill").style.width =
+          `${percent}%`;
+      });
+    }
+
+    function convertGestureName(name) {
+      const lowerName = name.toLowerCase();
+
+      if (lowerName.includes("scissors") || lowerName.includes("剪刀")) {
+        return "✌️ 剪刀";
+      }
+
+      if (lowerName.includes("rock") || lowerName.includes("石頭")) {
+        return "✊ 石頭";
+      }
+
+      if (lowerName.includes("paper") || lowerName.includes("布")) {
+        return "🖐️ 布";
+      }
+
+      return name;
+    }
+  </script>
+</body>
+</html>

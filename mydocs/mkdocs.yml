@@ -1,0 +1,69 @@
+site_name: 維誠的筆記
+site_description: 程式教材、學習筆記、專案紀錄與日常書寫
+site_author: 陳維誠
+site_url: https://kcwc1029.github.io/web-mkdocs/
+
+theme:
+  name: material
+  language: zh-TW
+  custom_dir: overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: 切換為深色模式
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: 切換為淺色模式
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+    - navigation.instant
+    - navigation.tracking
+
+  icon:
+    logo: material/book-open-page-variant
+
+nav:
+  - 首頁: index.md
+  - Python教材: python-notebooks/python課綱.md
+  - C++教材: teaching/cpp.md
+  - 學習筆記: notes/index.md
+  - 日記: 手札/手札.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_css:
+  - stylesheets/extra.css
+exclude_docs: |
+  python-notebooks/YOLOv8/YOLOv8_datasets/*.mp4
