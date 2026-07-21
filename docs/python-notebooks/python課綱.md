@@ -36,6 +36,10 @@
 
 ---
 
+- [API&Requests](./API&Requests/README.md)
+
+---
+
 - [Groq](./Groq/README.md)
 
 ---
