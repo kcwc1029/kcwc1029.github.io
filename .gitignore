@@ -21,6 +21,8 @@ env/
 # VSCode
 .vscode/
 
+# MkDocs
+site/
 
 # macOS
 .DS_Store
