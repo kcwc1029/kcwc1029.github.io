@@ -1,0 +1,2409 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、學習筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/web-mkdocs/python-notebooks/API%26Requests/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>API與Requests - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#apirequests" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API與Requests
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../teaching/cpp.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/AI%E6%87%89%E7%94%A8/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI應用
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  日記
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teaching/cpp.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/AI%E6%87%89%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI應用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API 到底是什麼？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API 和網頁有什麼不同？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-request-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Request 與 Response
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP Request 與 Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#url-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        URL 與 endpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST 與 Resource
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="REST 與 Resource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        範例：第一個GET
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response 不是 dict
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query Parameters：查詢、篩選與排序
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Headers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. JSON 與資料型態
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. JSON 與資料型態">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [] 與 .get() 怎麼選？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. API 分頁
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-json-dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. JSON 轉成 DataFrame
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 狀態碼與錯誤模型
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-bearer-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Bearer Token 認證
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Bearer Token 認證">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        認證與授權不同
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-post-request-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. POST 與 Request Body
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. POST 與 Request Body">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#201-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        201 與 Location
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. 冪等性：避免重複訂單
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-crudpostgetputpatchdelete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. CRUD：POST、GET、PUT、PATCH、DELETE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. CRUD：POST、GET、PUT、PATCH、DELETE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#put-patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PUT 與 PATCH 的差異
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#204-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        204 沒有 body
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Session
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-timeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. timeout 與例外處理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. timeout 與例外處理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        捕捉順序
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. 重試與指數退避
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-etag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. ETag 與條件式請求
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20. 串流下載 API 報表
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21. API 回應資料驗證
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-openapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22. OpenAPI 文件怎麼讀？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        23. API 版本管理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-rate-limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24. Rate Limit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25. 安全觀念
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="25. 安全觀念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-key-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Key 與 Token
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TLS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        不可信 URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        個資
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26. 綜合專題：API 商品推薦報表
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="26. 綜合專題：API 商品推薦報表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        情境
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        27. 課堂練習與答案
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="27. 課堂練習與答案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        練習 A：判斷放哪裡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        練習 B：選擇 Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        練習 C：狀態碼
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        練習 D：修改搜尋條件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        練習 E：找出程式問題
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        加分挑戰
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        28. 常見錯誤與除錯
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="28. 常見錯誤與除錯">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modulenotfounderror-no-module-named-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ModuleNotFoundError: No module named 'requests'
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connectionerror-connection-refused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ConnectionError 或 Connection refused
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsondecodeerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSONDecodeError
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#401" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        401
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#404" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        404
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        422
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#429" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        429
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#204-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        204 呼叫 .json() 失敗
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        中文 CSV 在 Excel 亂碼
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        29. API 串接交付檢查清單
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30. 教學 API 規格速查
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        31. 資料字典
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        32. 延伸學習
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        官方參考資料
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="apirequests">API與Requests<a class="headerlink" href="#apirequests" title="Permanent link">&para;</a></h1>
+<h2 id="api">API 到底是什麼？<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<p>API 是 Application Programming Interface，中文常翻成「應用程式介面」。</p>
+<p>用餐廳理解 API：餐廳裡：</p>
+<ul>
+<li>你是 Client。</li>
+<li>廚房是 Server。</li>
+<li>菜單是 API 文件。</li>
+<li>點餐窗口是 Endpoint。</li>
+<li>點餐動作是 HTTP Method。</li>
+<li>點餐內容是 Parameters 或 Request Body。</li>
+<li>號碼牌是 Token。</li>
+<li>餐點是 Response Body。</li>
+<li>店員說「售完」是錯誤回應。</li>
+</ul>
+<p>你不必進廚房了解每道菜如何製作，只要依菜單規則點餐。API 的價值就是把內部實作藏起來，對外提供穩定的操作方式。</p>
+<h2 id="api_1">API 和網頁有什麼不同？<a class="headerlink" href="#api_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>Web API</th>
+<th>一般網頁</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主要使用者</td>
+<td>程式</td>
+<td>人類</td>
+</tr>
+<tr>
+<td>常見內容</td>
+<td>JSON</td>
+<td>HTML、CSS、圖片</td>
+</tr>
+<tr>
+<td>結構來源</td>
+<td>API 契約／文件</td>
+<td>視覺版面</td>
+</tr>
+<tr>
+<td>取得方式</td>
+<td>依 endpoint 與參數</td>
+<td>瀏覽器瀏覽</td>
+</tr>
+<tr>
+<td>改版影響</td>
+<td>版本管理得當時較可控</td>
+<td>HTML class 改名就可能壞</td>
+</tr>
+</tbody>
+</table>
+<p>因此「API－Requests」與「爬蟲－Requests」雖然都使用 Requests，思考方式不同：</p>
+<ul>
+<li>API 串接：依官方契約交換結構化資料。</li>
+<li>網頁爬蟲：從面向人類的 HTML 中抽取資料。</li>
+</ul>
+<p>API 可以是公開服務、公司內部服務，也可以像本教材只運作於本機。重點不是「上網」，而是兩個軟體元件透過約定介面溝通。</p>
+<h2 id="http-request-response">HTTP Request 與 Response<a class="headerlink" href="#http-request-response" title="Permanent link">&para;</a></h2>
+<p>API 客戶端送出 Request，伺服器傳回 Response：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Python Client                         API Server
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>     │                                    │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>     │ GET /api/v1/products?page=1        │
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>     │ Accept: application/json           │
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>     ├───────────────────────────────────&gt;│
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>     │                                    │ 查詢資料
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>     │ 200 OK                             │
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>     │ Content-Type: application/json     │
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>     │ {&quot;data&quot;: [...], &quot;meta&quot;: {...}}   │
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>     │&lt;───────────────────────────────────┤
+</code></pre></div>
+<p>一個 Request 常包含：</p>
+<ul>
+<li>Method：想做什麼。</li>
+<li>URL：對哪個 endpoint 操作。</li>
+<li>Headers：格式、身分與追蹤資訊。</li>
+<li>Query Parameters：搜尋、分頁、排序條件。</li>
+<li>Body：POST、PUT、PATCH 要送出的資料。</li>
+</ul>
+<p>一個 Response 常包含：</p>
+<ul>
+<li>Status Code：處理結果。</li>
+<li>Headers：內容格式、快取、版本等資訊。</li>
+<li>Body：JSON 資料或錯誤細節。</li>
+</ul>
+<h3 id="url-endpoint">URL 與 endpoint<a class="headerlink" href="#url-endpoint" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>http://127.0.0.1:8765/api/v1/products?page=2&amp;per_page=10
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>└協定┘ └────主機────┘└埠┘└───路徑／endpoint──┘└─查詢字串─┘
+</code></pre></div>
+<ul>
+<li><code>/api</code>：表示 API 路徑。</li>
+<li><code>/v1</code>：第一版 API。</li>
+<li><code>/products</code>：商品資源集合。</li>
+<li><code>/products/P065</code>：單一商品資源。</li>
+</ul>
+<p>Endpoint 不只是網址。它通常是 Method 與路徑的組合：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>GET  /products       與 POST /products
+</code></pre></div>
+<p>即使路徑相同，方法不同，操作意義也不同。</p>
+<h2 id="rest-resource">REST 與 Resource<a class="headerlink" href="#rest-resource" title="Permanent link">&para;</a></h2>
+<p>REST 是常見的 API 設計風格。初學階段可先抓住兩件事：</p>
+<ol>
+<li>把系統資料看成 resource，例如 products、orders、tasks。</li>
+<li>用 HTTP Method 表達對 resource 的操作。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>CRUD</th>
+<th>常見意思</th>
+<th>範例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Read</td>
+<td>讀取</td>
+<td>查詢商品</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Create</td>
+<td>建立</td>
+<td>建立訂單</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Update</td>
+<td>完整取代</td>
+<td>完整更新任務</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>Update</td>
+<td>局部修改</td>
+<td>只把 completed 改成 true</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete</td>
+<td>刪除</td>
+<td>刪除任務</td>
+</tr>
+</tbody>
+</table>
+<p>資源路徑通常使用名詞：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>推薦：GET /products/P001
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>不推薦：GET /getProduct?id=P001
+</code></pre></div>
+<p>這是常見設計慣例，不是 HTTP 強制規定。串接既有 API 時，仍以對方文件為準。</p>
+<h3 id="get"><a href="API_Requests_src/%E7%AC%AC%E4%B8%80%E5%80%8BGET/">範例：第一個GET</a><a class="headerlink" href="#get" title="Permanent link">&para;</a></h3>
+<h3 id="response-dict">Response 不是 dict<a class="headerlink" href="#response-dict" title="Permanent link">&para;</a></h3>
+<p><code>requests.get()</code> 回傳的是 <code>Response</code> 物件，不是 JSON dict。必須呼叫 <code>.json()</code> 才會將 Response Body 解析成 Python 物件。</p>
+<table>
+<thead>
+<tr>
+<th>屬性／方法</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>response.status_code</code></td>
+<td>HTTP 狀態碼</td>
+</tr>
+<tr>
+<td><code>response.headers</code></td>
+<td>回應標頭</td>
+</tr>
+<tr>
+<td><code>response.text</code></td>
+<td>解碼後文字</td>
+</tr>
+<tr>
+<td><code>response.content</code></td>
+<td>原始 bytes</td>
+</tr>
+<tr>
+<td><code>response.json()</code></td>
+<td>JSON 轉 Python 物件</td>
+</tr>
+<tr>
+<td><code>response.raise_for_status()</code></td>
+<td>4xx、5xx 時拋出例外</td>
+</tr>
+<tr>
+<td><code>response.elapsed</code></td>
+<td>回應時間</td>
+</tr>
+<tr>
+<td><code>response.request</code></td>
+<td>實際送出的請求</td>
+</tr>
+</tbody>
+</table>
+<p>重要陷阱：<code>.json()</code> 成功只代表 body 是合法 JSON，不代表 API 操作成功。401、404、422、500 也可能回傳 JSON 錯誤，所以仍要檢查狀態碼。</p>
+<h2 id="query-parameters">Query Parameters：查詢、篩選與排序<a class="headerlink" href="#query-parameters" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="API_Requests_src/%E6%9F%A5%E8%A9%A2%E5%8F%83%E6%95%B8%E8%88%87%E5%95%86%E5%93%81%E6%90%9C%E5%B0%8B/">範例：查詢參數與商品搜尋</a></li>
+</ul>
+<p>Requests 會正確處理 <code>?</code>、<code>&amp;</code>、空白、中文與特殊符號。不要手動拼接：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 不建議</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;?category=&quot;</span> <span class="o">+</span> <span class="n">category</span> <span class="o">+</span> <span class="s2">&quot;&amp;q=&quot;</span> <span class="o">+</span> <span class="n">keyword</span>
+</code></pre></div>
+<p>可以印出 <code>response.url</code>，確認最後送出的網址。</p>
+<p>本教材商品 API 支援：</p>
+<table>
+<thead>
+<tr>
+<th>參數</th>
+<th>例子</th>
+<th>意義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>2</td>
+<td>第幾頁</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>20</td>
+<td>每頁筆數，最多 30</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td>學習進修</td>
+<td>精確篩選分類</td>
+</tr>
+<tr>
+<td><code>q</code></td>
+<td>Python</td>
+<td>商品名稱關鍵字</td>
+</tr>
+<tr>
+<td><code>min_price</code></td>
+<td>200</td>
+<td>最低價格</td>
+</tr>
+<tr>
+<td><code>max_price</code></td>
+<td>500</td>
+<td>最高價格</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td><code>-rating</code></td>
+<td>評分降冪排序</td>
+</tr>
+</tbody>
+</table>
+<p>Query Parameter 適合描述「怎樣取得資源」，例如搜尋、排序、分頁。敏感資料不應放 URL，因為網址可能出現在瀏覽紀錄、proxy log 和伺服器 log。</p>
+<hr />
+<h2 id="7-headers">7. Headers<a class="headerlink" href="#7-headers" title="Permanent link">&para;</a></h2>
+<p>範例：<code>API_Requests_src/03_Headers與Response物件.py</code></p>
+<p>Headers 像包裹外面的標籤，描述資料格式、身分與處理方式：</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>常見用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Accept</code></td>
+<td>客戶端希望收到的格式</td>
+</tr>
+<tr>
+<td><code>Content-Type</code></td>
+<td>Request Body 的格式</td>
+</tr>
+<tr>
+<td><code>Authorization</code></td>
+<td>認證資訊</td>
+</tr>
+<tr>
+<td><code>User-Agent</code></td>
+<td>客戶端名稱與版本</td>
+</tr>
+<tr>
+<td><code>X-Request-ID</code></td>
+<td>跨系統追蹤同一次請求</td>
+</tr>
+<tr>
+<td><code>Idempotency-Key</code></td>
+<td>防止建立操作被重複執行</td>
+</tr>
+<tr>
+<td><code>If-None-Match</code></td>
+<td>搭配 ETag 做條件式請求</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="s2">&quot;MyCompanyOrderClient/1.0&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">}</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+<p>HTTP Header 名稱大小寫不敏感，但團隊仍應採一致格式。</p>
+<hr />
+<h2 id="8-json">8. JSON 與資料型態<a class="headerlink" href="#8-json" title="Permanent link">&para;</a></h2>
+<p>範例：<code>API_Requests_src/04_JSON巢狀資料與安全取值.py</code></p>
+<p>JSON 是 API 常用的資料交換格式：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;P065&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Python入門圖解書&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">      </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">520</span><span class="p">,</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">      </span><span class="nt">&quot;free_shipping&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span><span class="p">],</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">72</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>JSON</th>
+<th>Python</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>object</td>
+<td><code>dict</code></td>
+</tr>
+<tr>
+<td>array</td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td>string</td>
+<td><code>str</code></td>
+</tr>
+<tr>
+<td>number</td>
+<td><code>int</code> / <code>float</code></td>
+</tr>
+<tr>
+<td>true / false</td>
+<td><code>True</code> / <code>False</code></td>
+</tr>
+<tr>
+<td>null</td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>data</code> 通常放主要資料，<code>meta</code> 放分頁等描述資訊，但每個 API 的契約可能不同。不能假設全世界都使用同一結構。</p>
+<h3 id="get_1"><code>[]</code> 與 <code>.get()</code> 怎麼選？<a class="headerlink" href="#get_1" title="Permanent link">&para;</a></h3>
+<p>必要欄位應用 <code>[]</code>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">product_id</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+</code></pre></div>
+<p>欄位缺少時立刻拋出 <code>KeyError</code>，能及早發現契約改變。</p>
+<p>真正可選欄位可用 <code>.get()</code>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">tag</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;tag&quot;</span><span class="p">,</span> <span class="s2">&quot;無標籤&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>所有欄位一律 <code>.get()</code>，可能把 API 壞掉偽裝成「資料都是空的」。</p>
+<hr />
+<h2 id="9-api">9. API 分頁<a class="headerlink" href="#9-api" title="Permanent link">&para;</a></h2>
+<p>範例：<code>API_Requests_src/05_API分頁取得全部資料.py</code></p>
+<p>伺服器不會一次傳回百萬筆資料，因為：</p>
+<ul>
+<li>傳輸很慢。</li>
+<li>Client 記憶體壓力大。</li>
+<li>Server 查詢成本高。</li>
+<li>連線中斷要全部重來。</li>
+</ul>
+<p>本 API 回傳：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="nt">&quot;per_page&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="nt">&quot;total_pages&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="nt">&quot;has_next&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="p">}</span>
+</code></pre></div>
+<p>流程：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>page=1 → 收 data → has_next?
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>                   ├─ true → page += 1 → 再請求
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>                   └─ false → 結束
+</code></pre></div>
+<p>不要只寫固定 <code>for page in range(1, 6)</code>，因為資料總數可能改變。也要防止 API 異常造成無限迴圈，正式專案可設定最大頁數並驗證 <code>total</code>。</p>
+<p>常見分頁還有：</p>
+<ul>
+<li>Offset/limit：<code>offset=100&amp;limit=20</code>。</li>
+<li>Cursor：伺服器傳回 <code>next_cursor</code>。</li>
+<li>Link Header：下一頁 URL 放在 Header。</li>
+</ul>
+<p>Cursor 分頁較能應付資料持續新增，但不能隨意跳到第 100 頁。必須依文件實作。</p>
+<hr />
+<h2 id="10-json-dataframe">10. JSON 轉成 DataFrame<a class="headerlink" href="#10-json-dataframe" title="Permanent link">&para;</a></h2>
+<p>範例：<code>API_Requests_src/06_API資料轉DataFrame.py</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;discount_percent&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;original_price&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">])</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;original_price&quot;</span><span class="p">]</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="o">*</span> <span class="mi">100</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<p>Requests 處理網路通訊，pandas 處理資料分析。兩者責任分開，程式比較容易測試。</p>
+<p>輸出給 Windows Excel 閱讀：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8-sig&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>但不要一收到 JSON 就盲目存檔。先驗證欄位、型態、筆數、唯一性及合理範圍。</p>
+<hr />
+<h2 id="11">11. 狀態碼與錯誤模型<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>狀態碼</th>
+<th>意義</th>
+<th>Client 常見處理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>成功讀取／更新</td>
+<td>解析 body</td>
+</tr>
+<tr>
+<td>201 Created</td>
+<td>成功建立</td>
+<td>讀資料與 <code>Location</code></td>
+</tr>
+<tr>
+<td>204 No Content</td>
+<td>成功但無 body</td>
+<td>不可呼叫 <code>.json()</code></td>
+</tr>
+<tr>
+<td>304 Not Modified</td>
+<td>快取仍有效</td>
+<td>沿用本機資料</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>參數或 JSON 格式錯</td>
+<td>修正請求</td>
+</tr>
+<tr>
+<td>401 Unauthorized</td>
+<td>未認證或 Token 無效</td>
+<td>更新認證</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>已辨識但沒有權限</td>
+<td>停止或申請權限</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>資源不存在</td>
+<td>檢查 ID／路徑</td>
+</tr>
+<tr>
+<td>409 Conflict</td>
+<td>資源狀態衝突</td>
+<td>重新讀取後處理</td>
+</tr>
+<tr>
+<td>422 Unprocessable Content</td>
+<td>格式合法但驗證失敗</td>
+<td>修正欄位值</td>
+</tr>
+<tr>
+<td>429 Too Many Requests</td>
+<td>超過用量</td>
+<td>尊重 <code>Retry-After</code></td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>Server 非預期錯誤</td>
+<td>記錄、稍後有限重試</td>
+</tr>
+<tr>
+<td>503 Service Unavailable</td>
+<td>暫時無服務</td>
+<td>退避後有限重試</td>
+</tr>
+</tbody>
+</table>
+<p>一致的錯誤 JSON 有助於 Client 處理：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VALIDATION_ERROR&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;title 不可空白&quot;</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="p">}</span>
+</code></pre></div>
+<p>程式應依穩定的 <code>code</code> 判斷，不要只用中文字串比對，因為文案可能修改或翻譯。</p>
+<hr />
+<h2 id="12-bearer-token">12. Bearer Token 認證<a class="headerlink" href="#12-bearer-token" title="Permanent link">&para;</a></h2>
+<p>範例：<code>API_Requests_src/07_Bearer_Token認證.py</code></p>
+<p>Token 像有期限的電子識別證。Client 先取得 Token，再放入 Header：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p">}</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">protected_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+<p>不要：</p>
+<ul>
+<li>將正式帳密、API Key、Token 寫在原始碼。</li>
+<li>提交到 Git。</li>
+<li>印在 log、錯誤截圖或聊天室。</li>
+<li>放在 Query Parameter。</li>
+<li>在 HTTP 明文連線傳送正式 Token。</li>
+</ul>
+<p>真實專案可從環境變數讀取：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MY_API_TOKEN&quot;</span><span class="p">]</span>
+</code></pre></div>
+<p>本教材的 <code>student / python123</code> 和 <code>training-demo-token</code> 只存在於本機教學 API，沒有外部權限。</p>
+<h3 id="_1">認證與授權不同<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Authentication：你是誰？</li>
+<li>Authorization：你可以做什麼？</li>
+</ul>
+<p>通過登入不代表可以操作所有資源。401 通常偏向未認證，403 通常偏向沒有權限。</p>
+<hr />
+<h2 id="13-post-request-body">13. POST 與 Request Body<a class="headerlink" href="#13-post-request-body" title="Permanent link">&para;</a></h2>
+<p>範例：<code>API_Requests_src/08_POST建立資源與冪等鍵.py</code></p>
+<p>Requests 的 <code>json=</code> 會把 Python dict 序列化成 JSON，並設定適當 <code>Content-Type</code>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">order</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="s2">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>        <span class="p">{</span><span class="s2">&quot;product_id&quot;</span><span class="p">:</span> <span class="s2">&quot;P065&quot;</span><span class="p">,</span> <span class="s2">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    <span class="p">]</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="p">}</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+<p>不要混淆：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># application/json</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># 通常是表單或原始資料</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">)</span>  <span class="c1"># multipart/form-data</span>
+</code></pre></div>
+<h3 id="201-location">201 與 Location<a class="headerlink" href="#201-location" title="Permanent link">&para;</a></h3>
+<p>建立成功常回 201，<code>Location</code> Header 可以指出新資源位置：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Location&quot;</span><span class="p">))</span>
+</code></pre></div>
+<hr />
+<h2 id="14">14. 冪等性：避免重複訂單<a class="headerlink" href="#14" title="Permanent link">&para;</a></h2>
+<p>假設 Client 建立訂單後網路中斷：伺服器其實成功了，但 Client 沒收到回應。Client 若直接再 POST 一次，可能產生兩張訂單。</p>
+<p><code>Idempotency-Key</code> 像這次操作的唯一號碼：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">headers</span><span class="p">[</span><span class="s2">&quot;Idempotency-Key&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span>
+</code></pre></div>
+<p>同一次商業操作重送時必須使用相同 key，伺服器才知道要回傳原結果；下一張新訂單則要產生新 key。</p>
+<p>「產生 key 後立刻每次重送都換新 key」沒有防重效果。正式系統還要規定 key 保存期限、使用者範圍、相同 key 卻不同 body 時的處理方式。</p>
+<hr />
+<h2 id="15-crudpostgetputpatchdelete">15. CRUD：POST、GET、PUT、PATCH、DELETE<a class="headerlink" href="#15-crudpostgetputpatchdelete" title="Permanent link">&para;</a></h2>
+<p>範例：<code>API_Requests_src/09_CRUD_POST_PUT_PATCH_DELETE.py</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>POST   /tasks      建立
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>GET    /tasks      讀取
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>PUT    /tasks/4    完整取代
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>PATCH  /tasks/4    局部修改
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>DELETE /tasks/4    刪除
+</code></pre></div>
+<h3 id="put-patch">PUT 與 PATCH 的差異<a class="headerlink" href="#put-patch" title="Permanent link">&para;</a></h3>
+<p>假設原始任務：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">{</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;完成作品集&quot;</span><span class="p">,</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">  </span><span class="nt">&quot;completed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">  </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;高&quot;</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="p">}</span>
+</code></pre></div>
+<p>PUT 通常傳完整狀態：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">{</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;完成並發布作品集&quot;</span><span class="p">,</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">  </span><span class="nt">&quot;completed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">  </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;中&quot;</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="p">}</span>
+</code></pre></div>
+<p>PATCH 只傳要修改的欄位：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;completed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p>具體語意仍以 API 文件為準。</p>
+<h3 id="204-body">204 沒有 body<a class="headerlink" href="#204-body" title="Permanent link">&para;</a></h3>
+<p>DELETE 成功可能回 204：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="c1"># 不要寫 response.json()，因為沒有 body。</span>
+</code></pre></div>
+<hr />
+<h2 id="16-session">16. Session<a class="headerlink" href="#16-session" title="Permanent link">&para;</a></h2>
+<p>範例：<code>API_Requests_src/10_Session共用設定.py</code></p>
+<p><code>requests.Session()</code> 可以：</p>
+<ul>
+<li>共用 Authorization、Accept、User-Agent。</li>
+<li>保存 Cookie。</li>
+<li>重用底層連線，減少同一主機反覆連線成本。</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">with</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>    <span class="n">session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>        <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>        <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>    <span class="p">})</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+<p>Session 不是全域變數越大越好。用 <code>with</code> 管理生命週期，並注意多執行緒共享 Session 的設計。</p>
+<hr />
+<h2 id="17-timeout">17. timeout 與例外處理<a class="headerlink" href="#17-timeout" title="Permanent link">&para;</a></h2>
+<p>範例：<code>API_Requests_src/11_錯誤格式與例外處理.py</code></p>
+<p>網路不是函式直接呼叫，DNS、連線、TLS、Server 與傳輸每一層都可能失敗。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="p">(</span><span class="mf">3.05</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">Timeout</span><span class="p">:</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;等待逾時&quot;</span><span class="p">)</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">:</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;連線失敗&quot;</span><span class="p">)</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">HTTPError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HTTP 錯誤&quot;</span><span class="p">,</span> <span class="n">error</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">JSONDecodeError</span><span class="p">:</span>
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;JSON 格式錯誤&quot;</span><span class="p">)</span>
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;其他 Requests 錯誤&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+</code></pre></div>
+<p><code>timeout=(3.05, 10)</code>：</p>
+<ul>
+<li>第一個數字：connect timeout。</li>
+<li>第二個數字：read timeout。</li>
+</ul>
+<p>read timeout 是等待下一批 bytes 的時間，不是整個工作的絕對總秒數。Requests 預設不會自動 timeout，所以正式程式應明確設定。</p>
+<h3 id="_2">捕捉順序<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>具體例外寫前面，父類別 <code>RequestException</code> 放最後，否則前面的廣泛捕捉會讓後面永遠不執行。</p>
+<p>不要使用：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">except</span><span class="p">:</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>    <span class="k">pass</span>
+</code></pre></div>
+<p>這會把程式 bug 也吞掉，最後只剩「資料沒有出現」。</p>
+<hr />
+<h2 id="18">18. 重試與指數退避<a class="headerlink" href="#18" title="Permanent link">&para;</a></h2>
+<p>範例：<code>API_Requests_src/12_重試與指數退避.py</code></p>
+<p>不是每個錯誤都應重試：</p>
+<ul>
+<li>400：參數錯，重試相同內容仍會錯。</li>
+<li>401：Token 錯，應更新認證。</li>
+<li>404：資源不存在，通常不重試。</li>
+<li>429：依 <code>Retry-After</code> 等待。</li>
+<li>502、503、504：可能是暫時故障，可有限重試。</li>
+</ul>
+<p>指數退避會逐漸增加等待時間，避免服務故障時所有 Client 同時狂打 API。</p>
+<p>重試 GET 通常比 POST 安全。若 POST 沒有冪等機制，重試可能重複扣款、發信或建立資料。</p>
+<hr />
+<h2 id="19-etag">19. ETag 與條件式請求<a class="headerlink" href="#19-etag" title="Permanent link">&para;</a></h2>
+<p>範例：<code>API_Requests_src/13_ETag條件式請求.py</code></p>
+<p>ETag 可以想成資料版本指紋：</p>
+<ol>
+<li>第一次 GET，Server 回傳資料及 <code>ETag: "abc123"</code>。</li>
+<li>Client 保存資料與 ETag。</li>
+<li>下次送 <code>If-None-Match: "abc123"</code>。</li>
+<li>資料沒變時，Server 回 304，不重傳 body。</li>
+</ol>
+<p>這能節省頻寬，但 304 不是錯誤，也通常不能呼叫 <code>.json()</code>。</p>
+<p><code>Cache-Control</code> 則告訴 Client 快取可以使用多久。認證資料、個資和即時交易資料要特別謹慎，不是所有 API 都適合快取。</p>
+<hr />
+<h2 id="20-api">20. 串流下載 API 報表<a class="headerlink" href="#20-api" title="Permanent link">&para;</a></h2>
+<p>範例：<code>API_Requests_src/14_串流下載API報表.py</code></p>
+<p>大型檔案不應一次塞入記憶體：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">with</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>    <span class="k">with</span> <span class="n">output_file</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>        <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">8192</span><span class="p">):</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>            <span class="k">if</span> <span class="n">chunk</span><span class="p">:</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>                <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+</code></pre></div>
+<p>下載前應確認 <code>Content-Type</code>、預期大小和檔名。不要直接信任 Server 提供的任意路徑，避免 path traversal。重要檔案還可比對 SHA-256。</p>
+<hr />
+<h2 id="21-api">21. API 回應資料驗證<a class="headerlink" href="#21-api" title="Permanent link">&para;</a></h2>
+<p>範例：<code>API_Requests_src/15_API回應資料驗證.py</code></p>
+<p>HTTP 200 只表示請求層面成功，不代表業務資料一定正確。檢查：</p>
+<ul>
+<li><code>data</code> 是否為 list。</li>
+<li>必要欄位是否存在。</li>
+<li>ID 是否重複。</li>
+<li>price 是否為正整數。</li>
+<li>rating 是否在 0～5。</li>
+<li>stock 是否為非負整數。</li>
+<li>實際累計筆數是否符合 <code>meta.total</code>。</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">required</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="s2">&quot;rating&quot;</span><span class="p">}</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="n">missing</span> <span class="o">=</span> <span class="n">required</span> <span class="o">-</span> <span class="n">item</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="k">if</span> <span class="n">missing</span><span class="p">:</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;缺少欄位：</span><span class="si">{</span><span class="n">missing</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>正式專案可使用 Pydantic、JSON Schema 或 OpenAPI 產生的模型進行更完整驗證。</p>
+<hr />
+<h2 id="22-openapi">22. OpenAPI 文件怎麼讀？<a class="headerlink" href="#22-openapi" title="Permanent link">&para;</a></h2>
+<p>串接陌生 API 時，不要只找一段程式碼複製。至少確認：</p>
+<ol>
+<li>Base URL 與版本。</li>
+<li>Endpoint 與 Method。</li>
+<li>Path、Query、Header、Body 參數。</li>
+<li>必填、型態、範圍與預設值。</li>
+<li>認證方法與權限範圍。</li>
+<li>成功狀態碼與 Response Schema。</li>
+<li>錯誤格式與錯誤碼。</li>
+<li>分頁方式。</li>
+<li>Rate limit 與 <code>Retry-After</code>。</li>
+<li>版本、棄用日期與變更紀錄。</li>
+</ol>
+<p>OpenAPI 描述的是機器可讀契約；Swagger UI 是常見的互動文件介面。即使有「Try it out」，也不要在正式環境隨便按 POST 或 DELETE。</p>
+<hr />
+<h2 id="23-api">23. API 版本管理<a class="headerlink" href="#23-api" title="Permanent link">&para;</a></h2>
+<p>本教材路徑包含 <code>/api/v1</code>。若未來破壞相容性，可以推出 <code>/api/v2</code>，讓舊 Client 有遷移時間。</p>
+<p>破壞性改動例如：</p>
+<ul>
+<li>刪除欄位。</li>
+<li>改變欄位型態。</li>
+<li>更改狀態碼語意。</li>
+<li>將原本可選欄位改為必填。</li>
+</ul>
+<p>通常新增可選欄位較容易向後相容，但 Client 也不應假設 JSON 永遠只會有原本那些欄位。</p>
+<p>正式 API 應公告 deprecated 狀態與 sunset 日期。Client 要記錄使用版本，不能等 API 關閉當天才處理。</p>
+<hr />
+<h2 id="24-rate-limit">24. Rate Limit<a class="headerlink" href="#24-rate-limit" title="Permanent link">&para;</a></h2>
+<p>API 可能限制每分鐘或每日請求數。常見 Header：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>RateLimit-Limit: 100
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>RateLimit-Remaining: 12
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>RateLimit-Reset: 60
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>Retry-After: 30
+</code></pre></div>
+<p>實際名稱依 API 文件為準。收到 429 時應：</p>
+<ol>
+<li>暫停送出新請求。</li>
+<li>尊重 <code>Retry-After</code>。</li>
+<li>檢查是否能快取或批次取得。</li>
+<li>需要時申請合適方案。</li>
+</ol>
+<p>不要輪替帳號、Token 或 IP 規避配額。</p>
+<hr />
+<h2 id="25">25. 安全觀念<a class="headerlink" href="#25" title="Permanent link">&para;</a></h2>
+<h3 id="api-key-token">API Key 與 Token<a class="headerlink" href="#api-key-token" title="Permanent link">&para;</a></h3>
+<ul>
+<li>放環境變數或祕密管理工具。</li>
+<li>權限採最小化。</li>
+<li>定期輪替。</li>
+<li>外洩時立即撤銷。</li>
+<li>log 中遮蔽。</li>
+</ul>
+<h3 id="tls">TLS<a class="headerlink" href="#tls" title="Permanent link">&para;</a></h3>
+<p>正式 API 應使用 HTTPS。不要為了消除憑證錯誤就寫：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<p>這會關閉伺服器身分驗證。正確做法是修正系統時間、憑證鏈，或使用組織核准的 CA bundle。</p>
+<h3 id="url">不可信 URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h3>
+<p>若應用程式允許使用者輸入 URL，再由 Server 代為請求，可能造成 SSRF，攻擊者可能探測內網。應建立允許的 scheme、domain、port 與 IP 範圍，不只做字串開頭比對。</p>
+<h3 id="_3">個資<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>API 回應中的姓名、電話、地址、健康或財務資料都可能是個資或敏感資訊。只取必要欄位、限制保存期限、加密並控制存取。</p>
+<hr />
+<h2 id="26-api">26. 綜合專題：API 商品推薦報表<a class="headerlink" href="#26-api" title="Permanent link">&para;</a></h2>
+<h3 id="_4">情境<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>主管希望每天從供應商 API 取得商品，產生高評價平價商品清單。需求：</p>
+<ol>
+<li>使用 Session，設定 User-Agent 與 Accept。</li>
+<li>每頁 20 筆，抓完所有分頁。</li>
+<li>每次請求設定 connect/read timeout。</li>
+<li>呼叫 <code>raise_for_status()</code>。</li>
+<li>驗證總筆數為 API 宣告值，ID 不重複。</li>
+<li>計算折扣百分比。</li>
+<li>篩選價格不超過 500、評分至少 4.7、庫存大於 0。</li>
+<li>依評分降冪、價格升冪排列。</li>
+<li>輸出 UTF-8 with BOM CSV。</li>
+</ol>
+<p>學生版：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">API_Requests_src</span><span class="p">/</span><span class="n">16_API商品推薦專題_學生版</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+<p>解答版：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">API_Requests_src</span><span class="p">/</span><span class="n">17_API商品推薦專題_解答</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+<p>作品集可以描述：「使用 Requests 串接具分頁的 REST API，加入逾時、狀態檢查、資料契約驗證、Session 與 pandas 報表流程。」不要將教學合成資料描述成真實市場資料。</p>
+<hr />
+<h2 id="27">27. 課堂練習與答案<a class="headerlink" href="#27" title="Permanent link">&para;</a></h2>
+<h3 id="a">練習 A：判斷放哪裡<a class="headerlink" href="#a" title="Permanent link">&para;</a></h3>
+<p>請判斷資料適合放在 Path、Query、Header 還是 Body：</p>
+<ol>
+<li>商品 ID <code>P065</code>。</li>
+<li>第 3 頁。</li>
+<li>Bearer Token。</li>
+<li>建立訂單的商品清單。</li>
+</ol>
+<p>答案：Path、Query、Header、Body。</p>
+<h3 id="b-method">練習 B：選擇 Method<a class="headerlink" href="#b-method" title="Permanent link">&para;</a></h3>
+<ol>
+<li>查詢商品。</li>
+<li>建立任務。</li>
+<li>完整改寫任務。</li>
+<li>只修改 completed。</li>
+<li>刪除任務。</li>
+</ol>
+<p>答案：GET、POST、PUT、PATCH、DELETE。</p>
+<h3 id="c">練習 C：狀態碼<a class="headerlink" href="#c" title="Permanent link">&para;</a></h3>
+<ol>
+<li>建立成功通常回什麼？</li>
+<li>刪除成功且沒有 body 可回什麼？</li>
+<li>Token 缺少或無效？</li>
+<li>欄位格式合法但業務驗證不通過？</li>
+<li>超過 API 配額？</li>
+</ol>
+<p>答案：201、204、401、422、429。</p>
+<h3 id="d">練習 D：修改搜尋條件<a class="headerlink" href="#d" title="Permanent link">&para;</a></h3>
+<p>找出手機周邊中，價格不超過 500 元並以價格升冪排序：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>    <span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;手機周邊&quot;</span><span class="p">,</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>    <span class="s2">&quot;max_price&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>    <span class="s2">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;price&quot;</span><span class="p">,</span>
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>    <span class="s2">&quot;per_page&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="p">}</span>
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s2">/products&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="e">練習 E：找出程式問題<a class="headerlink" href="#e" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div>
+<p>至少缺少：timeout、狀態碼檢查、例外處理、資料契約驗證。若 URL 由不可信使用者提供，還有 SSRF 風險。</p>
+<h3 id="_5">加分挑戰<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>在每次請求加入唯一 <code>X-Request-ID</code>。</li>
+<li>計算每頁 <code>response.elapsed</code>，找出最慢一頁。</li>
+<li>將 ETag 與摘要資料保存成本機 JSON 快取。</li>
+<li>遇到 401 時安全更新 Token，但限制重試次數。</li>
+<li>為商品回應建立 Pydantic 模型。</li>
+<li>撰寫自動測試，確認 404 錯誤格式固定。</li>
+</ul>
+<hr />
+<h2 id="28">28. 常見錯誤與除錯<a class="headerlink" href="#28" title="Permanent link">&para;</a></h2>
+<h3 id="modulenotfounderror-no-module-named-requests"><code>ModuleNotFoundError: No module named 'requests'</code><a class="headerlink" href="#modulenotfounderror-no-module-named-requests" title="Permanent link">&para;</a></h3>
+<p>在 <code>Requests</code> 資料夾執行：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">uv</span> <span class="n">sync</span>
+</code></pre></div>
+<p>並確認 VS Code 選擇 <code>.venv</code>。</p>
+<h3 id="connectionerror-connection-refused"><code>ConnectionError</code> 或 Connection refused<a class="headerlink" href="#connectionerror-connection-refused" title="Permanent link">&para;</a></h3>
+<p>先啟動 <code>00_啟動本機API伺服器.py</code>，並保持第一個終端機開啟。</p>
+<h3 id="jsondecodeerror"><code>JSONDecodeError</code><a class="headerlink" href="#jsondecodeerror" title="Permanent link">&para;</a></h3>
+<p>可能收到非 JSON 回應。檢查：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">))</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">300</span><span class="p">])</span>
+</code></pre></div>
+<p>正式 log 不要印出 Token、個資或完整敏感 body。</p>
+<h3 id="401">401<a class="headerlink" href="#401" title="Permanent link">&para;</a></h3>
+<p>確認 Authorization 格式：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>Authorization: Bearer &lt;token&gt;
+</code></pre></div>
+<p>檢查 Token 是否過期、audience、scope 與系統時間。不要把 Token 直接貼到公開聊天室求助。</p>
+<h3 id="404">404<a class="headerlink" href="#404" title="Permanent link">&para;</a></h3>
+<p>確認 Base URL、版本、endpoint、資源 ID 與結尾斜線規則。</p>
+<h3 id="422">422<a class="headerlink" href="#422" title="Permanent link">&para;</a></h3>
+<p>請求 JSON 可以解析，但欄位缺少、型態或值不符合規則。閱讀錯誤 body，不要只盯著狀態碼。</p>
+<h3 id="429">429<a class="headerlink" href="#429" title="Permanent link">&para;</a></h3>
+<p>尊重 <code>Retry-After</code>、降低頻率、使用快取或申請合適配額。</p>
+<h3 id="204-json">204 呼叫 <code>.json()</code> 失敗<a class="headerlink" href="#204-json" title="Permanent link">&para;</a></h3>
+<p>204 本來就沒有 body。先看狀態碼，不要對每個 Response 無條件 <code>.json()</code>。</p>
+<h3 id="csv-excel">中文 CSV 在 Excel 亂碼<a class="headerlink" href="#csv-excel" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8-sig&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="29-api">29. API 串接交付檢查清單<a class="headerlink" href="#29-api" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] 讀過官方 API 文件與版本說明。</li>
+<li>[ ] Base URL、endpoint、method 正確。</li>
+<li>[ ] Path、Query、Header、Body 放置正確。</li>
+<li>[ ] 所有請求都有 timeout。</li>
+<li>[ ] 4xx、5xx 有明確處理。</li>
+<li>[ ] 錯誤處理不會吞掉程式 bug。</li>
+<li>[ ] 分頁有結束條件並核對總筆數。</li>
+<li>[ ] JSON 必要欄位與型態有驗證。</li>
+<li>[ ] Token 不在程式、Git 或 log。</li>
+<li>[ ] 使用 HTTPS 且未關閉憑證驗證。</li>
+<li>[ ] 有遵守 rate limit 與 <code>Retry-After</code>。</li>
+<li>[ ] 重試次數有限且考慮冪等性。</li>
+<li>[ ] POST 交易有防重策略。</li>
+<li>[ ] 204、304 不會錯誤解析 JSON。</li>
+<li>[ ] API 版本與棄用日期有追蹤。</li>
+<li>[ ] 個資只取必要範圍。</li>
+<li>[ ] 輸出放在 <code>API_Requests_outputs</code>。</li>
+</ul>
+<hr />
+<h2 id="30-api">30. 教學 API 規格速查<a class="headerlink" href="#30-api" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>認證</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/health</code></td>
+<td>無</td>
+<td>健康檢查</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/products</code></td>
+<td>無</td>
+<td>商品列表、搜尋、分頁</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/products/{id}</code></td>
+<td>無</td>
+<td>單一商品</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/products-summary</code></td>
+<td>無</td>
+<td>支援 ETag 的摘要</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/products.csv</code></td>
+<td>無</td>
+<td>CSV 報表下載</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/auth/token</code></td>
+<td>帳密 body</td>
+<td>取得 Token</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/tasks</code></td>
+<td>Bearer</td>
+<td>任務列表</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/tasks</code></td>
+<td>Bearer</td>
+<td>建立任務</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>/tasks/{id}</code></td>
+<td>Bearer</td>
+<td>完整取代任務</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><code>/tasks/{id}</code></td>
+<td>Bearer</td>
+<td>局部修改任務</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/tasks/{id}</code></td>
+<td>Bearer</td>
+<td>刪除任務</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/orders</code></td>
+<td>Bearer + 冪等鍵</td>
+<td>建立訂單</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/slow</code></td>
+<td>無</td>
+<td>timeout 教學</td>
+</tr>
+</tbody>
+</table>
+<p>所有 endpoint 前面都要加：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>http://127.0.0.1:8765/api/v1
+</code></pre></div>
+<hr />
+<h2 id="31">31. 資料字典<a class="headerlink" href="#31" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>API 欄位</th>
+<th>CSV 中文欄位</th>
+<th>型態</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>商品編號</td>
+<td>string</td>
+<td>P001～P072，唯一識別碼</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>商品名稱</td>
+<td>string</td>
+<td>繁體中文生活商品</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td>分類</td>
+<td>string</td>
+<td>飲料、零食、辦公等</td>
+</tr>
+<tr>
+<td><code>brand</code></td>
+<td>品牌</td>
+<td>string</td>
+<td>教學用虛構品牌</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>價格</td>
+<td>integer</td>
+<td>售價，單位新臺幣</td>
+</tr>
+<tr>
+<td><code>original_price</code></td>
+<td>原價</td>
+<td>integer</td>
+<td>折扣前價格</td>
+</tr>
+<tr>
+<td><code>rating</code></td>
+<td>評分</td>
+<td>number</td>
+<td>0～5</td>
+</tr>
+<tr>
+<td><code>review_count</code></td>
+<td>評論數</td>
+<td>integer</td>
+<td>合成評論數</td>
+</tr>
+<tr>
+<td><code>stock</code></td>
+<td>庫存</td>
+<td>integer</td>
+<td>非負整數</td>
+</tr>
+<tr>
+<td><code>ship_from</code></td>
+<td>出貨地</td>
+<td>string</td>
+<td>臺灣縣市</td>
+</tr>
+<tr>
+<td><code>free_shipping</code></td>
+<td>免運</td>
+<td>boolean</td>
+<td>JSON true／false</td>
+</tr>
+<tr>
+<td><code>tag</code></td>
+<td>標籤</td>
+<td>string</td>
+<td>商品特色</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="32">32. 延伸學習<a class="headerlink" href="#32" title="Permanent link">&para;</a></h2>
+<ul>
+<li>OpenAPI / Swagger。</li>
+<li>OAuth 2.0 與 OpenID Connect。</li>
+<li>Pydantic 與 JSON Schema。</li>
+<li>FastAPI 建立正式 API。</li>
+<li>pytest 與 API contract testing。</li>
+<li>Webhook 與事件驅動整合。</li>
+<li>非同步 HTTP Client。</li>
+<li>資料庫交易、分散式追蹤與可觀測性。</li>
+</ul>
+<p>學習新工具時仍要回到核心：API 契約、錯誤處理、安全、資料驗證與可維護性。</p>
+<hr />
+<h2 id="_6">官方參考資料<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://requests.readthedocs.io/en/latest/">Requests 官方文件</a></li>
+<li><a href="https://requests.readthedocs.io/en/stable/user/quickstart/">Requests Quickstart</a></li>
+<li><a href="https://requests.readthedocs.io/en/stable/user/advanced/">Requests Advanced Usage</a></li>
+<li><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Reference/Status">MDN HTTP 狀態碼</a></li>
+<li><a href="https://spec.openapis.org/oas/latest.html">OpenAPI Specification</a></li>
+</ul>
+<p>最後請記住：可靠的 API Client 不只是在成功時拿到資料；它還要在逾時、Token 過期、資料改版、服務限流與部分失敗時，能清楚知道發生什麼事並安全停止或恢復。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "toc.follow", "navigation.instant", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
