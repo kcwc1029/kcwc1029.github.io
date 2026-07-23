@@ -6,13 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="程式教材、學習筆記、專案紀錄與日常書寫">
+        <meta name="description" content="程式教材、AI筆記、專案紀錄與日常書寫">
       
       
         <meta name="author" content="陳維誠">
       
       
-        <link rel="canonical" href="https://kcwc1029.github.io/web-mkdocs/AI%E6%87%89%E7%94%A8/Google%20AI%E5%A4%9A%E5%AA%92%E9%AB%94%E5%89%B5%E4%BD%9C/%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E5%9C%96%E5%83%8F%EF%BC%9A%E7%94%A8Gemini%E5%BB%BA%E7%AB%8B%E7%AC%AC%E4%B8%80%E5%BC%B5%E4%BD%9C%E5%93%81/">
+        <link rel="canonical" href="https://kcwc1029.github.io/AI%E6%87%89%E7%94%A8/Google%20AI%E5%A4%9A%E5%AA%92%E9%AB%94%E5%89%B5%E4%BD%9C/%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E5%9C%96%E5%83%8F%EF%BC%9A%E7%94%A8Gemini%E5%BB%BA%E7%AB%8B%E7%AC%AC%E4%B8%80%E5%BC%B5%E4%BD%9C%E5%93%81/">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>快速生成圖像：用Gemini建立第一張作品 - 維誠的筆記</title>
+        <title>快速生成圖像：用 Gemini 建立第一張作品 - 維誠的筆記</title>
       
     
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              快速生成圖像：用Gemini建立第一張作品
+              快速生成圖像：用 Gemini 建立第一張作品
             
           </span>
         </div>
@@ -497,21 +497,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
+  <a href="#gemini_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem.
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem.
+        Gemini 適合做創作起點的原因
       
     </span>
   </a>
@@ -522,7 +511,18 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        圖像風格的重要性
+        快速生成不等於精準控制
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gemini_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemini 建立圖像：基本操作
       
     </span>
   </a>
@@ -533,52 +533,19 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        四種最常用風格
+        理解圖像風格：選擇的基礎
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prompt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        如何寫 Prompt？
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prompt_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prompt 公式
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prompt_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        圖片不好，不代表 Prompt 很差
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="圖片不好，不代表 Prompt 很差">
+    <nav class="md-nav" aria-label="理解圖像風格：選擇的基礎">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#problem_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem. 打造科技咖啡品牌主視覺
+        第一類：寫實、攝影、商業質感類
       
     </span>
   </a>
@@ -586,10 +553,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#problem-prompt" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem. 同一 Prompt，不同風格
+        第二類：設計、插畫、手作表現類
       
     </span>
   </a>
@@ -597,10 +564,160 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#problem_3" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem. 圖片診斷
+        第三類：奇幻、世界觀、強風格創作類
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第四類：情境、氛圍、主題感類
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四類風格整理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        套用基本案例：同一間咖啡館的不同風格
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="套用基本案例：同一間咖啡館的不同風格">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        電影氛圍(商業質感)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        蒸氣龐克(世界觀風格)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        油畫風格(藝術表現)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        建立圖像的基本流程
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="建立圖像的基本流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步驟 1：確認創作方向
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步驟 2：選擇圖像風格
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步驟 3：撰寫圖像描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        生成結果的基本判斷
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="生成結果的基本判斷">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三個基本判斷標準
       
     </span>
   </a>
@@ -629,266 +746,462 @@
 
 
 
-<h1 id="gemini">快速生成圖像：用Gemini建立第一張作品<a class="headerlink" href="#gemini" title="Permanent link">&para;</a></h1>
-<p>很多人認為 AI 生圖就是：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>輸入 Prompt =&gt; 產生圖片
-</code></pre></div>
-<p>但真正的流程其實是：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Idea =&gt; Design Brief =&gt; 選擇風格 =&gt; 描述畫面 =&gt; AI生成 =&gt; 判斷 =&gt; 修正 =&gt; 完成作品
-</code></pre></div>
-<p>AI 並不是替你設計。而是把你的設計轉成圖片。因此，圖片品質通常取決於：</p>
+<h1 id="gemini">快速生成圖像：用 Gemini 建立第一張作品<a class="headerlink" href="#gemini" title="Permanent link">&para;</a></h1>
+<p>很多人認為 AI 生圖就是「輸入 Prompt → 產生圖片」。</p>
+<p>真正的創作流程更接近「Idea → Design Brief → 選擇風格 → 描述畫面 → AI 生成 → 判斷 → 修正 → 完成作品」。</p>
+<p>AI 並不是替你做設計，而是把你的設計想法轉成圖片。圖片品質通常取決於三件事：</p>
 <ul>
-<li>想法有沒有清楚</li>
-<li>描述有沒有完整</li>
-<li>是否知道如何修正</li>
+<li>想法有沒有清楚。</li>
+<li>描述有沒有完整。</li>
+<li>使用者是否知道如何判斷與修正。</li>
 </ul>
-<h3 id="problem">Problem.<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h3>
-<p>請畫一張圖片：</p>
+<p>這一章不追求「第一張就完美」。第一張圖只有兩個任務：</p>
+<ol>
+<li>驗證創作方向。</li>
+<li>找出下一步要修正的問題。</li>
+</ol>
 <blockquote>
-<p>一間咖啡店</p>
+<p>第一次生成要問的不是「好不好看」，而是「我是不是走在正確方向」。</p>
 </blockquote>
-<p>不要急著輸入 AI。請先回答：</p>
+<h2 id="gemini_1">Gemini 適合做創作起點的原因<a class="headerlink" href="#gemini_1" title="Permanent link">&para;</a></h2>
+<p>Gemini 的「建立圖像」適合把想法快速轉成可見成果。它可以：</p>
 <ul>
-<li>主題？</li>
-<li>場景？</li>
-<li>氣氛？</li>
-<li>風格？</li>
+<li>快速驗證主題是否適合變成畫面。</li>
+<li>快速確認風格方向是否成立。</li>
+<li>把創作藍圖第一次視覺化。</li>
+<li>讓學員在同一段對話中繼續補充與修改。</li>
 </ul>
+<p>它不是要取代所有專業圖像工具，而是幫助創作者從「有想法」跨到「看見畫面」。對初學者而言，先做出來比一次做到最好更重要。新手常見焦慮包括：</p>
+<ul>
+<li>不會寫很長的 Prompt。</li>
+<li>不知道哪個工具最好。</li>
+<li>擔心生成結果不好看。</li>
+<li>害怕浪費次數。</li>
+</ul>
+<p>創作初期真正需要的不是複雜設定，而是一個能快速看到成果的起點。第一張圖做出來後，抽象想法開始成形，學員也會更容易指出哪裡不對。</p>
+<h2 id="_1">快速生成不等於精準控制<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Gemini 適合快速把概念變成畫面、確認方向、取得第一張圖。但它可能出現：</p>
+<ul>
+<li>細節不完全準確。</li>
+<li>構圖不夠穩定。</li>
+<li>風格有時無法完全固定。</li>
+<li>品牌字樣、Logo 或長文字不正確。</li>
+</ul>
+<p>這些不是第一張圖的失敗，而是提醒我們下一步需要修正。</p>
 <blockquote>
-<p>很多新手會一直想： 我要一次畫成功。
-其實不用。第一張圖只有兩個目的：
-✓ 驗證方向
-✓ 找出問題
-所以第一次生成，只要回答：我是不是走在正確方向？而不是好不好看？</p>
+<p>Gemini 在本章的任務，是完成創作的第一個視覺成果，而不是直接成為最終精修工具。</p>
 </blockquote>
-<h3 id="problem_1">Problem.<a class="headerlink" href="#problem_1" title="Permanent link">&para;</a></h3>
-<p>假設我要設計科技咖啡品牌。第一次 Prompt：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>一家現代科技感咖啡店，
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>大片落地窗，
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>深色木質，
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>夜晚，
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>暖黃燈光，
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>安靜，
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>電影感，
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>高細節，
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>真實攝影。
+<h2 id="gemini_2">Gemini 建立圖像：基本操作<a class="headerlink" href="#gemini_2" title="Permanent link">&para;</a></h2>
+<p>實際操作時，可在 Gemini 選擇「工具」，再選擇「建立圖像」。不同帳號或版本的介面可能略有差異，若系統已能直接生圖，也可在對話中清楚要求建立圖片。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>### 基本操作流程
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>1. 開啟 Gemini，進入一段新對話或既有的品牌企劃對話。
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>2. 選擇「建立圖像」或直接提出生圖要求。
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>3. 選擇適合的圖片風格。
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>4. 輸入簡潔而具體的圖像描述。
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>5. 生成圖片。
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>6. 觀察結果，不急著立刻重做。
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>7. 指出一個最需要處理的問題，再進行下一輪修改。
 </code></pre></div>
+<h2 id="_2">理解圖像風格：選擇的基礎<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>圖像風格不是裝飾選項，而是畫面方向的起點。它會直接影響：</p>
+<ul>
+<li>視覺質感。</li>
+<li>色彩表現。</li>
+<li>光線氛圍。</li>
+<li>情緒傾向。</li>
+<li>整體圖像語言。</li>
+</ul>
+<p>選風格不是背名稱，而是判斷哪一種風格最適合創作目的。</p>
+<h3 id="_3">第一類：寫實、攝影、商業質感類<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>這類風格接近真實攝影，畫面通常較穩定、質感清楚，也適合初學者。</p>
+<p>相關風格包含：黑白、沙龍、電影氛圍、深沉、柔和人像、仲展台。</p>
+<p>共同特點：</p>
+<ul>
+<li>接近真實攝影效果。</li>
+<li>光影表現自然。</li>
+<li>畫面穩定，接受度高。</li>
+<li>適合品牌與商業應用。</li>
+</ul>
+<p><img alt="" src="../Image/%E9%BB%91%E7%99%BD%E6%94%9D%E5%BD%B1.png" /></p>
 <blockquote>
-<p>不用一次加入很多描述。先看方向。</p>
+<p>黑白攝影</p>
 </blockquote>
-<h2 id="_1">圖像風格的重要性<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>很多人不知道：</p>
+<p><img alt="" src="../Image/%E6%B2%99%E9%BE%8D%E6%94%9D%E5%BD%B1.png" /></p>
+<blockquote>
+<p>沙龍攝影</p>
+</blockquote>
+<p><img alt="" src="../Image/%E6%9F%94%E5%92%8C%E4%BA%BA%E5%83%8F.png" /></p>
+<blockquote>
+<p>柔和人像</p>
+</blockquote>
+<p><img alt="" src="../Image/%E9%9B%BB%E5%BD%B1%E6%B0%9B%E5%9C%8D.png" /></p>
+<blockquote>
+<p>電影氛圍</p>
+</blockquote>
+<p>適用情境：</p>
 <ul>
-<li>Prompt 決定內容。</li>
-<li>風格決定畫面。</li>
+<li>品牌主視覺。</li>
+<li>商品圖。</li>
+<li>社群貼文。</li>
+<li>書封設計。</li>
+<li>人像形象照。</li>
 </ul>
-<p>例如：「一位女孩坐在咖啡店。」</p>
-<p>如果換不同風格：</p>
+<p>若創作目標是穩定、專業、質感、容易成功，這一類通常最安全。</p>
+<h3 id="_4">第二類：設計、插畫、手作表現類<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>這一類偏向平面設計、插畫感或工藝質感，不追求真實攝影，而是強調視覺表現。</p>
+<p>相關風格包含：色塊、特藝彩色、素描、油畫、復古印刷、珐瑯別針、歌德陶土。</p>
+<p><img alt="" src="../Image/%E8%89%B2%E5%A1%8A.png" /></p>
+<blockquote>
+<p>色塊</p>
+</blockquote>
+<p><img alt="" src="../Image/%E7%89%B9%E8%97%9D%E5%BD%A9%E8%89%B2.png" /></p>
+<blockquote>
+<p>特藝彩色</p>
+</blockquote>
+<p><img alt="" src="../Image/%E7%B4%A0%E6%8F%8F.png" /></p>
+<blockquote>
+<p>素描</p>
+</blockquote>
+<p><img alt="" src="../Image/%E6%B2%B9%E7%95%AB.png" /></p>
+<blockquote>
+<p>油畫</p>
+</blockquote>
+<p><img alt="" src="../Image/%E5%BE%A9%E5%8F%A4%E5%8D%B0%E5%88%B7.png" /></p>
+<blockquote>
+<p>復古印刷</p>
+</blockquote>
+<p>共同特點：</p>
 <ul>
-<li>電影風格 -&gt; 像電影劇照</li>
-<li>油畫 -&gt; 像美術館作品</li>
-<li>動漫 -&gt; 日系插畫</li>
-<li>寫實攝影 -&gt; 像 Sony 相機拍的照片</li>
+<li>具有明顯設計感或材質感。</li>
+<li>帶有手作、插畫或藝術表現。</li>
+<li>較不追求真實攝影效果。</li>
 </ul>
-<h2 id="_2">四種最常用風格<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>適用情境：</p>
+<ul>
+<li>插圖。</li>
+<li>海報。</li>
+<li>書籍配圖。</li>
+<li>設計提案。</li>
+<li>文創商品概念圖。</li>
+</ul>
+<p>若想讓畫面更有設計感、插畫感、工藝感或材質特色，可以考慮這一類。</p>
+<h3 id="_5">第三類：奇幻、世界觀、強風格創作類<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>這類風格辨識度高、想像力強，適合角色設定、故事世界觀與創作型內容。</p>
+<p>相關風格包含：蒸氣龐克、神話戰士、超現實、生化人、Dynamite、Anyma's world。</p>
+<p><img alt="" src="../Image/%E8%92%B8%E6%B0%A3%E9%BE%90%E5%85%8B.png" /></p>
+<blockquote>
+<p>蒸氣龐克</p>
+</blockquote>
+<p><img alt="" src="../Image/%E7%A5%9E%E8%A9%B1%E6%88%B0%E5%A3%AB.png" /></p>
+<blockquote>
+<p>神話戰士</p>
+</blockquote>
+<p><img alt="" src="../Image/%E5%BE%A9%E5%8F%A4%E5%8D%B0%E5%88%B7.png" /></p>
+<blockquote>
+<p>復古印刷</p>
+</blockquote>
+<p><img alt="" src="../Image/%E8%B6%85%E7%8F%BE%E5%AF%A6.png" /></p>
+<blockquote>
+<p>超現實</p>
+</blockquote>
+<p><img alt="" src="../Image/Dynamite.png" /></p>
+<blockquote>
+<p>Dynamite</p>
+</blockquote>
+<p><img alt="" src="../Image/Anyma%27s%20World.png" /></p>
+<blockquote>
+<p>Anyma's World</p>
+</blockquote>
+<p>共同特點：</p>
+<ul>
+<li>風格鮮明。</li>
+<li>世界觀強烈。</li>
+<li>想像成分高。</li>
+<li>視覺衝擊力明顯。</li>
+</ul>
+<p>適用情境：</p>
+<ul>
+<li>角色設計。</li>
+<li>奇幻創作。</li>
+<li>科幻題材。</li>
+<li>視覺小說。</li>
+<li>概念藝術。</li>
+</ul>
+<p>若目標是讓畫面具有故事感、設定感、未來感或強烈個性，這一類很適合。不過品牌主視覺若沒有世界觀需求，過強的風格也可能搶走品牌本身。</p>
+<h3 id="_6">第四類：情境、氛圍、主題感類<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>這類風格不一定改變材質，而是加強畫面的感覺。</p>
+<p>相關風格包含：日出，也可以用 Prompt 指定溫暖、安靜、懷舊、孤獨、夢幻、專注。</p>
+<p>共同特點：</p>
+<ul>
+<li>強調情感。</li>
+<li>畫面主題明確。</li>
+<li>容易帶出特定時間、情緒或氛圍。</li>
+</ul>
+<p>適用情境：</p>
+<ul>
+<li>情緒型圖像。</li>
+<li>文案配圖。</li>
+<li>氣氛主題圖。</li>
+<li>社群視覺內容。</li>
+</ul>
+<h3 id="_7">四類風格整理<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>風格類型</th>
+<th>類型</th>
 <th>適合用途</th>
-<th>常用關鍵字 (Prompt)</th>
+<th>常用關鍵詞</th>
 <th>特色</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>寫實攝影 (Photorealistic)</strong></td>
-<td>商品攝影、品牌形象、商業廣告、人像攝影</td>
-<td><code>photorealistic</code><br><code>realistic</code><br><code>cinematic</code><br><code>professional photography</code><br><code>DSLR</code><br><code>85mm lens</code><br><code>high detail</code></td>
-<td>接近真實照片，光影自然、細節豐富，適合商業應用與品牌展示。</td>
+<td>寫實攝影(Photorealistic)</td>
+<td>商品、品牌形象、廣告、人像</td>
+<td><code>photorealistic</code>、<code>professional photography</code>、<code>DSLR</code>、<code>85mm lens</code>、<code>high detail</code></td>
+<td>接近真實照片，光影自然，適合商業應用</td>
 </tr>
 <tr>
-<td><strong>插畫設計 (Illustration)</strong></td>
-<td>社群貼文、海報設計、品牌角色、書籍封面</td>
-<td><code>illustration</code><br><code>flat design</code><br><code>minimal</code><br><code>vector</code><br><code>watercolor</code></td>
-<td>偏向設計與藝術風格，不追求真實感，可塑性高，容易建立品牌特色。</td>
+<td>插畫設計(Illustration)</td>
+<td>社群、海報、角色、書封</td>
+<td><code>illustration</code>、<code>flat design</code>、<code>minimal</code>、<code>vector</code>、<code>watercolor</code>、<code>oil painting</code></td>
+<td>不追求真實，可塑性高，容易建立特色</td>
 </tr>
 <tr>
-<td><strong>幻想世界 (Fantasy)</strong></td>
-<td>RPG 遊戲、奇幻小說、世界觀設定、角色設計</td>
-<td><code>fantasy</code><br><code>magic</code><br><code>steampunk</code><br><code>cyberpunk</code><br><code>dark fantasy</code></td>
-<td>強調世界觀、故事性與想像力，適合創意、科幻或奇幻主題。</td>
+<td>幻想世界(Fantasy)</td>
+<td>RPG、小說、世界觀、角色</td>
+<td><code>fantasy</code>、<code>magic</code>、<code>steampunk</code>、<code>cyberpunk</code>、<code>dark fantasy</code></td>
+<td>故事性與想像力強，視覺衝擊鮮明</td>
 </tr>
 <tr>
-<td><strong>氛圍類 (Mood / Atmosphere)</strong></td>
-<td>情境插圖、品牌形象、電影海報、社群視覺</td>
-<td><code>peaceful</code><br><code>cozy</code><br><code>warm</code><br><code>nostalgic</code><br><code>lonely</code><br><code>dreamy</code></td>
-<td>著重畫面傳達的情緒與氛圍，而非物件本身，能大幅影響作品的感受。</td>
+<td>氛圍類(Mood／Atmosphere)</td>
+<td>情境插圖、品牌、電影海報</td>
+<td><code>peaceful</code>、<code>cozy</code>、<code>warm</code>、<code>nostalgic</code>、<code>lonely</code>、<code>dreamy</code></td>
+<td>以情緒和感受帶動畫面</td>
 </tr>
 </tbody>
 </table>
-<h2 id="prompt">如何寫 Prompt？<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h2>
-<p>很多人會寫：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>科技感
+<h2 id="_8">套用基本案例：同一間咖啡館的不同風格<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>共用描述：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>請幫我生成一張圖：
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>一間現代風格的咖啡館外觀，位於安靜的城市街道夜晚，大面玻璃窗透出溫暖燈光，木質外觀設計，整體風格簡約，氛圍安靜且具有質感，光影層次明顯，高細節。
 </code></pre></div>
-<p>AI：</p>
-<p>???</p>
-<p>因為沒有畫面。</p>
-<p>真正要寫的是：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>主體
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>+
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>場景
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>+
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>風格
+<h3 id="_9">電影氛圍(商業質感)<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>請幫我生成一張圖：
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>一間現代風格的咖啡館外觀，位於安靜的城市街道夜晚，大面玻璃窗透出溫暖燈光，木質外觀設計，整體風格簡約，氛圍安靜且具有質感，光影層次明顯，高細節。
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>## 電影氛圍(商業質感)
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>- 接近真實攝影。
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>- 光影明顯。
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>- 高端品牌感。
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>- 畫面帶敘事性。
 </code></pre></div>
-<p>例如：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>一位工程師
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>+
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>坐在深夜辦公室
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>+
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>電影感
+<h3 id="_10">蒸氣龐克(世界觀風格)<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>請幫我生成一張圖：
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>一間現代風格的咖啡館外觀，位於安靜的城市街道夜晚，大面玻璃窗透出溫暖燈光，木質外觀設計，整體風格簡約，氛圍安靜且具有質感，光影層次明顯，高細節。
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>### 蒸氣龐克(世界觀風格)
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>- 暖銅色調。
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>- 機械或復古工業元素。
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>- 世界觀強烈。
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>- 咖啡館不再只是品牌空間，而像故事場景。
 </code></pre></div>
-<p>就會容易很多。</p>
-<hr />
-<h2 id="prompt_1">Prompt 公式<a class="headerlink" href="#prompt_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>主體
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>+
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>場景
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>+
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>風格
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>+
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>光線
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>+
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>鏡頭
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>+
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>細節
+<h3 id="_11">油畫風格(藝術表現)<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>請幫我生成一張圖：
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>一間現代風格的咖啡館外觀，位於安靜的城市街道夜晚，大面玻璃窗透出溫暖燈光，木質外觀設計，整體風格簡約，氛圍安靜且具有質感，光影層次明顯，高細節。
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>### 油畫風格(藝術表現)
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>- 明顯筆觸。
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>- 色彩較濃。
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>- 材質與藝術感強。
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>- 適合插畫、書封或展覽概念，不一定適合真實商業空間展示。
 </code></pre></div>
-<p>例如：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>一位工程師坐在木質辦公桌前，
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>桌上有 MacBook、
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>筆記本、
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>咖啡，
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>夜晚，
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>窗外城市燈光，
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>電影感，
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>暖黃光，
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>85mm Lens，
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>Ultra Realistic，
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>High Detail。
+<h2 id="_12">建立圖像的基本流程<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>在圖像創作初期，重點不是做出完美畫面，而是建立一個穩定、可重複的操作流程。</p>
+<h3 id="1">步驟 1：確認創作方向<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>生成前先回答：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>- 是什麼場景？
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>- 想傳達什麼感覺？
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>- 整體氛圍是什麼？
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>- 圖片要拿來做什麼？
 </code></pre></div>
-<hr />
-<h2 id="prompt_2">圖片不好，不代表 Prompt 很差<a class="headerlink" href="#prompt_2" title="Permanent link">&para;</a></h2>
-<p>圖片不好。通常只有三種原因。</p>
-<p>問題一：主體不清楚。例如：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>科技感空間 -&gt; AI不知道重點。
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>改成：
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>一間現代辦公室，中央是一張長桌。
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>**本節案例：**
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>場景：專注工作的個人桌面。
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>時間：夜晚。
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>情緒：安靜、沉穩、專注。
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>品牌感：科技、專業、高端。
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>用途：品牌網站 Hero Banner。
 </code></pre></div>
-<p>問題二：場景太少。例如：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>咖啡店 -&gt; 對AI來說，任何咖啡店都有可能。
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>改成：
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>東京街角，
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>玻璃落地窗，
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>雨天，
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>夜晚。
-</code></pre></div>
-<p>問題三：風格衝突。例如：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>可愛 + 高端品牌 + 寫實 + 卡通 -&gt; AI不知道該相信哪個。
-</code></pre></div>
-<hr />
-<h3 id="problem_2">Problem. 打造科技咖啡品牌主視覺<a class="headerlink" href="#problem_2" title="Permanent link">&para;</a></h3>
-<p>請設計一張品牌首頁 Hero Banner。需求：</p>
+<p>這一步的重點是先確定方向，不是急著生成。</p>
+<h3 id="2">步驟 2：選擇圖像風格<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>依創作方向選擇能支援畫面情緒的風格。風格要服務畫面情緒，而不是單純覺得名稱很酷。</p>
+<h3 id="3">步驟 3：撰寫圖像描述<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>先用簡潔描述建立方向：</p>
+<h2 id="_13">生成結果的基本判斷<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>圖像生成後，真正影響能不能繼續進步的能力是判斷結果，而不是只說「好不好看」。</p>
+<h3 id="_14">三個基本判斷標準<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<ol>
+<li>主體是否清楚。畫面中最重要的東西，有沒有被明確呈現？</li>
+</ol>
+<p>例子：</p>
 <ul>
-<li>品牌：Prompt Coffee</li>
-<li>對象：工程師、設計師</li>
-<li>氣氛：沉穩、高級</li>
-<li>色彩：黑色、深灰、暖黃</li>
-<li>時間：夜晚</li>
-<li>用途：品牌官網首頁</li>
+<li>工作桌面 → 是否清楚看到桌面與電腦？</li>
+<li>咖啡館 → 是否能辨識為咖啡館？</li>
+<li>品牌商品 → 商品是否成為視覺焦點？</li>
 </ul>
-<h3 id="problem-prompt">Problem. 同一 Prompt，不同風格<a class="headerlink" href="#problem-prompt" title="Permanent link">&para;</a></h3>
-<p>Prompt：</p>
+<p>若主體不清楚，通常代表描述不夠精準。</p>
+<ol>
+<li>場景是否合理。畫面是否符合設定的情境？</li>
+</ol>
+<p>例子：</p>
+<ul>
+<li>夜晚 → 是否真的呈現夜晚光線？</li>
+<li>室內 → 是否出現不合理的戶外元素？</li>
+<li>高樓辦公室 → 是否具有城市高樓視野？</li>
+</ul>
+<p>若場景不合理，通常代表描述或風格產生偏差。</p>
+<ol>
+<li>氛圍是否一致。圖片帶出的感覺是否符合預期？</li>
+</ol>
+<p>例子：</p>
+<ul>
+<li>專注 → 是否安靜、沉穩？</li>
+<li>溫暖 → 是否有柔和光線？</li>
+<li>高端 → 是否具有質感？</li>
+</ul>
+<p>若氣氛不對，通常需要調整風格或情緒描述詞。</p>
+<h1 id="2-3">2-3 從創作藍圖到圖像：關鍵轉換<a class="headerlink" href="#2-3" title="Permanent link">&para;</a></h1>
+<p>Design Brief 能幫我們釐清主題、訊息與風格，但若只寫「高級感、溫暖氣氛、科技感」，AI 仍只能猜測畫面。</p>
+<p>因此，創作藍圖必須轉換成可以被視覺化的語言。</p>
 <blockquote>
-<p>一位女孩坐在窗邊閱讀。</p>
+<p>把抽象概念，轉成清楚的畫面元素。</p>
 </blockquote>
-<p>請分別生成：</p>
+<h2 id="2-3-1">2-3-1 將藍圖轉換為圖像描述<a class="headerlink" href="#2-3-1" title="Permanent link">&para;</a></h2>
+<p>最基本的圖像描述結構是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>主體 + 場景 + 氛圍
+</code></pre></div>
+<h3 id="1_1">1. 主體<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>畫面最重要的物件或人物，例如：</p>
 <ul>
-<li>寫實攝影</li>
-<li>油畫</li>
-<li>水彩</li>
-<li>日系動漫</li>
+<li>一間咖啡館外觀。</li>
+<li>一個工作桌面。</li>
+<li>一台筆記型電腦。</li>
+<li>一杯咖啡。</li>
 </ul>
-<p>比較四張圖的差異，觀察風格如何改變畫面的表現。</p>
-<h3 id="problem_3">Problem. 圖片診斷<a class="headerlink" href="#problem_3" title="Permanent link">&para;</a></h3>
-<p>請生成一張圖片後，用下表檢查：</p>
+<h3 id="2_1">2. 場景<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>主體所在的環境與空間，例如：</p>
+<ul>
+<li>夜晚的城市街道。</li>
+<li>室內工作空間。</li>
+<li>窗邊位置。</li>
+<li>木質風格空間。</li>
+</ul>
+<h3 id="3_1">3. 氛圍與風格<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>畫面要傳達的感覺，例如：</p>
+<ul>
+<li>安靜。</li>
+<li>專注。</li>
+<li>溫暖。</li>
+<li>高質感。</li>
+<li>電影氛圍。</li>
+</ul>
+<h2 id="_15">套用範例：現代高樓辦公室<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<p>假設 Design Brief 是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>主題：現代化辦公環境。
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>訊息：專業、高效、城市視野。
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>風格：高質感、沉穩、電影氛圍。
+</code></pre></div>
+<p>如果只寫：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>一個很高級的辦公室。
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>一個可以看到風景的工作環境。
+</code></pre></div>
+<p>描述過於抽象，畫面資訊不足。可以改成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>一間位於台北高樓層的現代辦公室空間，大面落地窗設計，窗外可遠眺台北 101 大樓、基隆河與陽明山景色。室內為簡約高質感設計，包含辦公桌與雙電腦設備，白天自然光從窗外灑入。整體氛圍專業、安靜且高效率，電影氛圍風格，高細節。
+</code></pre></div>
+<p>這段描述具有：</p>
+<ul>
+<li>明確主體：現代辦公室。</li>
+<li>清楚場景：台北高樓、101、基隆河、陽明山。</li>
+<li>一致氛圍：專業、高效、高質感。</li>
+</ul>
+<p>相較原本的抽象描述，這種轉換能讓 AI 產出具有地點辨識度與一致氣氛的畫面。</p>
+<h2 id="prompt">完整生圖 Prompt 公式<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h2>
+<p>當基本結構能穩定生成後，可擴充為：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>主體 + 場景 + 風格 + 光線 + 鏡頭／構圖 + 細節 + 用途／比例
+</code></pre></div>
+<h3 id="problem">Problem. 一間咖啡店<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h3>
+<p>任務：請畫一張「一間咖啡店」。不要立刻輸入 AI，先完成：</p>
 <table>
 <thead>
 <tr>
-<th>項目</th>
-<th style="text-align: right;">評分(1~5)</th>
 <th>問題</th>
-<th>修改方式</th>
+<th>我的設定</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>主體是否清楚</td>
-<td style="text-align: right;"></td>
-<td></td>
+<td>主題</td>
 <td></td>
 </tr>
 <tr>
-<td>場景是否完整</td>
-<td style="text-align: right;"></td>
-<td></td>
+<td>場景</td>
 <td></td>
 </tr>
 <tr>
-<td>光線是否符合</td>
-<td style="text-align: right;"></td>
-<td></td>
+<td>氣氛</td>
 <td></td>
 </tr>
 <tr>
-<td>色彩是否一致</td>
-<td style="text-align: right;"></td>
-<td></td>
+<td>風格</td>
 <td></td>
 </tr>
 <tr>
-<td>氛圍是否符合</td>
-<td style="text-align: right;"></td>
-<td></td>
+<td>用途</td>
 <td></td>
 </tr>
 <tr>
-<td>品牌風格是否一致</td>
-<td style="text-align: right;"></td>
-<td></td>
+<td>圖片比例</td>
 <td></td>
 </tr>
 </tbody>
 </table>
+<p>完成後，寫出第一版 Prompt。</p>
+<h3 id="problem_1">Problem. 科技咖啡品牌方向圖<a class="headerlink" href="#problem_1" title="Permanent link">&para;</a></h3>
+<p>第一版 Prompt：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>一家現代科技感咖啡店，大片落地窗，深色木質，夜晚，暖黃燈光，安靜，電影感，高細節，真實攝影。
+</code></pre></div>
+<p>操作要求：先用這段簡短描述生成，不要一次加入太多內容。使用診斷表判斷：</p>
+<ul>
+<li>方向是否正確？</li>
+<li>哪一項最需要修改？</li>
+<li>第二輪只增加哪一項描述？</li>
+</ul>
+<h3 id="problem-prompt-coffee-hero-banner">Problem. Prompt Coffee Hero Banner<a class="headerlink" href="#problem-prompt-coffee-hero-banner" title="Permanent link">&para;</a></h3>
+<p>需求：</p>
+<ul>
+<li>品牌：Prompt Coffee。</li>
+<li>對象：工程師、設計師。</li>
+<li>氣氛：沉穩、高級。</li>
+<li>色彩：黑色、深灰、暖黃。</li>
+<li>時間：夜晚。</li>
+<li>用途：品牌官網首頁。</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>### 參考 Prompt
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Prompt Coffee 品牌官網首頁 Hero Banner。一位工程師在夜晚的現代工作空間中專注工作，前景是一杯曜石黑咖啡，桌上有高階機械鍵盤、筆記本與筆記型電腦，背景雙螢幕顯示失焦的程式碼。黑色與深灰為主色，暖黃桌燈照亮咖啡杯與木質桌面，冷色螢幕光形成輪廓。沉穩、高級、專注的電影感商業攝影，真實材質，淺景深，高細節，16:9 橫式構圖，左側保留品牌標題與 CTA 空間。避免卡通、雜亂背景、過亮色彩與生成文字。
+</code></pre></div>
+<h3 id="problem-prompt">Problem. 同一 Prompt，不同風格<a class="headerlink" href="#problem-prompt" title="Permanent link">&para;</a></h3>
+<p>固定內容：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>一位女孩坐在窗邊閱讀。
+</code></pre></div>
+<p>請分別生成：</p>
+<ul>
+<li>寫實攝影。</li>
+<li>油畫。</li>
+<li>水彩。</li>
+<li>日系動漫。</li>
+</ul>
+<p>比較四張圖的光線、材質、人物、情緒與用途。</p>
 
 
 

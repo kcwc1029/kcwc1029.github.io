@@ -1,0 +1,1231 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、AI筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/AI%E6%87%89%E7%94%A8/Google%20AI%E5%A4%9A%E5%AA%92%E9%AB%94%E5%89%B5%E4%BD%9C/%E9%80%B2%E9%9A%8E%E5%9C%96%E5%83%8F%E5%89%B5%E4%BD%9C%EF%BC%9A%E9%A2%A8%E6%A0%BC%26%E7%B7%A8%E4%BF%AE%26%E6%8E%A7%E5%88%B6/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>進階圖像創作：風格 × 編修 × 控制 - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              進階圖像創作：風格 × 編修 × 控制
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../teaching/cpp.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI應用
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  日記
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teaching/cpp.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI應用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三大核心控制能力
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        風格控制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="風格控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        寫實風：讓人相信
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        插畫風：讓人理解
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        品牌風：讓人記住
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 固定主題：「一位女孩在咖啡店使用 AI 完成工作」。
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-to-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image-to-Image：從「重來」到「延續」
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image-to-Image：從「重來」到「延續」">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        標準操作流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        局部修改：精準調整，不全部重來
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="局部修改：精準調整，不全部重來">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四種常見操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-3 原教材實例一：修正圖卡標題
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-4 原教材實例二：湖邊少女更換背景
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-5 原教材實例三：移除情侶照中的路人
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-6 原教材實例四：演唱會更換樂器與文字
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-7 原教材連續編修練習
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">進階圖像創作：風格 × 編修 × 控制<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>剛接觸 AI 圖像時，我們很容易把「生成圖片」當成完整創作：打一段描述，取得一張看起來不錯的圖，工作似乎就結束了。</p>
+<p>但當圖片真的要用在教材、廣告、品牌或故事中，我們會發現，多數生成圖不能直接使用。真正的進階能力，不是一次生成更多圖片，而是知道如何讓圖像一步一步接近自己的想法。</p>
+<p>這代表三個轉變：</p>
+<ul>
+<li>從一次性生成，轉為持續性優化。</li>
+<li>從結果導向，轉為過程導向。</li>
+<li>從依賴運氣，轉為掌握控制。</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>### 兩種創作流程比較
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>錯誤但常見的流程：輸入 Prompt → 生成 → 不滿意 → 整張重來
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>-&gt; 不斷重置。
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>較成熟的流程：生成 → 篩選 → 修改 → 檢查 → 優化
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>-&gt; 累積成果。
+</code></pre></div>
+<h2 id="_2">三大核心控制能力<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>第一種，風格控制（Style）：決定圖像的感覺。風格是觀眾第一眼感受到的元素。同一主題可以呈現為：</p>
+<ul>
+<li>寫實攝影</li>
+<li>商業廣告</li>
+<li>教學插畫</li>
+<li>動漫角色</li>
+<li>品牌視覺</li>
+<li>電影劇照</li>
+</ul>
+<p>風格差異不只在「畫法」，還包括色彩、材質、光線、構圖、鏡頭與情緒。</p>
+<p>第二種，編修能力（Image-to-Image）：決定圖像的穩定性。Image-to-Image 以現有圖片為基礎進行修改。它可以：</p>
+<ul>
+<li>保留人物與場景的一致性。</li>
+<li>在原圖上調整，不必整張重做。</li>
+<li>累積每次編修成果。</li>
+<li>將一張基礎圖延伸成多個版本。</li>
+</ul>
+<p>第三種，細節控制（Detail）：決定圖像的專業度。當風格與構圖大致正確後，真正拉開品質差距的是：</p>
+<ul>
+<li>光線是否自然。</li>
+<li>構圖是否清楚。</li>
+<li>氣氛是否符合主題。</li>
+<li>人物姿勢、視線與手部是否合理。</li>
+<li>文字與版面是否正確。</li>
+<li>物件比例、透視、陰影與接觸關係是否自然。</li>
+</ul>
+<h2 id="_3">風格控制<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>接到圖像任務時，不要先堆疊形容詞，而要先問：「這張圖要拿來做什麼？」</p>
+<p>例如招生廣告可以使用寫實品牌風；課堂流程適合插畫圖解風；社群角色經營適合固定 IP 的品牌插畫。</p>
+<h3 id="_4">寫實風：讓人相信<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>適合商業廣告、產品形象與專業內容。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[主體]，寫實攝影風格，[鏡頭與構圖]，[光線]，[材質細節]，
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>自然膚質，商業攝影，高解析度。
+</code></pre></div>
+<p><img alt="" src="../Image/%E4%B8%80%E5%BC%B5%E4%B9%BE%E6%B7%A8%E3%80%81%E6%9F%94%E5%92%8C%E5%85%89%E7%B7%9A%E7%9A%84%E9%AB%98%E8%B3%AA%E6%84%9F%E5%AF%AB%E5%AF%A6%E7%94%A2%E5%93%81%E6%94%9D%E5%BD%B1.png" /></p>
+<h3 id="_5">插畫風：讓人理解<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>適合教材、圖解、簡報與說明內容。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[主題]的教學插畫，清楚分區，扁平化構圖，柔和配色，
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>資訊層級明確，元素簡潔，適合課堂投影。
+</code></pre></div>
+<p><img alt="" src="../Image/%E7%B5%A6%E6%88%91%E4%B8%80%E5%BC%B5%E6%8F%92%E7%95%AB%E9%A2%A8%E7%9A%84%E5%9C%96.png" /></p>
+<h3 id="_6">品牌風：讓人記住<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>適合社群貼文、品牌角色與長期行銷素材。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>為[品牌／主題]建立一致的品牌視覺，主色為[色彩]，
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>固定[角色或符號]，整體風格[形容詞]，
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>保留可放置標題與 Logo 的空間。
+</code></pre></div>
+<p><img alt="" src="../Image/%E7%B5%A6%E6%88%91%E4%B8%80%E5%BC%B5%E5%93%81%E7%89%8C%E9%A2%A8%E7%9A%84%E5%9C%96.png" /></p>
+<h3 id="problem-ai">Problem. 固定主題：「一位女孩在咖啡店使用 AI 完成工作」。<a class="headerlink" href="#problem-ai" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>### 寫實商業攝影版 -- 提示詞
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>一位年輕女性在現代咖啡店使用筆電完成 AI 創作工作，
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>半身中景，人物位於畫面左側，右側保留文案空間。
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>窗邊自然光與暖色室內燈混合，真實膚質、木質桌面與咖啡細節清楚，
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>專業商業攝影，親切可信，16:9。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>### 教材插畫版 -- 提示詞
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>「一位女孩在咖啡店使用 AI 完成工作」的教學插畫，
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>清楚呈現人物、筆電、AI 協助與完成作品四個資訊元素。
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>扁平化構圖、柔和藍橙配色、背景簡潔、資訊層級清楚，
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>適合課堂投影與教材說明，16:9。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>### 品牌社群貼文版 -- 提示詞
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>為 AI 學習品牌製作正方形社群貼文。
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>固定一位短髮、圓框眼鏡、藍色上衣的女性角色，在咖啡店使用 AI 完成工作。
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>品牌主色為深藍與亮青色，暖黃色作重點，使用一致的圓角圖形與對話框符號。
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>畫面活潑但不雜亂，上方保留標題區，1:1。
+</code></pre></div>
+<h2 id="image-to-image">Image-to-Image：從「重來」到「延續」<a class="headerlink" href="#image-to-image" title="Permanent link">&para;</a></h2>
+<p>Image-to-Image（圖生圖）是以上傳圖片為基礎，透過指令修改、延伸或優化。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>操作方式</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>重新生成</td>
+<td>每次重新計算整張圖</td>
+<td>結果不穩定，人物與構圖容易改變</td>
+</tr>
+<tr>
+<td>Image-to-Image</td>
+<td>在既有圖片上修改</td>
+<td>保留基礎，只調整指定內容</td>
+</tr>
+</tbody>
+</table>
+<p>三個核心價值：</p>
+<ol>
+<li>一致性：人物、場景與構圖可以保留下來。</li>
+<li>可控性：只指定需要修改的地方。</li>
+<li>累積性：每次修改都建立在前一版本上。</li>
+</ol>
+<h3 id="_7">標準操作流程<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>1. 生成或挑選最接近需求的圖片。
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>2. 列出「必須保留」與「需要修改」。
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>3. 每次只處理一至兩個明確問題。
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>4. 檢查人物、構圖、色彩、文字是否漂移。
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>5. 以目前最佳版本繼續修改，直到符合需求。
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>&gt; 第一張圖不再是成品，而是起點；修改不是補救，而是主要創作流程。
+</code></pre></div>
+<h2 id="_8">局部修改：精準調整，不全部重來<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>圖片通常不是整張都錯，而是：</p>
+<ul>
+<li>背景不理想。</li>
+<li>色調不符合品牌。</li>
+<li>多了不必要的人或物件。</li>
+<li>少了關鍵元素。</li>
+<li>標題錯誤或位置不對。</li>
+</ul>
+<p>因此，保留正確的部分，只修改有問題的地方。</p>
+<h3 id="_9">四種常見操作<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ol>
+<li>背景替換：室內改戶外、白天改夜晚。</li>
+<li>元素新增：桌上增加咖啡、加入裝飾。</li>
+<li>元素移除：刪除路人、移除干擾物或錯誤文字。</li>
+<li>色彩與材質調整：改服裝色、整體色調或物件材質。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>### 局部修改 Prompt 公式
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>將[指定區域／物件]改成[目標內容]，
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>保留[人物／構圖／背景／光線／其他內容]不變，
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>使修改後的光線、比例、透視、色溫、陰影與原圖自然一致。
+</code></pre></div>
+<h2 id="5-3">5-3 原教材實例一：修正圖卡標題<a class="headerlink" href="#5-3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>將標題「Using AI to Complete Tasks」改為「使用AI完成任務」，
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>保持其他人物、插圖、色彩、版面配置與文字內容完全不變。
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>中文字體清楚可讀，置於原標題位置。
+</code></pre></div>
+<p>教學提醒：AI 中文仍可能出錯。對外作品應優先保留文字區，再用 Canva、PowerPoint、Figma 或排版工具加入正式文字。</p>
+<h2 id="5-4">5-4 原教材實例二：湖邊少女更換背景<a class="headerlink" href="#5-4" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>將上傳人物照片的背景改為油畫風森林景色，
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>整體呈現厚塗與筆觸質感，光線方向與人物一致，畫面具有藝術氛圍。
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>保留人物臉部、髮型、服裝、姿勢和身體比例不變。
+</code></pre></div>
+<h2 id="5-5">5-5 原教材實例三：移除情侶照中的路人<a class="headerlink" href="#5-5" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>移除背景左側拿手機的路人，保留情侶與富士山不變。
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>移除後自然補回道路、欄杆與遠方景色，
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>維持原圖的光線、透視和景深，不留下模糊或重複痕跡。
+</code></pre></div>
+<h2 id="5-6">5-6 原教材實例四：演唱會更換樂器與文字<a class="headerlink" href="#5-6" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>請將舞台上的歌手手中樂器替換成一根巨型香蕉，
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>保留演奏姿勢自然，看起來像真的在彈奏香蕉。
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>讓標題「500 Miles」顯示在畫面下方中央，字體大而清晰，帶有發光效果。
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>整體保留夢幻、宇宙感的演唱會氛圍，
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>光線流動，觀眾剪影與舞台燈光維持不變。
+</code></pre></div>
+<h2 id="5-7">5-7 原教材連續編修練習<a class="headerlink" href="#5-7" title="Permanent link">&para;</a></h2>
+<p>挑選一張自己有權使用的照片，完成三次連續修改：</p>
+<ol>
+<li>移除一個干擾物件。</li>
+<li>新增一個合理物件。</li>
+<li>將整體色調改成指定品牌配色。</li>
+</ol>
+<p>每次都要記錄：</p>
+<ul>
+<li>本次修改什麼？</li>
+<li>本次保留什麼？</li>
+<li>修改後是否發生非預期漂移？</li>
+<li>下一輪要沿用哪個版本？</li>
+</ul>
+<hr />
+<h1 id="_10">第六單元　角色一致性：讓同一人物持續存在<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h1>
+<h2 id="6-1">6-1 為什麼重要<a class="headerlink" href="#6-1" title="Permanent link">&para;</a></h2>
+<p>同一人物跨圖片時，常出現：</p>
+<ul>
+<li>臉部改變。</li>
+<li>五官、膚色或髮型漂移。</li>
+<li>氣質不穩定。</li>
+<li>看起來不像同一角色。</li>
+</ul>
+<p>這會直接影響可信度與可用性。需要角色一致性的情境包括：</p>
+<ul>
+<li>行銷素材中的固定模特兒。</li>
+<li>品牌角色與 IP。</li>
+<li>教學內容中的固定引導者。</li>
+<li>故事與漫畫中的連續人物。</li>
+</ul>
+<h3 id="prompt">角色一致性 Prompt 公式<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>以參考圖中的同一位人物為主角，
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>保持臉部輪廓、五官比例、膚色、髮色與整體辨識特徵一致。
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>只改變[服裝／姿勢／場景／髮型]，
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>其他人物核心特徵不變。
+</code></pre></div>
+<h2 id="6-2">6-2 原教材實例：潮流搞笑版巨人<a class="headerlink" href="#6-2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>將人物改造成潮流搞笑版的巨人，有高大壯碩的肌肉，
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>但臉部與髮型保持和原圖一致。
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>穿著潮牌風格服飾，腳踩超大球鞋，戴上金項鍊或潮帽。
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>城市中有許多小人物仰望或拍照，畫面有趣、帶搞笑氛圍。
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>背景為潮流派對舞台，有霓虹燈、塗鴉牆、閃爍燈光與煙霧，
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>呈現「潮流展覽 × 超級英雄」的跨界場景，融合寫實與漫畫趣味。
+</code></pre></div>
+<p>教學提醒：正式商業使用時，避免未經授權直接模仿特定品牌標誌或商標圖樣，可改寫為「高端街頭潮牌風」。</p>
+<h2 id="6-3">6-3 原教材實例：同一人物進入咖啡廳<a class="headerlink" href="#6-3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>保持參考人物的臉部輪廓、五官、膚色、髮型與自然氣質一致，
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>將她放置在咖啡廳場景中。
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>人物坐姿自然，光線柔和，表情帶自然微笑；
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>桌上擺有咖啡與書本，背景為溫暖燈光與木質裝潢，
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>臉部特徵與參考圖一致，整體真實自然。
+</code></pre></div>
+<h2 id="6-4">6-4 原教材實例：未來科技城市海報<a class="headerlink" href="#6-4" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>以參考圖像中的女性為主角，生成她身處未來科技城市的海報。
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>她站在充滿霓虹與全息投影的街道，
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>背景有高科技摩天樓、漂浮載具與電子看板。
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>她穿著黑色皮衣與帶發光線條的科技外套。
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>以藍、紫、粉紅為主色，具有強烈霓虹反射與金屬質感。
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>保持臉部特徵、五官比例、膚色與髮型一致，
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>整體風格充滿賽博龐克氣息，視覺震撼。
+</code></pre></div>
+<h2 id="6-5">6-5 原教材實例：太空艙海報<a class="headerlink" href="#6-5" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>請將參考圖像中的女性放入太空艙場景。
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>背景為高科技太空艙內部，有控制面板與觀景窗，
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>窗外可見星空或地球。
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>人物穿著現代太空服，保留臉部特徵、髮型與人物辨識度，
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>光線呈現冷色金屬質感，畫面真實自然，帶有未來科幻氛圍。
+</code></pre></div>
+<h2 id="6-6">6-6 原教材實例：髮型九宮格<a class="headerlink" href="#6-6" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>生成一張正方形九宮格影像（3×3），主題為「髮型變化美感展示」。
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>使用同一位女性人物，臉部特徵、膚色、五官比例與光線保持一致。
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>每格展示不同髮型，例如短髮、長直髮、長捲髮、馬尾、包頭、編髮、瀏海造型等。
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>整體構圖平衡，背景簡潔，乾淨明亮。
+</code></pre></div>
+<h2 id="6-7">6-7 原教材實例：年齡變化九宮格<a class="headerlink" href="#6-7" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>生成一張正方形九宮格影像（3×3），主題為「年齡變化時光九宮格」。
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>以上傳的女性人物照片為基礎，保持臉部比例、髮型輪廓與光線一致。
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>依序呈現 10、20、30、40、50、60、70、80、90 歲。
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>每格維持相同姿勢與構圖，
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>只透過皮膚、輪廓、髮色與細節自然呈現年齡差異。
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>背景保持柔和白灰色，光線均勻，構圖整齊。
+</code></pre></div>
+<p>提醒：年齡、族群與外貌推演只是模型生成，不應被當成真實預測，也不宜用於身份判斷、醫療或就業決策。</p>
+<hr />
+<h1 id="_11">第七單元　多圖融合：從單一素材到創意組合<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h1>
+<h2 id="7-1">7-1 定義與價值<a class="headerlink" href="#7-1" title="Permanent link">&para;</a></h2>
+<p>多圖融合（Image Fusion）是把不同圖片中的主體、場景、產品或風格整合成新畫面。</p>
+<table>
+<thead>
+<tr>
+<th>類型</th>
+<th>特點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>局部修改</td>
+<td>在同一張圖片中調整</td>
+</tr>
+<tr>
+<td>多圖融合</td>
+<td>整合多張圖片，重新組成內容</td>
+</tr>
+</tbody>
+</table>
+<p>三個價值：</p>
+<ol>
+<li>創作自由度提升。</li>
+<li>抽象靈感可以直接具體化。</li>
+<li>現有素材可以重新組合，產生新價值。</li>
+</ol>
+<h3 id="prompt_1">多圖融合 Prompt 公式<a class="headerlink" href="#prompt_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>以圖片 A 的[人物／物件]為來源主體，放入圖片 B 的[場景／背景]。
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>保留[來源主體的核心特徵]，
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>調整人物比例、站位、透視、光線方向、色溫、陰影、景深與接觸關係，
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>使兩者自然融合，像原本就在同一場景中。
+</code></pre></div>
+<p>核心不是拼接，而是自然融合。</p>
+<h2 id="7-2">7-2 原教材實例：南極旅行紀念照<a class="headerlink" href="#7-2" title="Permanent link">&para;</a></h2>
+<p>使用「南極.jpg」與「女學生.jpg」：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>將上傳的女學生自然地融合進南極雪景中，
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>站在紅色小屋旁的雪地上，身體微微左轉，面向海面。
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>服裝改為適合極地氣候的探險服：
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>紅色羽絨外套、毛邊帽、黑色防寒褲、手套與雪靴。
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>光線方向與背景一致，色溫偏冷，約 5500K，雪地呈現柔和陰影。
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>調整人物比例、腳底接觸與景深，
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>使畫面像在南極現場拍攝的電影感旅行照。
+</code></pre></div>
+<h2 id="7-3">7-3 原教材實例：懷舊合成<a class="headerlink" href="#7-3" title="Permanent link">&para;</a></h2>
+<p>使用 40 年前人物照「Hung.jpg」與「澳門巴黎人酒店.jpg」：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>將上傳的舊照片人物自然融合進現代澳門巴黎人酒店夜景中。
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>讓人物站在酒店前方步道中央，穿白色襯衫，
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>雙手自然在身前交握，帶著溫和微笑。
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>保留人物原本外貌特徵，但提升畫質清晰度、光線與色調，
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>使其與現場照明一致。
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>服裝光影與酒店暖金色燈光相符，去除老照片底片顆粒，
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>調整地面陰影與透視，
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>呈現「人物穿越時空，40 年後造訪澳門巴黎人」的真實感。
+</code></pre></div>
+<h2 id="7-4">7-4 原教材實例：白雪公主故事融合<a class="headerlink" href="#7-4" title="Permanent link">&para;</a></h2>
+<p>使用「現代公主.jpg」與「Kwei.jpg」：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>將上傳的王子照片自然融合進現代公主插畫中，
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>讓他站在公主身後略偏左的位置，
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>帶著溫柔、保護的神情注視公主。
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>服裝轉換為現代王子風格，穿深藍色長外套並帶銀色刺繡，內搭白襯衫。
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>周圍森林、燈籠、柔霧和光暈保持原插畫風格，
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>人物光線方向一致，
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>整體呈現溫暖、夢幻又浪漫的童話氛圍。
+</code></pre></div>
+<h2 id="7-5">7-5 原教材實例：車站大廳品牌牆<a class="headerlink" href="#7-5" title="Permanent link">&para;</a></h2>
+<p>使用「車站大廳品牌牆.jpg」、「辦公族.jpg」與「book.jpg」：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>以車站大廳品牌牆照片為主要場景，
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>將辦公室模特兒自然融合進中央廣告牆預留的空白位置。
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>人物微笑面向鏡頭，手中拿著《NotebookLM筆記術》一書，
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>服裝改為白色襯衫搭配深藍色西裝外套，呈現專業形象。
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>將書封清楚放入畫面，
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>調整人物與書本比例、光線、陰影與透視，使其符合大廳環境。
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>畫面加入輕微景深，營造明亮、乾淨、專業的宣傳氛圍。
+</code></pre></div>
+<p>教學提醒：產品圖與書封必須使用有權使用的素材；精確產品文字與標誌建議後製置入。</p>
+<h2 id="7-6">7-6 素材三合一實作<a class="headerlink" href="#7-6" title="Permanent link">&para;</a></h2>
+<p>準備三張有權使用的圖片：人物照、場景照、產品照。產出一張活動宣傳圖。</p>
+<p>檢查：</p>
+<ul>
+<li>人物是否像貼上去的？</li>
+<li>腳底與地面是否有合理接觸？</li>
+<li>光線方向與色溫是否一致？</li>
+<li>人物比例與透視是否合理？</li>
+<li>產品是否清楚但不搶走主題？</li>
+<li>畫面是否保留標題、日期與 CTA 空間？</li>
+</ul>
+<hr />
+<h1 id="ai">第八單元　世界知識加成：AI 的隱藏能力<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h1>
+<h2 id="8-1">8-1 什麼是世界知識加成<a class="headerlink" href="#8-1" title="Permanent link">&para;</a></h2>
+<p>AI 在生成或編修時，可能結合對現實世界的理解，自動補足合理的：</p>
+<ul>
+<li>地理環境</li>
+<li>文化背景</li>
+<li>歷史情境</li>
+<li>日常常識</li>
+</ul>
+<p>例如：</p>
+<ul>
+<li>北極熊可能搭配冰川與雪地。</li>
+<li>和服人物可能搭配櫻花、日式建築或庭園。</li>
+<li>科學家可能搭配實驗室、黑板、公式與儀器。</li>
+</ul>
+<p>三個核心價值：</p>
+<ol>
+<li>自動補合理背景。</li>
+<li>提升畫面的真實脈絡。</li>
+<li>降低 Prompt 描述成本。</li>
+</ol>
+<p>但模型可能過時、刻板或出錯。涉及歷史、地圖、品牌標誌、文化服飾、科學與公共安全時，必須人工核對。</p>
+<h2 id="8-2">8-2 原教材實例：歷史人物 × 時代場景<a class="headerlink" href="#8-2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>將這張愛因斯坦的照片轉換成插畫風格，
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>背景自動生成 1920 年代的物理實驗室，
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>加入黑板、粉筆科學公式、書架、玻璃實驗器材與暖色檯燈。
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>保留人物可辨識的臉部、髮型與沉思姿勢，
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>整體帶有歷史感與學術氛圍。
+</code></pre></div>
+<p>生成後應檢查：器材是否符合年代、公式是否正確、服裝與空間是否合理。裝飾性公式不可直接當成知識內容。</p>
+<h2 id="8-3-google-map">8-3 原教材實例：Google Map 繪製旅遊畫面<a class="headerlink" href="#8-3-google-map" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>用上傳的 Google Map 截圖作為地理位置參考，
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>繪製紅色圈選地點的寫實旅遊畫面。
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>呈現哈爾斯塔特湖畔、阿爾卑斯山、傳統木造房屋、
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>湖面倒影與晴朗天空，構圖自然，像專業旅遊攝影。
+</code></pre></div>
+<p>提醒：生成圖是情境想像，不是現場照片，也不能取代地圖導航或即時旅遊資訊。</p>
+<h2 id="8-4">8-4 原教材實例：地圖轉藝術資訊圖<a class="headerlink" href="#8-4" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>以上傳的 Google Map 截圖為基礎，
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>生成「101 大樓區域的手繪具藝術感地圖」。
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>模擬立體地形與俯視透視，
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>保持主要道路、街廓、水域與重要位置清晰。
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>以手繪水彩風格上色，使用漸層綠、藍與棕色調，
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>加入台北 101 與周邊建築的簡化立體圖示。
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>背景保持乾淨明亮，呈現具藝術感又可辨識的地理資訊地圖。
+</code></pre></div>
+<p>提醒：這類圖適合視覺說明，不可直接當作精準導航圖。道路、地標與比例應另外查證。</p>
+<hr />
+<h1 id="prompt_2">第九單元　七格 Prompt 控制框架<a class="headerlink" href="#prompt_2" title="Permanent link">&para;</a></h1>
+<p>當圖片需要修改或融合時，使用以下框架：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>【任務】要新增、移除、替換、改風格或融合？
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>【來源主體】要保留哪張圖中的人物或物件？
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>【目標內容】要改成什麼？
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>【保留項目】哪些人物、構圖、文字或背景不可改？
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>【視覺條件】風格、色彩、光線、鏡頭、材質與氣氛。
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>【融合條件】比例、透視、陰影、色溫、景深與接觸關係。
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>【輸出規格】比例、尺寸、版面、留白與用途。
+</code></pre></div>
+<h2 id="9-1">9-1 綜合示例<a class="headerlink" href="#9-1" title="Permanent link">&para;</a></h2>
+<p>情境：把人物照放進書店，改成課程招生 Banner。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>【任務】人物與場景融合，並建立招生 Banner。
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>【來源主體】保留圖片 A 的女性人物。
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>【目標內容】把人物放進圖片 B 的現代書店，坐在桌前使用筆電。
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>【保留項目】保持臉部輪廓、五官比例、膚色、髮型與自然微笑不變。
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>【視覺條件】深藍與暖橙品牌色，柔和窗光，真實商業攝影，親切專業。
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>【融合條件】人物坐姿與桌面高度合理，腳與椅子自然接觸；
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>光線由左上方進入，人物陰影、色溫、透視與背景一致。
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>【輸出規格】16:9；人物置左，右側保留 40% 乾淨空間供後製加入課名與 CTA；不要生成文字。
+</code></pre></div>
+<h2 id="9-2-prompt">9-2 修改 Prompt 的優先順序<a class="headerlink" href="#9-2-prompt" title="Permanent link">&para;</a></h2>
+<p>一次只處理一到兩類問題：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>第一輪：修構圖與主體位置。
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>第二輪：修人物一致性。
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>第三輪：修光線、色溫與陰影。
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>第四輪：修多餘元素與材質細節。
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>第五輪：確認留白與輸出比例。
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>第六輪：在設計工具加入精確文字與品牌識別。
+</code></pre></div>
+<hr />
+<h1 id="_12">第十單元　新增課堂題目與參考答案<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h1>
+<h2 id="_13">題目一：重新生成還是局部修改？<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>畫面中的人物、姿勢與構圖都正確，只有背景多了一位路人。應該重新生成還是局部修改？</p>
+<p>參考答案：局部修改。指定移除路人並保留人物、構圖、光線與其他背景，避免正確部分一起改變。</p>
+<h2 id="_14">題目二：找出衝突風格<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>極簡、華麗巴洛克、真實攝影、扁平卡通、冷靜、熱鬧、
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>大量細節又要非常簡單。
+</code></pre></div>
+<p>請指出問題並改寫。</p>
+<p>參考答案：描述互相衝突，模型難以判斷優先順序。應先依用途選一個主風格，再用一至兩個輔助特徵。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>供企業簡報使用的極簡扁平插畫，
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>深藍與白色，清楚分區，少量線性 icon，
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>背景乾淨、資訊層級明確。
+</code></pre></div>
+<h2 id="_15">題目三：修正「只說要改，沒說要保留」<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<p>原 Prompt：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>把背景換成夜景。
+</code></pre></div>
+<p>參考改寫：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>只將窗外白天城市景色改為夜晚城市，
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>加入自然的建築燈光與少量車流光軌。
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>保留前景人物、臉部、服裝、姿勢、室內家具與原構圖不變。
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>讓窗外冷色夜光自然影響人物輪廓與室內反射，
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>維持原圖透視與景深。
+</code></pre></div>
+<h2 id="_16">題目四：角色一致性診斷<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<p>同一角色第二張圖出現髮色、眼型與臉型改變。請寫一段補救 Prompt。</p>
+<p>參考答案：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>以第一張參考圖的人物為唯一角色基準，
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>恢復相同的橢圓臉型、內雙眼型、深棕瞳色、
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>及肩深棕直髮與左側分線。
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>保持膚色、眉型、鼻形與嘴角特徵一致。
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>只保留第二張圖的咖啡店場景、坐姿與服裝，
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>不要重新設計人物外貌。
+</code></pre></div>
+<h2 id="_17">題目五：多圖融合失敗診斷<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<p>人物融合進雪地後看起來像貼紙。列出至少四項可能原因。</p>
+<p>參考答案：</p>
+<ul>
+<li>人物比例或站位不合理。</li>
+<li>腳底沒有與雪地接觸或陷入。</li>
+<li>光線方向、強度或色溫不同。</li>
+<li>人物沒有投下符合環境的陰影。</li>
+<li>景深與背景不同。</li>
+<li>人物邊緣過於銳利。</li>
+<li>衣著與氣候不合理。</li>
+</ul>
+<h2 id="_18">題目六：世界知識查核<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<p>AI 生成 1920 年代物理實驗室後，哪些內容不能直接相信？</p>
+<p>參考答案：黑板公式、儀器年代、服裝、建築風格、人物身份脈絡都需查核。畫面「像真的」不代表內容正確。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "toc.follow", "navigation.instant", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
