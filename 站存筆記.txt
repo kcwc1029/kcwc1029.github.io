@@ -6,3 +6,38 @@ mkdocs gh-deploy
 
 ## 網站本地瀏覽
 mkdocs serve
+
+## 放圖片
+```html=
+<!-- 兩張 -->
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <img
+        src="images/photo1.jpg"
+        alt="第一張圖片"
+        style="width: calc(50% - 10px); height: auto; object-fit: cover;">
+    <img
+        src="images/photo1.jpg"
+        alt="第一張圖片"
+        style="width: calc(50% - 10px); height: auto; object-fit: cover;">
+</div>
+```
+
+```html=
+<!-- 三張 -->
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <img
+        src="images/photo1.jpg"
+        alt="第一張圖片"
+        style="width: calc((100% - 40px) / 3); height: auto; object-fit: cover;">
+
+    <img
+        src="images/photo2.jpg"
+        alt="第二張圖片"
+        style="width: calc((100% - 40px) / 3); height: auto; object-fit: cover;">
+
+    <img
+        src="images/photo3.jpg"
+        alt="第三張圖片"
+        style="width: calc((100% - 40px) / 3); height: auto; object-fit: cover;">
+</div>
+```
