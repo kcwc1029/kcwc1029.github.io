@@ -43,7 +43,7 @@ theme:
 nav:
   - 首頁: index.md
   - Python教材: python-notebooks/python課綱.md
-  - C++教材: teaching/cpp.md
+  - C++教材: cpp-notebooks/cpp課綱.md
   - AI應用: AI應用/AI應用.md
   - 日記: 手札/手札.md
 
