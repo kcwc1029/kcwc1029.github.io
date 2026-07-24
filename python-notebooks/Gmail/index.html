@@ -169,6 +169,11 @@
       </label>
       <nav class="md-search__options" aria-label="搜尋">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -536,24 +541,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#env" class="md-nav__link">
     <span class="md-ellipsis">
       
-        安裝套件
+        到.env設定寄件相關資訊
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="到.env設定寄件相關資訊">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gmail_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        範例：發送簡單gmail
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        撰寫 Python 程式碼寄送郵件
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -565,6 +576,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="MIME">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mime_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        範例：使用MIME發送信件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        補充：成大亂發郵件
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -579,6 +618,14 @@
           
             <div class="md-content" data-md-component="content">
               
+                
+
+
+
+  
+
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -586,18 +633,22 @@
 
 
 <h1 id="gmail">Gmail<a class="headerlink" href="#gmail" title="Permanent link">&para;</a></h1>
+<p>專案下載：https://github.com/kcwc1029/kcwc1029.github.io/tree/main/docs/python-notebooks/Gmail</p>
+<blockquote>
+<p>補充影片</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=SRo7oL1kCeI">什么是SMTP 1080P 高清 AVC</a></li>
 <li><a href="https://www.youtube.com/watch?v=ziGtmbljXeE">自行瀏覽：Part12 - 什麼是郵件伺服器？ (Mail Server簡介與應用)</a></li>
 </ul>
+</blockquote>
 <h2 id="smtp">SMTP 協定：電子郵件傳送的基礎<a class="headerlink" href="#smtp" title="Permanent link">&para;</a></h2>
 <p>SMTP 是 Simple Mail Transfer Protocol 的縮寫，中文是「簡單郵件傳輸協定」。它主要定義了網際網路上傳送電子郵件的相關細節。</p>
 <h3 id="smtp_1">SMTP 伺服器的網域名稱<a class="headerlink" href="#smtp_1" title="Permanent link">&para;</a></h3>
 <p>SMTP 伺服器的網域名稱通常就是電子郵件服務供應商的網域名稱。</p>
 <ul>
 <li>SMTP 伺服器的網域名稱通常就是電子郵件服務供應商的網域名稱。</li>
-<li>下表列出了幾個常見的 SMTP 伺服器網域名稱範例：</li>
 </ul>
+<p>下表列出了幾個常見的 SMTP 伺服器網域名稱範例：</p>
 <table>
 <thead>
 <tr>
@@ -624,34 +675,89 @@
 </tr>
 </tbody>
 </table>
-<h2 id="gmail_1"><a href="https://support.google.com/accounts/answer/185833?hl=zh-Hant">取得 Gmail 應用程式密碼</a><a class="headerlink" href="#gmail_1" title="Permanent link">&para;</a></h2>
-<p><img alt="圖片" src="Gmail_assets/%E9%BB%9E%E9%81%B8%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F%E5%AF%86%E7%A2%BC.png" />
-<img alt="圖片" src="Gmail_assets/%E7%82%BA%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F%E5%AF%86%E7%A2%BC%E5%8F%96%E5%90%8D%E7%A8%B1.png" />
-<img alt="圖片" src="Gmail_assets/%E5%8F%96%E5%BE%97%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F%E5%AF%86%E7%A2%BC.png" /></p>
-<h2 id="_1">安裝套件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 已經在uv sync一併裝好了</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">pip</span> <span class="n">install</span> <span class="n">gdown</span> <span class="o">-</span><span class="n">q</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">uv</span> <span class="n">add</span>
-</code></pre></div>
-<h2 id="python">撰寫 Python 程式碼寄送郵件<a class="headerlink" href="#python" title="Permanent link">&para;</a></h2>
+<h2 id="gmail_1">取得 Gmail 應用程式密碼<a class="headerlink" href="#gmail_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p><a href="Gmail_src/%E9%80%A3%E7%B7%9A%E7%99%BC%E9%80%81%E8%87%B3%E9%83%B5%E4%BB%B6%E4%BC%BA%E6%9C%8D%E5%99%A8.py">範例：連線發送至郵件伺服器</a></p>
-</li>
-<li>
-<p><a href="Gmail_src/%E5%95%9F%E7%94%A8%E7%A8%8B%E5%BC%8F%E5%92%8CSMTP%E9%83%B5%E4%BB%B6%E4%BC%BA%E6%9C%8D%E5%99%A8%E5%B0%8D%E8%A9%B1.py">範例：啟用程式和SMTP郵件伺服器對話</a></p>
-</li>
-<li><a href=".env">設定寄件相關資訊</a></li>
-<li><a href="Gmail_src/%E7%99%BC%E9%80%81%E7%B0%A1%E5%96%AEgmail.py">範例：發送簡單gmail</a></li>
+<li><a href="https://support.google.com/accounts/answer/185833?hl=zh-Hant">Google帳戶說明-應用程式密碼</a></li>
 </ul>
+<p><img alt="圖片" src="Gmail_assets/%E9%BB%9E%E9%81%B8%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F%E5%AF%86%E7%A2%BC.png" /></p>
+<!-- 兩張 -->
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <img
+        src="./Gmail_assets/為應用程式密碼取名稱.png"
+        alt="為應用程式密碼取名稱"
+        style="width: calc(50% - 10px); height: auto; object-fit: cover;">
+    <img
+        src="./Gmail_assets/取得應用程式密碼.png"
+        alt="取得應用程式密碼"
+        style="width: calc(50% - 10px); height: auto; object-fit: cover;">
+</div>
+
+<h2 id="env">到.env設定寄件相關資訊<a class="headerlink" href="#env" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>### env
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a># 應用程式密碼
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>AppPassword = &quot;0000 0000 0000 0000&quot;
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a># 登入信箱
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>LoginEmail = &quot;xxxxxxx@gmail.com&quot;
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a># 寄件者
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>FromAddress = &quot;xxxxxxx@gmail.com&quot;
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a># 收件者
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>ToAddress = &quot;ooooooooo@gmail.com&quot;
+</code></pre></div>
+<h3 id="gmail_2">範例：發送簡單gmail<a class="headerlink" href="#gmail_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">smtplib</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1">### 環境變數</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">current_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span> <span class="c1"># 取得目前這個 main.py 檔案的絕對路徑</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">project_root</span> <span class="o">=</span> <span class="n">current_file</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span> <span class="c1"># 透過 .parent 往上跳兩層，回到專案根目錄 (my_project/)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">env_path</span> <span class="o">=</span> <span class="n">project_root</span> <span class="o">/</span> <span class="s2">&quot;.env&quot;</span> <span class="c1"># 指定根目錄底下的 .env 檔案路徑</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">load_dotenv</span><span class="p">(</span><span class="n">dotenv_path</span><span class="o">=</span><span class="n">env_path</span><span class="p">)</span> <span class="c1"># 載入指定路徑的 .env 檔案</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1">### 讀取環境變數</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="n">AppPassword</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AppPassword&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="n">LoginEmail</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;LoginEmail&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="n">FromAddress</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;FromAddress&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">ToAddress</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;ToAddress&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="n">mySMTP</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="s1">&#39;smtp.gmail.com&#39;</span><span class="p">,</span> <span class="mi">587</span><span class="p">)</span> <span class="c1"># 建立一個 SMTP 物件</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="n">ehlo_response</span> <span class="o">=</span> <span class="n">mySMTP</span><span class="o">.</span><span class="n">ehlo</span><span class="p">()</span> <span class="c1"># 啟動與 SMTP 伺服器的對話 (mySMTP.ehlo()回傳職必須要是250，才算成功)</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="n">starttls_response</span> <span class="o">=</span> <span class="n">mySMTP</span><span class="o">.</span><span class="n">starttls</span><span class="p">()</span> <span class="c1"># 建立加密傳輸 (必須要回傳220，才算成功)</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="n">login_response</span> <span class="o">=</span> <span class="n">mySMTP</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">LoginEmail</span><span class="p">,</span> <span class="n">AppPassword</span><span class="p">)</span> <span class="c1"># 登入 (必須要回傳235，才算成功)</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="nb">print</span><span class="p">(</span><span class="n">login_response</span><span class="p">)</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="c1">### 撰寫一封簡單gmail</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="n">status</span> <span class="o">=</span> <span class="n">mySMTP</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>    <span class="n">FromAddress</span><span class="p">,</span> <span class="c1"># 寄件者</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>    <span class="n">ToAddress</span><span class="p">,</span> <span class="c1"># 收件者</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>    <span class="c1"># 信件內容 (標題與內文之間要空一行，而且只能用英文)</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>    <span class="s2">&quot;Subject: 2026.04.20 send gmail test.</span><span class="se">\n\n</span><span class="s2">It&#39;s very hot today.&quot;</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="p">)</span> <span class="c1"># 寄信 (status回傳{}表示成功)()只能用英文)</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="n">mySMTP</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span> <span class="c1"># 結束與 SMTP 伺服器的對話 (必須要回傳221，才算成功)</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;信件發送成功&quot;</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="mime">MIME<a class="headerlink" href="#mime" title="Permanent link">&para;</a></h2>
-<p>我們在剛剛所使用的<code>smtplib</code>，本質就像郵差。那剛剛的範例其實就有點類似隨手拿一張白紙寫一寫就給郵差。同時，<code>smtplib</code>他只能使用ASCII編碼(就是只能寫英文跟數字)。</p>
-<p>而MIME (Multipurpose Internet Mail Extensions) 就像是「標準化的包裹」。</p>
+<p>我們剛剛使用的 <code>smtplib</code>，可以把它想成<strong>負責送信的郵差</strong>。</p>
+<p>如果只使用 <code>smtplib</code>，就像是在一張白紙上寫幾行英文，直接交給郵差寄出去。這種方式很簡單，但功能有限，只能傳送純文字，而且預設只能處理 ASCII 字元，也就是英文、數字和部分符號，遇到中文就容易出現亂碼。</p>
+<p>MIME (Multipurpose Internet Mail Extensions) 則像是<strong>專門寄包裹的包裝規格</strong>。</p>
+<p>它會先把 Email 包裝好，再貼上各種標籤，告訴收件人的郵件系統：</p>
 <ul>
-<li>可以在包裹（Email）裡放任何東西：中文信件、HTML、圖片、PDF 檔案。</li>
-<li>MIME 會在包裹外面貼上「標籤」，告訴收件人的 Email 軟體（如 Gmail）：「嘿！我這個包裹裡，第一層是純文字，第二層是一張圖片附件，第三層是一個 PDF 附件。」</li>
-<li>這樣，Gmail 收到後就知道該如何正確地「拆開」並「展示」你的信件。</li>
+<li>這一段是純文字。</li>
+<li>這一段是 HTML 網頁內容。</li>
+<li>這裡有一張圖片附件。</li>
+<li>這裡有一份 PDF 檔案。</li>
+</ul>
+<p>有了這些標籤，Gmail、Outlook 等郵件軟體收到信後，就知道該怎麼解析內容，正確顯示中文、HTML 版面，以及各種附件。</p>
+<p>因此，實際開發中通常會搭配使用：</p>
+<ul>
+<li><code>smtplib</code>：負責把信送出去。</li>
+<li><code>email.mime</code> (MIME)：負責把信的內容包裝成標準格式，讓各種郵件軟體都能正確顯示。</li>
 </ul>
 <p><img alt="" src="Gmail_assets/MIME.png" /></p>
 <table>
@@ -690,19 +796,28 @@
 </tr>
 </tbody>
 </table>
+<h3 id="mime_1">範例：使用MIME發送信件<a class="headerlink" href="#mime_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="Gmail_src/%E4%BD%BF%E7%94%A8MIME%E7%99%BC%E9%80%81%E7%B4%94%E6%96%87%E5%AD%97%E4%BF%A1%E4%BB%B6.py">範例：使用MIME發送純文字信件</a></li>
-<li><a href="Gmail_src/%E4%BD%BF%E7%94%A8MIME%E7%99%BC%E9%80%81HTML%E6%A0%BC%E5%BC%8F%E4%BF%A1%E4%BB%B6.py">範例：使用MIME發送HTML格式信件</a></li>
-<li><a href="Gmail_src/%E5%B0%87%E7%B4%94%E6%96%87%E5%AD%97%E4%BF%A1%E4%BB%B6%E8%BD%89%E6%88%90HTML%E6%A0%BC%E5%BC%8F%E4%BF%A1%E4%BB%B6.txt">提示詞：將純文字信件轉成HTML格式信件</a></li>
-<li><a href="Gmail_assets/%E7%B3%BB%E7%B5%B1%E4%BA%82%E7%99%BC%E4%BF%A1%E4%BB%B6A.PNG">成大亂發郵件</a></li>
-<li><a href="Gmail_src/%E4%BD%BF%E7%94%A8MIME%E7%99%BC%E9%80%81%E5%9C%96%E7%89%87%2B%E7%B4%94%E6%96%87%E5%AD%97%E4%BF%A1%E4%BB%B6.py">範例：使用MIME發送圖片+純文字信件</a></li>
-<li><a href="Gmail_src/%E4%BD%BF%E7%94%A8MIME%E7%99%BC%E9%80%81%E9%99%84%E4%BB%B6%2B%E7%B4%94%E6%96%87%E5%AD%97%E4%BF%A1%E4%BB%B6.py">範例：使用MIME發送附件+純文字信件</a></li>
-<li><a href="Gmail_src/%E5%AE%A2%E8%A3%BD%E5%8C%96%E8%A1%8C%E9%8A%B7%E4%BF%A1%E4%BB%B6%E5%A4%A7%E9%87%8F%E7%99%BC%E9%80%81.py">範例：客製化行銷信件大量發送</a></li>
-<li><a href="Gmail_src/%E4%B8%B2%E6%8E%A5yfinance%E6%8A%93%E8%82%A1%E7%A5%A8%E8%B3%87%E6%96%99%EF%BC%8C%E5%AF%84%E9%80%81%E5%9B%BA%E5%AE%9A%E8%B2%A1%E7%B6%93%E4%BF%A1%E4%BB%B6.py">範例：串接yfinance抓股票資料，寄送固定財經信件</a></li>
-<li><a href="Gmail_src/%E4%B8%B2%E6%8E%A5yfinance%E6%8A%93%E8%82%A1%E7%A5%A8%E8%B3%87%E6%96%99%EF%BC%8C%E5%AF%84%E9%80%81%E5%9B%BA%E5%AE%9A%E8%B2%A1%E7%B6%93%E4%BF%A1%E4%BB%B6.txt">提示詞：串接yfinance抓股票資料，寄送固定財經信件</a></li>
-<li><a href="Gmail_src/%E7%B3%BB%E7%B5%B1%E7%99%BC%E9%80%81Gmail.py">範例：系統發送gmail</a></li>
-<li><a href="./系統發送gmail.txt">檢討：系統發送gmail</a></li>
+<li><a href="Gmail_src/%E4%BD%BF%E7%94%A8MIME%E7%99%BC%E9%80%81%E7%B4%94%E6%96%87%E5%AD%97%E4%BF%A1%E4%BB%B6/">範例：使用MIME發送純文字信件</a></li>
+<li><a href="Gmail_src/%E4%BD%BF%E7%94%A8MIME%E7%99%BC%E9%80%81HTML%E6%A0%BC%E5%BC%8F%E4%BF%A1%E4%BB%B6/">範例：使用MIME發送HTML格式信件</a></li>
+<li><a href="Gmail_src/%E4%BD%BF%E7%94%A8MIME%E7%99%BC%E9%80%81%E5%9C%96%E7%89%87%2B%E7%B4%94%E6%96%87%E5%AD%97%E4%BF%A1%E4%BB%B6/">範例：使用MIME發送圖片+純文字信件</a></li>
+<li><a href="Gmail_src/%E4%BD%BF%E7%94%A8MIME%E7%99%BC%E9%80%81%E9%99%84%E4%BB%B6%2B%E7%B4%94%E6%96%87%E5%AD%97%E4%BF%A1%E4%BB%B6/">範例：使用MIME發送附件+純文字信件</a></li>
+<li><a href="Gmail_src/%E5%AE%A2%E8%A3%BD%E5%8C%96%E8%A1%8C%E9%8A%B7%E4%BF%A1%E4%BB%B6%E5%A4%A7%E9%87%8F%E7%99%BC%E9%80%81/">範例：客製化行銷信件大量發送</a></li>
+<li><a href="Gmail_src/%E4%B8%B2%E6%8E%A5yfinance%E6%8A%93%E8%82%A1%E7%A5%A8%E8%B3%87%E6%96%99%EF%BC%8C%E5%AF%84%E9%80%81%E5%9B%BA%E5%AE%9A%E8%B2%A1%E7%B6%93%E4%BF%A1%E4%BB%B6/">範例：串接yfinance抓股票資料，寄送固定財經信件</a></li>
+<li><a href="Gmail_src/%E7%B3%BB%E7%B5%B1%E7%99%BC%E9%80%81Gmail%E4%BB%8B%E9%9D%A2%E7%B6%B2%E9%A0%81%E7%89%88/">範例：系統發送Gmail介面網頁版.md</a></li>
 </ul>
+<h3 id="_1">補充：成大亂發郵件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<!-- 兩張 -->
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <img
+        src="./Gmail_assets/系統亂發信件A.PNG"
+        alt="系統亂發信件A"
+        style="width: calc(50% - 10px); height: auto; object-fit: cover;">
+    <img
+        src="./Gmail_assets/系統亂發信件B.PNG"
+        alt="系統亂發信件B"
+        style="width: calc(50% - 10px); height: auto; object-fit: cover;">
+</div>
 
 
 
@@ -750,11 +865,13 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
     
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "toc.follow", "navigation.instant", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "navigation.top", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
