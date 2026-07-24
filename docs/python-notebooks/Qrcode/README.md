@@ -227,7 +227,6 @@ img = img.convert("RGB")
 img.show() # 顯示圖片
 ```
 
-```html
 <!-- 兩張 -->
 <div style="display: flex; flex-wrap: wrap; gap: 20px;">
   <img
@@ -241,9 +240,7 @@ img.show() # 顯示圖片
     style="width: calc(50% - 10px); height: auto; object-fit: cover;"
   />
 </div>
-```
 
-```html
 <!-- 兩張 -->
 <div style="display: flex; flex-wrap: wrap; gap: 20px;">
   <img
@@ -257,4 +254,3 @@ img.show() # 顯示圖片
     style="width: calc(50% - 10px); height: auto; object-fit: cover;"
   />
 </div>
-```
