@@ -1,5 +1,7 @@
 # Qrcode
 
+==專案下載：https://github.com/kcwc1029/kcwc1029.github.io/tree/main/docs/python-notebooks/Qrcode==
+
 > 補充：
 > 電腦讀取qrcode 線上工具：https://zxing.org/w/decode.jspx
 

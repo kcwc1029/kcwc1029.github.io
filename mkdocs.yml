@@ -47,7 +47,9 @@ nav:
   - Python教材: python-notebooks/python課綱.md
   - C++教材: cpp-notebooks/cpp課綱.md
   - AI應用: AI應用/AI應用.md
-  - 日記: 手札/手札.md
+  - 日記:
+      - 手札首頁: 手札/手札.md
+      - 12天補充兵: 手札/12天補充兵/README.md
 
 markdown_extensions:
   - admonition # 提示框 (Note、Warning、Tip)
