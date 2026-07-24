@@ -28,6 +28,8 @@ Cookie 是**由伺服器建立，儲存在瀏覽器中的小型資料**。
 - 保存購物車
 - 分析使用者行為
 
+![](../API_Requests_assets/Cookie網站識別貼紙.png)
+
 ## Cookie 運作流程
 
 ```text
