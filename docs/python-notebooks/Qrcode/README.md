@@ -227,30 +227,34 @@ img = img.convert("RGB")
 img.show() # 顯示圖片
 ```
 
-```html=
+```html
 <!-- 兩張 -->
 <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-    <img
-        src="./Qrcode_assets/VCARD展示demo.png"
-        alt="VCARD展示demo.png"
-        style="width: calc(50% - 10px); height: auto; object-fit: cover;">
-    <img
-        src="./Qrcode_assets/名片01.png"
-        alt="名片01.png"
-        style="width: calc(50% - 10px); height: auto; object-fit: cover;">
+  <img
+    src="./Qrcode_assets/VCARD展示demo.png"
+    alt="VCARD展示demo.png"
+    style="width: calc(50% - 10px); height: auto; object-fit: cover;"
+  />
+  <img
+    src="./Qrcode_assets/名片01.png"
+    alt="名片01.png"
+    style="width: calc(50% - 10px); height: auto; object-fit: cover;"
+  />
 </div>
 ```
 
-```html=
+```html
 <!-- 兩張 -->
 <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-    <img
-        src="./Qrcode_assets/名片02.png"
-        alt="名片02.png"
-        style="width: calc(50% - 10px); height: auto; object-fit: cover;">
-    <img
-        src="./Qrcode_assets/名片03.png"
-        alt="名片03.png"
-        style="width: calc(50% - 10px); height: auto; object-fit: cover;">
+  <img
+    src="./Qrcode_assets/名片02.png"
+    alt="名片02.png"
+    style="width: calc(50% - 10px); height: auto; object-fit: cover;"
+  />
+  <img
+    src="./Qrcode_assets/名片03.png"
+    alt="名片03.png"
+    style="width: calc(50% - 10px); height: auto; object-fit: cover;"
+  />
 </div>
 ```
