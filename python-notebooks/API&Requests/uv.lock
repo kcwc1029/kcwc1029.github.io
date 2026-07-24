@@ -15,7 +15,7 @@ resolution-markers = [
 ]
 
 [[package]]
-name = "api-requests-course"
+name = "api-requests"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

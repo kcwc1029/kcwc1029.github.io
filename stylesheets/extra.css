@@ -3,6 +3,7 @@
    Material for MkDocs
 ========================================== */
 
+
 /* ---------- 全站變數 ---------- */
 
 :root {
@@ -21,6 +22,7 @@
     0 8px 24px rgba(0, 0, 0, 0.05);
 }
 
+
 /* ---------- 整體寬度 ---------- */
 
 .md-grid {
@@ -28,9 +30,10 @@
 }
 
 .md-content__inner {
-    max-width: 1250px;
-    margin: 0 auto;
+  max-width: 1250px;
+  margin: 0 auto;
 }
+
 
 /* ---------- 文章排版 ---------- */
 
@@ -44,33 +47,39 @@
   margin-bottom: 1.1em;
 }
 
+
 /* ---------- 標題 ---------- */
 
 .md-typeset h1 {
-  font-size: clamp(2rem,4vw,2rem);
-  font-weight: 800;
-  /* line-height: 1; */
-  letter-spacing: -0.045em;
   margin-top: 0.4rem;
   margin-bottom: 1.2rem;
+
+  font-size: clamp(2rem, 4vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
 }
+
 
 /* 白天模式 */
 [data-md-color-scheme="default"] .md-typeset h1 {
   color: #111111;
 }
 
-/* 黑暗模式 */
+
+/* 深色模式 */
 [data-md-color-scheme="slate"] .md-typeset h1 {
   color: #f5f5f7;
 }
 
+
 .md-typeset h2 {
+  margin-top: 2.8rem;
+  padding-bottom: 0.45rem;
+
   font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: -0.025em;
-  margin-top: 2.8rem;
-  padding-bottom: 0.45rem;
+
   border-bottom: 1px solid var(--mix-border);
 }
 
@@ -78,18 +87,22 @@
   border-bottom-color: var(--mix-border-dark);
 }
 
+
 .md-typeset h3 {
+  margin-top: 2rem;
+
   font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: -0.015em;
-  margin-top: 2rem;
 }
+
 
 /* ---------- Header ---------- */
 
 .md-header {
-  box-shadow: none;
   border-bottom: 1px solid var(--mix-border);
+  box-shadow: none;
+
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
@@ -98,20 +111,30 @@
   border-bottom-color: var(--mix-border-dark);
 }
 
+
 /* ---------- 上方 Tabs ---------- */
 
 .md-tabs {
-  box-shadow: none;
+  overflow: visible;
+
   border-bottom: 1px solid var(--mix-border);
+  box-shadow: none;
+}
+
+.md-tabs__inner,
+.md-tabs__list {
+  overflow: visible;
 }
 
 [data-md-color-scheme="slate"] .md-tabs {
   border-bottom-color: var(--mix-border-dark);
 }
 
+
 .md-tabs__link {
   font-weight: 600;
   opacity: 0.72;
+
   transition:
     opacity 0.2s ease,
     transform 0.2s ease;
@@ -122,14 +145,150 @@
   opacity: 1;
 }
 
+
+/* ---------- 上方導覽下拉選單 ---------- */
+
+.md-tabs__item {
+  position: relative;
+}
+
+
+/* 下拉箭頭 */
+.md-tabs__dropdown-arrow {
+  display: inline-block;
+  margin-left: 0.25rem;
+
+  font-size: 0.72rem;
+  opacity: 0.65;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.md-tabs__item--dropdown:hover .md-tabs__dropdown-arrow,
+.md-tabs__item--dropdown:focus-within .md-tabs__dropdown-arrow {
+  opacity: 1;
+  transform: rotate(180deg);
+}
+
+
+/* 第二層下拉選單 */
+.md-tabs__dropdown {
+  position: absolute;
+  top: calc(100% - 0.1rem);
+  left: 0;
+  z-index: 1000;
+
+  min-width: 220px;
+  margin: 0;
+  padding: 0.5rem;
+
+  list-style: none;
+
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  background-color: var(--md-default-bg-color);
+  border: 1px solid var(--mix-border);
+  border-radius: var(--mix-radius-md);
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.14),
+    0 2px 6px rgba(0, 0, 0, 0.06);
+
+  transform: translateY(0.5rem);
+
+  transition:
+    visibility 0.18s ease,
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+[data-md-color-scheme="slate"] .md-tabs__dropdown {
+  border-color: var(--mix-border-dark);
+}
+
+
+/* 顯示下拉選單 */
+.md-tabs__item--dropdown:hover > .md-tabs__dropdown,
+.md-tabs__item--dropdown:focus-within > .md-tabs__dropdown {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+
+  transform: translateY(0);
+}
+
+
+/* 下拉選單項目 */
+.md-tabs__dropdown-item {
+  position: relative;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+/* 下拉選單文字與連結 */
+.md-tabs__dropdown-link,
+.md-tabs__dropdown-title {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.65rem 0.85rem;
+
+  color: var(--md-default-fg-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: left;
+  white-space: nowrap;
+
+  border-radius: var(--mix-radius-sm);
+}
+
+
+/* 可點擊下拉連結 */
+.md-tabs__dropdown-link {
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.md-tabs__dropdown-link:hover {
+  color: var(--mix-blue);
+  text-decoration: none;
+
+  background-color: rgba(9, 105, 218, 0.09);
+}
+
+
+/* 第三層選單 */
+.md-tabs__dropdown-submenu {
+  margin: 0 0 0.35rem 0.75rem;
+  padding: 0 0 0 0.55rem;
+
+  list-style: none;
+  border-left: 1px solid var(--mix-border);
+}
+
+[data-md-color-scheme="slate"] .md-tabs__dropdown-submenu {
+  border-left-color: var(--mix-border-dark);
+}
+
+
 /* ---------- 左側導覽 ---------- */
 
 .md-nav__link {
-  border-radius: 7px;
   padding: 0.35rem 0.5rem;
+
+  border-radius: 7px;
+
   transition:
-    background-color 0.15s ease,
-    color 0.15s ease;
+    color 0.15s ease,
+    background-color 0.15s ease;
 }
 
 .md-nav__link:hover {
@@ -141,177 +300,6 @@
   font-weight: 700;
 }
 
-/* ---------- 連結 ---------- */
-
-.md-typeset a {
-  color: var(--mix-blue);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
-}
-
-.md-typeset a:hover {
-  color: var(--mix-blue-hover);
-  text-decoration: underline;
-}
-
-/* ---------- 按鈕 ---------- */
-
-.md-typeset .md-button {
-  border-radius: 999px;
-  padding: 0.65rem 1.2rem;
-  font-weight: 650;
-  border-width: 1px;
-  transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease,
-    background-color 0.18s ease;
-}
-
-.md-typeset .md-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-}
-
-/* ---------- 卡片 ---------- */
-
-.md-typeset .grid.cards > ul > li {
-  padding: 1.45rem;
-  border: 1px solid var(--mix-border);
-  border-radius: var(--mix-radius-lg);
-  box-shadow: var(--mix-shadow);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
-}
-
-[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li {
-  border-color: var(--mix-border-dark);
-}
-
-.md-typeset .grid.cards > ul > li:hover {
-  transform: translateY(-4px);
-  border-color: rgba(9, 105, 218, 0.55);
-  box-shadow:
-    0 4px 10px rgba(0, 0, 0, 0.06),
-    0 16px 38px rgba(0, 0, 0, 0.09);
-}
-
-/* ---------- 行內程式碼 ---------- */
-
-.md-typeset code {
-  border-radius: 6px;
-  padding: 0.17em 0.38em;
-  font-size: 0.92em;
-}
-
-/* ---------- 程式碼區塊 ---------- */
-
-.md-typeset pre {
-  border: 1px solid var(--mix-border);
-  border-radius: var(--mix-radius-md);
-  overflow: hidden;
-  box-shadow: none;
-}
-
-[data-md-color-scheme="slate"] .md-typeset pre {
-  border-color: var(--mix-border-dark);
-}
-
-.md-typeset pre > code {
-  border-radius: 0;
-  line-height: 1.7;
-}
-
-/* 程式碼標題列 */
-.highlighttable,
-.highlight {
-  border-radius: var(--mix-radius-md);
-}
-
-/* ---------- 表格 ---------- */
-
-.md-typeset table:not([class]) {
-  border: 1px solid var(--mix-border);
-  border-radius: var(--mix-radius-md);
-  overflow: hidden;
-  border-collapse: separate;
-  border-spacing: 0;
-  box-shadow: none;
-}
-
-[data-md-color-scheme="slate"] .md-typeset table:not([class]) {
-  border-color: var(--mix-border-dark);
-}
-
-.md-typeset table:not([class]) th {
-  font-weight: 700;
-}
-
-.md-typeset table:not([class]) th,
-.md-typeset table:not([class]) td {
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid var(--mix-border);
-}
-
-[data-md-color-scheme="slate"] .md-typeset table:not([class]) th,
-[data-md-color-scheme="slate"] .md-typeset table:not([class]) td {
-  border-bottom-color: var(--mix-border-dark);
-}
-
-.md-typeset table:not([class]) tr:last-child td {
-  border-bottom: none;
-}
-
-/* ---------- 引言 ---------- */
-
-.md-typeset blockquote {
-  margin-left: 0;
-  padding: 0.4rem 1rem;
-  border-left: 4px solid var(--mix-blue);
-  border-radius: 0 var(--mix-radius-sm) var(--mix-radius-sm) 0;
-  color: var(--md-default-fg-color--light);
-}
-
-/* ---------- 提示框 ---------- */
-
-.md-typeset .admonition,
-.md-typeset details {
-  border-width: 1px;
-  border-radius: var(--mix-radius-md);
-  box-shadow: none;
-}
-
-/* ---------- 搜尋框 ---------- */
-
-.md-search__form {
-  border-radius: 12px;
-}
-
-.md-search__input {
-  border-radius: 12px;
-}
-
-/* ---------- 圖片 ---------- */
-
-.md-typeset img {
-  border-radius: var(--mix-radius-md);
-  border: 1px solid var(--mix-border);
-}
-
-[data-md-color-scheme="slate"] .md-typeset img {
-  border-color: var(--mix-border-dark);
-}
-
-/* ---------- 分隔線 ---------- */
-
-.md-typeset hr {
-  border-bottom: 1px solid var(--mix-border);
-}
-
-[data-md-color-scheme="slate"] .md-typeset hr {
-  border-bottom-color: var(--mix-border-dark);
-}
 
 /* ---------- 右側目錄 ---------- */
 
@@ -323,6 +311,215 @@
   border-left-color: var(--mix-border-dark);
 }
 
+
+/* ---------- 連結 ---------- */
+
+.md-typeset a {
+  color: var(--mix-blue);
+
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.md-typeset a:hover {
+  color: var(--mix-blue-hover);
+  text-decoration: underline;
+}
+
+
+/* ---------- 按鈕 ---------- */
+
+.md-typeset .md-button {
+  padding: 0.65rem 1.2rem;
+
+  font-weight: 650;
+
+  border-width: 1px;
+  border-radius: 999px;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.md-typeset .md-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ---------- 卡片 ---------- */
+
+.md-typeset .grid.cards > ul > li {
+  padding: 1.45rem;
+
+  border: 1px solid var(--mix-border);
+  border-radius: var(--mix-radius-lg);
+
+  box-shadow: var(--mix-shadow);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li {
+  border-color: var(--mix-border-dark);
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: rgba(9, 105, 218, 0.55);
+
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.06),
+    0 16px 38px rgba(0, 0, 0, 0.09);
+
+  transform: translateY(-4px);
+}
+
+
+/* ---------- 行內程式碼 ---------- */
+
+.md-typeset code {
+  padding: 0.17em 0.38em;
+
+  font-size: 0.92em;
+
+  border-radius: 6px;
+}
+
+
+/* ---------- 程式碼區塊 ---------- */
+
+.md-typeset pre {
+  overflow: hidden;
+
+  border: 1px solid var(--mix-border);
+  border-radius: var(--mix-radius-md);
+
+  box-shadow: none;
+}
+
+[data-md-color-scheme="slate"] .md-typeset pre {
+  border-color: var(--mix-border-dark);
+}
+
+.md-typeset pre > code {
+  line-height: 1.7;
+  border-radius: 0;
+}
+
+
+/* 程式碼標題列 */
+.highlighttable,
+.highlight {
+  border-radius: var(--mix-radius-md);
+}
+
+
+/* ---------- 表格 ---------- */
+
+.md-typeset table:not([class]) {
+  overflow: hidden;
+
+  border: 1px solid var(--mix-border);
+  border-spacing: 0;
+  border-collapse: separate;
+  border-radius: var(--mix-radius-md);
+
+  box-shadow: none;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) {
+  border-color: var(--mix-border-dark);
+}
+
+
+.md-typeset table:not([class]) th {
+  font-weight: 700;
+}
+
+
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+  padding: 0.75rem 1rem;
+
+  border-bottom: 1px solid var(--mix-border);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th,
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td {
+  border-bottom-color: var(--mix-border-dark);
+}
+
+
+.md-typeset table:not([class]) tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* ---------- 引言 ---------- */
+
+.md-typeset blockquote {
+  margin-left: 0;
+  padding: 0.4rem 1rem;
+
+  color: var(--md-default-fg-color--light);
+
+  border-left: 4px solid var(--mix-blue);
+  border-radius:
+    0
+    var(--mix-radius-sm)
+    var(--mix-radius-sm)
+    0;
+}
+
+
+/* ---------- 提示框 ---------- */
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 1px;
+  border-radius: var(--mix-radius-md);
+
+  box-shadow: none;
+}
+
+
+/* ---------- 搜尋框 ---------- */
+
+.md-search__form,
+.md-search__input {
+  border-radius: 12px;
+}
+
+
+/* ---------- 圖片 ---------- */
+
+.md-typeset img {
+  border: 1px solid var(--mix-border);
+  border-radius: var(--mix-radius-md);
+}
+
+[data-md-color-scheme="slate"] .md-typeset img {
+  border-color: var(--mix-border-dark);
+}
+
+
+/* ---------- 分隔線 ---------- */
+
+.md-typeset hr {
+  border-bottom: 1px solid var(--mix-border);
+}
+
+[data-md-color-scheme="slate"] .md-typeset hr {
+  border-bottom-color: var(--mix-border-dark);
+}
+
+
 /* ---------- Footer ---------- */
 
 .md-footer {
@@ -333,31 +530,47 @@
   border-top-color: var(--mix-border-dark);
 }
 
+
 /* ---------- 首頁 Hero ---------- */
 
 .hero {
   padding: 4.5rem 1rem 3.5rem;
+
   text-align: center;
 }
 
 .hero h1 {
+  margin-bottom: 1rem;
+
   font-size: clamp(2.8rem, 8vw, 5rem);
   font-weight: 850;
   letter-spacing: -0.06em;
-  margin-bottom: 1rem;
 }
 
 .hero p {
   max-width: 720px;
   margin: 0 auto 2rem;
+
+  color: var(--md-default-fg-color--light);
   font-size: 1.1rem;
   line-height: 1.75;
-  color: var(--md-default-fg-color--light);
 }
 
 .hero .md-button {
   margin: 0.3rem;
 }
+
+
+/* ---------- 平板與手機版 ---------- */
+
+@media screen and (max-width: 76.234375em) {
+
+  /* 手機版使用 Material 原本的側邊導覽 */
+  .md-tabs__dropdown {
+    display: none;
+  }
+}
+
 
 /* ---------- 手機版 ---------- */
 
@@ -383,7 +596,7 @@
   }
 
   .md-typeset .grid.cards > ul > li {
-    border-radius: 14px;
     padding: 1.1rem;
+    border-radius: 14px;
   }
 }

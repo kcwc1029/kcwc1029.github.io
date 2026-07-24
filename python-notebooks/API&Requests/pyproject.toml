@@ -1,5 +1,5 @@
 [project]
-name = "api-requests-course"
+name = "api-requests"
 version = "0.1.0"
 description = "職業訓練用 Python Requests API 串接教材"
 requires-python = ">=3.10"
