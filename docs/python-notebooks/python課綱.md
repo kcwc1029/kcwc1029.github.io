@@ -12,8 +12,8 @@
 
 ---
 
-- [發送Gmail](./Gmail/README.md)
-- [Qrcode](./Qrcode/README.md)
+- (完成)[發送Gmail](./Gmail/README.md)
+- (完成)[Qrcode](./Qrcode/README.md)
 - [海龜繪圖](./海龜繪圖/README.md)
 
 - [CustomTkinter](./CustomTkinter/README.md)

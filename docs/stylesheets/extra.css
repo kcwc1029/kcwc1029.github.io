@@ -36,7 +36,7 @@
 
 .md-typeset {
   font-size: 0.84rem;
-  line-height: 1.85;
+  line-height: 1.7;
   letter-spacing: 0.005em;
 }
 
@@ -49,7 +49,7 @@
 .md-typeset h1 {
   font-size: clamp(2rem,4vw,2rem);
   font-weight: 800;
-  line-height: 1.12;
+  /* line-height: 1; */
   letter-spacing: -0.045em;
   margin-top: 0.4rem;
   margin-bottom: 1.2rem;

@@ -1,3 +1,4 @@
+```python
 import os
 from pathlib import Path
 from dotenv import load_dotenv
@@ -88,3 +89,4 @@ with smtplib.SMTP("smtp.gmail.com", 587) as server:
 
 
 print("郵件已寄出！")
+```

@@ -3,8 +3,8 @@
 - [陣列](./陣列/README.md)
 - [字串](./字串/README.md)
 - [指標](./指標/README.md)
-
-ZeroJudge
+- [函數](./函數/README.md)
+- [前置處理與巨集](./前置處理與巨集/README.md)
 
 ### ZeroJudge -- 判斷式
 

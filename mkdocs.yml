@@ -25,17 +25,19 @@ theme:
         name: 切換為淺色模式
 
   features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.expand
-    - navigation.top
-    - navigation.footer
-    - search.suggest
-    - search.highlight
-    - content.code.copy
-    - toc.follow
-    - navigation.instant
-    - navigation.tracking
+    - navigation.tabs # 頂層章節顯示成頁面上方分頁
+    - navigation.sections # 第二層章節在左側導覽列中分組顯示
+    - navigation.path # 顯示目前頁面的導覽路徑，例如 C++教材 > 判斷式
+    - navigation.top # 頁面往上捲動時，顯示「返回頂端」按鈕
+    - navigation.footer # 頁面底部顯示上一篇與下一篇
+    - navigation.instant # 點擊站內連結時，不重新載入整個頁面
+    - navigation.instant.progress # 頁面載入較慢時，在頂端顯示進度條
+    - navigation.tracking # 捲動頁面時，網址自動更新到目前標題的錨點
+    - toc.follow # 自動捲動右側目錄，讓目前閱讀的標題保持可見
+    - search.suggest # 搜尋時提供文字補全建議
+    - search.highlight # 從搜尋結果進入頁面後，高亮搜尋關鍵字
+    - search.share # 搜尋視窗中加入分享按鈕，可複製搜尋結果網址
+    - content.code.copy # 程式碼區塊右上角顯示複製按鈕
 
   icon:
     logo: material/book-open-page-variant
@@ -48,20 +50,20 @@ nav:
   - 日記: 手札/手札.md
 
 markdown_extensions:
-  - admonition
-  - attr_list
-  - md_in_html
-  - tables
-  - footnotes
+  - admonition # 提示框 (Note、Warning、Tip)
+  - pymdownx.mark # ==文字高亮==
+  - attr_list # 自訂 HTML 屬性 (id、class、width...)
+  - md_in_html # HTML 標籤內可使用 Markdown
+  - tables # Markdown 表格
+  - footnotes # 註腳
   - toc:
-      permalink: true
-  - pymdownx.details
-  - pymdownx.superfences
+      permalink: true # 標題後加入永久連結
+  - pymdownx.superfences # 增強版程式碼區塊、Mermaid、Tabs
   - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
+      anchor_linenums: true # 程式碼行號可連結
+  - pymdownx.inlinehilite # 行內程式碼高亮
   - pymdownx.tabbed:
-      alternate_style: true
+      alternate_style: true # Material 風格的分頁(Tab)
 
 extra_css:
   - stylesheets/extra.css
