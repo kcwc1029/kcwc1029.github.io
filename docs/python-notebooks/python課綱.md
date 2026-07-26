@@ -48,8 +48,8 @@
 
 ## 爬蟲相關
 
-- [API&Requests](./API&Requests/README.md)
-- [爬蟲介紹與BeautifulSoup]
+- (完成)[API&Requests](./API&Requests/README.md)
+- [爬蟲介紹&BeautifulSoup](./爬蟲介紹&BeautifulSoup/README.md)
 - [自動化操作與selenium]
 
 ## 網頁相關
