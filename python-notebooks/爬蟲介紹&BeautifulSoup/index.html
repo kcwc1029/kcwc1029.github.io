@@ -1,0 +1,1644 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、AI筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/python-notebooks/%E7%88%AC%E8%9F%B2%E4%BB%8B%E7%B4%B9%26BeautifulSoup/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Python 爬蟲介紹與 BeautifulSoup - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-beautifulsoup" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python 爬蟲介紹與 BeautifulSoup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/AI%E6%87%89%E7%94%A8/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI應用
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+          
+  
+  
+  日記
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/AI%E6%87%89%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI應用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    日記
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    手札首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%89%8B%E6%9C%AD/12%E5%A4%A9%E8%A3%9C%E5%85%85%E5%85%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12天補充兵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        教師使用說明
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="教師使用說明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        建議授課節奏
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="python-beautifulsoup">Python 爬蟲介紹與 BeautifulSoup<a class="headerlink" href="#python-beautifulsoup" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>適用對象：職業訓練、第一次接觸網頁技術的學員<br />
+開發環境：VS Code、uv、Python 3.11 以上<br />
+教材定位：從「看得懂網頁」到「把 72 筆職缺整理成表格」<br />
+範例資料皆為教學用虛構資料，不需要連外即可練習。</p>
+</blockquote>
+<hr />
+<h2 id="_1">教師使用說明<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>這份教材刻意把技術講得比較慢。每遇到一個新名詞，先用生活類比，再看 HTML，最後才寫 Python。學生若問「這可以幹嘛」，可以先回答：</p>
+<ul>
+<li>求職時，自動整理公開職缺的地區、技能與薪資，減少逐頁抄寫。</li>
+<li>租屋時，整理公開物件後比較區域行情，但要遵守網站規定。</li>
+<li>比價時，把公開商品價格做成自己的觀察表。</li>
+<li>行政工作中，把重複貼到 Excel 的資料自動化。</li>
+<li>行銷工作中，整理公開活動、標題或新聞資料，再做分類與統計。</li>
+</ul>
+<p>爬蟲不是「破解網站」，而是讓程式代替人完成「下載公開頁面、找到需要的欄位、整理成資料」這三件事。能不能爬與該不該爬是兩個問題；技術做得到，不代表網站規定或法律允許。</p>
+<h3 id="_2">建議授課節奏<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>每段可以重複使用「預測 → 執行 → 解釋 → 改錯」：</p>
+<ol>
+<li>先不執行，讓學生猜輸出。</li>
+<li>執行範例，觀察實際結果。</li>
+<li>請學生用自己的話解釋每一行。</li>
+<li>故意把選擇器改錯，練習從空結果找原因。</li>
+<li>換一個條件，讓學生確認自己不是只會照抄。</li>
+</ol>
+<hr />
+<h1 id="_3">第一部分：爬蟲到底在做什麼<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
+<h2 id="1">1. 從「人工抄資料」開始想<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>假設你正在找工作。你打開職缺網站，看見 72 張職缺卡片，想回答：</p>
+<ul>
+<li>哪些工作接受無經驗？</li>
+<li>哪些工作最低薪資超過 35,000 元？</li>
+<li>台中有哪些 Python 相關職缺？</li>
+<li>哪個技能在這批職缺最常出現？</li>
+</ul>
+<p>人工做法是打開每一筆、複製、貼到 Excel。這很像請一個人做 72 次相同動作。爬蟲則是把這套規則寫成程式：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>取得網頁 → 看懂 HTML 結構 → 找到每張卡片 → 取出欄位 → 清理 → 儲存
+</code></pre></div>
+<p>爬蟲的英文常見為 Web Scraping。Scrape 原意有「刮取」，可以想像成從一大張佈告欄上，把你需要的公開資訊刮下來，整理進自己的表格。</p>
+<h3 id="_4">課堂提問<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>如果只有 3 筆資料，值得寫程式嗎？</li>
+<li>如果每天都要整理 3 筆，連續一年呢？</li>
+<li>如果網站明天改版，人工和程式各自會遇到什麼問題？</li>
+</ol>
+<p>關鍵不是資料「現在有幾筆」，而是工作是否重複、規則是否清楚，以及未來會不會再次執行。</p>
+<h2 id="2">2. 網頁、網站與伺服器<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>初學者常把三個概念混在一起：</p>
+<ul>
+<li>網站：像一間百貨公司。</li>
+<li>網頁：百貨公司裡的一個櫃位或一張目錄。</li>
+<li>伺服器：保管資料並接受請求的後場人員。</li>
+<li>瀏覽器：替使用者送出請求、把回應畫成畫面的工具。</li>
+</ul>
+<p>當你輸入網址並按 Enter，大致發生以下事情：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>你的瀏覽器                         網站伺服器
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>     |                                 |
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>     |---- HTTP Request：請給我頁面 ---&gt;|
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>     |                                 |
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>     |&lt;--- HTTP Response：狀態＋內容 ----|
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>     |                                 |
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>     ↓
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>把 HTML、CSS、JavaScript 呈現在螢幕上
+</code></pre></div>
+<p>爬蟲程式通常扮演一個簡化版瀏覽器。<code>requests</code> 負責「去拿」，BeautifulSoup 負責「在拿回來的 HTML 裡尋找」。</p>
+<blockquote>
+<p>記憶口訣：Requests 是外送員，BeautifulSoup 是整理員。<br />
+外送員把箱子拿回來，整理員才知道箱子裡哪些是商品、價格與地址。</p>
+</blockquote>
+<h2 id="3-http">3. HTTP 請求與回應<a class="headerlink" href="#3-http" title="Permanent link">&para;</a></h2>
+<p>HTTP 是瀏覽器與伺服器溝通的規則。像去餐廳點餐：</p>
+<ul>
+<li>URL：桌號加上餐點名稱，表示要找哪個資源。</li>
+<li>Method：動作；<code>GET</code> 通常是讀取，<code>POST</code> 常用於提交。</li>
+<li>Headers：附註，例如接受的格式、瀏覽器資訊。</li>
+<li>Body：要送出的主要內容，GET 通常沒有。</li>
+<li>Status Code：店家回覆的處理結果。</li>
+</ul>
+<p>常見狀態碼：</p>
+<table>
+<thead>
+<tr>
+<th>狀態碼</th>
+<th>白話意思</th>
+<th>程式應對</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>成功拿到內容</td>
+<td>繼續解析</td>
+</tr>
+<tr>
+<td>301/302</td>
+<td>資源搬家，請到別處</td>
+<td>requests 通常會跟隨轉址</td>
+</tr>
+<tr>
+<td>403</td>
+<td>伺服器拒絕</td>
+<td>停下來檢查規範，不要硬闖</td>
+</tr>
+<tr>
+<td>404</td>
+<td>找不到頁面</td>
+<td>檢查網址或記錄缺漏</td>
+</tr>
+<tr>
+<td>429</td>
+<td>請求太頻繁</td>
+<td>降低頻率、尊重限制</td>
+</tr>
+<tr>
+<td>500</td>
+<td>伺服器內部出錯</td>
+<td>稍後再試，設定重試上限</td>
+</tr>
+</tbody>
+</table>
+<p><code>response.status_code == 200</code> 不代表資料一定正確。伺服器也可能回傳登入頁、驗證頁或「查無資料」的 HTML。所以除了狀態碼，也要檢查頁面標題、資料筆數與必要欄位。</p>
+<h2 id="4">4. 靜態與動態網頁<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>這是爬蟲課最重要的判斷之一。</p>
+<h3 id="_5">靜態內容<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>伺服器回來的 HTML 裡已經有商品名稱、價格。BeautifulSoup 讀得到。</p>
+<h3 id="_6">動態內容<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>伺服器先回傳空殼，瀏覽器執行 JavaScript 後再取得資料。你在畫面看得到，<code>requests.get()</code> 的文字裡卻找不到。</p>
+<p>生活類比：</p>
+<ul>
+<li>靜態網頁像便當：打開盒子，飯菜都在。</li>
+<li>動態網頁像火鍋材料單：先拿到鍋子，稍後才由別人把食材送上來。</li>
+</ul>
+<p>BeautifulSoup 只負責解析收到的 HTML，不會執行 JavaScript。遇到動態網站時，應先用瀏覽器開發者工具的 Network 面板了解資料來源。若網站提供正式 API，通常優先依其規範使用 API。瀏覽器自動化是另一門課，不要一看到空資料就立刻換工具。</p>
+<hr />
+<h1 id="_7">第二部分：合法、合宜、可靠<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
+<h2 id="5">5. 寫程式之前的五個檢查<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<ol>
+<li>資料是否公開？是否需要登入、付費或繞過驗證？</li>
+<li>網站服務條款是否允許自動化存取？</li>
+<li><code>robots.txt</code> 提供了什麼爬取指引？</li>
+<li>是否包含姓名、電話、地址、帳號等個人資料？</li>
+<li>請求頻率是否會造成對方負擔？</li>
+</ol>
+<p><code>robots.txt</code> 是網站給自動化程式的爬取指引，但它不是法律同意書，也不是看到允許就代表任何用途都合法。仍要看服務條款、資料授權、個資與著作權。</p>
+<h3 id="_8">教學專案的安全原則<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>優先使用本教材提供的本機 HTML。</li>
+<li>真實網站只做少量、公開、允許的示範。</li>
+<li>設定 <code>timeout</code>，避免永久等待。</li>
+<li>說明 <code>User-Agent</code>，不要假冒不相關身分。</li>
+<li>控制頻率，能快取就不重複下載。</li>
+<li>不繞過登入、驗證碼、付費牆或存取控制。</li>
+<li>不收集完成任務所不需要的個資。</li>
+</ul>
+<h3 id="_9">可以討論的職場情境<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>主管說：「競爭對手網站都公開，你全部抓回來就好。」工程師仍要確認用途、規定與資料範圍。專業不只是會寫，而是知道何時應停下來詢問。</p>
+<hr />
+<h1 id="uvvs-code">第三部分：建立 uv＋VS Code 專案<a class="headerlink" href="#uvvs-code" title="Permanent link">&para;</a></h1>
+<h2 id="6-uv">6. uv 是什麼<a class="headerlink" href="#6-uv" title="Permanent link">&para;</a></h2>
+<p>Python 專案通常需要：</p>
+<ul>
+<li>指定 Python 版本；</li>
+<li>建立彼此隔離的虛擬環境；</li>
+<li>安裝套件；</li>
+<li>記錄版本，讓別台電腦重現。</li>
+</ul>
+<p>uv 把這些常用工作整合起來。虛擬環境可想成每個專案自己的工具箱：A 專案要新版套件、B 專案要舊版套件，彼此不打架。</p>
+<p>本教材已提供 <code>pyproject.toml</code>。在 VS Code 開啟本資料夾後，於終端機執行：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">uv</span> <span class="n">sync</span>
+</code></pre></div>
+<p>它會同步依賴並建立 <code>.venv</code>。接著在 VS Code：</p>
+<ol>
+<li>按 <code>Ctrl+Shift+P</code>。</li>
+<li>輸入 <code>Python: Select Interpreter</code>。</li>
+<li>選擇本專案 <code>.venv</code> 裡的 Python。</li>
+</ol>
+<p>執行程式：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">01_第一支BeautifulSoup</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+<p>若要從零建立另一個專案：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">uv</span> <span class="n">init</span> <span class="n">我的爬蟲專案</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">cd </span><span class="n">我的爬蟲專案</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">uv</span> <span class="n">add</span> <span class="n">requests</span> <span class="n">beautifulsoup4</span>
+</code></pre></div>
+<h3 id="_10">常見混淆<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>安裝套件名稱是 <code>beautifulsoup4</code>。</li>
+<li>Python 匯入名稱是 <code>bs4</code>。</li>
+<li>類別名稱是 <code>BeautifulSoup</code>。</li>
+</ul>
+<p>三者長得不同，但指向同一套工具。這不是打錯字。</p>
+<hr />
+<h1 id="html">第四部分：先讀懂 HTML<a class="headerlink" href="#html" title="Permanent link">&para;</a></h1>
+<h2 id="7-html">7. HTML 是有結構的文字<a class="headerlink" href="#7-html" title="Permanent link">&para;</a></h2>
+<p>以下是一張商品卡：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;product&quot;</span> <span class="na">data-id</span><span class="o">=</span><span class="s">&quot;P001&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;name&quot;</span><span class="p">&gt;</span>炙燒雞腿便當<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;price&quot;</span><span class="p">&gt;</span>120<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/product/P001&quot;</span><span class="p">&gt;</span>查看餐點<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>拆解第一行：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>&lt;article class=&quot;product&quot; data-id=&quot;P001&quot;&gt;
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    ↑          ↑                 ↑
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  標籤名      class 屬性          自訂屬性
+</code></pre></div>
+<ul>
+<li>標籤 Tag：說明內容角色，例如 <code>h1</code> 是主標題、<code>a</code> 是連結。</li>
+<li>屬性 Attribute：附加資訊，例如 <code>href</code>、<code>class</code>、<code>id</code>。</li>
+<li>文字 Text：人真正看到的「炙燒雞腿便當」。</li>
+<li>巢狀 Nesting：一個標籤可以包住其他標籤。</li>
+</ul>
+<h2 id="8-dom">8. DOM 樹<a class="headerlink" href="#8-dom" title="Permanent link">&para;</a></h2>
+<p>BeautifulSoup 不是把 HTML 當普通長字串，而是解析成樹：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>article.product
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>├── h2.name
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>│   └── &quot;炙燒雞腿便當&quot;
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>├── span.price
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>│   └── &quot;120&quot;
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>└── a
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    └── &quot;查看餐點&quot;
+</code></pre></div>
+<p>家族關係的說法很適合 DOM：</p>
+<ul>
+<li><code>article</code> 是三個標籤的 parent（父元素）。</li>
+<li><code>h2</code>、<code>span</code>、<code>a</code> 是 children（子元素）。</li>
+<li>三者彼此是 siblings（兄弟元素）。</li>
+<li>更外層還有 ancestors（祖先元素）。</li>
+</ul>
+<p>為什麼要懂樹？因為「找頁面上所有 span」太寬了；更可靠的說法是「每張 job-card 裡，找 salary」。先鎖定一張卡，再在卡內找欄位，資料才不會配錯。</p>
+<h2 id="9-id-class">9. id 與 class<a class="headerlink" href="#9-id-class" title="Permanent link">&para;</a></h2>
+<p>可以把 <code>id</code> 想成身分證號，同一頁理論上應唯一；把 <code>class</code> 想成社團名稱，許多元素可以加入同一社團。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;site-title&quot;</span><span class="p">&gt;</span>轉職雷達<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;job-card remote&quot;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><code>article</code> 同時有 <code>job-card</code> 與 <code>remote</code> 兩個 class。BeautifulSoup 的 <code>tag.get("class")</code> 通常會得到清單，而不是單一字串。</p>
+<hr />
+<h1 id="beautifulsoup">第五部分：BeautifulSoup 核心操作<a class="headerlink" href="#beautifulsoup" title="Permanent link">&para;</a></h1>
+<h2 id="10-html">10. 解析第一份 HTML<a class="headerlink" href="#10-html" title="Permanent link">&para;</a></h2>
+<p>檔案：<code>examples/01_第一支BeautifulSoup.py</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">html</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;datasets/迷你商店.html&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>逐行理解：</p>
+<ol>
+<li><code>Path</code> 幫我們處理檔案路徑。</li>
+<li><code>read_text()</code> 把檔案讀成 Python 字串。</li>
+<li><code>encoding="utf-8"</code> 告訴 Python 如何把位元組翻譯成繁體中文。</li>
+<li><code>BeautifulSoup(html, "html.parser")</code> 把字串解析成樹。</li>
+</ol>
+<p><code>html.parser</code> 是 Python 內建解析器，課堂環境最省事。真實世界還有 <code>lxml</code> 等解析器，速度與容錯可能不同；團隊應固定解析器並測試，避免不同電腦出現不同結果。</p>
+<h2 id="11-find-find_all">11. find() 與 find_all()<a class="headerlink" href="#11-find-find_all" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">title</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">cards</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;article&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;product&quot;</span><span class="p">)</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>回傳</th>
+<th>找不到時</th>
+<th>適用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>find()</code></td>
+<td>第一個 Tag</td>
+<td><code>None</code></td>
+<td>頁面標題、單一欄位</td>
+</tr>
+<tr>
+<td><code>find_all()</code></td>
+<td>ResultSet，像清單</td>
+<td>空清單 <code>[]</code></td>
+<td>多張卡片、多個連結</td>
+</tr>
+</tbody>
+</table>
+<p>為什麼是 <code>class_</code> 而不是 <code>class</code>？因為 <code>class</code> 已經是 Python 的保留字，所以 BeautifulSoup 使用尾端底線避開衝突。</p>
+<h3 id="_11">最常見錯誤<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">title</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;h9&quot;</span><span class="p">)</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<p>如果根本沒有 <code>h9</code>，<code>title</code> 是 <code>None</code>，再取 <code>.text</code> 就會出現：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>AttributeError: &#39;NoneType&#39; object has no attribute ...
+</code></pre></div>
+<p>安全寫法：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">title</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;h9&quot;</span><span class="p">)</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">if</span> <span class="n">title</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;找不到標題，請檢查 HTML 或選擇條件&quot;</span><span class="p">)</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</code></pre></div>
+<p>錯誤訊息不是責罵，而是線索：程式以為手上有標籤，實際拿到的是「沒有東西」。</p>
+<h2 id="12">12. 取得文字與屬性<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">name</span> <span class="o">=</span> <span class="n">tag</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">href</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;href&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">job_id</span> <span class="o">=</span> <span class="n">card</span><span class="p">[</span><span class="s2">&quot;data-job-id&quot;</span><span class="p">]</span>
+</code></pre></div>
+<ul>
+<li><code>.get_text()</code> 收集標籤裡的人類可見文字。</li>
+<li><code>strip=True</code> 移除頭尾多餘空白。</li>
+<li>第一個參數 <code>" "</code> 表示多段文字間用空格連接。</li>
+<li><code>tag["href"]</code> 不存在時會出錯。</li>
+<li><code>tag.get("href", "")</code> 不存在時回傳空字串，適合真實髒資料。</li>
+</ul>
+<p>何時該讓程式出錯？若 <code>data-job-id</code> 是資料絕對不可缺的主鍵，缺少時立刻出錯反而能早點發現品質問題。若是可選的圖片網址，使用預設值較合理。</p>
+<h2 id="13-css">13. CSS 選擇器<a class="headerlink" href="#13-css" title="Permanent link">&para;</a></h2>
+<p>CSS 選擇器本來是前端工程師用來指定「哪些元素要套樣式」，爬蟲也可用同一套語法找資料。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;article.job-card&quot;</span><span class="p">)</span>       <span class="c1"># 所有符合者</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">soup</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s2">&quot;#site-title&quot;</span><span class="p">)</span>        <span class="c1"># 第一個符合者</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;.job-card .salary&quot;</span><span class="p">)</span>      <span class="c1"># 卡片內的薪資</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;article.remote&quot;</span><span class="p">)</span>         <span class="c1"># 同時是 article 且有 remote class</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;[data-job-id=&#39;J009&#39;]&quot;</span><span class="p">)</span>   <span class="c1"># 指定屬性值</span>
+</code></pre></div>
+<p>常用符號：</p>
+<table>
+<thead>
+<tr>
+<th>選擇器</th>
+<th>意思</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tag</code></td>
+<td>標籤名</td>
+<td><code>article</code></td>
+</tr>
+<tr>
+<td><code>.class</code></td>
+<td>class</td>
+<td><code>.job-card</code></td>
+</tr>
+<tr>
+<td><code>#id</code></td>
+<td>id</td>
+<td><code>#site-title</code></td>
+</tr>
+<tr>
+<td><code>A B</code></td>
+<td>A 裡面的任意後代 B</td>
+<td><code>.job-card .salary</code></td>
+</tr>
+<tr>
+<td><code>A &gt; B</code></td>
+<td>A 的直接子元素 B</td>
+<td><code>article &gt; h2</code></td>
+</tr>
+<tr>
+<td><code>[attr]</code></td>
+<td>有某屬性</td>
+<td><code>[datetime]</code></td>
+</tr>
+<tr>
+<td><code>[attr=value]</code></td>
+<td>屬性值相同</td>
+<td><code>[data-job-id='J001']</code></td>
+</tr>
+<tr>
+<td><code>:not(...)</code></td>
+<td>排除條件</td>
+<td><code>.product:not(.sold-out)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_12">選擇器閱讀練習<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>請從右往左讀：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">section</span><span class="p">#</span><span class="nn">job-list</span><span class="w"> </span><span class="nt">article</span><span class="p">.</span><span class="nc">job-card</span><span class="w"> </span><span class="nt">h2</span><span class="p">.</span><span class="nc">job-title</span>
+</code></pre></div>
+<p>「找 class 是 job-title 的 h2；它在 class 是 job-card 的 article 裡；而 article 又在 id 是 job-list 的 section 裡。」</p>
+<h3 id="find-select">find 還是 select？<a class="headerlink" href="#find-select" title="Permanent link">&para;</a></h3>
+<p>沒有唯一正解。簡單找單一標籤時 <code>find()</code> 很直觀；已會 CSS 或條件涉及階層時，<code>select()</code> 常更好讀。團隊重點是保持一致與可維護，不是比誰寫得最短。</p>
+<hr />
+<h1 id="_13">第六部分：從網頁變成可分析資料<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h1>
+<h2 id="14-72">14. 先建立 72 筆本機職缺網站<a class="headerlink" href="#14-72" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">00_建立本機練習網站</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+<p>資料來源是 <code>datasets/職缺資料_72筆.csv</code>，執行後會建立 <code>datasets/職缺市集.html</code>。</p>
+<p>為什麼教材不直接爬真實求職網站？</p>
+<ul>
+<li>真實網站可能有禁止自動化的條款。</li>
+<li>版面可能在上課前一晚改掉。</li>
+<li>教室網路可能不穩。</li>
+<li>有些網站由 JavaScript 動態載入。</li>
+<li>本機資料可重複實驗，所有學生得到相同答案。</li>
+</ul>
+<p>這不是「假爬蟲」。HTML 解析、選擇器、清理、驗證與輸出流程都與真實工作相同，只是把不穩定的下載步驟隔離。</p>
+<h2 id="15">15. 一張卡片一筆資料<a class="headerlink" href="#15" title="Permanent link">&para;</a></h2>
+<p>檔案：<code>examples/04_解析72筆職缺.py</code></p>
+<p>核心模式：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">jobs</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;article.job-card&quot;</span><span class="p">):</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    <span class="n">job</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>        <span class="s2">&quot;職缺&quot;</span><span class="p">:</span> <span class="n">card</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s2">&quot;.job-title&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>        <span class="s2">&quot;公司&quot;</span><span class="p">:</span> <span class="n">card</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s2">&quot;.company&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>    <span class="p">}</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>    <span class="n">jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+</code></pre></div>
+<p>請注意搜尋範圍是 <code>card.select_one(...)</code>，不是每次都從 <code>soup</code> 搜。這像先拿起一張履歷，再從同一張履歷讀姓名和電話；如果分別從整疊履歷找第一個姓名、第一個電話，有機會把不同人的資料配在一起。</p>
+<h2 id="16">16. 資料型別清理<a class="headerlink" href="#16" title="Permanent link">&para;</a></h2>
+<p>網頁文字通常是字串：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">salary_text</span> <span class="o">=</span> <span class="s2">&quot;月薪 40,000 元&quot;</span>
+</code></pre></div>
+<p>要排序與計算，就要變成整數。教材頁面特別把純數字放在 <code>data-min</code>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">min_salary</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">salary_tag</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;data-min&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</code></pre></div>
+<p>真實網站沒有乾淨屬性時，可做清理：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;月薪 40,000 元&quot;</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;月薪&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;元&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</code></pre></div>
+<p>但要小心「面議」「時薪」「年薪」不能全部硬轉。資料清理前要先列出可能格式，再決定規則；不要用一個正規表示式假裝所有情況都一樣。</p>
+<h2 id="17">17. 多值欄位<a class="headerlink" href="#17" title="Permanent link">&para;</a></h2>
+<p>一份職缺可能有多個技能：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">skills</span> <span class="o">=</span> <span class="p">[</span><span class="n">tag</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">card</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;.skill&quot;</span><span class="p">)]</span>
+</code></pre></div>
+<p>結果：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">[</span><span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;BeautifulSoup&quot;</span><span class="p">]</span>
+</code></pre></div>
+<p>清單生成式的完整寫法：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">skills</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">card</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;.skill&quot;</span><span class="p">):</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>    <span class="n">skills</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tag</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</code></pre></div>
+<p>初學時先寫完整版，看懂「逐一取出 → 清理文字 → 放入清單」，再縮成一行。</p>
+<h2 id="18">18. 篩選轉職條件<a class="headerlink" href="#18" title="Permanent link">&para;</a></h2>
+<p>檔案：<code>examples/05_篩選適合我的職缺.py</code></p>
+<p>程式不是替你決定人生，而是先把 72 筆縮成值得人工閱讀的 8 筆。這是資料工具的價值：降低資訊量，把時間留給需要判斷的事。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">if</span> <span class="s2">&quot;Python&quot;</span> <span class="ow">in</span> <span class="n">skills</span> <span class="ow">and</span> <span class="s2">&quot;不拘&quot;</span> <span class="ow">in</span> <span class="n">experience</span> <span class="ow">and</span> <span class="n">min_salary</span> <span class="o">&gt;=</span> <span class="mi">35000</span><span class="p">:</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>    <span class="n">matched</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div>
+<p>可以請學生逐項改條件：</p>
+<ul>
+<li>把最低薪資改為自己的期待。</li>
+<li>只看自己的縣市。</li>
+<li>接受「是」或「部分」遠端。</li>
+<li>排除自己不想要的技能。</li>
+</ul>
+<p>這時學生會立刻感受到「變數與條件判斷」不是考試語法，而是把個人偏好變成可執行規則。</p>
+<h2 id="19-csv">19. 輸出 CSV<a class="headerlink" href="#19-csv" title="Permanent link">&para;</a></h2>
+<p>檔案：<code>examples/06_輸出CSV.py</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">with</span> <span class="n">output_path</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8-sig&quot;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">fieldnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;編號&quot;</span><span class="p">,</span> <span class="s2">&quot;職缺&quot;</span><span class="p">,</span> <span class="s2">&quot;公司&quot;</span><span class="p">])</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>    <span class="n">writer</span><span class="o">.</span><span class="n">writeheader</span><span class="p">()</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">({</span><span class="s2">&quot;編號&quot;</span><span class="p">:</span> <span class="s2">&quot;J001&quot;</span><span class="p">,</span> <span class="s2">&quot;職缺&quot;</span><span class="p">:</span> <span class="s2">&quot;Python資料助理&quot;</span><span class="p">,</span> <span class="s2">&quot;公司&quot;</span><span class="p">:</span> <span class="s2">&quot;好日子數位&quot;</span><span class="p">})</span>
+</code></pre></div>
+<p>重點：</p>
+<ul>
+<li><code>with</code> 結束時會妥善關閉檔案。</li>
+<li><code>newline=""</code> 避免 Windows CSV 出現多餘空白列。</li>
+<li><code>utf-8-sig</code> 讓常見 Windows Excel 較容易正確辨識繁體中文。</li>
+<li><code>writeheader()</code> 寫欄位名稱。</li>
+<li>字典 key 要與 <code>fieldnames</code> 對得上。</li>
+</ul>
+<p>執行：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">06_輸出CSV</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+<p>完成後用 VS Code 或試算表開啟 <code>outputs/爬取結果.csv</code>。</p>
+<hr />
+<h1 id="_14">第七部分：真正下載網頁<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h1>
+<h2 id="20-requests">20. requests 基本流程<a class="headerlink" href="#20-requests" title="Permanent link">&para;</a></h2>
+<p>檔案：<code>examples/07_requests取得網頁.py</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="timeout">為什麼一定寫 timeout<a class="headerlink" href="#timeout" title="Permanent link">&para;</a></h3>
+<p>沒有 timeout 時，網路或伺服器異常可能讓程式等非常久。<code>timeout=10</code> 表示網路操作超過合理等待就回報錯誤，讓程式有機會記錄、重試或結束。</p>
+<h3 id="raise_for_status">為什麼使用 raise_for_status<a class="headerlink" href="#raise_for_status" title="Permanent link">&para;</a></h3>
+<p>如果伺服器回 404，<code>requests.get()</code> 本身仍成功完成「請求」，但我們沒有拿到想要的頁面。<code>raise_for_status()</code> 會把 4xx、5xx 轉成例外，集中交給錯誤處理。</p>
+<h3 id="_15">例外處理<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;網路操作失敗：&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+</code></pre></div>
+<p><code>try</code> 不是把錯誤藏起來。好的例外處理要回答：</p>
+<ul>
+<li>哪個網址失敗？</li>
+<li>是逾時、拒絕，還是找不到？</li>
+<li>是否重試？最多幾次？</li>
+<li>失敗資料是否記錄下來？</li>
+</ul>
+<p>無限重試是危險的。若網站一直拒絕，程式就一直增加負擔。</p>
+<h2 id="21">21. 網址組合<a class="headerlink" href="#21" title="Permanent link">&para;</a></h2>
+<p>頁面裡可能只有相對網址：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/jobs/J001&quot;</span><span class="p">&gt;</span>查看職缺<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>它像「從本站大門往右走」，缺少網域。不要用字串直接相加，應使用：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">urljoin</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="n">full_url</span> <span class="o">=</span> <span class="n">urljoin</span><span class="p">(</span><span class="s2">&quot;https://example.com/jobs/&quot;</span><span class="p">,</span> <span class="s2">&quot;/jobs/J001&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><code>urljoin</code> 能正確處理斜線、相對路徑與完整網址。</p>
+<h2 id="22">22. 編碼與亂碼<a class="headerlink" href="#22" title="Permanent link">&para;</a></h2>
+<p>文字在電腦底層是數字。編碼就是「數字如何對應文字」的字典。寫入時用 A 字典，讀取時卻用 B 字典，就可能看到亂碼。</p>
+<p>本機檔案：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;資料.html&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>網路回應可觀察：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">encoding</span><span class="p">)</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">apparent_encoding</span><span class="p">)</span>
+</code></pre></div>
+<p>不要看到亂碼就隨便試到能看。應檢查 HTTP header、HTML <code>&lt;meta charset&gt;</code> 與來源實際編碼，並用固定測試資料驗證。</p>
+<hr />
+<h1 id="_16">第八部分：讓爬蟲不那麼脆弱<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h1>
+<h2 id="23-class">23. 網站改一個 class，程式為何就壞<a class="headerlink" href="#23-class" title="Permanent link">&para;</a></h2>
+<p>爬蟲依賴網頁結構。若：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;salary&quot;</span><span class="p">&gt;</span>40,000<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>改成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;pay&quot;</span><span class="p">&gt;</span>40,000<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>原本的 <code>.salary</code> 就找不到。這不是 BeautifulSoup 壞掉，而是我們的假設過期。</p>
+<p>可靠爬蟲要把假設寫得清楚：</p>
+<ul>
+<li>預期至少有一張卡片。</li>
+<li>每張卡片一定有編號。</li>
+<li>薪資可以缺，但缺少時記為 <code>None</code>。</li>
+<li>頁面標題應包含指定文字。</li>
+</ul>
+<h2 id="24">24. 安全取值函式<a class="headerlink" href="#24" title="Permanent link">&para;</a></h2>
+<p>檔案：<code>examples/08_穩健爬蟲函式.py</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">safe_text</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">selector</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>    <span class="n">tag</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span>
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>    <span class="k">return</span> <span class="n">tag</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">if</span> <span class="n">tag</span> <span class="k">else</span> <span class="n">default</span>
+</code></pre></div>
+<p>使用：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="n">title</span> <span class="o">=</span> <span class="n">safe_text</span><span class="p">(</span><span class="n">card</span><span class="p">,</span> <span class="s2">&quot;.job-title&quot;</span><span class="p">,</span> <span class="s2">&quot;未命名職缺&quot;</span><span class="p">)</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="n">salary</span> <span class="o">=</span> <span class="n">safe_text</span><span class="p">(</span><span class="n">card</span><span class="p">,</span> <span class="s2">&quot;.salary&quot;</span><span class="p">,</span> <span class="s2">&quot;薪資未提供&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>但不要所有欄位都默默給空字串。否則網站整頁改版時，程式可能輸出 72 筆空資料還說成功。必要欄位應驗證並中止，可選欄位才使用預設值。</p>
+<h2 id="25">25. 資料驗證<a class="headerlink" href="#25" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">cards</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;.job-card&quot;</span><span class="p">)</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="k">if</span> <span class="ow">not</span> <span class="n">cards</span><span class="p">:</span>
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;找不到任何職缺卡片，頁面可能改版&quot;</span><span class="p">)</span>
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>
+<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cards</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">:</span>
+<a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;警告：資料量比預期少，請人工檢查&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>還可以檢查：</p>
+<ul>
+<li>編號是否重複；</li>
+<li>薪資是否為合理正數；</li>
+<li>日期能否解析；</li>
+<li>缺漏率是否突然升高；</li>
+<li>本次筆數是否與前次差異過大。</li>
+</ul>
+<p>「程式沒有紅字」只代表程式跑完，不代表資料正確。</p>
+<h2 id="26">26. 除錯六步驟<a class="headerlink" href="#26" title="Permanent link">&para;</a></h2>
+<p>當結果是空清單，不要立刻亂改：</p>
+<ol>
+<li>確認拿到的真的是目標頁，不是登入或錯誤頁。</li>
+<li>印出 <code>response.status_code</code> 與前 500 個字。</li>
+<li>把 HTML 存檔，用 VS Code 搜尋你在畫面看到的文字。</li>
+<li>確認資料是否由 JavaScript 後載入。</li>
+<li>在開發者工具測試 CSS 選擇器。</li>
+<li>從寬到窄：先找 <code>article</code>，再找 <code>.job-card</code>，最後加父子關係。</li>
+</ol>
+<p>推薦暫時加入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HTML 長度：&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">html</span><span class="p">))</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;卡片數：&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;.job-card&quot;</span><span class="p">)))</span>
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">prettify</span><span class="p">()[:</span><span class="mi">1000</span><span class="p">])</span>
+</code></pre></div>
+<p>除錯完成後，移除大量輸出或改用正式 logging。</p>
+<hr />
+<h1 id="_17">第九部分：課堂示範與練習<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h1>
+<h2 id="27">27. 範例檔案地圖<a class="headerlink" href="#27" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>檔案</th>
+<th>學習焦點</th>
+<th>有感情境</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>00_建立本機練習網站.py</code></td>
+<td>CSV 轉 HTML、產生測試頁</td>
+<td>建立自己的職缺網站</td>
+</tr>
+<tr>
+<td><code>01_第一支BeautifulSoup.py</code></td>
+<td>解析、find、find_all</td>
+<td>找晚餐便當</td>
+</tr>
+<tr>
+<td><code>02_find與屬性.py</code></td>
+<td>id、class、data、href</td>
+<td>商品編號與連結</td>
+</tr>
+<tr>
+<td><code>03_CSS選擇器.py</code></td>
+<td>select、select_one、排除</td>
+<td>排除售完便當</td>
+</tr>
+<tr>
+<td><code>04_解析72筆職缺.py</code></td>
+<td>卡片迴圈、結構化字典</td>
+<td>轉職資料整理</td>
+</tr>
+<tr>
+<td><code>05_篩選適合我的職缺.py</code></td>
+<td>條件篩選</td>
+<td>薪資與無經驗條件</td>
+</tr>
+<tr>
+<td><code>06_輸出CSV.py</code></td>
+<td>Excel 可開啟的輸出</td>
+<td>工作報表</td>
+</tr>
+<tr>
+<td><code>07_requests取得網頁.py</code></td>
+<td>HTTP、timeout、例外</td>
+<td>真正取得公開頁面</td>
+</tr>
+<tr>
+<td><code>08_穩健爬蟲函式.py</code></td>
+<td>缺漏處理</td>
+<td>遇到未提供薪資</td>
+</tr>
+</tbody>
+</table>
+<p>依序執行：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">00_建立本機練習網站</span><span class="p">.</span><span class="n">py</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">01_第一支BeautifulSoup</span><span class="p">.</span><span class="n">py</span>
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">02_find與屬性</span><span class="p">.</span><span class="n">py</span>
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">03_CSS選擇器</span><span class="p">.</span><span class="n">py</span>
+<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">04_解析72筆職缺</span><span class="p">.</span><span class="n">py</span>
+<a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">05_篩選適合我的職缺</span><span class="p">.</span><span class="n">py</span>
+<a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">06_輸出CSV</span><span class="p">.</span><span class="n">py</span>
+<a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">07_requests取得網頁</span><span class="p">.</span><span class="n">py</span>
+<a id="__codelineno-40-9" name="__codelineno-40-9" href="#__codelineno-40-9"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">08_穩健爬蟲函式</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+<h2 id="28">28. 練習一：今天便當吃什麼<a class="headerlink" href="#28" title="Permanent link">&para;</a></h2>
+<p>學生檔：<code>exercises/01_便當選擇器練習.py</code><br />
+答案：<code>answers/01_便當選擇器練習_答案.py</code></p>
+<p>任務：</p>
+<ol>
+<li>印出所有便當名稱與價格。</li>
+<li>排除含有 <code>sold-out</code> class 的商品。</li>
+<li>找出最低價格商品。</li>
+<li>顯示商品連結。</li>
+</ol>
+<h3 id="_18">教師引導，不直接公布答案<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<ul>
+<li>先用 <code>.product</code> 取得每張卡。</li>
+<li>名稱和價格都在卡片裡找。</li>
+<li>價格是文字，數字比較前要 <code>int()</code>。</li>
+<li><code>min()</code> 可以搭配 <code>key=</code> 告訴 Python 比較哪個欄位。</li>
+</ul>
+<h3 id="_19">延伸<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<ul>
+<li>設定今天預算，只顯示買得起的便當。</li>
+<li>若售完商品最便宜，是否應納入推薦？</li>
+<li>多個商品同價時，<code>min()</code> 會怎麼做？</li>
+</ul>
+<h2 id="29">29. 練習二：我的轉職雷達<a class="headerlink" href="#29" title="Permanent link">&para;</a></h2>
+<p>學生檔：<code>exercises/02_我的轉職雷達.py</code><br />
+答案：<code>answers/02_我的轉職雷達_答案.py</code></p>
+<p>任務：</p>
+<ol>
+<li>選擇縣市。</li>
+<li>設定能接受的最低薪資。</li>
+<li>依薪資由高到低排序。</li>
+<li>顯示職缺、公司與最低薪資。</li>
+</ol>
+<p>延伸：</p>
+<ul>
+<li>使用 <code>input()</code> 讓使用者輸入縣市。</li>
+<li>加入技能關鍵字。</li>
+<li>顯示完全遠端或部分遠端。</li>
+<li>將結果輸出 CSV。</li>
+<li>沒有結果時給友善提示，而不是只印空白。</li>
+</ul>
+<h2 id="30">30. 綜合專題：轉職決策助手<a class="headerlink" href="#30" title="Permanent link">&para;</a></h2>
+<h3 id="_20">專題需求<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<p>使用 72 筆資料完成：</p>
+<ol>
+<li>顯示資料總筆數。</li>
+<li>讓使用者輸入縣市、最低薪資、技能。</li>
+<li>篩選符合職缺。</li>
+<li>依最低薪資由高至低排序。</li>
+<li>顯示前 10 筆。</li>
+<li>輸出 <code>outputs/我的職缺清單.csv</code>。</li>
+<li>印出各技能出現次數前 5 名。</li>
+<li>缺少欄位時不能整批崩潰。</li>
+<li>若完全沒有結果，建議使用者放寬一項條件。</li>
+</ol>
+<h3 id="_21">評分規準<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>面向</th>
+<th style="text-align: right;">比例</th>
+<th>判斷重點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正確解析</td>
+<td style="text-align: right;">25%</td>
+<td>欄位沒有配錯、72 筆能讀取</td>
+</tr>
+<tr>
+<td>條件與排序</td>
+<td style="text-align: right;">20%</td>
+<td>數字型別正確、條件符合需求</td>
+</tr>
+<tr>
+<td>穩健性</td>
+<td style="text-align: right;">20%</td>
+<td>找不到元素、空結果、錯誤輸入有處理</td>
+</tr>
+<tr>
+<td>可讀性</td>
+<td style="text-align: right;">15%</td>
+<td>命名清楚、函式合理、註解解釋原因</td>
+</tr>
+<tr>
+<td>輸出品質</td>
+<td style="text-align: right;">10%</td>
+<td>CSV 編碼與欄位正確</td>
+</tr>
+<tr>
+<td>倫理說明</td>
+<td style="text-align: right;">10%</td>
+<td>能說明資料來源、限制與使用界線</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_22">口頭報告問題<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<ul>
+<li>你的選擇器依賴哪些 HTML 結構？</li>
+<li>網站把 class 改名後，程式會如何發現？</li>
+<li>哪些欄位可以缺，哪些不能缺？</li>
+<li>為什麼儲存最低薪資為整數？</li>
+<li>真實上線前還需要取得哪些許可或確認？</li>
+</ul>
+<hr />
+<h1 id="_23">第十部分：常見錯誤診療室<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h1>
+<h2 id="31-modulenotfounderror-no-module-named-bs4">31. ModuleNotFoundError: No module named 'bs4'<a class="headerlink" href="#31-modulenotfounderror-no-module-named-bs4" title="Permanent link">&para;</a></h2>
+<p>可能原因：VS Code 選到系統 Python，不是專案 <code>.venv</code>。</p>
+<p>處理：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">uv</span> <span class="n">sync</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">-c</span> <span class="s2">&quot;import bs4; print(bs4.__version__)&quot;</span>
+</code></pre></div>
+<p>並重新選擇 VS Code Python Interpreter。</p>
+<h2 id="32-filenotfounderror">32. FileNotFoundError<a class="headerlink" href="#32-filenotfounderror" title="Permanent link">&para;</a></h2>
+<p>相對路徑是相對於「執行時所在資料夾」，不一定是程式檔所在資料夾。本教材使用：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="n">ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="n">path</span> <span class="o">=</span> <span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;datasets&quot;</span> <span class="o">/</span> <span class="s2">&quot;迷你商店.html&quot;</span>
+</code></pre></div>
+<p>如此從專案根目錄執行時較穩定。</p>
+<h2 id="33-select">33. select() 回傳空清單<a class="headerlink" href="#33-select" title="Permanent link">&para;</a></h2>
+<p>檢查：</p>
+<ul>
+<li>class 前是否忘記 <code>.</code>？</li>
+<li>id 前是否忘記 <code>#</code>？</li>
+<li>大小寫是否相同？</li>
+<li>HTML 裡真的有資料嗎？</li>
+<li>取得的是目標頁還是錯誤頁？</li>
+<li>資料是否由 JavaScript 動態載入？</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;job-card&quot;</span><span class="p">)</span>   <span class="c1"># 尋找名為 job-card 的標籤，通常錯</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;.job-card&quot;</span><span class="p">)</span>  <span class="c1"># 尋找 class=job-card，正確</span>
+</code></pre></div>
+<h2 id="34-typeerror-valueerror-int">34. TypeError 或 ValueError：不能轉 int<a class="headerlink" href="#34-typeerror-valueerror-int" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;40,000&quot;</span><span class="p">)</span>      <span class="c1"># 錯，逗號不能直接轉</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;薪資面議&quot;</span><span class="p">)</span>    <span class="c1"># 錯，沒有數字</span>
+</code></pre></div>
+<p>先觀察實際格式，再清理與分流。不要只用 <code>except: pass</code> 吞掉所有錯誤，否則會不知道遺失了多少資料。</p>
+<h2 id="35">35. 中文亂碼<a class="headerlink" href="#35" title="Permanent link">&para;</a></h2>
+<ul>
+<li>HTML 本機檔通常用 <code>encoding="utf-8"</code>。</li>
+<li>給 Windows Excel 的 CSV 可用 <code>utf-8-sig</code>。</li>
+<li>不要把「檔案編碼」與「Python 字串」混為一談。</li>
+<li>檢查來源聲明，不要靠猜。</li>
+</ul>
+<h2 id="36-attributeerror-nonetype">36. AttributeError: NoneType<a class="headerlink" href="#36-attributeerror-nonetype" title="Permanent link">&para;</a></h2>
+<p>這幾乎總是在說「前一步沒有找到標籤」：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="n">tag</span> <span class="o">=</span> <span class="n">card</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s2">&quot;.salary&quot;</span><span class="p">)</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">tag</span><span class="o">.</span><span class="n">get_text</span><span class="p">())</span>  <span class="c1"># tag 可能是 None</span>
+</code></pre></div>
+<p>先印：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">card</span><span class="o">.</span><span class="n">prettify</span><span class="p">())</span>
+</code></pre></div>
+<p>確認資料真的缺少，還是選擇器寫錯，再決定預設值或中止。</p>
+<hr />
+<h1 id="_24">第十一部分：理解檢核<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h1>
+<h2 id="37">37. 選擇題<a class="headerlink" href="#37" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>BeautifulSoup 主要負責什麼？<br />
+   A. 執行 JavaScript　B. 解析 HTML　C. 建立資料庫　D. 自動取得所有權限</p>
+</li>
+<li>
+<p><code>find_all()</code> 找不到資料時通常回傳什麼？<br />
+   A. <code>None</code>　B. <code>0</code>　C. 空的結果集合　D. 一定拋出錯誤</p>
+</li>
+<li>
+<p>CSS 選擇器 <code>.job-card .salary</code> 的意思是什麼？<br />
+   A. 同一元素同時有兩個 class<br />
+   B. job-card 裡的 salary<br />
+   C. salary 的父元素<br />
+   D. id 是 salary</p>
+</li>
+<li>
+<p>為何請求要設定 timeout？<br />
+   A. 讓網站跑更快　B. 避免無限等待　C. 隱藏身分　D. 自動破解限制</p>
+</li>
+<li>
+<p>HTTP 403 時最合適的第一反應？<br />
+   A. 高速重試　B. 繞過限制　C. 停下檢查規範與權限　D. 忽略狀態碼</p>
+</li>
+</ol>
+<p>答案：1-B、2-C、3-B、4-B、5-C。</p>
+<h2 id="38">38. 問答題參考答案<a class="headerlink" href="#38" title="Permanent link">&para;</a></h2>
+<h3 id="requests-beautifulsoup">Requests 與 BeautifulSoup 有何不同？<a class="headerlink" href="#requests-beautifulsoup" title="Permanent link">&para;</a></h3>
+<p>Requests 負責透過 HTTP 取得內容；BeautifulSoup 把 HTML 解析成可搜尋的樹。前者像取貨，後者像整理貨物。</p>
+<h3 id="responsetext">為何畫面看得到，response.text 卻找不到？<a class="headerlink" href="#responsetext" title="Permanent link">&para;</a></h3>
+<p>內容可能由 JavaScript 在初始 HTML 載入後才取得。應先檢查 Network 與資料來源，不應直接假設 BeautifulSoup 故障。</p>
+<h3 id="_25">為何爬蟲結果要驗證？<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<p>程式能完成不表示抓到正確頁面。登入頁、錯誤頁或改版頁仍可能是合法 HTML，所以要驗證標題、筆數、必要欄位與合理範圍。</p>
+<h3 id="_26">為何不建議直接從整頁分別抓名稱與價格？<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<p>若某張卡缺少價格，兩份清單長度會不同，使用索引配對可能把 A 商品名稱接到 B 商品價格。應先逐張卡片，再在卡片內取欄位。</p>
+<hr />
+<h1 id="_27">第十二部分：教師可用的加深講解<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h1>
+<h2 id="39-python">39. 為什麼爬蟲最難的常常不是 Python<a class="headerlink" href="#39-python" title="Permanent link">&para;</a></h2>
+<p>Python 迴圈可能只有十行，真正花時間的是：</p>
+<ul>
+<li>理解網站資料如何送到瀏覽器；</li>
+<li>分辨穩定欄位與純視覺 class；</li>
+<li>處理缺漏與多種格式；</li>
+<li>確認授權和合理頻率；</li>
+<li>發現「看似成功但其實資料錯」；</li>
+<li>網站改版後維護。</li>
+</ul>
+<p>因此職場價值不是背出 <code>find_all()</code>，而是能把模糊需求變成資料規格與檢查規則。</p>
+<h2 id="40">40. 選擇器要短還是長<a class="headerlink" href="#40" title="Permanent link">&para;</a></h2>
+<p>太短：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="p">.</span><span class="nc">name</span>
+</code></pre></div>
+<p>頁首使用者名稱、公司名稱、商品名稱都可能被抓到。</p>
+<p>太長：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="nt">body</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">main</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">div</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">section</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">article</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">h2</span>
+</code></pre></div>
+<p>插入一個廣告區塊就可能失效。</p>
+<p>較平衡：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="nt">article</span><span class="p">.</span><span class="nc">job-card</span><span class="w"> </span><span class="p">.</span><span class="nc">job-title</span>
+</code></pre></div>
+<p>它表達資料的語意與範圍，又不依賴第幾個位置。沒有永遠不壞的選擇器，只能讓假設合理、可測試。</p>
+<h2 id="41-api">41. 爬蟲與 API<a class="headerlink" href="#41-api" title="Permanent link">&para;</a></h2>
+<p>API 像餐廳正式菜單與點餐窗口：欄位通常較結構化，規格較清楚。爬 HTML 像從客人看到的擺盤反推食材：能做，但版面原本是給人看，不保證程式介面穩定。</p>
+<p>若官方提供符合用途且允許使用的 API，通常優先選 API。若沒有 API，也不能自動推論 HTML 一定可以任意擷取。</p>
+<h2 id="42">42. 可重現的重要性<a class="headerlink" href="#42" title="Permanent link">&para;</a></h2>
+<p>今天抓到的頁面明天可能不同。正式專案可在合規前提下保存：</p>
+<ul>
+<li>抓取時間；</li>
+<li>來源網址；</li>
+<li>HTTP 狀態；</li>
+<li>原始回應或雜湊；</li>
+<li>解析器版本；</li>
+<li>程式版本；</li>
+<li>解析後資料與錯誤清單。</li>
+</ul>
+<p>如此資料出問題時，才知道是來源變了、程式變了，還是清理規則變了。</p>
+<hr />
+<h1 id="a">附錄 A：課堂指令速查<a class="headerlink" href="#a" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="c"># 安裝／同步專案依賴</span>
+<a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="n">uv</span> <span class="n">sync</span>
+<a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a>
+<a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a><span class="c"># 建立 72 筆本機網站</span>
+<a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">00_建立本機練習網站</span><span class="p">.</span><span class="n">py</span>
+<a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a>
+<a id="__codelineno-50-7" name="__codelineno-50-7" href="#__codelineno-50-7"></a><span class="c"># 執行單一範例</span>
+<a id="__codelineno-50-8" name="__codelineno-50-8" href="#__codelineno-50-8"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">04_解析72筆職缺</span><span class="p">.</span><span class="n">py</span>
+<a id="__codelineno-50-9" name="__codelineno-50-9" href="#__codelineno-50-9"></a>
+<a id="__codelineno-50-10" name="__codelineno-50-10" href="#__codelineno-50-10"></a><span class="c"># 執行練習答案</span>
+<a id="__codelineno-50-11" name="__codelineno-50-11" href="#__codelineno-50-11"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">answers</span><span class="p">/</span><span class="n">02_我的轉職雷達_答案</span><span class="p">.</span><span class="n">py</span>
+<a id="__codelineno-50-12" name="__codelineno-50-12" href="#__codelineno-50-12"></a>
+<a id="__codelineno-50-13" name="__codelineno-50-13" href="#__codelineno-50-13"></a><span class="c"># 執行自動測試</span>
+<a id="__codelineno-50-14" name="__codelineno-50-14" href="#__codelineno-50-14"></a><span class="n">uv</span> <span class="n">run</span> <span class="n">pytest</span> <span class="n">-v</span>
+</code></pre></div>
+<h1 id="bbeautifulsoup">附錄 B：BeautifulSoup 速查表<a class="headerlink" href="#bbeautifulsoup" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>
+<a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+<a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a>
+<a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a><span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">)</span>                        <span class="c1"># 第一個 h1</span>
+<a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>                     <span class="c1"># 所有 a</span>
+<a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a><span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;site-title&quot;</span><span class="p">)</span>             <span class="c1"># 指定 id</span>
+<a id="__codelineno-51-8" name="__codelineno-51-8" href="#__codelineno-51-8"></a><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;article&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;job-card&quot;</span><span class="p">)</span>
+<a id="__codelineno-51-9" name="__codelineno-51-9" href="#__codelineno-51-9"></a><span class="n">soup</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s2">&quot;.job-card .salary&quot;</span><span class="p">)</span>    <span class="c1"># CSS，第一個</span>
+<a id="__codelineno-51-10" name="__codelineno-51-10" href="#__codelineno-51-10"></a><span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;.job-card .skill&quot;</span><span class="p">)</span>         <span class="c1"># CSS，所有</span>
+<a id="__codelineno-51-11" name="__codelineno-51-11" href="#__codelineno-51-11"></a>
+<a id="__codelineno-51-12" name="__codelineno-51-12" href="#__codelineno-51-12"></a><span class="n">tag</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>           <span class="c1"># 清理文字</span>
+<a id="__codelineno-51-13" name="__codelineno-51-13" href="#__codelineno-51-13"></a><span class="n">tag</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;href&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>                     <span class="c1"># 安全讀屬性</span>
+<a id="__codelineno-51-14" name="__codelineno-51-14" href="#__codelineno-51-14"></a><span class="n">tag</span><span class="o">.</span><span class="n">name</span>                                <span class="c1"># 標籤名</span>
+<a id="__codelineno-51-15" name="__codelineno-51-15" href="#__codelineno-51-15"></a><span class="n">tag</span><span class="o">.</span><span class="n">parent</span>                              <span class="c1"># 父元素</span>
+<a id="__codelineno-51-16" name="__codelineno-51-16" href="#__codelineno-51-16"></a><span class="n">tag</span><span class="o">.</span><span class="n">find_next_sibling</span><span class="p">()</span>                 <span class="c1"># 下一個兄弟元素</span>
+</code></pre></div>
+<h1 id="c">附錄 C：學完後應能做到<a class="headerlink" href="#c" title="Permanent link">&para;</a></h1>
+<ul>
+<li>用自己的話解釋 HTTP 請求與回應。</li>
+<li>分辨 Requests 與 BeautifulSoup 的責任。</li>
+<li>看懂基本 HTML 標籤、屬性、id、class 與樹狀關係。</li>
+<li>使用 <code>find()</code>、<code>find_all()</code>、<code>select()</code>、<code>select_one()</code>。</li>
+<li>安全取得文字與屬性。</li>
+<li>將多張卡片整理為字典清單。</li>
+<li>清理數字、多值欄位與缺漏值。</li>
+<li>輸出繁體中文 CSV。</li>
+<li>根據狀態碼、HTML 與選擇器逐步除錯。</li>
+<li>說明靜態與動態網頁的差別。</li>
+<li>在開始前檢查服務條款、robots 指引、個資與請求頻率。</li>
+<li>使用 uv 與 VS Code 重現並執行專案。</li>
+</ul>
+<hr />
+<h2 id="_28">官方延伸閱讀<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Beautiful Soup 官方文件：<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">https://www.crummy.com/software/BeautifulSoup/bs4/doc/</a></li>
+<li>uv 專案指南：<a href="https://docs.astral.sh/uv/guides/projects/">https://docs.astral.sh/uv/guides/projects/</a></li>
+<li>Python <code>urllib.robotparser</code>：<a href="https://docs.python.org/3/library/urllib.robotparser.html">https://docs.python.org/3/library/urllib.robotparser.html</a></li>
+<li>Requests 文件：<a href="https://requests.readthedocs.io/">https://requests.readthedocs.io/</a></li>
+</ul>
+<p>文件會更新，實務使用時請以官方最新說明為準。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "navigation.top", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1343 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、AI筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/AI%E6%87%89%E7%94%A8/Google%20AI%E5%A4%9A%E5%AA%92%E9%AB%94%E5%89%B5%E4%BD%9C/AI%E9%9F%B3%E6%A8%82%E5%89%B5%E4%BD%9C%EF%BC%9AGoogle_Lyria/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>AI音樂與情緒設計：Lyria音樂創作 - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ailyria" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI音樂與情緒設計：Lyria音樂創作
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI應用
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+          
+  
+  
+  日記
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI應用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    日記
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    手札首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%89%8B%E6%9C%AD/12%E5%A4%A9%E8%A3%9C%E5%85%85%E5%85%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12天補充兵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        聲音如何改變觀眾感受
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        聲音如何讓畫面產生敘事
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        聲音建立記憶點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        沒有音樂的作品為什麼不完整
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lyria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lyria 是什麼：從「使用音樂」到「創作音樂」
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lyria 是什麼：從「使用音樂」到「創作音樂」">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        音樂生成的三個核心元素
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-music" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        從文字生成音樂（Text → Music）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="從文字生成音樂（Text → Music）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#music-song" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Music 與 Song 的差別
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 基本結構
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 溫暖敘事（完整保留）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-edm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. EDM 風格
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 咖啡廳情境（溫暖氛圍）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-music" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        從圖像生成音樂（Image → Music）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="從圖像生成音樂（Image → Music）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 同一角色 × 三種場景
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        音樂風格、情緒控制與一致性
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="音樂風格、情緒控制與一致性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常見音樂風格
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        情緒控制三大元素
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 溫馨回憶影片
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 科技產品發表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 奇幻冒險
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 極速賽車
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 星空縮時攝影
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 懸疑推理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 運動品牌廣告
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ailyria">AI音樂與情緒設計：Lyria音樂創作<a class="headerlink" href="#ailyria" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>前面的 AI 創作流程，常常把焦點放在「畫面能不能被看見」。但完整作品不只要被看見，也要被感受。畫面告訴觀眾發生了什麼，聲音則告訴觀眾應該怎麼感受。<br />
+同一個人走在街上，沒有音樂時只是普通畫面；搭配溫暖音樂，可能像生活感或療癒故事；搭配緊張音樂，立刻像懸疑片。聲音不是最後才補上的裝飾，而是創作一開始就該決定的情緒核心。</p>
+</blockquote>
+<h3 id="_1">聲音如何改變觀眾感受<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>觀眾接收影片時，通常先被聲音的節奏與氛圍影響，再理解畫面內容。</p>
+<ul>
+<li>緩慢的鋼琴：溫柔、感性、回憶、療癒</li>
+<li>強烈的節奏音樂：緊張、速度、推進、行動</li>
+<li>安靜或環境聲：真實、沉浸、孤獨、留白</li>
+<li>漸強音樂：即將發生重要事件</li>
+<li>突然中斷：轉折、驚訝、危機</li>
+<li>持續堆疊：期待與故事張力</li>
+</ul>
+<h3 id="_2">聲音如何讓畫面產生敘事<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>單一畫面只是瞬間，聲音可以把瞬間變成過程：</p>
+<ul>
+<li>音樂漸強 → 觀眾預期事件即將發生。</li>
+<li>節奏突然中斷 → 製造轉折或驚喜。</li>
+<li>情緒逐步堆疊 → 建立故事張力。</li>
+</ul>
+<p>因此，沒有聲音的畫面，是片段；有聲音的畫面，才可能成為故事。</p>
+<h3 id="_3">聲音建立記憶點<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>人們記住作品，常常不是只記得畫面，而是記得整體感受，而感受很大一部分來自聲音。</p>
+<ul>
+<li>某段旋律讓人立刻想到某支影片。</li>
+<li>某種音樂風格代表某個品牌。</li>
+<li>某種聲音氛圍產生情緒連結。</li>
+</ul>
+<p>聲音不只是輔助，而是作品被記住的關鍵。</p>
+<h3 id="_4">沒有音樂的作品為什麼不完整<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>沒有音樂時，觀眾仍能理解場景、動作與角色，但通常只能停在「資訊層」：</p>
+<ul>
+<li>畫面顯得平淡。</li>
+<li>轉場缺乏張力。</li>
+<li>情緒無法累積。</li>
+<li>節奏不容易被感知。</li>
+<li>作品難以被記住。</li>
+</ul>
+<p>小結：</p>
+<ul>
+<li>畫面讓人理解內容。</li>
+<li>聲音讓人產生感受。</li>
+<li>兩者結合，創作才真正完整。</li>
+</ul>
+<h2 id="lyria">Lyria 是什麼：從「使用音樂」到「創作音樂」<a class="headerlink" href="#lyria" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://deepmind.google/models/lyria/">Google Lyria</a></li>
+<li><a href="https://suno.com">Suno</a></li>
+</ul>
+<h3 id="_5">音樂生成的三個核心元素<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ol>
+<li>情緒(Emotion)。決定整體氛圍，是最重要的起點。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>- 溫暖：warm, cozy
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>- 緊張：tense, suspenseful
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>- 希望：hopeful, uplifting
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>- 好奇：curious
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>- 動感：energetic, playful
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>- 孤獨：lonely, reflective
+</code></pre></div>
+<ol>
+<li>節奏(Rhythm／Tempo)。決定速度與推進感，也會直接改變影片觀看感受。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>- 慢節奏：敘事、感性、鋪陳
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>- 中節奏：日常、穩定、一般內容推進
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>- 快節奏：動作、轉折、緊張
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>- 動態節奏：配合情緒曲線與鏡頭變化
+</code></pre></div>
+<ol>
+<li>(風格 Style)。決定聲音的質感與類型。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>- 電影感 cinematic
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>- 鋼琴 piano-based
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>- 電子 electronic
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>- 放鬆氛圍 lo-fi
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>- 管弦樂 orchestral
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>- 卡通感 cartoon style
+</code></pre></div>
+<h2 id="text-music">從文字生成音樂（Text → Music）<a class="headerlink" href="#text-music" title="Permanent link">&para;</a></h2>
+<h3 id="music-song">Music 與 Song 的差別<a class="headerlink" href="#music-song" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Music：用來支持畫面、建立情緒與氛圍，通常是無人聲背景音樂。</li>
+<li>Song：本身可以成為內容主體，以歌詞強化訊息與表達。</li>
+</ul>
+<p>兩者不是風格差異，而是用途差異。</p>
+<p>關鍵詞教學：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>### 明確要求背景音樂。
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>- `instrumental`(樂器演奏)
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>- `no vocals`(無人聲)
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>- `background music only`
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>### 明確要求歌曲與歌詞主題。
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>- `song`
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>- `with lyrics`
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>- `lyrics about...`
+</code></pre></div>
+<h3 id="prompt">Prompt 基本結構<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h3>
+<p>四個核心元素：「主題 Theme × 情緒 Emotion × 節奏 Tempo × 風格 Style」</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>### 建議流程：
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>1. 先以中文想清楚需求。
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>2. 再轉成簡潔英文生成提示。
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>3. 明確寫出是否需要人聲。
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a># 中文幫助釐清情緒與方向；英文通常有助於提高生成描述的精確度。若平台支援中文，也可直接使用中文，比較兩種結果。
+</code></pre></div>
+<h3 id="problem">Problem. 溫暖敘事（完整保留）<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>### 背景音樂 Music｜無人聲版
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>### 中文理解：
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>溫暖、慢節奏、以鋼琴為主、具有電影感的背景音樂，適合故事影片，無人聲。
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>### 生成用 Prompt：
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>Warm, slow-tempo, piano-based cinematic instrumental background music for a heartfelt story. Gentle emotional development, subtle strings, no vocals, background music only.
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>### 關鍵詞：`instrumental`、`no vocals`、`background music only`
+</code></pre></div>
+<!-- 播放影片 -->
+<div class="video-wrapper">
+    <iframe
+        src="https://drive.google.com/file/d/1x_OVu8cHuDQ2WgZTjT4E92QdkKXt9K1k/preview" 
+        allow="autoplay"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>### 歌曲 Song｜含人聲版
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>### 中文理解：
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>一首溫暖、慢節奏的鋼琴歌曲，具有電影感，歌詞描述生活中的小確幸與希望。
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>### 生成用 Prompt：
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>A warm, slow-tempo piano song with a cinematic style, with lyrics about small moments of happiness, hope, and finding light in everyday life.
+</code></pre></div>
+<div class="video-wrapper">
+    <iframe
+        src="https://drive.google.com/file/d/1OUCuRJVF6AwIkwABpUwrwMqTch8gG35I/preview" 
+        allow="autoplay"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<h3 id="problem-edm">Problem. EDM 風格<a class="headerlink" href="#problem-edm" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>### 背景音樂 Music｜無人聲版
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>### 中文理解：
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>一首充滿能量的 EDM 電子舞曲，節奏明快，具有未來科技感，適合作為科技產品展示影片背景音樂，無人聲。
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>### 生成用 Prompt：
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>Energetic EDM background music with a futuristic atmosphere, fast tempo, powerful electronic beats, deep bass, uplifting synths, cinematic build-ups and drops, instrumental, no vocals, perfect for a technology product showcase.
+</code></pre></div>
+<div class="video-wrapper">
+    <iframe
+        src="https://drive.google.com/file/d/1iJ6Ap-IviMj-GVrapAAx9kqdmbw0a8V8/preview" 
+        allow="autoplay"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>### 背景音樂 Music｜含人聲版
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>### 中文理解：
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>一首充滿未來感的 EDM 歌曲，節奏快速且充滿能量，歌詞描述科技如何改變世界、創新以及人類的無限可能。
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>### 生成用 Prompt：
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>An energetic EDM song with a futuristic atmosphere, fast tempo, powerful drops, uplifting electronic synths, and lyrics about technology transforming the world, innovation, and limitless human potential.
+</code></pre></div>
+<div class="video-wrapper">
+    <iframe
+        src="https://drive.google.com/file/d/1QPzRYHTZCwl6s3396B7aQrhLWKrmi7_S/preview" 
+        allow="autoplay"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<h3 id="problem_1">Problem. 咖啡廳情境（溫暖氛圍）<a class="headerlink" href="#problem_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>### 歌曲 Song｜無人聲版
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>### 中文理解：
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>溫暖、輕鬆、中慢節奏、Lo-fi 風格背景音樂，適合咖啡廳氛圍，無人聲。
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>### 生成用 Prompt：
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>Warm, relaxed, medium-slow tempo lo-fi ambient background music for a cozy café. Soft beat, mellow keys, instrumental, no vocals.
+</code></pre></div>
+<div class="video-wrapper">
+    <iframe
+        src="https://drive.google.com/file/d/1JDpRv0Ie2gckuyQQJG3yMp0eWkftbU2z/preview" 
+        allow="autoplay"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>### 歌曲 Song｜含人聲版
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>### 中文理解：
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>一首溫暖、輕鬆的 Lo-fi 歌曲，中慢節奏，歌詞描述咖啡與日常生活。
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>### 生成用 Prompt：
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>A warm and relaxed lo-fi song, medium-slow tempo, with lyrics about coffee, quiet mornings, and small moments in daily life.
+</code></pre></div>
+<div class="video-wrapper">
+    <iframe
+        src="https://drive.google.com/file/d/1XRz5TwoNXOcguaHoGAEUo8NPJ4Hx9ZpB/preview" 
+        allow="autoplay"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<h2 id="image-music">從圖像生成音樂（Image → Music）<a class="headerlink" href="#image-music" title="Permanent link">&para;</a></h2>
+<p>轉換邏輯：「畫面 → 情緒判讀 → 節奏推測 → 風格選擇 → 音樂 Prompt」</p>
+<p>圖像不只提供物件，也提供情緒訊號。分析圖片時，可觀察三個層面：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>### 光線 Lighting
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>- 柔和光線 → 溫暖、放鬆
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>- 強烈對比 → 緊張、戲劇感
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>- 昏暗光線 → 神秘、壓迫、懸疑
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>### 色調 Color Tone
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>- 暖色系（橙、黃）→ 溫馨、舒適
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>- 冷色系（藍、紫）→ 冷靜、科技感
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>- 高對比色 → 活潑、強烈、速度感
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>### 場景與內容 Scene &amp; Subject
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>- 咖啡廳 → 輕鬆、日常
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>- 未來城市 → 科技、節奏感
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>- 空曠場景 → 孤獨、沉靜
+</code></pre></div>
+<h3 id="problem_2">Problem. 同一角色 × 三種場景<a class="headerlink" href="#problem_2" title="Permanent link">&para;</a></h3>
+<p>設定同一隻熊貓外送員，保持外觀一致，只改變場景與音樂。</p>
+<p>場景一：悠閒小鎮(輕鬆日常)
+<img alt="" src="../Image/Google%20Lyria/%E7%86%8A%E8%B2%93%E5%A4%96%E9%80%81%E5%93%A1%E9%A8%8E%E8%91%97%E8%85%B3%E8%B8%8F%E8%BB%8A.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>### 圖片內容：
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>熊貓外送員騎著腳踏車，穿梭在陽光灑落的小鎮街道，準備配送餐點。
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>(無提示詞先生成一次，觀察 AI 對圖片的直覺判讀。)
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>### 背景音樂 Prompt：
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>Warm, relaxed lo-fi background music, medium-slow tempo, soft acoustic guitar and gentle piano, cozy neighborhood atmosphere, instrumental, no vocals.
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>### 歌曲 Prompt：
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>A warm and relaxed lo-fi song, medium-slow tempo, with lyrics about delivering happiness, friendly neighborhoods, and enjoying everyday life.
+</code></pre></div>
+<p>場景二：雨天城市(專注與努力)
+<img alt="" src="../Image/Google%20Lyria/%E7%86%8A%E8%B2%93%E5%A4%96%E9%80%81%E5%93%A1%E7%A9%BF%E8%91%97%E9%9B%A8%E8%A1%A3.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>### 圖片內容：
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>同一隻熊貓外送員穿著雨衣，在下雨的城市中努力送餐。
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>(無提示詞先生成一次，觀察 AI 對圖片的直覺判讀。)
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>### 背景音樂 Prompt：
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>Focused ambient background music, medium tempo, soft piano, subtle electronic textures, determined and steady mood, instrumental, no vocals.
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>### 歌曲 Prompt：
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>A motivational pop song, medium tempo, with lyrics about perseverance, responsibility, and never giving up despite the rain.
+</code></pre></div>
+<p>場景三：未來都市(科技與速度)</p>
+<p><img alt="" src="../Image/Google%20Lyria/%E7%86%8A%E8%B2%93%E5%A4%96%E9%80%81%E5%93%A1%E9%A8%8E%E8%91%97%E6%87%B8%E6%B5%AE%E6%A9%9F%E8%BB%8A.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>### 圖片內容：
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>同一隻熊貓外送員騎著懸浮機車，穿梭在霓虹閃爍的未來城市，高樓林立，充滿科技感。
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>(無提示詞先生成一次，觀察 AI 對圖片的直覺判讀。)
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>### 背景音樂 Prompt：
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>Futuristic electronic background music, medium-fast tempo, cinematic electronic score, energetic pulse, modern synth textures, instrumental, no vocals.
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>### 歌曲 Prompt：
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>A futuristic electronic song, medium-fast tempo, with lyrics about speed, innovation, smart cities, and delivering to the future.
+</code></pre></div>
+<h2 id="_6">音樂風格、情緒控制與一致性<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">常見音樂風格<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>1. 電影感 Cinematic
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>   特點：情緒強、層次分明。
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>   適合：故事影片、品牌影片。
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>2. 輕鬆氛圍 Lo-fi
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>   特點：放鬆、日常、低干擾。
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>   適合：生活影片、咖啡廳情境。
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>3. 電子音樂 Electronic
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>   特點：節奏強、科技感。
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>   適合：未來場景、科技產品。
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>4. 管弦樂 Orchestral
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>   特點：戲劇性、層次豐富。
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>   適合：動畫角色、故事高潮。
+</code></pre></div>
+<h3 id="_8">情緒控制三大元素<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>公式：「節奏 × 音色 × 強弱 = 情緒控制」</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>### 節奏 Tempo
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>- slow → 平靜、敘事
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>- medium → 穩定、日常
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>- fast → 緊張、動作
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>### 音色 Tone／Instrument
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>- 鋼琴 → 溫暖、情感
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>- 電子 → 科技、未來
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>- 弦樂 → 劇情、張力
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>### 強弱 Intensity
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>- 柔和 → 放鬆
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>- 漸強 → 推進
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>- 高峰 → 爆發
+</code></pre></div>
+<h3 id="problem_3">Problem. 溫馨回憶影片<a class="headerlink" href="#problem_3" title="Permanent link">&para;</a></h3>
+<p>「製作一段家庭相簿影片的背景音樂，希望聽起來溫暖、放鬆，像是在回憶美好的時光，不要有人聲。」</p>
+<p>請依據情境寫出Music Prompt，並利用寫出的Music Prompt做出Music。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>- 風格(Style)：
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>- 節奏(Tempo)：
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>- 音色(Tone / Instrument)：
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>- 情緒(Mood)：
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>- 強弱(Intensity)：
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>- 人聲(Vocals)：
+</code></pre></div>
+<h3 id="problem_4">Problem. 科技產品發表<a class="headerlink" href="#problem_4" title="Permanent link">&para;</a></h3>
+<p>「製作一支 AI 智慧眼鏡的產品介紹影片，希望充滿科技感，節奏明快，能展現未來世界的氛圍，無人聲。」</p>
+<p>請依據情境寫出Music Prompt，並利用寫出的Music Prompt做出Music。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>- 風格(Style)：
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>- 節奏(Tempo)：
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>- 音色(Tone / Instrument)：
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>- 情緒(Mood)：
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>- 強弱(Intensity)：
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>- 人聲(Vocals)：
+</code></pre></div>
+<h3 id="problem_5">Problem. 奇幻冒險<a class="headerlink" href="#problem_5" title="Permanent link">&para;</a></h3>
+<p>「製作一位勇者踏入古老神殿，即將展開冒險。希望音樂具有史詩感，情緒逐漸堆疊，最後進入高潮，無人聲。」</p>
+<p>請依據情境寫出Music Prompt，並利用寫出的Music Prompt做出Music。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>- 風格(Style)：
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>- 節奏(Tempo)：
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>- 音色(Tone / Instrument)：
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>- 情緒(Mood)：
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>- 強弱(Intensity)：
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>- 人聲(Vocals)：
+</code></pre></div>
+<h3 id="problem_6">Problem. 極速賽車<a class="headerlink" href="#problem_6" title="Permanent link">&para;</a></h3>
+<p>「製作賽車高速衝刺、超車、最後衝過終點，希望音樂充滿速度感與緊張感，情緒一路推向最高點。」</p>
+<p>請依據情境寫出Music Prompt，並利用寫出的Music Prompt做出Music。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>- 風格(Style)：
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>- 節奏(Tempo)：
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>- 音色(Tone / Instrument)：
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>- 情緒(Mood)：
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>- 強弱(Intensity)：
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>- 人聲(Vocals)：
+</code></pre></div>
+<h3 id="problem_7">Problem. 星空縮時攝影<a class="headerlink" href="#problem_7" title="Permanent link">&para;</a></h3>
+<p>「夜晚星空慢慢移動，銀河緩緩升起，希望音樂空靈、夢幻，帶有神秘感，無人聲。」</p>
+<p>請依據情境寫出Music Prompt，並利用寫出的Music Prompt做出Music。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>- 風格(Style)：
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>- 節奏(Tempo)：
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>- 音色(Tone / Instrument)：
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>- 情緒(Mood)：
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>- 強弱(Intensity)：
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>- 人聲(Vocals)：
+</code></pre></div>
+<h3 id="problem_8">Problem. 懸疑推理<a class="headerlink" href="#problem_8" title="Permanent link">&para;</a></h3>
+<p>「偵探走進昏暗的房間尋找線索，希望音樂能營造神秘與緊張感，但不要太激烈，慢慢增加壓迫感。」</p>
+<p>請依據情境寫出Music Prompt，並利用寫出的Music Prompt做出Music。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>- 風格(Style)：
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>- 節奏(Tempo)：
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>- 音色(Tone / Instrument)：
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>- 情緒(Mood)：
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>- 強弱(Intensity)：
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>- 人聲(Vocals)：
+</code></pre></div>
+<h3 id="problem_9">Problem. 運動品牌廣告<a class="headerlink" href="#problem_9" title="Permanent link">&para;</a></h3>
+<p>「運動員清晨訓練、奔跑、跳躍，最後完成挑戰，希望音樂充滿力量與激勵感。」</p>
+<p>請依據情境寫出Music Prompt，並利用寫出的Music Prompt做出Music。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>- 風格(Style)：
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>- 節奏(Tempo)：
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>- 音色(Tone / Instrument)：
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>- 情緒(Mood)：
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>- 強弱(Intensity)：
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>- 人聲(Vocals)：
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "navigation.top", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
