@@ -559,7 +559,22 @@
 .hero .md-button {
   margin: 0.3rem;
 }
+/* ----------- 影片播放畫面 --------- */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 2rem 0;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+}
 
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
 
 /* ---------- 平板與手機版 ---------- */
 

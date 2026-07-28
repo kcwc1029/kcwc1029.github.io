@@ -8,7 +8,9 @@
 - [進階圖像創作：風格&編修&控制](./Google%20AI多媒體創作/進階圖像創作：風格&編修&控制.md)
 - [圖像策略：建立個人與品牌視覺](./Google%20AI多媒體創作/圖像策略：建立個人與品牌視覺.md)
 - [AI版面設計：Google Stitch](./Google%20AI多媒體創作/AI版面設計：Google_Stitch.md)
-- [AI影片創作](./Google%20AI多媒體創作/AI影片創作.md)
+- Google Site
+- [AI影片創作：以Google Flow](./Google%20AI多媒體創作/AI影片創作：以Google_Flow創作.md)
+- [AI音樂創作：以Google Lyria](./Google%20AI多媒體創作/AI音樂創作：Google_Lyria.md)
 
 ```text
 把圖片中的內容，寫成可以直接教課得教材給我

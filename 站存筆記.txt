@@ -41,3 +41,65 @@ mkdocs serve
         style="width: calc((100% - 40px) / 3); height: auto; object-fit: cover;">
 </div>
 ```
+
+```html
+<!-- 播放影片 -->
+<div class="video-wrapper">
+    <iframe
+        src="https://drive.google.com/file/d/drive的ID/preview"
+        allow="autoplay"
+        allowfullscreen>
+    </iframe>
+</div>
+```
+
+```html
+<!-- 左邊圖片 + 右邊影片 -->
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;">
+
+    <!-- 左邊圖片 -->
+    <img
+        src="images/photo1.jpg"
+        alt="圖片"
+        style="
+            flex: 1;
+            min-width: 300px;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        ">
+
+    <!-- 右邊影片 -->
+    <div
+        style="
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            padding-top: 56.25%;
+        ">
+        <iframe
+            src="https://drive.google.com/file/d/你的DriveID/preview"
+            allow="autoplay"
+            allowfullscreen
+            style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            ">
+        </iframe>
+    </div>
+</div>
+```
+
+```html
+<!-- 播放音樂 -->
+<video 
+    src="https://drive.google.com/file/d/你的DriveID/preview" 
+    controls 
+    style="max-width: 200px; width: 100%; height: auto; display: block; margin: 0 auto;">
+您的瀏覽器不支援 HTML5 影片播放。
+</video>
+```
