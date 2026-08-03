@@ -114,6 +114,31 @@ uv sync
 .\.venv\Scripts\activate
 ```
 
+### 使用 uv 建立支援 CUDA 的 AI 開發環境
+
+```py
+uv init
+uv venv
+.venv\Scripts\activate
+# 啟動成功後，終端機前面會出現虛擬環境名稱：(uv_for_ipynb) PS D:\github\uv_for_ipynb>
+
+# 安裝 AI 開發常用套件
+uv pip install ipykernel numpy matplotlib
+
+# 安裝支援 CUDA 12.8 的 PyTorch
+uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+
+# 測試 PyTorch 是否可以使用 GPU
+uv run python -c "import torch; print('PyTorch：', torch.__version__); print('CUDA：', torch.version.cuda); print('CUDA 可用：', torch.cuda.is_available()); print('GPU：', torch.cuda.get_device_name(0)); print('支援架構：', torch.cuda.get_arch_list())"
+
+# 正常情況下，會看到類似：
+# PyTorch： 2.11.0+cu128
+# CUDA： 12.8
+# CUDA 可用： True
+# GPU： NVIDIA GeForce RTX 5060
+# 支援架構： ['sm_75', 'sm_80', 'sm_86', 'sm_90', 'sm_100', 'sm_120']
+```
+
 ## venv
 
 venv 是一個 Python 內建的標準函式庫，專門用來建立輕量級的虛擬環境。它不需依賴外部安裝，能夠為每個專案提供獨立的 Python 執行環境，確保不同專案之間的套件版本不會互相干擾。
