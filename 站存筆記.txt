@@ -103,3 +103,9 @@ mkdocs serve
 您的瀏覽器不支援 HTML5 影片播放。
 </video>
 ```
+
+
+```text
+圖池用法：
+upgit -c config.toml "D:\Users\User\Downloads\CNN流程圖.jfif"
+```
