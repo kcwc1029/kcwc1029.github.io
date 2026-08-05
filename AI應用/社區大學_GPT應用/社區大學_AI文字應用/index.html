@@ -1,0 +1,2003 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、AI筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/AI%E6%87%89%E7%94%A8/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_GPT%E6%87%89%E7%94%A8/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%96%87%E5%AD%97%E6%87%89%E7%94%A8/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>社區大學_AI文字應用 - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_ai" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              社區大學_AI文字應用
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI應用
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+          
+  
+  
+  日記
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI應用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    日記
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    手札首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%89%8B%E6%9C%AD/12%E5%A4%A9%E8%A3%9C%E5%85%85%E5%85%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12天補充兵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LINE回覆助手
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LINE回覆助手">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem.已讀但不能立刻處理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 家庭群組確認人數
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 婉拒代購
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 一句話三種關係
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#email" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Email撰寫
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Email撰寫">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 預約改期
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 詢問報價
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 附件忘了放
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        活動公告撰寫
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="活動公告撰寫">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 健康講座公告
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 同一活動，不同宣傳平台
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 颱風延期公告
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 公告挑錯大會
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        邀請函撰寫
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="邀請函撰寫">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 家庭聚餐邀請
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 邀請專家擔任講師
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 小型聚會邀請
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 同一活動，不同邀請方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        感謝信與祝福卡
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="感謝信與祝福卡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 謝謝照顧長輩的人
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 退休祝福卡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 感謝鄰居幫忙
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 康復祝福
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 生日卡改寫
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自我介紹優化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="自我介紹優化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 社大第一天自我介紹
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 志工面談自我介紹
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 加入 LINE 新群組
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 同一份資料，不同場合
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文章改寫與潤飾
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文章改寫與潤飾">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常用指令差異
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 旅遊心得潤飾
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 抱怨改成溝通
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 同一段話，不同語氣
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        長文摘要整理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="長文摘要整理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 社區會議紀錄整理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 保險條款白話整理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 新聞重點整理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI協助發想內容
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI協助發想內容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 幫社區課程取名字
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 家庭聚會活動發想
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 社區活動企劃發想
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 把點子變成活動企劃
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 早餐店新品發想
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 社群貼文主題發想
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI建立個人寫作流程
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI建立個人寫作流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五階段流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 從零完成一封 Email
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 活動公告完整流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-line_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. LINE 邀請訊息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 心得分享
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_ai">社區大學_AI文字應用<a class="headerlink" href="#_ai" title="Permanent link">&para;</a></h1>
+<h2 id="line">LINE回覆助手<a class="headerlink" href="#line" title="Permanent link">&para;</a></h2>
+<p>「LINE 最難的常不是沒有字，而是不知道怎麼回才不失禮。AI 能提供草稿，但它不知道你和對方的關係，所以一定要告訴它：對方是家人、朋友、鄰居，還是工作夥伴。」</p>
+<ul>
+<li>依親疏關係調整 LINE 回覆語氣。</li>
+<li>清楚表達答應、拒絕、延後回覆與確認資訊。</li>
+<li>避免 AI 寫出太正式、太冷淡或承諾過度的文字。</li>
+</ul>
+<p><img alt="" src="../Image/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%96%87%E5%AD%97%E6%87%89%E7%94%A8/LINE%E5%9B%9E%E8%A6%86%E5%8A%A9%E6%89%8B.png" /></p>
+<blockquote>
+<p>Meta AI
+Android版本：https://play.google.com/store/apps/details?id=com.facebook.stella&amp;hl=zh_TW
+IOS版本：https://apps.apple.com/tw/app/meta-ai/id1558240027</p>
+</blockquote>
+<h3 id="problem">Problem.<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../Image/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%96%87%E5%AD%97%E6%87%89%E7%94%A8/line%E5%90%83%E9%A3%AF%E9%82%80%E7%B4%84.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>朋友邀我本週六參加聚餐，但我已經有家庭行程。
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>請寫一則 LINE 回覆，先謝謝邀請，再簡短婉拒，不要編造理由，也不要承諾下次一定參加。語氣自然。
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>提供溫暖版與簡潔版。
+</code></pre></div>
+<h3 id="problem_1">Problem.已讀但不能立刻處理<a class="headerlink" href="#problem_1" title="Permanent link">&para;</a></h3>
+<p>鄰居傳訊息詢問社區修繕，我現在正在上班，晚上才能查看。請寫一則 40 字內的回覆，讓對方知道我已收到，但不要讓人誤會我已答應處理。</p>
+<p><img alt="" src="../Image/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%96%87%E5%AD%97%E6%87%89%E7%94%A8/line%E7%A4%BE%E5%8D%80%E4%BF%AE%E7%B9%95.png" /></p>
+<h3 id="problem_2">Problem. 家庭群組確認人數<a class="headerlink" href="#problem_2" title="Permanent link">&para;</a></h3>
+<p>請寫訊息詢問下週日聚餐人數、飲食限制及是否需要兒童座椅，設定週三為回覆期限；語氣親切，不像公文。</p>
+<h3 id="problem_3">Problem. 婉拒代購<a class="headerlink" href="#problem_3" title="Permanent link">&para;</a></h3>
+<p>親友請你代購商品，但你不熟悉規格，也不希望負責退換貨。請 AI 寫出有界線又不責怪對方的版本。</p>
+<p><img alt="" src="../Image/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%96%87%E5%AD%97%E6%87%89%E7%94%A8/line%E4%BB%A3%E8%B3%BC.png" /></p>
+<h3 id="problem_4">Problem. 一句話三種關係<a class="headerlink" href="#problem_4" title="Permanent link">&para;</a></h3>
+<p>將「我今天會晚到 20 分鐘」分別寫給好友、社區課程老師與工作同事。全班比較哪些字詞顯示關係差異。</p>
+<h2 id="email">Email撰寫<a class="headerlink" href="#email" title="Permanent link">&para;</a></h2>
+<ul>
+<li>寫出清楚主旨、稱呼、正文與署名。</li>
+<li>把背景、請求及期限分開表達。</li>
+<li>附件和個資在寄出前再次確認。</li>
+</ul>
+<p><img alt="" src="../Image/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%96%87%E5%AD%97%E6%87%89%E7%94%A8/Email%E6%92%B0%E5%AF%AB.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>請幫我寫 Email 給社區大學承辦人，詢問秋季班報名是否成功。我在 7 月 25 日完成線上繳費，但尚未收到確認信。
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>語氣有禮、簡潔，提供主旨；
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>正文先說明情況，再請對方協助確認。
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>不要替我編造姓名、訂單號碼或電話，
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>以［請填寫］標示缺少資料。
+</code></pre></div>
+<h3 id="problem_5">Problem. 預約改期<a class="headerlink" href="#problem_5" title="Permanent link">&para;</a></h3>
+<p>你原本和課程講師約好週二下午進行 1 小時的個別討論，但因家中臨時有重要事情需要處理，無法依原定時間出席。希望改約到本週四下午，若講師已有其他安排，也願意配合重新協調時間。</p>
+<p>請 AI 撰寫一封 Email，並提供 兩個不同風格的信件主旨，內容需有禮貌地說明原因，同時保留讓講師婉拒或提出其他時間的空間。</p>
+<h3 id="problem_6">Problem. 詢問報價<a class="headerlink" href="#problem_6" title="Permanent link">&para;</a></h3>
+<p>你正在協助籌辦一場社區活動，預計約 40 人參加，希望租借場地於 週六下午使用。</p>
+<p>除了基本場地外，還需要了解是否提供 投影設備、茶水服務，以及活動若臨時取消或延期時的退費與取消規定。</p>
+<p>請 AI 撰寫一封詢價 Email，將所有想確認的事項整理成條列式問題，避免因資訊不足而需要來回寄送多封信件。</p>
+<h3 id="problem_7">Problem. 附件忘了放<a class="headerlink" href="#problem_7" title="Permanent link">&para;</a></h3>
+<p>你寄出一封工作 Email 後，才發現信中提到「請參閱附件」，但實際上忘記附上檔案。希望立即補寄附件，讓對方可以順利收到完整資料。</p>
+<p>請 AI 撰寫一封簡短的補寄 Email，直接承認是自己疏忽即可，不需要過度道歉，也不要寫得太冗長，重點是讓對方快速知道附件已補上。</p>
+<h2 id="_1">活動公告撰寫<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../Image/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%96%87%E5%AD%97%E6%87%89%E7%94%A8/%E6%B4%BB%E5%8B%95%E5%85%AC%E5%91%8A%E6%92%B0%E5%AF%AB.png" /></p>
+<ul>
+<li>寫齊活動六要素：人、事、時、地、費用、報名方式。</li>
+<li>依公告欄、LINE、社群平台調整版面。</li>
+<li>清楚處理延期、額滿與注意事項。</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>請把以下資訊整理成社區活動公告(以圖片形式給我)：
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>時間：8 月 17 日(週日) 下午 2:00–4:00
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>地點：里民活動中心
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>課程：手機攝影入門
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>限 25 人、免費、自備手機
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>8 月 10 日前向管理室報名。
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>先給醒目標題，再用短段落及條列呈現。
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>不得增加我沒提供的講師姓名或聯絡電話。
+</code></pre></div>
+<p><img alt="" src="../Image/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%96%87%E5%AD%97%E6%87%89%E7%94%A8/%E6%B4%BB%E5%8B%95%E5%85%AC%E5%91%8A%E6%92%B0%E5%AF%AB-%E6%89%8B%E6%A9%9F%E6%94%9D%E5%BD%B1%E5%85%A5%E9%96%80.png" /></p>
+<h3 id="problem_8">Problem. 健康講座公告<a class="headerlink" href="#problem_8" title="Permanent link">&para;</a></h3>
+<p>社區發展協會將舉辦一場健康講座，希望張貼於里民活動中心公告欄。</p>
+<p>請依照以下資料撰寫一份 A4 活動公告：</p>
+<ul>
+<li>活動名稱：銀髮健康保健講座</li>
+<li>日期：9 月 20 日(六)</li>
+<li>時間：上午 9:30–11:30</li>
+<li>地點：幸福里民活動中心</li>
+<li>對象：55 歲以上民眾</li>
+<li>費用：免費</li>
+<li>名額：40 人</li>
+<li>報名期限：9 月 15 日</li>
+<li>報名方式：向里辦公處登記</li>
+<li>注意事項：請攜帶健保卡及環保杯。</li>
+</ul>
+<p>請先設計醒目標題，再用短段落及條列方式呈現，最後列出公告中還有哪些資訊建議補充，但不得自行虛構。</p>
+<h3 id="problem_9">Problem. 同一活動，不同宣傳平台<a class="headerlink" href="#problem_9" title="Permanent link">&para;</a></h3>
+<p>以下是一則社區活動公告：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>🎉 秋季手作課程開始報名！
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>社區大學將於 10 月 4 日(六)下午 2:00–4:30，在文化活動中心舉辦「療癒乾燥花手作課」，邀請有興趣的民眾一起動手創作。
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>活動限額 30 人，材料費 200 元，請於 9 月 28 日前向服務台完成報名及繳費，額滿為止。活動當天請提前 10 分鐘報到。
+</code></pre></div>
+<p>請將以上內容改寫成：</p>
+<ol>
+<li>公布欄 A4 公告版。</li>
+<li>電梯公告版(80 字內)。</li>
+<li>LINE 群組通知版(100 字內)。</li>
+</ol>
+<h3 id="problem_10">Problem. 颱風延期公告<a class="headerlink" href="#problem_10" title="Permanent link">&para;</a></h3>
+<p>原訂於 <strong>8 月 24 日(日) 下午 2:00</strong> 在 <strong>永安里民活動中心</strong> 舉辦的 <strong>「親子桌遊體驗活動」</strong>，因颱風來襲宣布延期。</p>
+<p>目前新的活動日期尚未確定。</p>
+<p>已完成報名的民眾 <strong>不需要重新報名</strong>，待新日期確定後將統一通知。</p>
+<p>請 AI 撰寫一份適合同時發布於公告欄與 LINE 群組的延期公告，要求標題一眼就能知道活動延期，避免居民誤以為活動照常舉辦。</p>
+<h3 id="problem_11">Problem. 公告挑錯大會<a class="headerlink" href="#problem_11" title="Permanent link">&para;</a></h3>
+<p>下面是一份活動公告：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>**✨ 社區電影欣賞✨**
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>歡迎大家一起來看電影！
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>時間：10/18 下午開始
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>地點：活動中心
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>請大家記得報名。
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>有問題請洽服務台。
+</code></pre></div>
+<p>請 AI 扮演第一次看到公告的居民，找出這份公告容易造成困惑或資訊不足的地方，例如：</p>
+<ul>
+<li>哪些資訊不夠明確？</li>
+<li>哪些內容可能讓居民誤解？</li>
+<li>還缺少哪些重要資訊？</li>
+</ul>
+<p>最後請重新整理成一份完整、容易閱讀的社區活動公告。</p>
+<h2 id="_2">邀請函撰寫<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>分辨正式邀請與私人邀請。</li>
+<li>交代邀請原因、活動資訊及回覆方式。</li>
+<li>避免用情緒壓力要求對方出席。</li>
+</ul>
+<p><img alt="" src="../Image/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%96%87%E5%AD%97%E6%87%89%E7%94%A8/%E9%82%80%E8%AB%8B%E5%87%BD%E6%92%B0%E5%AF%AB.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>請寫一則邀請老同學參加畢業 30 年聚會的訊息。
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>日期為 9 月 14 日中午，地點在台中車站附近，餐廳待人數確認後公布，請在 8 月 20 日前回覆。語氣溫暖、有懷舊感，但不要暗示沒參加就是不重感情。
+</code></pre></div>
+<h3 id="problem_12">Problem. 家庭聚餐邀請<a class="headerlink" href="#problem_12" title="Permanent link">&para;</a></h3>
+<p>王媽媽將於 10 月 5 日(日) 中午 舉辦 70 歲生日餐會，地點為高雄福華大飯店，希望邀請親友一起慶祝。
+請 AI 分別撰寫：</p>
+<ul>
+<li>適合傳給長輩的 LINE 邀請訊息。</li>
+<li>適合傳給同輩或晚輩的 LINE 邀請訊息。</li>
+</ul>
+<p>內容需包含：</p>
+<ul>
+<li>活動時間與地點。</li>
+<li>不收禮，只希望大家一起吃飯。</li>
+<li>請於 9 月 20 日前 回覆是否參加。</li>
+<li>若有素食或其他飲食需求，請一併告知。</li>
+</ul>
+<p>兩個版本需呈現不同語氣，但資訊都要完整。</p>
+<h3 id="problem_13">Problem. 邀請專家擔任講師<a class="headerlink" href="#problem_13" title="Permanent link">&para;</a></h3>
+<p>社區大學希望邀請一位金融專家，分享「常見詐騙手法與防詐觀念」。</p>
+<p>請 AI 撰寫一封正式 Email，內容包含：</p>
+<ul>
+<li>活動日期：11 月 8 日(六)</li>
+<li>時間：下午 2:00–4:00</li>
+<li>地點：文化中心演講廳</li>
+<li>對象：一般民眾</li>
+<li>預估人數：約 80 人</li>
+</ul>
+<p>並禮貌詢問：</p>
+<ul>
+<li>是否方便擔任講師。</li>
+<li>是否有演講費或交通費需求。</li>
+<li>是否需要提供投影設備或其他器材。</li>
+<li>希望於一週內回覆。</li>
+</ul>
+<p>信件需正式但不生硬。</p>
+<h3 id="problem_14">Problem. 小型聚會邀請<a class="headerlink" href="#problem_14" title="Permanent link">&para;</a></h3>
+<p>今年的同學聚會因餐廳包廂座位有限，只能邀請平時固定聯絡的同學參加，希望之後再規劃大型聚會。</p>
+<p>請 AI 撰寫一段內部說明，避免讓未受邀的人感到被排擠或比較，語氣需自然、誠懇，不要使用容易造成誤會的措辭。</p>
+<h3 id="problem_15">Problem. 同一活動，不同邀請方式<a class="headerlink" href="#problem_15" title="Permanent link">&para;</a></h3>
+<p>社區將於 <strong>9 月 27 日(六) 上午 9:00–12:00</strong> 舉辦「社區大掃除」，集合地點為里民活動中心，活動免費，請自備手套與水壺。</p>
+<p>請 AI 分別撰寫：</p>
+<ol>
+<li>社區公布欄正式邀請。</li>
+<li>LINE 群組邀請訊息。</li>
+<li>Facebook 社團貼文。</li>
+</ol>
+<p>比較三個版本在語氣、長度及內容上的差異，並說明哪些資訊一定要保留。</p>
+<h2 id="_3">感謝信與祝福卡<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>用具體事件表達感謝，而非堆疊華麗形容詞。</li>
+<li>依生日、退休、康復、畢業等情境調整祝福。</li>
+<li>保留真實情感，避免 AI 腔與過度煽情。</li>
+</ul>
+<p><img alt="" src="../Image/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%96%87%E5%AD%97%E6%87%89%E7%94%A8/%E6%84%9F%E8%AC%9D%E4%BF%A1%E8%88%87%E7%A5%9D%E7%A6%8F%E5%8D%A1.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>我要寫一張卡片謝謝照顧父親的居家服務員。具體想感謝的是：她每次耐心聽父親說話，也會提醒我們補充日用品。
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>請將這些事寫成 100 字內、真誠平實的文字，不誇大、不代表父親說他未說過的話。
+</code></pre></div>
+<h3 id="problem_16">Problem. 謝謝照顧長輩的人<a class="headerlink" href="#problem_16" title="Permanent link">&para;</a></h3>
+<p>阿姨長期協助照顧家中的長輩，不僅會耐心陪伴聊天，也經常提醒家屬注意生活用品是否足夠。</p>
+<p>請 AI 撰寫一段約 100 字的感謝卡內容，要求：</p>
+<ul>
+<li>提及兩件具體的小事。</li>
+<li>語氣真誠、自然。</li>
+<li>不過度讚美，也不要替長輩表達未曾說過的感受。</li>
+</ul>
+<h3 id="problem_17">Problem. 退休祝福卡<a class="headerlink" href="#problem_17" title="Permanent link">&para;</a></h3>
+<p>王老師即將退休，任教社區大學 15 年，平時總是提早到教室協助學員準備設備，也很有耐心回答問題。</p>
+<p>請 AI 撰寫一張退休祝福卡，內容包含：</p>
+<ul>
+<li>一段具體回憶。</li>
+<li>感謝對社區的付出。</li>
+<li>對退休生活的祝福。</li>
+</ul>
+<p>避免使用「終於退休」「功成身退」「享清福」等可能讓人感到不自在的詞語。</p>
+<h3 id="problem_18">Problem. 感謝鄰居幫忙<a class="headerlink" href="#problem_18" title="Permanent link">&para;</a></h3>
+<p>出差期間，鄰居除了幫忙代收包裹，還發現陽台漏水並立即通知你，避免造成更大的損失。</p>
+<p>請 AI 分別撰寫：</p>
+<ul>
+<li>LINE 感謝訊息(50 字內)。</li>
+<li>手寫卡片內容(120 字內)。</li>
+</ul>
+<p>比較兩種版本在語氣與內容上的差異。</p>
+<h3 id="problem_19">Problem. 康復祝福<a class="headerlink" href="#problem_19" title="Permanent link">&para;</a></h3>
+<p>朋友最近因身體不適正在休養，目前狀況已有好轉，但仍需要一段時間恢復。</p>
+<p>請 AI 撰寫一段關心訊息，要求：</p>
+<ul>
+<li>不主動詢問病情。</li>
+<li>不提供醫療建議。</li>
+<li>不保證一定會康復。</li>
+<li>讓對方感受到關心，而不是壓力。</li>
+</ul>
+<h3 id="problem_20">Problem. 生日卡改寫<a class="headerlink" href="#problem_20" title="Permanent link">&para;</a></h3>
+<p>下面是一段 AI 產生的生日祝福：「願你的生命如璀璨星河，歲月如詩如畫，每一天都綻放耀眼光芒，開啟人生新的精彩篇章。」</p>
+<p>請 AI 將這段內容改寫成：</p>
+<ul>
+<li>像平常和好友聊天的口吻。</li>
+<li>保留祝福，但避免過度華麗。</li>
+<li>加入一句具體的小回憶，讓祝福更有溫度。</li>
+</ul>
+<h2 id="_4">自我介紹優化<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../Image/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%96%87%E5%AD%97%E6%87%89%E7%94%A8/%E8%87%AA%E6%88%91%E4%BB%8B%E7%B4%B9%E5%84%AA%E5%8C%96.png" /></p>
+<ul>
+<li>依場合選擇適合資訊，而非從出生講到現在。</li>
+<li>建立 30 秒、1 分鐘與書面版本。</li>
+<li>自信呈現經驗，不虛構學歷、職稱或成果。</li>
+</ul>
+<h3 id="problem_21">Problem. 社大第一天自我介紹<a class="headerlink" href="#problem_21" title="Permanent link">&para;</a></h3>
+<p>以下是真實資料：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>- 姓名：林美惠
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>- 居住地：高雄市左營區
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>- 退休前擔任行政人員 22 年
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>- 平時喜歡健走、旅遊及拍照
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>- 這次報名 AI 課程，希望學會使用 AI，也認識更多朋友
+</code></pre></div>
+<p>請 AI 撰寫一段 <strong>30 秒口語自我介紹</strong>，內容自然、親切，不需要透露年齡、詳細住址或其他個人隱私，最後加入一句能讓同學容易接話的內容。</p>
+<h3 id="problem_22">Problem. 志工面談自我介紹<a class="headerlink" href="#problem_22" title="Permanent link">&para;</a></h3>
+<p>你準備參加圖書館志工面談，以下是你的經歷：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>- 曾擔任公司行政工作 18 年
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>- 平時協助社區活動報到與文書整理
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>- 喜歡與人互動，也習慣協助長輩使用手機
+</code></pre></div>
+<p>請 AI 撰寫一段約 <strong>1 分鐘</strong> 的自我介紹，強調自己的溝通能力、耐心及服務經驗，但不得虛構證照、獎項或志工經歷。</p>
+<h3 id="problem-line">Problem. 加入 LINE 新群組<a class="headerlink" href="#problem-line" title="Permanent link">&para;</a></h3>
+<p>你剛加入社區大學 AI 課程的 LINE 群組，希望先向大家打招呼。</p>
+<p>請根據以下資料撰寫一段 <strong>80 字內</strong> 的自我介紹，內容需親切自然，不要透露電話、詳細住址或其他個人隱私。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>- 姓名：陳建宏
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>- 住在台南市東區
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>- 喜歡園藝和攝影
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>- 希望學會 AI 協助整理生活資料
+</code></pre></div>
+<h3 id="problem_23">Problem. 同一份資料，不同場合<a class="headerlink" href="#problem_23" title="Permanent link">&para;</a></h3>
+<p>以下是同一位學員的資料，請 AI 分別撰寫：</p>
+<ol>
+<li>社區大學課堂自我介紹。</li>
+<li>登山社新社員自我介紹。</li>
+<li>同學聚會重新認識大家的自我介紹。</li>
+</ol>
+<p>最後比較三個版本有哪些內容保留、哪些內容需要調整，並說明原因。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>- 曾任銀行行政 25 年
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>- 喜歡登山、閱讀及攝影
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>- 退休後開始學習 AI，希望提升生活便利性
+</code></pre></div>
+<h2 id="_5">文章改寫與潤飾<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li>分辨改錯字、調順序、縮短與改語氣等不同任務。</li>
+<li>保留原意與個人立場。</li>
+<li>使用修改對照避免重要資訊被刪除。</li>
+</ul>
+<p><img alt="" src="../Image/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%96%87%E5%AD%97%E6%87%89%E7%94%A8/%E6%96%87%E7%AB%A0%E6%94%B9%E5%AF%AB%E8%88%87%E6%BD%A4%E9%A3%BE.png" /></p>
+<h3 id="_6">常用指令差異<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>主要工作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>校對</td>
+<td>錯字、標點、基本語法</td>
+</tr>
+<tr>
+<td>潤飾</td>
+<td>讓句子自然順暢</td>
+</tr>
+<tr>
+<td>改寫</td>
+<td>改變結構、語氣或表達方式</td>
+</tr>
+<tr>
+<td>縮寫</td>
+<td>保留重點、減少篇幅</td>
+</tr>
+<tr>
+<td>擴寫</td>
+<td>補充說明；須防止 AI 編造事實</td>
+</tr>
+</tbody>
+</table>
+<h3 id="problem_24">Problem. 旅遊心得潤飾<a class="headerlink" href="#problem_24" title="Permanent link">&para;</a></h3>
+<p>下面是一段旅遊心得：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>上個星期天我們一家人去旗津玩，天氣真的很熱，可是風很大，所以沒有那麼不舒服。我們先去吃海產，後來又租腳踏車騎去燈塔，途中一直停下來拍照，所以比原本預計晚很多。回家雖然很累，但是大家都玩得很開心，我覺得下次如果不要那麼晚出門應該會更好。
+</code></pre></div>
+<p>請 AI 協助：</p>
+<ul>
+<li>修正錯字、標點及語句不順。</li>
+<li>保留第一人稱及原本口吻。</li>
+<li>不增加新的景點或經歷。</li>
+<li>最後列出三項主要修改內容。</li>
+</ul>
+<h3 id="problem_25">Problem. 抱怨改成溝通<a class="headerlink" href="#problem_25" title="Permanent link">&para;</a></h3>
+<p>下面是一段住戶抱怨：「你們每次晚上都很吵，完全不尊重別人，每天都這樣誰受得了？」</p>
+<p>請 AI 將內容改寫成適合向社區管委會或鄰居反映的文字，要求：</p>
+<ul>
+<li>保留原本想表達的問題。</li>
+<li>描述實際情況與造成的影響。</li>
+<li>提出具體且有禮貌的請求。</li>
+<li>避免責備或情緒化用詞。</li>
+</ul>
+<h3 id="problem_26">Problem. 同一段話，不同語氣<a class="headerlink" href="#problem_26" title="Permanent link">&para;</a></h3>
+<p>下面是一段通知：「下週開始課程改到二樓教室，請大家不要跑錯。」</p>
+<p>請 AI 分別改寫成：</p>
+<ul>
+<li>正式公告版。</li>
+<li>LINE 群組通知版。</li>
+<li>親切提醒版。</li>
+<li>長輩容易閱讀版。</li>
+</ul>
+<p>最後比較四種版本在用字與語氣上的差異。</p>
+<h2 id="_7">長文摘要整理<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li>依閱讀目的選擇摘要格式。</li>
+<li>區分原文內容、AI 推論與未提及事項。</li>
+<li>回到原文核對日期、數字與關鍵條件。</li>
+</ul>
+<h3 id="problem_27">Problem. 社區會議紀錄整理<a class="headerlink" href="#problem_27" title="Permanent link">&para;</a></h3>
+<p>以下是一份社區會議紀錄：https://glrs.moi.gov.tw/LawContent.aspx?id=FL003853#lawmenu</p>
+<p>請透過AI：</p>
+<ul>
+<li>100 字摘要。</li>
+<li>條列所有正式決議事項。</li>
+<li>整理每項工作的負責人與完成期限。</li>
+</ul>
+<h3 id="problem_28">Problem. 保險條款白話整理<a class="headerlink" href="#problem_28" title="Permanent link">&para;</a></h3>
+<p>以下是一份南山人壽的機車保險說明：https://ecrwd.nanshangeneral.com.tw/nanshanEC/html/best-selling</p>
+<p>請透過AI：</p>
+<ul>
+<li>用一般民眾容易理解的方式整理。</li>
+<li>條列重要金額、期間及例外情況。</li>
+<li>哪些地方建議向保險公司再確認？</li>
+<li>不可提供法律或理賠結論。</li>
+</ul>
+<h3 id="problem_29">Problem. 新聞重點整理<a class="headerlink" href="#problem_29" title="Permanent link">&para;</a></h3>
+<p>以下是一份財經新聞：https://reurl.cc/gN2o1R</p>
+<p>請透過AI：</p>
+<ul>
+<li>用 500 字整理新聞。</li>
+<li>整理：</li>
+<li>誰？</li>
+<li>發生什麼事？</li>
+<li>何時開始？</li>
+<li>資料來源？</li>
+<li>哪些內容仍有爭議？</li>
+<li>哪些事情尚未確定？</li>
+<li>不可加入其他新聞內容。</li>
+</ul>
+<h2 id="ai">AI協助發想內容<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h2>
+<ul>
+<li>從對象、目的與限制開始發想。</li>
+<li>用分類、組合與評分收斂點子。</li>
+<li>將 AI 點子轉成可執行的小方案。</li>
+</ul>
+<p><img alt="" src="../Image/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%96%87%E5%AD%97%E6%87%89%E7%94%A8/AI%E5%8D%94%E5%8A%A9%E7%99%BC%E6%83%B3%E5%85%A7%E5%AE%B9.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>我正在規劃社區大學的秋季活動，希望請 AI 協助發想。
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>對象：40～75 歲社區居民。
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>目的：提高參與意願，讓居民願意報名。
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>限制：
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>- 不需要昂貴設備。
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>- 活動時間約 2 小時。
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>- 適合初學者。
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>- 不涉及醫療診斷或專業證照。
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>請依照以下步驟回答：
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>1. 分成健康、生活、AI 應用、手作、休閒五個類別。
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>2. 每類提出 5 個活動點子。
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>3. 每個點子用一句話說明特色。
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>4. 依「吸引力」「容易執行」「預算需求」各 5 分評分。
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>5. 推薦最值得辦的前三名，並說明理由。
+</code></pre></div>
+<h3 id="problem_30">Problem. 幫社區課程取名字<a class="headerlink" href="#problem_30" title="Permanent link">&para;</a></h3>
+<p>社區大學準備開設一門課程：利用 AI 幫忙整理照片、寫文章、規劃旅遊及生活大小事。</p>
+<p>請 AI：</p>
+<ol>
+<li>提出 <strong>15 個課程名稱</strong>。</li>
+<li>分成：</li>
+<li>清楚易懂型</li>
+<li>親切生活型</li>
+<li>
+<p>活潑有趣型</p>
+</li>
+<li>
+<p>刪除可能誇大效果或容易誤導的名稱。</p>
+</li>
+<li>最後推薦最適合社區大學招生的 5 個名稱，並說明原因。</li>
+</ol>
+<h3 id="problem_31">Problem. 家庭聚會活動發想<a class="headerlink" href="#problem_31" title="Permanent link">&para;</a></h3>
+<p>一家三代準備在週末聚餐，希望飯後安排一些互動活動。</p>
+<p>限制條件：</p>
+<ul>
+<li>共 8 人。</li>
+<li>年齡 8 歲～75 歲。</li>
+<li>室內活動。</li>
+<li>時間 2 小時。</li>
+<li>預算 500 元內。</li>
+<li>不需要另外購買大量材料。</li>
+</ul>
+<p>請 AI：</p>
+<ol>
+<li>發想 15 個活動。</li>
+<li>分成：</li>
+<li>動腦型</li>
+<li>動手型</li>
+<li>
+<p>互動聊天型</p>
+</li>
+<li>
+<p>每個活動說明玩法及適合原因。</p>
+</li>
+<li>最後挑選最推薦的 3 個。</li>
+</ol>
+<h3 id="problem_32">Problem. 社區活動企劃發想<a class="headerlink" href="#problem_32" title="Permanent link">&para;</a></h3>
+<p>社區希望舉辦一場能吸引居民參加的新活動。</p>
+<p>請 AI 先提出 <strong>20 個活動點子</strong>。</p>
+<p>再依照：</p>
+<ul>
+<li>容易吸引居民。</li>
+<li>經費需求低。</li>
+<li>容易舉辦。</li>
+<li>適合各年齡層。</li>
+</ul>
+<p>四項各 5 分評分。</p>
+<p>最後留下最值得辦的 <strong>3 個活動</strong>，並說明淘汰其他點子的原因。</p>
+<h3 id="problem_33">Problem. 把點子變成活動企劃<a class="headerlink" href="#problem_33" title="Permanent link">&para;</a></h3>
+<p>從下列活動中選擇一項：</p>
+<ul>
+<li>手機攝影。</li>
+<li>AI 生活應用。</li>
+<li>健康料理。</li>
+<li>桌遊交流。</li>
+<li>手作盆栽。</li>
+</ul>
+<p>請 AI 完成：</p>
+<ol>
+<li>活動名稱。</li>
+<li>活動目標。</li>
+<li>適合對象。</li>
+<li>2 小時流程安排。</li>
+<li>需要準備的物品。</li>
+<li>宣傳文案(100 字)。</li>
+<li>哪些內容需要主辦單位自行補充。</li>
+</ol>
+<h3 id="problem_34">Problem. 早餐店新品發想<a class="headerlink" href="#problem_34" title="Permanent link">&para;</a></h3>
+<p>你是一間早餐店老闆，希望推出新的套餐。</p>
+<p>限制：</p>
+<ul>
+<li>成本不要太高。</li>
+<li>能快速製作。</li>
+<li>適合上班族。</li>
+<li>不需要新增大型設備。</li>
+</ul>
+<p>請 AI：</p>
+<ol>
+<li>發想 15 種套餐。</li>
+<li>每種包含：</li>
+<li>名稱</li>
+<li>內容</li>
+<li>
+<p>特色</p>
+</li>
+<li>
+<p>評估：</p>
+</li>
+<li>吸引力</li>
+<li>成本</li>
+<li>
+<p>製作難度</p>
+</li>
+<li>
+<p>推薦最值得推出的 3 個。</p>
+</li>
+</ol>
+<h3 id="problem_35">Problem. 社群貼文主題發想<a class="headerlink" href="#problem_35" title="Permanent link">&para;</a></h3>
+<p>你經營一個介紹 AI 工具的 Facebook 粉絲專頁，希望增加互動率。</p>
+<p>請 AI：</p>
+<ol>
+<li>發想 30 個貼文主題。</li>
+<li>分成：</li>
+<li>教學</li>
+<li>生活應用</li>
+<li>實測分享</li>
+<li>常見問題</li>
+<li>
+<p>有趣互動</p>
+</li>
+<li>
+<p>哪些適合短影片？</p>
+</li>
+<li>哪些適合圖文？</li>
+<li>推薦未來一週每天發布的內容。</li>
+</ol>
+<h2 id="ai_1">AI建立個人寫作流程<a class="headerlink" href="#ai_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>串聯發想、草稿、修改、校對與發布。</li>
+<li>分清楚 AI 負責的工作與自己的責任。</li>
+<li>建立可重複使用的個人檢查表。</li>
+</ul>
+<h3 id="_8">五階段流程<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>定任務</strong>：對象、目的、必要資訊。</li>
+<li><strong>出草稿</strong>：要求一版即可，先求完整。</li>
+<li><strong>改內容</strong>：調結構、語氣、長度與行動指示。</li>
+<li><strong>核事實</strong>：姓名、日期、數字、連結、附件與引用。</li>
+<li><strong>本人定稿</strong>：朗讀一次，刪除不像自己的句子再發送。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>### 定任務 (需求確認)
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>我準備寫一篇內容，請先不要直接開始寫。
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>請先協助我整理：
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>1. 寫給誰？
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>2. 寫這篇的目的？
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>3. 一定要包含哪些資訊？
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>4. 有哪些資訊不能自己補充？
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>5. 建議使用什麼語氣？
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>6. 是否還缺少重要資訊？
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>如果資訊不足，請先詢問我，不要自行假設。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>### 出草稿 (完成第一版)
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>請根據以下資料，先完成一份草稿。
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>要求：
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>- 保留所有事實。
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>- 不自行新增人物、日期、數字或經歷。
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>- 使用自然口語。
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>- 先求完整，不必追求完美。
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>資料：
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>(貼上內容)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>### 改內容 (修改與潤飾)
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>請協助修改這份內容。
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>修改重點：
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>- 讓句子更順。
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>- 保留原本意思。
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>- 保留第一人稱。
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>- 不改變立場。
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>- 不增加新的資訊。
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>最後請列出：
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>1. 修改後版本。
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>2. 三個主要修改重點。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>### 核事實 (AI 幫忙檢查)
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>請不要改寫內容。
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>請只協助檢查：
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>□ 人名是否一致
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>□ 日期是否一致
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>□ 時間是否一致
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>□ 數字是否一致
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>□ 地點是否一致
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>□ 是否提到附件但沒有附件
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>□ 是否提到連結但沒有提供
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>□ 是否有前後矛盾
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>若無法確認，請直接標示：
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>「需要人工確認」
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>不要自行猜測答案。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>### 本人定稿 (最後確認)
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>請站在收件人的角度閱讀這篇內容。
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>回答：
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>1. 哪一句最不像一般人會說？
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>2. 哪一句可以更自然？
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>3. 哪一句可能造成誤解？
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>4. 是否有重複內容？
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>5. 哪一句可以刪除？
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>請不要重新全部改寫，只提出修改建議。
+</code></pre></div>
+<h3 id="problem-email">Problem. 從零完成一封 Email<a class="headerlink" href="#problem-email" title="Permanent link">&para;</a></h3>
+<p>你需要寄信給社區大學，詢問是否還有 <strong>AI 課程</strong> 的名額。</p>
+<p>已知資訊：</p>
+<ul>
+<li>姓名：林美惠</li>
+<li>想報名 AI 課程</li>
+<li>想詢問是否還能報名</li>
+<li>若已額滿，希望知道是否有候補或下一梯次</li>
+</ul>
+<p>請依照五個步驟完成：</p>
+<ol>
+<li>確認是否還缺少資訊。</li>
+<li>產生 Email 草稿。</li>
+<li>修改語氣，使內容更自然。</li>
+<li>檢查是否有日期、姓名或資訊遺漏。</li>
+<li>最後列出寄出前的檢查清單。</li>
+</ol>
+<h3 id="problem_36">Problem. 活動公告完整流程<a class="headerlink" href="#problem_36" title="Permanent link">&para;</a></h3>
+<p>社區即將舉辦一場活動。資料如下：</p>
+<ul>
+<li>活動：AI 手機生活應用</li>
+<li>日期：10 月 18 日(六)</li>
+<li>時間：下午 2:00–4:00</li>
+<li>地點：幸福里活動中心</li>
+<li>對象：一般民眾</li>
+<li>費用：免費</li>
+<li>名額：30 人</li>
+<li>報名截止：10 月 10 日</li>
+<li>報名方式：里辦公室登記</li>
+</ul>
+<p>請依照五個步驟完成：</p>
+<ol>
+<li>檢查資料是否完整。</li>
+<li>產生活動公告。</li>
+<li>改成更容易閱讀的版本。</li>
+<li>檢查日期、地點及名額是否一致。</li>
+<li>最後列出公告發布前應確認的事項。</li>
+</ol>
+<h3 id="problem-line_1">Problem. LINE 邀請訊息<a class="headerlink" href="#problem-line_1" title="Permanent link">&para;</a></h3>
+<p>你準備邀請朋友一起聚餐。資料如下：</p>
+<ul>
+<li>時間：9 月 13 日(六) 下午 6 點</li>
+<li>地點：高雄夢時代附近</li>
+<li>原因：半年沒見</li>
+<li>餐廳：待確認</li>
+<li>希望大家 9 月 5 日前回覆</li>
+</ul>
+<p>請依照五個步驟完成整個 AI 寫作流程。</p>
+<p>最後檢查：</p>
+<ul>
+<li>是否有造成壓力？</li>
+<li>是否容易回覆？</li>
+<li>是否缺少重要資訊？</li>
+</ul>
+<h3 id="problem_37">Problem. 心得分享<a class="headerlink" href="#problem_37" title="Permanent link">&para;</a></h3>
+<p>完成社區大學 AI 課程後，希望寫一篇心得。</p>
+<p>內容至少包含：</p>
+<ul>
+<li>原本最大的擔心。</li>
+<li>學到哪些內容。</li>
+<li>哪個工具最有幫助。</li>
+<li>未來希望如何應用。</li>
+</ul>
+<p>請依照五個步驟完成。</p>
+<p>最後請 AI 指出：</p>
+<ul>
+<li>哪一句最像 AI？</li>
+<li>哪一句最像自己？</li>
+<li>哪裡可以加入自己的真實經驗？</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "navigation.top", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

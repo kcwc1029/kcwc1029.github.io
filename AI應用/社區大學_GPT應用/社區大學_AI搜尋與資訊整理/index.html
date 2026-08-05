@@ -1,0 +1,1891 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、AI筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/AI%E6%87%89%E7%94%A8/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_GPT%E6%87%89%E7%94%A8/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%90%9C%E5%B0%8B%E8%88%87%E8%B3%87%E8%A8%8A%E6%95%B4%E7%90%86/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>AI搜尋與資訊整理： - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI搜尋與資訊整理：
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI應用
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+          
+  
+  
+  日記
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI應用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    日記
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    手札首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%89%8B%E6%9C%AD/12%E5%A4%A9%E8%A3%9C%E5%85%85%E5%85%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12天補充兵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aigoogle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI搜尋比Google更有效？
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI搜尋比Google更有效？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        示範
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        搜尋類AI有哪些
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 哪個工具最快？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 最快找到答案
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 台電夏季電價是多少？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 最新資訊
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何提出好問題
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="如何提出好問題">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        教師示範
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        好問題六格
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 一句話變專業
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 找出缺少什麼資訊
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查旅遊資訊
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="查旅遊資訊">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        示範
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 第一次去，不知道從哪開始
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 旅遊預算大挑戰
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 長輩旅遊健檢
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 找最適合自己的住宿
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 交通方式比較
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 旅遊踩雷預防
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI查交通與航班
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI查交通與航班">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        示範提示詞
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 準時抵達挑戰
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 最快？最便宜？最舒服？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 選機票，不只看價格
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 安排接送時間
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI查政府補助與生活資訊
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI查政府補助與生活資訊">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        提示詞
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 我可以申請嗎？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 網路傳言是真的嗎？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 同樣名稱，真的一樣嗎？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 第一次辦理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 打電話前先準備
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 讓AI 採訪你
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 把官方網站變簡單
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        官方來源優先順序
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        補充：高風險提醒
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI幫你整理大量資訊
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI幫你整理大量資訊">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        教師示範提示詞
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 我要買哪一個？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 重要資訊一頁看懂
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 建立 FAQ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        補充：大量資料提示詞安全版
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ai">AI搜尋與資訊整理：<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h1>
+<h2 id="aigoogle">AI搜尋比Google更有效？<a class="headerlink" href="#aigoogle" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=BEmbCq9SMg4">手把手打造自動化AI 資料搜集小助手</a></li>
+<li><a href="https://www.youtube.com/watch?v=ZC3L94U0_sc">為什麼科技巨頭都愛用 Perplexity？網友用過後驚呼：終於可以跟滿是廣告的 Google 說拜拜了！！</a></li>
+</ul>
+<p>「AI 搜尋不一定永遠比 Google 好。Google 很適合找官方網站、地址或特定頁面；AI 適合把複雜問題拆開、整理多個來源和協助比較。真正有效的是選對工具。」</p>
+<p>先理解兩者最大的差別：</p>
+<table>
+<thead>
+<tr>
+<th>Google 搜尋</th>
+<th>AI 搜尋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>找官方網站</td>
+<td>幫你整理重點</td>
+</tr>
+<tr>
+<td>找地址、電話</td>
+<td>幫你比較不同方案</td>
+</tr>
+<tr>
+<td>找最新公告</td>
+<td>幫你解釋難懂內容</td>
+</tr>
+<tr>
+<td>找特定網頁</td>
+<td>根據需求提出建議</td>
+</tr>
+<tr>
+<td>自己閱讀內容</td>
+<td>AI 幫忙閱讀整理</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">示範<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>題目：「台南有哪些適合長輩的半日景點？」</p>
+<p>Google 搜尋後，通常看到部落格、地圖、官方網站、旅遊文章、廣告。至於哪一邊比較可以信，其實我們並不知道。</p>
+<p>而透過AI搜尋：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>請推薦台南適合長輩的半日景點。
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>條件：
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>- 不需要走很多路
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>- 有停車位
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>- 有室內休息區
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>- 每人預算 500 元內
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>- 下午四點以前結束
+</code></pre></div>
+<p>AI找完後，不要急著相信。要回到來源查證，確認：</p>
+<ul>
+<li>營業時間</li>
+<li>是否休館</li>
+<li>是否有輪椅</li>
+<li>是否需要預約</li>
+<li>票價</li>
+</ul>
+<h3 id="ai_1">搜尋類AI有哪些<a class="headerlink" href="#ai_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>特色</th>
+<th>適合用途</th>
+<th style="text-align: center;">是否可搜尋網路</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ChatGPT</td>
+<td>對話整理能力強，可分析、比較、規劃</td>
+<td>學習、寫作、整理資訊</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>Gemini</td>
+<td>整合 Google 生態，搜尋速度快</td>
+<td>查資料、旅遊、Google 服務</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>Microsoft Copilot</td>
+<td>結合 Bing 搜尋</td>
+<td>工作、Office、網頁搜尋</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>Perplexity AI</td>
+<td>每段回答都附來源</td>
+<td>查資料、研究、學術</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>Claude</td>
+<td>長文閱讀、摘要能力佳</td>
+<td>文件整理、閱讀報告</td>
+<td style="text-align: center;">✅(需開啟網路功能)</td>
+</tr>
+<tr>
+<td>Grok</td>
+<td>即時資訊、社群內容</td>
+<td>新聞、時事、X 平台資訊</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>Felo</td>
+<td>中文搜尋體驗佳，整理快速</td>
+<td>中文資料整理、學習</td>
+<td style="text-align: center;">✅</td>
+</tr>
+</tbody>
+</table>
+<h3 id="problem">Problem. 哪個工具最快？<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h3>
+<p>請學生判斷最適合使用 Google、AI 或兩者搭配。</p>
+<table>
+<thead>
+<tr>
+<th>任務</th>
+<th style="text-align: center;">Google</th>
+<th style="text-align: center;">AI</th>
+<th style="text-align: center;">都可以</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>找台鐵官方網站</td>
+<td style="text-align: center;">□</td>
+<td style="text-align: center;">□</td>
+<td style="text-align: center;">□</td>
+</tr>
+<tr>
+<td>敬老卡有哪些用途</td>
+<td style="text-align: center;">□</td>
+<td style="text-align: center;">□</td>
+<td style="text-align: center;">□</td>
+</tr>
+<tr>
+<td>找某醫院電話</td>
+<td style="text-align: center;">□</td>
+<td style="text-align: center;">□</td>
+<td style="text-align: center;">□</td>
+</tr>
+<tr>
+<td>比較三個雨天景點</td>
+<td style="text-align: center;">□</td>
+<td style="text-align: center;">□</td>
+<td style="text-align: center;">□</td>
+</tr>
+<tr>
+<td>幫我安排一天行程</td>
+<td style="text-align: center;">□</td>
+<td style="text-align: center;">□</td>
+<td style="text-align: center;">□</td>
+</tr>
+<tr>
+<td>找最新颱風公告</td>
+<td style="text-align: center;">□</td>
+<td style="text-align: center;">□</td>
+<td style="text-align: center;">□</td>
+</tr>
+<tr>
+<td>比較三款手機</td>
+<td style="text-align: center;">□</td>
+<td style="text-align: center;">□</td>
+<td style="text-align: center;">□</td>
+</tr>
+<tr>
+<td>找政府補助資格</td>
+<td style="text-align: center;">□</td>
+<td style="text-align: center;">□</td>
+<td style="text-align: center;">□</td>
+</tr>
+</tbody>
+</table>
+<h3 id="problem_1">Problem. 最快找到答案<a class="headerlink" href="#problem_1" title="Permanent link">&para;</a></h3>
+<p>教師出題，學生必須在最短時間找到正確答案，並說出使用的工具。例如：</p>
+<ul>
+<li>某家醫院門診時間</li>
+<li>高鐵最早班車時間</li>
+<li>台南市垃圾車時間</li>
+<li>敬老卡申請方式</li>
+</ul>
+<h3 id="problem_2">Problem. 台電夏季電價是多少？<a class="headerlink" href="#problem_2" title="Permanent link">&para;</a></h3>
+<p>學生必須找到：</p>
+<ul>
+<li>官方網站</li>
+<li>官方公告</li>
+<li>更新日期</li>
+</ul>
+<p>不能只貼 AI 回答。</p>
+<h3 id="problem_3">Problem. 最新資訊<a class="headerlink" href="#problem_3" title="Permanent link">&para;</a></h3>
+<p>很多 AI 容易引用舊資料。</p>
+<p>題目例如：</p>
+<ul>
+<li>今天油價</li>
+<li>最新補助方案</li>
+<li>最新高鐵優惠</li>
+</ul>
+<p>學生需要回答：</p>
+<ul>
+<li>AI 有沒有提供日期？</li>
+<li>官方網站怎麼寫？</li>
+<li>哪個比較新？</li>
+</ul>
+<h2 id="_2">如何提出好問題<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>將「我想知道」改成有範圍的問題。</li>
+<li>加入地點、時間、對象、限制及來源。</li>
+<li>用追問逐步縮小結果。</li>
+</ul>
+<p><img alt="" src="../Image/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%90%9C%E5%B0%8B%E8%88%87%E8%B3%87%E8%A8%8A%E6%95%B4%E7%90%86/%E5%A6%82%E4%BD%95%E6%8F%90%E5%87%BA%E5%A5%BD%E5%95%8F%E9%A1%8C.png" /></p>
+<h3 id="_3">教師示範<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>### 從模糊到清楚：
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&gt; 第一版：長輩有什麼補助？
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>&gt; 第二版：請查台灣長輩目前有哪些補助。
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>&gt; 第三版：請查 2026 年目前適用於設籍高雄市、年滿 65 歲一般市民的生活或交通福利。優先引用政府官方網站，列資格、內容、申請方式、期限及連結；排除低收入戶專屬項目。
+</code></pre></div>
+<h3 id="_4">好問題六格<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>格子</th>
+<th>問自己</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主題</td>
+<td>到底想知道什麼？</td>
+</tr>
+<tr>
+<td>對象</td>
+<td>適用於誰？</td>
+</tr>
+<tr>
+<td>地點</td>
+<td>哪個國家、縣市或區域？</td>
+</tr>
+<tr>
+<td>時間</td>
+<td>哪一年、哪一天、是否要最新？</td>
+</tr>
+<tr>
+<td>條件</td>
+<td>預算、交通、健康或其他限制？</td>
+</tr>
+<tr>
+<td>證據</td>
+<td>要官方來源、日期與連結嗎？</td>
+</tr>
+</tbody>
+</table>
+<h3 id="problem_4">Problem. 一句話變專業<a class="headerlink" href="#problem_4" title="Permanent link">&para;</a></h3>
+<p>請將下面的問題改成 AI 更容易回答的版本，至少加入 4 個資訊(對象、地點、時間、條件、來源)。</p>
+<table>
+<thead>
+<tr>
+<th>原始問題</th>
+<th>改寫後</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>哪裡好玩？</td>
+<td></td>
+</tr>
+<tr>
+<td>哪裡有好吃的？</td>
+<td></td>
+</tr>
+<tr>
+<td>有什麼補助？</td>
+<td></td>
+</tr>
+<tr>
+<td>怎麼減肥？</td>
+<td></td>
+</tr>
+<tr>
+<td>哪裡可以學電腦？</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="problem_5">Problem. 找出缺少什麼資訊<a class="headerlink" href="#problem_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>我想買手機，至少還需要知道哪些資訊？
+</code></pre></div>
+<h3 id="problem_6">Problem.<a class="headerlink" href="#problem_6" title="Permanent link">&para;</a></h3>
+<p>這邊有一個模糊需求：「我要送禮。」</p>
+<p>請小組列出 AI 應該先知道哪些資訊。例如：</p>
+<ul>
+<li>送誰？</li>
+<li>預算？</li>
+<li>年齡？</li>
+<li>興趣？</li>
+<li>節日？</li>
+<li>男女？</li>
+<li>是否需要宅配？</li>
+</ul>
+<p>列得最多的小組獲勝。</p>
+<h2 id="_5">查旅遊資訊<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li>搜尋景點、住宿、天氣、活動及無障礙資訊。</li>
+<li>區分靈感整理與出發前確認。</li>
+<li>建立旅遊資訊查證表。</li>
+</ul>
+<p><img alt="" src="../Image/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%90%9C%E5%B0%8B%E8%88%87%E8%B3%87%E8%A8%8A%E6%95%B4%E7%90%86/AI%E6%9F%A5%E6%97%85%E9%81%8A%E8%B3%87%E8%A8%8A.png" /></p>
+<h3 id="_6">示範<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>規劃 2026 年 10 月平日的嘉義一日遊資訊蒐集。
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>兩位 60 多歲成人從台南搭火車，步行不宜太多，每人預算 2,000 元。
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>先不要排最終行程，請分別搜尋交通、兩個候選景點、午餐區域、休息地點及雨天備案；每項列官方來源、資料日期和出發前要再確認的事項。
+</code></pre></div>
+<h3 id="problem_7">Problem. 第一次去，不知道從哪開始<a class="headerlink" href="#problem_7" title="Permanent link">&para;</a></h3>
+<p>請規劃一趟<strong>自己從沒去過</strong> 的城市。</p>
+<p>不用安排行程，只需要蒐集資料。</p>
+<p>至少找到：</p>
+<ul>
+<li>如何前往</li>
+<li>必去景點 3 個</li>
+<li>必吃美食 3 個</li>
+<li>最佳旅遊季節</li>
+<li>是否需要預約</li>
+<li>官方旅遊網站</li>
+</ul>
+<p>最後回答：「還有哪些資訊是 AI 沒有告訴你的？」</p>
+<h3 id="problem_8">Problem. 旅遊預算大挑戰<a class="headerlink" href="#problem_8" title="Permanent link">&para;</a></h3>
+<p>兩人一天旅遊，每人預算1,500 元。</p>
+<p>請搜尋：</p>
+<ul>
+<li>交通</li>
+<li>門票</li>
+<li>午餐</li>
+<li>下午茶</li>
+<li>停車(或大眾運輸)</li>
+<li>預估總花費</li>
+</ul>
+<p>最後整理成表格。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>金額</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>交通</td>
+<td></td>
+</tr>
+<tr>
+<td>景點</td>
+<td></td>
+</tr>
+<tr>
+<td>餐飲</td>
+<td></td>
+</tr>
+<tr>
+<td>其他</td>
+<td></td>
+</tr>
+<tr>
+<td>合計</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="problem_9">Problem. 長輩旅遊健檢<a class="headerlink" href="#problem_9" title="Permanent link">&para;</a></h3>
+<p>請規劃適合 70 歲長輩的一日遊。</p>
+<p>搜尋並確認：</p>
+<ul>
+<li>是否有電梯</li>
+<li>是否有輪椅服務</li>
+<li>是否有無障礙廁所</li>
+<li>停車是否方便</li>
+<li>是否需要長時間步行</li>
+</ul>
+<h3 id="problem_10">Problem. 找最適合自己的住宿<a class="headerlink" href="#problem_10" title="Permanent link">&para;</a></h3>
+<p>請收尋一間符合以下條件的住宿。</p>
+<ul>
+<li>每晚 2,500 元以下</li>
+<li>有早餐</li>
+<li>免費停車</li>
+<li>有電梯</li>
+<li>離車站步行 10 分鐘內</li>
+<li>可免費取消</li>
+</ul>
+<p>最後比較三家住宿。</p>
+<h3 id="problem_11">Problem. 交通方式比較<a class="headerlink" href="#problem_11" title="Permanent link">&para;</a></h3>
+<p>同一個景點。請比較：</p>
+<ul>
+<li>火車</li>
+<li>高鐵</li>
+<li>客運</li>
+<li>自行開車</li>
+</ul>
+<p>比較：</p>
+<ul>
+<li>花費</li>
+<li>時間</li>
+<li>轉乘次數</li>
+<li>適合長輩嗎？</li>
+</ul>
+<p>最後選出最推薦方式。</p>
+<h3 id="problem_12">Problem. 旅遊踩雷預防<a class="headerlink" href="#problem_12" title="Permanent link">&para;</a></h3>
+<p>出發前一天，請重新搜尋：</p>
+<ul>
+<li>天氣</li>
+<li>景點公告</li>
+<li>是否休館</li>
+<li>是否施工</li>
+<li>活動是否取消</li>
+<li>停車資訊</li>
+<li>大眾運輸異動</li>
+</ul>
+<h2 id="ai_2">AI查交通與航班<a class="headerlink" href="#ai_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>清楚查詢出發地、目的地、日期、抵達期限及轉乘限制。</li>
+<li>了解 AI 適合比較方案，官方平台適合確認即時班次與票價。</li>
+<li>比較航班時納入行李、轉機、機場及退改條件。</li>
+</ul>
+<p><img alt="" src="../Image/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%90%9C%E5%B0%8B%E8%88%87%E8%B3%87%E8%A8%8A%E6%95%B4%E7%90%86/AI%E6%9F%A5%E4%BA%A4%E9%80%9A%E8%88%87%E8%88%AA%E7%8F%AD.png" /></p>
+<h3 id="_7">示範提示詞<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>我要在 2026 年 9 月 18 日上午 10:30 前，從台南火車站抵達桃園機場第二航廈。
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>帶一件大行李，希望最多轉乘兩次，並保留至少 90 分鐘緩衝。
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>請提出可查詢的交通方案與比較欄位，不要把班次和票價當成已確認；
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>最後列出應到哪些官方平台核對。
+</code></pre></div>
+<h3 id="problem_13">Problem. 準時抵達挑戰<a class="headerlink" href="#problem_13" title="Permanent link">&para;</a></h3>
+<p>你需要 上午 9:30 前 抵達高雄榮總。請規劃交通方案，並考慮：</p>
+<ul>
+<li>最晚幾點出門</li>
+<li>是否需要轉乘</li>
+<li>是否有備案</li>
+<li>建議提早多久抵達</li>
+</ul>
+<p>最後提醒哪些資訊要到官方平台確認。</p>
+<h3 id="problem_14">Problem. 最快？最便宜？最舒服？<a class="headerlink" href="#problem_14" title="Permanent link">&para;</a></h3>
+<p>請比較台南 → 台北的：</p>
+<ul>
+<li>高鐵</li>
+<li>台鐵</li>
+<li>客運</li>
+<li>自行開車</li>
+</ul>
+<p>並整理成表格：</p>
+<table>
+<thead>
+<tr>
+<th>交通方式</th>
+<th>時間</th>
+<th>花費</th>
+<th>轉乘</th>
+<th>優點</th>
+<th>缺點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="problem_15">Problem.<a class="headerlink" href="#problem_15" title="Permanent link">&para;</a></h3>
+<p>準備搭飛機。請搜尋：</p>
+<ul>
+<li>需要提前多久到機場？</li>
+<li>行李限制有哪些？</li>
+<li>液體攜帶規定</li>
+<li>網路報到時間</li>
+<li>哪些資訊一定要向航空公司確認？</li>
+</ul>
+<p>最後整理成出發前一天檢查清單。</p>
+<h3 id="problem_16">Problem. 選機票，不只看價格<a class="headerlink" href="#problem_16" title="Permanent link">&para;</a></h3>
+<p>請AI推薦三個航班，並比較：</p>
+<ul>
+<li>總價格</li>
+<li>是否含托運</li>
+<li>飛行時間</li>
+<li>轉機次數</li>
+<li>抵達時間</li>
+<li>起降機場</li>
+<li>是否可退票</li>
+</ul>
+<p>最後回答：哪一班最適合家庭旅遊？</p>
+<h3 id="problem_17">Problem. 安排接送時間<a class="headerlink" href="#problem_17" title="Permanent link">&para;</a></h3>
+<p>朋友搭高鐵到高雄。請搜尋：</p>
+<ul>
+<li>幾點到站</li>
+<li>建議提前多久到車站</li>
+<li>哪個出口接人最方便</li>
+<li>是否有停車場</li>
+<li>是否有計程車排班區</li>
+</ul>
+<p>最後整理成一份接送提醒。</p>
+<h2 id="ai_3">AI查政府補助與生活資訊<a class="headerlink" href="#ai_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>從官方網站查資格、期限、文件及申請窗口。</li>
+<li>分辨中央與地方、一般資格與特殊身分。</li>
+<li>避免把舊新聞或轉傳訊息當成現行規定。</li>
+</ul>
+<p>「補助最容易差一個縣市、年齡、所得條件或申請期限。AI 可以幫忙找方向和整理問題，但能不能申請，必須以主管機關最新公告及承辦窗口確認。」</p>
+<p><img alt="" src="../Image/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%90%9C%E5%B0%8B%E8%88%87%E8%B3%87%E8%A8%8A%E6%95%B4%E7%90%86/AI%E6%9F%A5%E6%94%BF%E5%BA%9C%E8%A3%9C%E5%8A%A9%E8%88%87%E7%94%9F%E6%B4%BB%E8%B3%87%E8%A8%8A.png" /></p>
+<h3 id="_8">提示詞<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>請查 2026 年目前設籍台中市、年滿 65 歲一般市民可能使用的交通福利。只使用政府機關或官方服務網站。以表格列名稱、資格、內容、申請地點、應備文件、官方更新日期與連結。若沒有找到明確資料就寫「未確認」，不要依其他縣市推測。
+</code></pre></div>
+<h3 id="problem_18">Problem. 我可以申請嗎？<a class="headerlink" href="#problem_18" title="Permanent link">&para;</a></h3>
+<p>請根據以下情境，整理可能符合資格的補助，並標示哪些需要到官方網站確認。</p>
+<ul>
+<li>65 歲退休長輩</li>
+<li>新生兒家庭</li>
+<li>大學生</li>
+<li>身心障礙者</li>
+<li>創業青年</li>
+</ul>
+<p>並要求整理：</p>
+<ul>
+<li>補助名稱</li>
+<li>申請資格</li>
+<li>補助內容</li>
+<li>主管機關</li>
+<li>官方網站</li>
+</ul>
+<h3 id="problem_19">Problem. 網路傳言是真的嗎？<a class="headerlink" href="#problem_19" title="Permanent link">&para;</a></h3>
+<p>根據這則訊息：https://tw.news.yahoo.com/%E7%A7%9F%E5%B1%8B%E6%B4%A5%E8%B2%BC%E4%BE%86%E4%BA%86-5000%E5%85%83%E9%A0%9812%E5%80%8B%E6%9C%88-225000476.html</p>
+<p>請利用 AI 協助拆解查證重點，再到官方網站確認：</p>
+<ul>
+<li>有沒有這項補助？</li>
+<li>哪個政府機關負責？</li>
+<li>是否有資格限制？</li>
+<li>是否有申請期限？</li>
+</ul>
+<h3 id="problem_20">Problem. 同樣名稱，真的一樣嗎？<a class="headerlink" href="#problem_20" title="Permanent link">&para;</a></h3>
+<p>請比較台南與台北兩個縣市相同類型的福利。例如：</p>
+<ul>
+<li>敬老卡</li>
+<li>育兒補助</li>
+<li>租屋補貼</li>
+</ul>
+<p>並整理：</p>
+<table>
+<thead>
+<tr>
+<th>比較項目</th>
+<th>縣市 A</th>
+<th>縣市 B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>申請資格</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>福利內容</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>使用限制</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>官方網站</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="problem_21">Problem. 第一次辦理<a class="headerlink" href="#problem_21" title="Permanent link">&para;</a></h3>
+<p>找到一項補助後，不直接看金額。</p>
+<p>請整理：</p>
+<ul>
+<li>去哪裡辦？</li>
+<li>要帶哪些文件？</li>
+<li>是否需要本人辦理？</li>
+<li>是否需要預約？</li>
+<li>是否有截止日期？</li>
+</ul>
+<p>最後製作：「第一次申請懶人包」。</p>
+<h3 id="problem_22">Problem. 打電話前先準備<a class="headerlink" href="#problem_22" title="Permanent link">&para;</a></h3>
+<p>假設你要打電話詢問市政府。</p>
+<p>先請 AI 幫你整理：</p>
+<ul>
+<li>我目前的情況</li>
+<li>想確認哪些問題</li>
+<li>還缺哪些資料</li>
+<li>最後產生一份 30 秒詢問重點。並要求不要透露不必要的個人資料。</li>
+</ul>
+<h3 id="problem-ai">Problem. 讓AI 採訪你<a class="headerlink" href="#problem-ai" title="Permanent link">&para;</a></h3>
+<p>輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>我想知道自己有哪些政府補助，請先問我最多 6 個問題，再開始搜尋。
+</code></pre></div>
+<p>觀察 AI 是否詢問：</p>
+<ul>
+<li>年齡</li>
+<li>居住縣市</li>
+<li>身分別</li>
+<li>工作狀況</li>
+<li>家庭狀況</li>
+<li>是否已有其他補助</li>
+</ul>
+<h3 id="problem_23">Problem. 把官方網站變簡單<a class="headerlink" href="#problem_23" title="Permanent link">&para;</a></h3>
+<p>找到一篇政府公告。請 AI 幫忙整理成：</p>
+<ul>
+<li>我符合資格嗎？</li>
+<li>要準備什麼？</li>
+<li>去哪裡辦？</li>
+<li>什麼時候截止？</li>
+<li>有哪些注意事項？</li>
+</ul>
+<h3 id="_9">官方來源優先順序<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ol>
+<li>主管機關正式網站或法規系統。</li>
+<li>縣市政府及所屬局處網站。</li>
+<li>政府服務入口與正式公告。</li>
+<li>新聞、社群或部落格只作為線索，不作最終依據。</li>
+</ol>
+<h3 id="_10">補充：高風險提醒<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>看到要求先匯款、點陌生連結、提供密碼或驗證碼才能領補助，先停止操作並透過官方電話查證。</p>
+<h2 id="ai_4">AI幫你整理大量資訊<a class="headerlink" href="#ai_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>先設定欄位，再整理多份資料。</li>
+<li>區分原文事實、AI 摘要、推論及缺漏。</li>
+<li>將結果轉成比較表、時間線、FAQ 和行動清單。</li>
+</ul>
+<p><img alt="" src="../Image/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_AI%E6%90%9C%E5%B0%8B%E8%88%87%E8%B3%87%E8%A8%8A%E6%95%B4%E7%90%86/AI%E5%B9%AB%E4%BD%A0%E6%95%B4%E7%90%86%E5%A4%A7%E9%87%8F%E8%B3%87%E8%A8%8A.png" /></p>
+<h3 id="_11">教師示範提示詞<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>我會依序貼上三份資料。在我說「資料貼完」之前，只回覆「已收到第幾份」，不要開始整理。
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>資料貼完後，請只根據我提供的內容，以表格整理：來源名稱、發布日期、適用對象、主要內容、期限、需要採取的行動、原文未說明之處。
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>不同資料矛盾時並列，不要自行選一個答案。
+</code></pre></div>
+<h3 id="problem_24">Problem. 我要買哪一個？<a class="headerlink" href="#problem_24" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>以下為三份資料：
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>MMBCU：https://tw.sym-global.com/mmbcu
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>G7：https://www.kymco.com.tw/motor/g7
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>RTS R 165：https://www.kymco.com.tw/motor/rts-165
+</code></pre></div>
+<p>請 AI 整理成比較表。至少包含：</p>
+<ul>
+<li>優點</li>
+<li>缺點</li>
+<li>適合誰</li>
+<li>共通點</li>
+<li>意見不同之處</li>
+</ul>
+<h3 id="problem_25">Problem. 重要資訊一頁看懂<a class="headerlink" href="#problem_25" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.bbc.com/zhongwen/trad/world-60068041">Z世代對愛和性的看法是否更加務實？</a></li>
+</ul>
+<p>請 AI 整理成：</p>
+<ul>
+<li>一句話重點</li>
+<li>三個重點</li>
+<li>五個關鍵資訊</li>
+<li>三件要做的事</li>
+</ul>
+<p>要求不要加入原文沒有提到的內容。</p>
+<h3 id="problem-faq">Problem. 建立 FAQ<a class="headerlink" href="#problem-faq" title="Permanent link">&para;</a></h3>
+<p>請將以下政府公告：https://www.redoakspe.com.tw/application/%E8%BA%AB%E5%BF%83%E9%9A%9C%E7%A4%99%E8%A3%9C%E5%8A%A9.html</p>
+<p>請 AI 整理成常見問題。例如：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Q：誰可以申請？
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Q：要準備什麼？
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Q：多久可以完成？
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Q：去哪裡辦？
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>Q：什麼時候截止？
+</code></pre></div>
+<p>讓一般人不用閱讀整份公告。</p>
+<h3 id="_12">補充：大量資料提示詞安全版<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>只使用我提供的資料，不使用記憶或外部知識補充。每項結論標示來源編號；原文未提供就寫「未提及」。數字、日期、資格和例外不得合併改寫。先列矛盾與缺漏，再提供摘要。</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "navigation.top", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -730,7 +730,30 @@ deactivate
 <p>uv sync</p>
 <h1 id="_5">啟動虛擬環境<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
 <p>..venv\Scripts\activate
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>### 使用 uv 建立支援 CUDA 的 AI 開發環境
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>```py
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>uv init
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>uv venv
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>.venv\Scripts\activate
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a># 啟動成功後，終端機前面會出現虛擬環境名稱：(uv_for_ipynb) PS D:\github\uv_for_ipynb&gt;
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a># 安裝 AI 開發常用套件
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>uv pip install ipykernel numpy matplotlib
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a># 安裝支援 CUDA 12.8 的 PyTorch
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a># 測試 PyTorch 是否可以使用 GPU
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>uv run python -c &quot;import torch; print(&#39;PyTorch：&#39;, torch.__version__); print(&#39;CUDA：&#39;, torch.version.cuda); print(&#39;CUDA 可用：&#39;, torch.cuda.is_available()); print(&#39;GPU：&#39;, torch.cuda.get_device_name(0)); print(&#39;支援架構：&#39;, torch.cuda.get_arch_list())&quot;
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a># 正常情況下，會看到類似：
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a># PyTorch： 2.11.0+cu128
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a># CUDA： 12.8
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a># CUDA 可用： True
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a># GPU： NVIDIA GeForce RTX 5060
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a># 支援架構： [&#39;sm_75&#39;, &#39;sm_80&#39;, &#39;sm_86&#39;, &#39;sm_90&#39;, &#39;sm_100&#39;, &#39;sm_120&#39;]
+</code></pre></div></p>
 <h2 id="venv">venv<a class="headerlink" href="#venv" title="Permanent link">&para;</a></h2>
 <p>venv 是一個 Python 內建的標準函式庫，專門用來建立輕量級的虛擬環境。它不需依賴外部安裝，能夠為每個專案提供獨立的 Python 執行環境，確保不同專案之間的套件版本不會互相干擾。</p>
 <p>venv 的環境建置速度與現代工具相比稍慢，但具有極高的系統相容性，是許多開發者與導生在學習基礎專案管理時的首選。</p>

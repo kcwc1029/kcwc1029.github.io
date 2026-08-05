@@ -1,0 +1,1367 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、AI筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/AI%E6%87%89%E7%94%A8/Google_AI%E5%A4%9A%E5%AA%92%E9%AB%94%E5%89%B5%E4%BD%9C/%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E5%9C%96%E5%83%8F%EF%BC%9A%E7%94%A8Gemini%E5%BB%BA%E7%AB%8B%E7%AC%AC%E4%B8%80%E5%BC%B5%E4%BD%9C%E5%93%81/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>快速生成圖像：用 Gemini 建立第一張作品 - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gemini" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              快速生成圖像：用 Gemini 建立第一張作品
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI應用
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+          
+  
+  
+  日記
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI應用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    日記
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    手札首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%89%8B%E6%9C%AD/12%E5%A4%A9%E8%A3%9C%E5%85%85%E5%85%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12天補充兵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gemini_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemini 適合做創作起點的原因
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        快速生成不等於精準控制
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gemini_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemini 建立圖像：基本操作
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        理解圖像風格：選擇的基礎
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="理解圖像風格：選擇的基礎">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一類：寫實、攝影、商業質感類
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二類：設計、插畫、手作表現類
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三類：奇幻、世界觀、強風格創作類
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第四類：情境、氛圍、主題感類
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四類風格整理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        套用基本案例：同一間咖啡館的不同風格
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="套用基本案例：同一間咖啡館的不同風格">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        電影氛圍(商業質感)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        蒸氣龐克(世界觀風格)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        油畫風格(藝術表現)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        建立圖像的基本流程
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="建立圖像的基本流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步驟 1：確認創作方向
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步驟 2：選擇圖像風格
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步驟 3：撰寫圖像描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        生成結果的基本判斷
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="生成結果的基本判斷">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三個基本判斷標準
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="gemini">快速生成圖像：用 Gemini 建立第一張作品<a class="headerlink" href="#gemini" title="Permanent link">&para;</a></h1>
+<p>很多人認為 AI 生圖就是「輸入 Prompt → 產生圖片」。</p>
+<p>真正的創作流程更接近「Idea → Design Brief → 選擇風格 → 描述畫面 → AI 生成 → 判斷 → 修正 → 完成作品」。</p>
+<p>AI 並不是替你做設計，而是把你的設計想法轉成圖片。圖片品質通常取決於三件事：</p>
+<ul>
+<li>想法有沒有清楚。</li>
+<li>描述有沒有完整。</li>
+<li>使用者是否知道如何判斷與修正。</li>
+</ul>
+<p>這一章不追求「第一張就完美」。第一張圖只有兩個任務：</p>
+<ol>
+<li>驗證創作方向。</li>
+<li>找出下一步要修正的問題。</li>
+</ol>
+<blockquote>
+<p>第一次生成要問的不是「好不好看」，而是「我是不是走在正確方向」。</p>
+</blockquote>
+<h2 id="gemini_1">Gemini 適合做創作起點的原因<a class="headerlink" href="#gemini_1" title="Permanent link">&para;</a></h2>
+<p>Gemini 的「建立圖像」適合把想法快速轉成可見成果。它可以：</p>
+<ul>
+<li>快速驗證主題是否適合變成畫面。</li>
+<li>快速確認風格方向是否成立。</li>
+<li>把創作藍圖第一次視覺化。</li>
+<li>讓學員在同一段對話中繼續補充與修改。</li>
+</ul>
+<p>它不是要取代所有專業圖像工具，而是幫助創作者從「有想法」跨到「看見畫面」。對初學者而言，先做出來比一次做到最好更重要。新手常見焦慮包括：</p>
+<ul>
+<li>不會寫很長的 Prompt。</li>
+<li>不知道哪個工具最好。</li>
+<li>擔心生成結果不好看。</li>
+<li>害怕浪費次數。</li>
+</ul>
+<p>創作初期真正需要的不是複雜設定，而是一個能快速看到成果的起點。第一張圖做出來後，抽象想法開始成形，學員也會更容易指出哪裡不對。</p>
+<h2 id="_1">快速生成不等於精準控制<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Gemini 適合快速把概念變成畫面、確認方向、取得第一張圖。但它可能出現：</p>
+<ul>
+<li>細節不完全準確。</li>
+<li>構圖不夠穩定。</li>
+<li>風格有時無法完全固定。</li>
+<li>品牌字樣、Logo 或長文字不正確。</li>
+</ul>
+<p>這些不是第一張圖的失敗，而是提醒我們下一步需要修正。</p>
+<blockquote>
+<p>Gemini 在本章的任務，是完成創作的第一個視覺成果，而不是直接成為最終精修工具。</p>
+</blockquote>
+<h2 id="gemini_2">Gemini 建立圖像：基本操作<a class="headerlink" href="#gemini_2" title="Permanent link">&para;</a></h2>
+<p>實際操作時，可在 Gemini 選擇「工具」，再選擇「建立圖像」。不同帳號或版本的介面可能略有差異，若系統已能直接生圖，也可在對話中清楚要求建立圖片。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>### 基本操作流程
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>1. 開啟 Gemini，進入一段新對話或既有的品牌企劃對話。
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>2. 選擇「建立圖像」或直接提出生圖要求。
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>3. 選擇適合的圖片風格。
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>4. 輸入簡潔而具體的圖像描述。
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>5. 生成圖片。
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>6. 觀察結果，不急著立刻重做。
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>7. 指出一個最需要處理的問題，再進行下一輪修改。
+</code></pre></div>
+<h2 id="_2">理解圖像風格：選擇的基礎<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>圖像風格不是裝飾選項，而是畫面方向的起點。它會直接影響：</p>
+<ul>
+<li>視覺質感。</li>
+<li>色彩表現。</li>
+<li>光線氛圍。</li>
+<li>情緒傾向。</li>
+<li>整體圖像語言。</li>
+</ul>
+<p>選風格不是背名稱，而是判斷哪一種風格最適合創作目的。</p>
+<h3 id="_3">第一類：寫實、攝影、商業質感類<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>這類風格接近真實攝影，畫面通常較穩定、質感清楚，也適合初學者。</p>
+<p>相關風格包含：黑白、沙龍、電影氛圍、深沉、柔和人像、仲展台。</p>
+<p>共同特點：</p>
+<ul>
+<li>接近真實攝影效果。</li>
+<li>光影表現自然。</li>
+<li>畫面穩定，接受度高。</li>
+<li>適合品牌與商業應用。</li>
+</ul>
+<p><img alt="" src="../Image/%E9%BB%91%E7%99%BD%E6%94%9D%E5%BD%B1.png" /></p>
+<blockquote>
+<p>黑白攝影</p>
+</blockquote>
+<p><img alt="" src="../Image/%E6%B2%99%E9%BE%8D%E6%94%9D%E5%BD%B1.png" /></p>
+<blockquote>
+<p>沙龍攝影</p>
+</blockquote>
+<p><img alt="" src="../Image/%E6%9F%94%E5%92%8C%E4%BA%BA%E5%83%8F.png" /></p>
+<blockquote>
+<p>柔和人像</p>
+</blockquote>
+<p><img alt="" src="../Image/%E9%9B%BB%E5%BD%B1%E6%B0%9B%E5%9C%8D.png" /></p>
+<blockquote>
+<p>電影氛圍</p>
+</blockquote>
+<p>適用情境：</p>
+<ul>
+<li>品牌主視覺。</li>
+<li>商品圖。</li>
+<li>社群貼文。</li>
+<li>書封設計。</li>
+<li>人像形象照。</li>
+</ul>
+<p>若創作目標是穩定、專業、質感、容易成功，這一類通常最安全。</p>
+<h3 id="_4">第二類：設計、插畫、手作表現類<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>這一類偏向平面設計、插畫感或工藝質感，不追求真實攝影，而是強調視覺表現。</p>
+<p>相關風格包含：色塊、特藝彩色、素描、油畫、復古印刷、珐瑯別針、歌德陶土。</p>
+<p><img alt="" src="../Image/%E8%89%B2%E5%A1%8A.png" /></p>
+<blockquote>
+<p>色塊</p>
+</blockquote>
+<p><img alt="" src="../Image/%E7%89%B9%E8%97%9D%E5%BD%A9%E8%89%B2.png" /></p>
+<blockquote>
+<p>特藝彩色</p>
+</blockquote>
+<p><img alt="" src="../Image/%E7%B4%A0%E6%8F%8F.png" /></p>
+<blockquote>
+<p>素描</p>
+</blockquote>
+<p><img alt="" src="../Image/%E6%B2%B9%E7%95%AB.png" /></p>
+<blockquote>
+<p>油畫</p>
+</blockquote>
+<p><img alt="" src="../Image/%E5%BE%A9%E5%8F%A4%E5%8D%B0%E5%88%B7.png" /></p>
+<blockquote>
+<p>復古印刷</p>
+</blockquote>
+<p>共同特點：</p>
+<ul>
+<li>具有明顯設計感或材質感。</li>
+<li>帶有手作、插畫或藝術表現。</li>
+<li>較不追求真實攝影效果。</li>
+</ul>
+<p>適用情境：</p>
+<ul>
+<li>插圖。</li>
+<li>海報。</li>
+<li>書籍配圖。</li>
+<li>設計提案。</li>
+<li>文創商品概念圖。</li>
+</ul>
+<p>若想讓畫面更有設計感、插畫感、工藝感或材質特色，可以考慮這一類。</p>
+<h3 id="_5">第三類：奇幻、世界觀、強風格創作類<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>這類風格辨識度高、想像力強，適合角色設定、故事世界觀與創作型內容。</p>
+<p>相關風格包含：蒸氣龐克、神話戰士、超現實、生化人、Dynamite、Anyma's world。</p>
+<p><img alt="" src="../Image/%E8%92%B8%E6%B0%A3%E9%BE%90%E5%85%8B.png" /></p>
+<blockquote>
+<p>蒸氣龐克</p>
+</blockquote>
+<p><img alt="" src="../Image/%E7%A5%9E%E8%A9%B1%E6%88%B0%E5%A3%AB.png" /></p>
+<blockquote>
+<p>神話戰士</p>
+</blockquote>
+<p><img alt="" src="../Image/%E5%BE%A9%E5%8F%A4%E5%8D%B0%E5%88%B7.png" /></p>
+<blockquote>
+<p>復古印刷</p>
+</blockquote>
+<p><img alt="" src="../Image/%E8%B6%85%E7%8F%BE%E5%AF%A6.png" /></p>
+<blockquote>
+<p>超現實</p>
+</blockquote>
+<p><img alt="" src="../Image/Dynamite.png" /></p>
+<blockquote>
+<p>Dynamite</p>
+</blockquote>
+<p><img alt="" src="../Image/Anyma%27s%20World.png" /></p>
+<blockquote>
+<p>Anyma's World</p>
+</blockquote>
+<p>共同特點：</p>
+<ul>
+<li>風格鮮明。</li>
+<li>世界觀強烈。</li>
+<li>想像成分高。</li>
+<li>視覺衝擊力明顯。</li>
+</ul>
+<p>適用情境：</p>
+<ul>
+<li>角色設計。</li>
+<li>奇幻創作。</li>
+<li>科幻題材。</li>
+<li>視覺小說。</li>
+<li>概念藝術。</li>
+</ul>
+<p>若目標是讓畫面具有故事感、設定感、未來感或強烈個性，這一類很適合。不過品牌主視覺若沒有世界觀需求，過強的風格也可能搶走品牌本身。</p>
+<h3 id="_6">第四類：情境、氛圍、主題感類<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>這類風格不一定改變材質，而是加強畫面的感覺。</p>
+<p>相關風格包含：日出，也可以用 Prompt 指定溫暖、安靜、懷舊、孤獨、夢幻、專注。</p>
+<p>共同特點：</p>
+<ul>
+<li>強調情感。</li>
+<li>畫面主題明確。</li>
+<li>容易帶出特定時間、情緒或氛圍。</li>
+</ul>
+<p>適用情境：</p>
+<ul>
+<li>情緒型圖像。</li>
+<li>文案配圖。</li>
+<li>氣氛主題圖。</li>
+<li>社群視覺內容。</li>
+</ul>
+<h3 id="_7">四類風格整理<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>類型</th>
+<th>適合用途</th>
+<th>常用關鍵詞</th>
+<th>特色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>寫實攝影(Photorealistic)</td>
+<td>商品、品牌形象、廣告、人像</td>
+<td><code>photorealistic</code>、<code>professional photography</code>、<code>DSLR</code>、<code>85mm lens</code>、<code>high detail</code></td>
+<td>接近真實照片，光影自然，適合商業應用</td>
+</tr>
+<tr>
+<td>插畫設計(Illustration)</td>
+<td>社群、海報、角色、書封</td>
+<td><code>illustration</code>、<code>flat design</code>、<code>minimal</code>、<code>vector</code>、<code>watercolor</code>、<code>oil painting</code></td>
+<td>不追求真實，可塑性高，容易建立特色</td>
+</tr>
+<tr>
+<td>幻想世界(Fantasy)</td>
+<td>RPG、小說、世界觀、角色</td>
+<td><code>fantasy</code>、<code>magic</code>、<code>steampunk</code>、<code>cyberpunk</code>、<code>dark fantasy</code></td>
+<td>故事性與想像力強，視覺衝擊鮮明</td>
+</tr>
+<tr>
+<td>氛圍類(Mood／Atmosphere)</td>
+<td>情境插圖、品牌、電影海報</td>
+<td><code>peaceful</code>、<code>cozy</code>、<code>warm</code>、<code>nostalgic</code>、<code>lonely</code>、<code>dreamy</code></td>
+<td>以情緒和感受帶動畫面</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_8">套用基本案例：同一間咖啡館的不同風格<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>共用描述：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>請幫我生成一張圖：
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>一間現代風格的咖啡館外觀，位於安靜的城市街道夜晚，大面玻璃窗透出溫暖燈光，木質外觀設計，整體風格簡約，氛圍安靜且具有質感，光影層次明顯，高細節。
+</code></pre></div>
+<h3 id="_9">電影氛圍(商業質感)<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>請幫我生成一張圖：
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>一間現代風格的咖啡館外觀，位於安靜的城市街道夜晚，大面玻璃窗透出溫暖燈光，木質外觀設計，整體風格簡約，氛圍安靜且具有質感，光影層次明顯，高細節。
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>## 電影氛圍(商業質感)
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>- 接近真實攝影。
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>- 光影明顯。
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>- 高端品牌感。
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>- 畫面帶敘事性。
+</code></pre></div>
+<h3 id="_10">蒸氣龐克(世界觀風格)<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>請幫我生成一張圖：
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>一間現代風格的咖啡館外觀，位於安靜的城市街道夜晚，大面玻璃窗透出溫暖燈光，木質外觀設計，整體風格簡約，氛圍安靜且具有質感，光影層次明顯，高細節。
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>### 蒸氣龐克(世界觀風格)
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>- 暖銅色調。
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>- 機械或復古工業元素。
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>- 世界觀強烈。
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>- 咖啡館不再只是品牌空間，而像故事場景。
+</code></pre></div>
+<h3 id="_11">油畫風格(藝術表現)<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>請幫我生成一張圖：
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>一間現代風格的咖啡館外觀，位於安靜的城市街道夜晚，大面玻璃窗透出溫暖燈光，木質外觀設計，整體風格簡約，氛圍安靜且具有質感，光影層次明顯，高細節。
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>### 油畫風格(藝術表現)
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>- 明顯筆觸。
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>- 色彩較濃。
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>- 材質與藝術感強。
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>- 適合插畫、書封或展覽概念，不一定適合真實商業空間展示。
+</code></pre></div>
+<h2 id="_12">建立圖像的基本流程<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>在圖像創作初期，重點不是做出完美畫面，而是建立一個穩定、可重複的操作流程。</p>
+<h3 id="1">步驟 1：確認創作方向<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>生成前先回答：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>- 是什麼場景？
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>- 想傳達什麼感覺？
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>- 整體氛圍是什麼？
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>- 圖片要拿來做什麼？
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>**本節案例：**
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>場景：專注工作的個人桌面。
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>時間：夜晚。
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>情緒：安靜、沉穩、專注。
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>品牌感：科技、專業、高端。
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>用途：品牌網站 Hero Banner。
+</code></pre></div>
+<p>這一步的重點是先確定方向，不是急著生成。</p>
+<h3 id="2">步驟 2：選擇圖像風格<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>依創作方向選擇能支援畫面情緒的風格。風格要服務畫面情緒，而不是單純覺得名稱很酷。</p>
+<h3 id="3">步驟 3：撰寫圖像描述<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>先用簡潔描述建立方向：</p>
+<h2 id="_13">生成結果的基本判斷<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>圖像生成後，真正影響能不能繼續進步的能力是判斷結果，而不是只說「好不好看」。</p>
+<h3 id="_14">三個基本判斷標準<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<ol>
+<li>主體是否清楚。畫面中最重要的東西，有沒有被明確呈現？</li>
+</ol>
+<p>例子：</p>
+<ul>
+<li>工作桌面 → 是否清楚看到桌面與電腦？</li>
+<li>咖啡館 → 是否能辨識為咖啡館？</li>
+<li>品牌商品 → 商品是否成為視覺焦點？</li>
+</ul>
+<p>若主體不清楚，通常代表描述不夠精準。</p>
+<ol>
+<li>場景是否合理。畫面是否符合設定的情境？</li>
+</ol>
+<p>例子：</p>
+<ul>
+<li>夜晚 → 是否真的呈現夜晚光線？</li>
+<li>室內 → 是否出現不合理的戶外元素？</li>
+<li>高樓辦公室 → 是否具有城市高樓視野？</li>
+</ul>
+<p>若場景不合理，通常代表描述或風格產生偏差。</p>
+<ol>
+<li>氛圍是否一致。圖片帶出的感覺是否符合預期？</li>
+</ol>
+<p>例子：</p>
+<ul>
+<li>專注 → 是否安靜、沉穩？</li>
+<li>溫暖 → 是否有柔和光線？</li>
+<li>高端 → 是否具有質感？</li>
+</ul>
+<p>若氣氛不對，通常需要調整風格或情緒描述詞。</p>
+<h1 id="2-3">2-3 從創作藍圖到圖像：關鍵轉換<a class="headerlink" href="#2-3" title="Permanent link">&para;</a></h1>
+<p>Design Brief 能幫我們釐清主題、訊息與風格，但若只寫「高級感、溫暖氣氛、科技感」，AI 仍只能猜測畫面。</p>
+<p>因此，創作藍圖必須轉換成可以被視覺化的語言。</p>
+<blockquote>
+<p>把抽象概念，轉成清楚的畫面元素。</p>
+</blockquote>
+<h2 id="2-3-1">2-3-1 將藍圖轉換為圖像描述<a class="headerlink" href="#2-3-1" title="Permanent link">&para;</a></h2>
+<p>最基本的圖像描述結構是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>主體 + 場景 + 氛圍
+</code></pre></div>
+<h3 id="1_1">1. 主體<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>畫面最重要的物件或人物，例如：</p>
+<ul>
+<li>一間咖啡館外觀。</li>
+<li>一個工作桌面。</li>
+<li>一台筆記型電腦。</li>
+<li>一杯咖啡。</li>
+</ul>
+<h3 id="2_1">2. 場景<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>主體所在的環境與空間，例如：</p>
+<ul>
+<li>夜晚的城市街道。</li>
+<li>室內工作空間。</li>
+<li>窗邊位置。</li>
+<li>木質風格空間。</li>
+</ul>
+<h3 id="3_1">3. 氛圍與風格<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>畫面要傳達的感覺，例如：</p>
+<ul>
+<li>安靜。</li>
+<li>專注。</li>
+<li>溫暖。</li>
+<li>高質感。</li>
+<li>電影氛圍。</li>
+</ul>
+<h2 id="_15">套用範例：現代高樓辦公室<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<p>假設 Design Brief 是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>主題：現代化辦公環境。
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>訊息：專業、高效、城市視野。
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>風格：高質感、沉穩、電影氛圍。
+</code></pre></div>
+<p>如果只寫：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>一個很高級的辦公室。
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>一個可以看到風景的工作環境。
+</code></pre></div>
+<p>描述過於抽象，畫面資訊不足。可以改成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>一間位於台北高樓層的現代辦公室空間，大面落地窗設計，窗外可遠眺台北 101 大樓、基隆河與陽明山景色。室內為簡約高質感設計，包含辦公桌與雙電腦設備，白天自然光從窗外灑入。整體氛圍專業、安靜且高效率，電影氛圍風格，高細節。
+</code></pre></div>
+<p>這段描述具有：</p>
+<ul>
+<li>明確主體：現代辦公室。</li>
+<li>清楚場景：台北高樓、101、基隆河、陽明山。</li>
+<li>一致氛圍：專業、高效、高質感。</li>
+</ul>
+<p>相較原本的抽象描述，這種轉換能讓 AI 產出具有地點辨識度與一致氣氛的畫面。</p>
+<h2 id="prompt">完整生圖 Prompt 公式<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h2>
+<p>當基本結構能穩定生成後，可擴充為：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>主體 + 場景 + 風格 + 光線 + 鏡頭／構圖 + 細節 + 用途／比例
+</code></pre></div>
+<h3 id="problem">Problem. 一間咖啡店<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h3>
+<p>任務：請畫一張「一間咖啡店」。不要立刻輸入 AI，先完成：</p>
+<table>
+<thead>
+<tr>
+<th>問題</th>
+<th>我的設定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主題</td>
+<td></td>
+</tr>
+<tr>
+<td>場景</td>
+<td></td>
+</tr>
+<tr>
+<td>氣氛</td>
+<td></td>
+</tr>
+<tr>
+<td>風格</td>
+<td></td>
+</tr>
+<tr>
+<td>用途</td>
+<td></td>
+</tr>
+<tr>
+<td>圖片比例</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>完成後，寫出第一版 Prompt。</p>
+<h3 id="problem_1">Problem. 科技咖啡品牌方向圖<a class="headerlink" href="#problem_1" title="Permanent link">&para;</a></h3>
+<p>第一版 Prompt：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>一家現代科技感咖啡店，大片落地窗，深色木質，夜晚，暖黃燈光，安靜，電影感，高細節，真實攝影。
+</code></pre></div>
+<p>操作要求：先用這段簡短描述生成，不要一次加入太多內容。使用診斷表判斷：</p>
+<ul>
+<li>方向是否正確？</li>
+<li>哪一項最需要修改？</li>
+<li>第二輪只增加哪一項描述？</li>
+</ul>
+<h3 id="problem-prompt-coffee-hero-banner">Problem. Prompt Coffee Hero Banner<a class="headerlink" href="#problem-prompt-coffee-hero-banner" title="Permanent link">&para;</a></h3>
+<p>需求：</p>
+<ul>
+<li>品牌：Prompt Coffee。</li>
+<li>對象：工程師、設計師。</li>
+<li>氣氛：沉穩、高級。</li>
+<li>色彩：黑色、深灰、暖黃。</li>
+<li>時間：夜晚。</li>
+<li>用途：品牌官網首頁。</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>### 參考 Prompt
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Prompt Coffee 品牌官網首頁 Hero Banner。一位工程師在夜晚的現代工作空間中專注工作，前景是一杯曜石黑咖啡，桌上有高階機械鍵盤、筆記本與筆記型電腦，背景雙螢幕顯示失焦的程式碼。黑色與深灰為主色，暖黃桌燈照亮咖啡杯與木質桌面，冷色螢幕光形成輪廓。沉穩、高級、專注的電影感商業攝影，真實材質，淺景深，高細節，16:9 橫式構圖，左側保留品牌標題與 CTA 空間。避免卡通、雜亂背景、過亮色彩與生成文字。
+</code></pre></div>
+<h3 id="problem-prompt">Problem. 同一 Prompt，不同風格<a class="headerlink" href="#problem-prompt" title="Permanent link">&para;</a></h3>
+<p>固定內容：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>一位女孩坐在窗邊閱讀。
+</code></pre></div>
+<p>請分別生成：</p>
+<ul>
+<li>寫實攝影。</li>
+<li>油畫。</li>
+<li>水彩。</li>
+<li>日系動漫。</li>
+</ul>
+<p>比較四張圖的光線、材質、人物、情緒與用途。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "navigation.top", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1828 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、AI筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/AI%E6%87%89%E7%94%A8/Google_AI%E5%A4%9A%E5%AA%92%E9%AB%94%E5%89%B5%E4%BD%9C/AI%E5%BD%B1%E7%89%87%E5%89%B5%E4%BD%9C%EF%BC%9A%E4%BB%A5Google_Flow%E5%89%B5%E4%BD%9C/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>AI 影片創作：以 Google Flow 創作 - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai-google-flow" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI 影片創作：以 Google Flow 創作
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI應用
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+          
+  
+  
+  日記
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI應用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    日記
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    手札首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%89%8B%E6%9C%AD/12%E5%A4%A9%E8%A3%9C%E5%85%85%E5%85%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12天補充兵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        影片的三個核心元素
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        從「描述畫面」轉為「設計變化」
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="從「描述畫面」轉為「設計變化」">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 下雨天
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 下雨天
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 流浪小貓
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 咖啡店
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 生日驚喜
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 火箭發射
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 森林探險
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Flow 的定位、能力與限制
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-to-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text-to-Video——從文字生成影片
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Text-to-Video——從文字生成影片">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五大 Prompt 結構
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 工作情境
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 科技情境
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 品牌影片
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 把圖片描述改成影片描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 把圖片描述改成影片描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 把圖片描述改成影片描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 把圖片描述改成影片描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 把圖片描述改成影片描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 把圖片描述改成影片描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 把圖片描述改成影片描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-to-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image-to-Video——從既有畫面延伸動態
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image-to-Video——從既有畫面延伸動態">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 人物情境延伸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 科技場景延伸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        起始影格與結束影格
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 微動態設計
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 微動態設計
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 微動態設計
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 微動態設計
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 微動態設計
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 微動態設計
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多段影片生成、串接與一致性
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多段影片生成、串接與一致性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        建立片段的三個原則
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整案例——貓娘小姐姐
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="完整案例——貓娘小姐姐">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        角色設計 Prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        英文版
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 工具箱
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt 工具箱">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        單段影片模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        圖片延伸模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        跨片段延續模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        產生變體模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        負面限制建議
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ai-google-flow">AI 影片創作：以 Google Flow 創作<a class="headerlink" href="#ai-google-flow" title="Permanent link">&para;</a></h1>
+<h2 id="_1">影片的三個核心元素<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>再短的影片，也可以拆成：</p>
+<ol>
+<li><strong>起點（Start）</strong>：建立情境，讓觀眾知道現在在哪裡、誰在畫面中。</li>
+<li><strong>變化（Change）</strong>：人物、物件、光線、環境或鏡頭發生改變。</li>
+<li><strong>結果（End）</strong>：留下完成狀態、明確畫面、情緒或訊息。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>例如「創作者在咖啡廳使用 AI」：
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>- 起點：女性創作者坐在桌前，筆電尚未操作。
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>- 變化：她開始操作，螢幕逐漸出現設計內容，鏡頭緩慢靠近。
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>- 結果：畫面停在完成的設計成果，她露出理解與滿意的表情。
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>沒有起點，觀眾不知道發生什麼；沒有變化，影片只是動態桌布；沒有結果，影片沒有記憶點。
+</code></pre></div>
+<h2 id="_2">從「描述畫面」轉為「設計變化」<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>錯誤寫法：「一位女性在咖啡廳使用電腦，畫面很漂亮，光線柔和。」</p>
+<p>這是圖片描述，沒有明確動態。</p>
+<p>改善寫法：「一位女性創作者坐在咖啡廳中開始操作筆電，手部自然移動，螢幕內容逐漸亮起，窗外柔光緩慢變化，鏡頭從側面慢慢推近，最後停在她專注而安心的表情。」</p>
+<p>差別不在形容詞更多，而在於加入：</p>
+<ul>
+<li>可見的動作</li>
+<li>可理解的變化</li>
+<li>鏡頭節奏</li>
+<li>最終畫面</li>
+</ul>
+<h3 id="problem">Problem. 下雨天<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h3>
+<p>題目：「AI 幫助學生整理學習資料」。</p>
+<p>請只用三句話完成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>起點：
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>變化：
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>結果：
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># 參考答案：
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>起點：學生面對散亂筆記與多個檔案，神情困擾。
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>變化：AI 介面逐步整理內容，將資料分類成摘要、重點與待辦。
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>結果：桌面變得整齊，學生看著清楚的學習地圖露出安心微笑。
+</code></pre></div>
+<div class="video-wrapper">
+    <iframe
+        src="https://drive.google.com/file/d/13NtURXrrjZgt3r4monk0LnXa1rnMwf_P/preview"
+        allow="autoplay"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<h3 id="problem_1">Problem. 下雨天<a class="headerlink" href="#problem_1" title="Permanent link">&para;</a></h3>
+<p>題目：「突如其來的大雨」。</p>
+<p>請只用三句話完成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>起點：
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>變化：
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>結果：
+</code></pre></div>
+<h3 id="problem_2">Problem. 流浪小貓<a class="headerlink" href="#problem_2" title="Permanent link">&para;</a></h3>
+<p>題目：「一隻流浪小貓找到新主人」。</p>
+<p>請只用三句話完成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>起點：
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>變化：
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>結果：
+</code></pre></div>
+<h3 id="problem_3">Problem. 咖啡店<a class="headerlink" href="#problem_3" title="Permanent link">&para;</a></h3>
+<p>題目：「一家安靜的咖啡店迎接第一位客人」。</p>
+<p>請只用三句話完成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>起點：
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>變化：
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>結果：
+</code></pre></div>
+<h3 id="problem_4">Problem. 生日驚喜<a class="headerlink" href="#problem_4" title="Permanent link">&para;</a></h3>
+<p>題目：「朋友偷偷準備生日派對」。</p>
+<p>請只用三句話完成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>起點：
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>變化：
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>結果：
+</code></pre></div>
+<h3 id="problem_5">Problem. 火箭發射<a class="headerlink" href="#problem_5" title="Permanent link">&para;</a></h3>
+<p>題目：「火箭成功升空」。</p>
+<p>請只用三句話完成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>起點：
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>變化：
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>結果：
+</code></pre></div>
+<h3 id="problem_6">Problem. 森林探險<a class="headerlink" href="#problem_6" title="Permanent link">&para;</a></h3>
+<p>題目：「一名探險家在森林中發現神秘遺跡」。</p>
+<p>請只用三句話完成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>起點：
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>變化：
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>結果：
+</code></pre></div>
+<h2 id="google-flow">Google Flow 的定位、能力與限制<a class="headerlink" href="#google-flow" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://labs.google/fx/zh/tools/flow">Google Flow官網</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Flow 價值</th>
+<th>特別適合</th>
+<th>Flow 的限制</th>
+<th>正確策略</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>建立角色、物件、場景與風格素材。</td>
+<td>約數秒至十秒的清楚情境或片段。</td>
+<td>手部或細小物件偶爾不自然。</td>
+<td>不要企圖控制所有微小細節。</td>
+</tr>
+<tr>
+<td>由文字、圖片、參考素材或起訖影格生成片段。</td>
+<td>科技產品展示。</td>
+<td>長片中人物外觀、服裝或場景容易漂移。</td>
+<td>不要一次生成很長、很複雜的故事。</td>
+</tr>
+<tr>
+<td>延長或修改片段。</td>
+<td>人物工作情境。</td>
+<td>一次要求太多動作，畫面容易混亂。</td>
+<td>一個片段只安排一個主要任務。</td>
+</tr>
+<tr>
+<td>管理素材與版本。</td>
+<td>品牌形象與氛圍影片。</td>
+<td>長時間劇情可能失去連貫性。</td>
+<td>以多段短片完成，再逐段檢查與組合。</td>
+</tr>
+<tr>
+<td>把片段放進同一個故事脈絡中。</td>
+<td>社群短影音。</td>
+<td>畫面內的文字可能變形，應優先在後製時加入。</td>
+<td>使用引導性的描述，不要下達互相衝突的命令。</td>
+</tr>
+<tr>
+<td></td>
+<td>以固定角色發展的系列內容。</td>
+<td>不同模型支援的片長、音訊、起訖影格、參考素材與延長功能不同。</td>
+<td>生成前先確認模型支援的功能與限制。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="text-to-video">Text-to-Video——從文字生成影片<a class="headerlink" href="#text-to-video" title="Permanent link">&para;</a></h2>
+<h3 id="prompt">五大 Prompt 結構<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h3>
+<p>建議固定使用：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>&gt; **主題 Subject + 動作 Action + 環境 Environment + 鏡頭 Camera + 氛圍 Mood**
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>1. **主題**：誰、什麼物件、在哪種情境。
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>2. **動作**：正在發生什麼變化。
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>3. **環境**：場景、背景元素、光線。
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>4. **鏡頭**：遠近、角度、移動方式。
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>5. **氛圍**：觀眾應感受到什麼。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>### 通用模板：
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>主題：[]
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>動作：先[]，接著[]，最後[]。
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>環境：[]，光線[]。
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>鏡頭：[]景，鏡頭[]。
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>氛圍與風格：[]。
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>畫面比例：[]，片長：[]秒。
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>避免：多餘人物、突變、畫面文字、角色外觀改變。
+</code></pre></div>
+<h3 id="problem_7">Problem. 工作情境<a class="headerlink" href="#problem_7" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../Image/Google%20Flow/%E5%A5%B3%E6%80%A7%E5%89%B5%E4%BD%9C%E8%80%85%E5%9C%A8%E5%92%96%E5%95%A1%E5%BB%B3.png" /></p>
+<p>設計拆解：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>- 主題：女性創作者在咖啡廳。
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>- 動作：操作筆電與繪圖板。
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>- 環境：桌上有咖啡與書本。
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>- 鏡頭：緩慢推進。
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>- 氛圍：溫暖、安靜、專注。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>### Prompt：
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>一位女性創作者坐在咖啡廳中使用筆電與繪圖板工作，
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>手部自然操作，螢幕微微發光，
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>桌上放著咖啡與書本，窗外柔和日光灑入，
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>鏡頭從側面緩慢推進並輕微聚焦在主角，
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>整體氛圍溫暖、安靜且專注，帶有柔和電影感。
+</code></pre></div>
+<div class="video-wrapper">
+    <iframe
+        src="https://drive.google.com/file/d/1H1lRzKkhLgYIp8SZnYFblCUA5odr7Lt2/preview"
+        allow="autoplay"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<h3 id="problem_8">Problem. 科技情境<a class="headerlink" href="#problem_8" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../Image/Google%20Flow/AI%20%E5%89%B5%E4%BD%9C%E8%80%85%E5%9C%A8%E6%9C%AA%E4%BE%86%E5%AF%A6%E9%A9%97%E5%AE%A4.png" /></p>
+<p>設計拆解：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>- 主題：AI 創作者在未來實驗室。
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>- 動作：操作全息介面，資料流動。
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>- 環境：科技設備與藍紫光線。
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>- 鏡頭：環繞移動。
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>- 氛圍：科技感、未來感。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a># Prompt：
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>一位創作者站在未來 AI 實驗室中，
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>手部操作全息投影介面，數據與光線在空中流動，
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>背景為高科技設備與藍紫色光影，
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>鏡頭緩慢環繞主體移動，
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>整體呈現強烈科技感與未來感，光線帶有霓虹效果。
+</code></pre></div>
+<h3 id="problem_9">Problem. 品牌影片<a class="headerlink" href="#problem_9" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../Image/Google%20Flow/%E4%BB%8B%E9%9D%A2%E9%80%90%E6%AD%A5%E7%94%9F%E6%88%90.png" /></p>
+<p>設計拆解：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>- 主題：AI 創作工具展示。
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>- 動作：介面逐步生成。
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>- 環境：簡潔的筆電工作桌。
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>- 鏡頭：由遠到近。
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>- 氛圍：專業、科技、簡潔。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a># Prompt：
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>一台筆電放在簡潔的工作桌上，螢幕顯示 AI 創作介面，
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>畫面中的圖像與數據逐步生成並變得完整，
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>周圍環境乾淨，帶有簡潔科技元素，
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>鏡頭從遠處緩慢推近至螢幕，
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>整體氛圍專業、簡潔且具有未來科技感。
+</code></pre></div>
+<h3 id="problem_10">Problem. 把圖片描述改成影片描述<a class="headerlink" href="#problem_10" title="Permanent link">&para;</a></h3>
+<p>題目：「一位講師站在教室中，背後有 AI 簡報。」</p>
+<p>請補上動作、鏡頭與結果。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a># 參考答案：
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>一位講師站在明亮教室前方，抬手指向背後的 AI 流程簡報，
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>圖表依序亮起，學生視線跟著移動，
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>鏡頭從教室後方緩慢推近至講師與主圖表，
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>最後停在完整的流程畫面，氛圍清楚、專業且具教學感。
+</code></pre></div>
+<h3 id="problem_11">Problem. 把圖片描述改成影片描述<a class="headerlink" href="#problem_11" title="Permanent link">&para;</a></h3>
+<p>題目：「一位廚師站在料理台前，桌上放著新鮮食材。」</p>
+<p>請補上動作、鏡頭與結果。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a># 參考答案：
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>一位廚師站在明亮的料理台前，依序拿起番茄、香草與調味料，
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>接著快速切菜並將食材放入鍋中翻炒，蒸氣緩緩升起，
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>鏡頭從食材特寫移動到廚師的操作畫面，
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>最後停在完成的料理上，呈現新鮮、溫暖且專業的氛圍。
+</code></pre></div>
+<h3 id="problem_12">Problem. 把圖片描述改成影片描述<a class="headerlink" href="#problem_12" title="Permanent link">&para;</a></h3>
+<p>題目：「一隻橘貓坐在掃地機器人上，準備穿過客廳。」</p>
+<p>請補上動作、鏡頭與結果。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a># 參考答案：
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>一隻橘貓穩穩坐在掃地機器人上，機器人開始緩慢穿過客廳，
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>橘貓左右張望，經過玩具時伸出前腳輕輕撥動，
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>鏡頭貼近地面跟著掃地機器人向前移動，
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>最後停在橘貓乘坐機器人抵達沙發前的畫面，氣氛輕鬆、可愛又帶有喜劇感。
+</code></pre></div>
+<h3 id="problem_13">Problem. 把圖片描述改成影片描述<a class="headerlink" href="#problem_13" title="Permanent link">&para;</a></h3>
+<p>題目：「一名探險家站在發光的巨大蘑菇森林中。」</p>
+<p>請補上動作、鏡頭與結果。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a># 參考答案：
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>一名探險家提著小燈站在巨大蘑菇森林中，慢慢向前走動，
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>周圍的蘑菇依序亮起，細小光點從地面飄向空中，
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>鏡頭從探險家背後跟拍，再緩慢拉高展示整座發光森林，
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>最後停在遠方出現神祕入口的畫面，營造夢幻、未知且充滿冒險感的氛圍。
+</code></pre></div>
+<h3 id="problem_14">Problem. 把圖片描述改成影片描述<a class="headerlink" href="#problem_14" title="Permanent link">&para;</a></h3>
+<p>題目：「一台智慧型手機放在桌面上，旁邊有耳機與充電器。」</p>
+<p>請補上動作、鏡頭與結果。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a># 參考答案：
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>一台智慧型手機放在乾淨的桌面中央，螢幕亮起並顯示主要功能介面，
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>耳機與充電器依序滑入畫面，在手機旁整齊排列，
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>鏡頭先環繞產品移動，再慢慢靠近手機螢幕，
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>最後停在完整的產品組合畫面，呈現俐落、精緻且具有商業廣告感的效果。
+</code></pre></div>
+<h3 id="problem_15">Problem. 把圖片描述改成影片描述<a class="headerlink" href="#problem_15" title="Permanent link">&para;</a></h3>
+<p>題目：「一台迷你機器人在凌亂的桌面上整理文具。」</p>
+<p>請補上動作、鏡頭與結果。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a># 參考答案：
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>一台迷你機器人站在凌亂的書桌中央，抬起小型機械手臂開始整理文具，
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>鉛筆、橡皮擦與便利貼依序被搬到正確位置，桌面逐漸變得整齊，
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>鏡頭以低角度跟著機器人移動，再切換到桌面的俯視畫面，
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>最後停在機器人站在整理完成的桌面上比出勝利手勢，呈現活潑、療癒且充滿巧思的感覺。
+</code></pre></div>
+<h3 id="problem_16">Problem. 把圖片描述改成影片描述<a class="headerlink" href="#problem_16" title="Permanent link">&para;</a></h3>
+<p>題目：「一群企鵝在冰面上舉辦滑行比賽。」</p>
+<p>請補上動作、鏡頭與結果。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a># 參考答案：
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>一群企鵝排在冰面起點，起跑後趴下身體快速向前滑行，
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>其中一隻企鵝左右搖晃超越其他選手，沿途濺起細小冰屑，
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>鏡頭貼近冰面高速跟拍，再切換到終點前方等待牠們滑近，
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>最後停在企鵝們一起撞成一團的畫面，呈現熱鬧、逗趣且充滿節奏感的效果。
+</code></pre></div>
+<h2 id="image-to-video">Image-to-Video——從既有畫面延伸動態<a class="headerlink" href="#image-to-video" title="Permanent link">&para;</a></h2>
+<p>Text-to-Video 是「從零開始」，Image-to-Video 是「從既有視覺基準延伸」。後者通常更適合品牌與系列內容，因為：</p>
+<ul>
+<li>起點已固定。</li>
+<li>角色外觀較容易延續。</li>
+<li>色彩、風格與構圖較穩定。</li>
+<li>結果更容易預測。</li>
+</ul>
+<p>核心原則：「不改內容，只加入動態」。先加入三類變化：</p>
+<ol>
+<li>動作：手部、表情、物件。</li>
+<li>光線：亮度、反射、流動。</li>
+<li>鏡頭：推進、平移、環繞。</li>
+<li>最後才考慮大型場景轉換。</li>
+</ol>
+<p>常見錯誤是同時改場景、角色與風格，結果失去一致性。</p>
+<h3 id="problem_17">Problem. 人物情境延伸<a class="headerlink" href="#problem_17" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>原始畫面：
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>- 長髮女性創作者，戴眼鏡。
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>- 黑色牛仔外套。
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>- 坐在咖啡廳木質環境中。
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>- 桌上有咖啡、筆電與繪圖板。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>Prompt：
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>生成8秒影片
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>畫面中的長髮戴眼鏡女性創作者，黑色牛仔外套專注工作，
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>右手使用繪圖板設計，左手在筆電鍵盤上輕微操作，
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>繪圖板上的設計內容逐漸完成，
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>桌上咖啡冒出微微熱氣，背景人物有細微動作，
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>窗邊燈光自然流動，鏡頭緩慢向前推進並聚焦主角，
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>保持角色外觀、藍紫科技色調與木質咖啡廳風格完全一致。
+</code></pre></div>
+<p>觀察：</p>
+<ul>
+<li>角色不變。</li>
+<li>場景完整延續。</li>
+<li>只增加手部、螢幕、蒸氣、光線與鏡頭的微動態。</li>
+</ul>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;">
+    <!-- 左邊圖片 -->
+    <img
+        src="../Image/Google Flow/長髮戴眼鏡女性創作者，黑色牛仔外套.png"
+        alt="長髮戴眼鏡女性創作者，黑色牛仔外套.png"
+        style="
+            flex: 1;
+            min-width: 300px;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        ">
+    <!-- 右邊影片 -->
+    <div
+        style="
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            padding-top: 56.25%;
+        ">
+        <iframe
+            src="https://drive.google.com/file/d/1LyN51doYtrtiUaidmEgYR0LoZNQnx_Ou/preview"
+            allow="autoplay"
+            allowfullscreen
+            style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            ">
+        </iframe>
+    </div>
+</div>
+
+<h3 id="problem_18">Problem. 科技場景延伸<a class="headerlink" href="#problem_18" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a># 生成一張圖片
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>- 長髮女性角色與黑絲服裝。
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>- 未來 AI 實驗室。
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>- 四周有伺服器與全息介面。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a># Prompt：
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>生成8秒影片
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>讓畫面中的女性創作者開始操作前方全息介面，
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>雙手自然移動控制，介面中的數據與圖表動態變化，
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>神經網路圖形逐漸運算流動，
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>周圍光線與霓虹線條持續移動閃動，
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>背景伺服器設備燈光微微閃爍，
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>鏡頭緩慢向前推進並聚焦角色與中央介面，
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>保持同一角色、同一實驗室與藍紫未來科技風格。
+</code></pre></div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;">
+    <!-- 左邊圖片 -->
+    <img
+        src="../Image/Google Flow/長髮女性角色與黑絲服裝.png"
+        alt="長髮戴眼鏡女性創作者，黑色牛仔外套.png"
+        style="
+            flex: 1;
+            min-width: 300px;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        ">
+    <!-- 右邊影片 -->
+    <div
+        style="
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            padding-top: 56.25%;
+        ">
+        <iframe
+            src="https://drive.google.com/file/d/10Z0M6BCLXHa7zD1EfyHg5cb1opZm2-Du/preview"
+            allow="autoplay"
+            allowfullscreen
+            style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            ">
+        </iframe>
+    </div>
+</div>
+
+<h3 id="_3">起始影格與結束影格<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>若當下模型支援起訖影格，可指定：</p>
+<ul>
+<li>起始畫面：故事從哪裡出發。</li>
+<li>結束畫面：故事要抵達哪裡。</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>例如：
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>- 起始影格：咖啡杯放在桌上，沒有品牌標誌。
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>- 結束影格：鏡頭拉近，杯身出現品牌視覺，蒸氣形成柔和圖案。
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a># 中間的動態仍需描述，否則模型只知道兩端，不知道過程應如何發生。
+</code></pre></div>
+<h3 id="problem_19">Problem. 微動態設計<a class="headerlink" href="#problem_19" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../Image/Google%20Flow/%E5%A5%B3%E6%80%A7%E5%8F%B3%E6%89%8B%E8%BC%95%E8%BC%95%E6%8F%AE%E6%89%8B%EF%BC%8C%E9%A0%AD%E9%AB%AE%E9%9A%A8%E5%BE%AE%E9%A2%A8%E8%BC%95%E8%BC%95%E9%A3%84%E5%8B%95.png" /></p>
+<p>幫這張人物圖片，只允許加入五項微動態，不得更換人物、服裝或場景：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>- 手部：右手輕輕揮手，手指自然擺動。
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>- 物件：頭髮隨微風輕輕飄動。
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>- 光線：陽光微微閃爍，亮度自然變化。
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>- 背景：樹葉緩慢搖曳，偶爾有落葉飄過。
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>- 鏡頭：鏡頭緩慢向前推近人物。
+</code></pre></div>
+<!-- 播放影片 -->
+<div class="video-wrapper">
+    <iframe
+        src="https://drive.google.com/file/d/10B6zophimyFOJpgJiyF3_lly0JbG_d1K/preview"
+        allow="autoplay"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<h3 id="problem_20">Problem. 微動態設計<a class="headerlink" href="#problem_20" title="Permanent link">&para;</a></h3>
+<p>幫這張人物圖片，只允許加入五項微動態，不得更換人物、服裝或場景：</p>
+<p><img alt="" src="../Image/Google%20Flow/%E9%81%87%E8%A6%8B%E4%B8%89%E8%A7%92%E9%BE%8D.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>- 手部：
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>- 物件：
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>- 光線：
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>- 背景：
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>- 鏡頭：
+</code></pre></div>
+<h3 id="problem_21">Problem. 微動態設計<a class="headerlink" href="#problem_21" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../Image/Google%20Flow/%E5%A4%A7%E7%8B%BC%E8%88%87%E5%B0%8F%E5%A5%B3%E5%AD%A9.png" /></p>
+<p>幫這張人物圖片，只允許加入五項微動態，不得更換人物、服裝或場景：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>- 手部：
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>- 物件：
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>- 光線：
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>- 背景：
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>- 鏡頭：
+</code></pre></div>
+<h3 id="problem_22">Problem. 微動態設計<a class="headerlink" href="#problem_22" title="Permanent link">&para;</a></h3>
+<p>幫這張人物圖片，只允許加入五項微動態，不得更換人物、服裝或場景：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>- 手部：
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>- 物件：
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>- 光線：
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>- 背景：
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>- 鏡頭：
+</code></pre></div>
+<h3 id="problem_23">Problem. 微動態設計<a class="headerlink" href="#problem_23" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../Image/Google%20Flow/Enter%E9%8D%B5.png" /></p>
+<p>幫這張人物圖片，只允許加入五項微動態，不得更換人物、服裝或場景：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>- 手部：
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>- 物件：
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>- 光線：
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>- 背景：
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>- 鏡頭：
+</code></pre></div>
+<h3 id="problem_24">Problem. 微動態設計<a class="headerlink" href="#problem_24" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../Image/Google%20Flow/%E6%97%A5%E6%9C%AC%E6%AD%A6%E5%A3%AB.png" /></p>
+<p>幫這張人物圖片，只允許加入五項微動態，不得更換人物、服裝或場景：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>- 手部：
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>- 物件：
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>- 光線：
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>- 背景：
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>- 鏡頭：
+</code></pre></div>
+<h2 id="_4">多段影片生成、串接與一致性<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>每一段分鏡都應該有一個明確任務：</p>
+<ul>
+<li>開場：建立場景與氛圍。</li>
+<li>發展：推進動作或資訊。</li>
+<li>轉折：產生變化或衝突。</li>
+<li>結尾：收束情緒與訊息。</li>
+</ul>
+<p>每段不是一張畫面，而是一個功能。</p>
+<h3 id="_5">建立片段的三個原則<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>單一重點</strong>：每段只負責一個核心動作或情境。</li>
+<li><strong>可延續性</strong>：能自然接到下一段。</li>
+<li><strong>視覺一致性</strong>：不同段落像同一支影片。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>### Flow 中的實作邏輯
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>1. 建立或開啟專案。
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>2. 建立角色、場景與風格素材。
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>3. 將素材拖入 Prompt，或指定起始／結束影格。
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>4. 生成第一段可用片段。
+<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>5. 以最後影格或延長功能建立下一段。
+<a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>6. 使用不同版本比較動作、鏡頭與情緒。
+<a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a>7. 將片段按敘事順序整理。
+<a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a>8. 必要時移除不需要的物件、調整局部內容或鏡頭。
+<a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a>9. 輸出後再進行字幕、品牌標誌、音樂與精準剪輯。
+<a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a>
+<a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a># 小技巧：先排順序，再修細節。順序錯誤時，再精緻的畫面也救不了故事。
+<a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a># 不同模型功能可能不同；生成前先查看目前模型支援的片長、參考素材、延長、音訊與編修能力。
+</code></pre></div>
+<h2 id="_6">完整案例——貓娘小姐姐<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>主題設定：貓娘小姐姐的一天</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a># 角色設定
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>白色貓耳與柔順長髮，真人版
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>穿著簡約可愛的居家服。
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>金色眼睛，表情溫柔。
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>尾巴會隨情緒自然擺動。
+<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>活潑但有點害羞。
+</code></pre></div>
+<p>```text=</p>
+<h3 id="prompt_1">角色設計 Prompt<a class="headerlink" href="#prompt_1" title="Permanent link">&para;</a></h3>
+<p>請幫我設計一位可愛的貓娘女孩，
+具有溫柔療癒的形象，
+描述她的外觀、個性、服裝特色與代表性的動作。</p>
+<h3 id="_7">英文版<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>Design a cute anime catgirl with a warm and gentle personality.
+Describe her appearance, clothing, personality, and signature gestures.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>![](./Image/Google%20Flow/貓娘mochi.png)
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>### 四段分鏡腳本
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>```text
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>### Scene 1：初次見面
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>場景：溫暖明亮的客廳。
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>畫面：貓娘站在窗邊，看見鏡頭後露出微笑，輕輕揮手，尾巴自然晃動。
+<a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>目的：建立角色形象。
+<a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a>
+<a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a>### prompt(英文版)
+<a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a>A cute anime catgirl standing beside a bright living room window,
+<a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a>she notices the camera, smiles warmly and gently waves,
+<a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a>her fluffy tail slowly sways,
+<a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a>soft morning sunlight,
+<a id="__codelineno-37-16" name="__codelineno-37-16" href="#__codelineno-37-16"></a>slow cinematic push-in,
+<a id="__codelineno-37-17" name="__codelineno-37-17" href="#__codelineno-37-17"></a>warm cozy atmosphere,
+<a id="__codelineno-37-18" name="__codelineno-37-18" href="#__codelineno-37-18"></a>anime style,
+<a id="__codelineno-37-19" name="__codelineno-37-19" href="#__codelineno-37-19"></a>soft lighting,
+<a id="__codelineno-37-20" name="__codelineno-37-20" href="#__codelineno-37-20"></a>shallow depth of field.
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>### Scene 2：撒嬌互動
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>場景：沙發旁。
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>畫面：貓娘走近鏡頭，雙手放在背後，微微歪頭，用期待的眼神看著觀眾，尾巴開心地左右搖擺。
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>目的：建立角色互動感。
+<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a>
+<a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a>### Prompt:
+<a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a>The catgirl slowly walks toward the camera,
+<a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a>tilting her head with sparkling eyes,
+<a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a>hands behind her back,
+<a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a>she smiles sweetly while her fluffy tail happily sways,
+<a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a>gentle camera movement,
+<a id="__codelineno-38-12" name="__codelineno-38-12" href="#__codelineno-38-12"></a>warm cozy atmosphere,
+<a id="__codelineno-38-13" name="__codelineno-38-13" href="#__codelineno-38-13"></a>anime style,
+<a id="__codelineno-38-14" name="__codelineno-38-14" href="#__codelineno-38-14"></a>soft lighting,
+<a id="__codelineno-38-15" name="__codelineno-38-15" href="#__codelineno-38-15"></a>shallow depth of field.
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>Scene 3：可愛撒嬌
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>場景：沙發上。
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>畫面：貓娘坐在沙發，雙手抱著抱枕，輕輕晃動雙腳，對鏡頭露出撒嬌的笑容。
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>目的：加入更多生活感。
+<a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>
+<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a>Prompt:
+<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a>The anime catgirl sits on a cozy sofa,
+<a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a>hugging a soft pillow,
+<a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a>gently swinging her legs,
+<a id="__codelineno-39-11" name="__codelineno-39-11" href="#__codelineno-39-11"></a>she looks toward the camera with a playful smile,
+<a id="__codelineno-39-12" name="__codelineno-39-12" href="#__codelineno-39-12"></a>warm afternoon sunlight,
+<a id="__codelineno-39-13" name="__codelineno-39-13" href="#__codelineno-39-13"></a>cinematic side camera movement,
+<a id="__codelineno-39-14" name="__codelineno-39-14" href="#__codelineno-39-14"></a>anime style,
+<a id="__codelineno-39-15" name="__codelineno-39-15" href="#__codelineno-39-15"></a>soft lighting,
+<a id="__codelineno-39-16" name="__codelineno-39-16" href="#__codelineno-39-16"></a>shallow depth of field.
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>Scene 4：道別
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>場景：玄關。
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>畫面：貓娘站在門口，雙手放在身前，露出甜甜的笑容，揮手道別，鏡頭慢慢拉遠。
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>目的：讓影片有完整收尾。
+<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a>
+<a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a>Prompt：
+<a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a>The cute anime catgirl stands at the doorway,
+<a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a>smiling gently,
+<a id="__codelineno-40-9" name="__codelineno-40-9" href="#__codelineno-40-9"></a>she waves goodbye with both hands,
+<a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a>camera slowly pulls back,
+<a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a>warm evening light,
+<a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a>peaceful atmosphere,
+<a id="__codelineno-40-13" name="__codelineno-40-13" href="#__codelineno-40-13"></a>anime style,
+<a id="__codelineno-40-14" name="__codelineno-40-14" href="#__codelineno-40-14"></a>soft lighting,
+<a id="__codelineno-40-15" name="__codelineno-40-15" href="#__codelineno-40-15"></a>shallow depth of field.
+</code></pre></div>
+<!-- 播放影片 -->
+<div class="video-wrapper">
+    <iframe
+        src="https://drive.google.com/file/d/1bi3kCFJnXLJ5QAUJMluW3IpVHgg_UT4c/preview"
+        allow="autoplay"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<h2 id="prompt_2">Prompt 工具箱<a class="headerlink" href="#prompt_2" title="Permanent link">&para;</a></h2>
+<h3 id="_8">單段影片模板<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>在【場景】中，【角色／物件】先【起始狀態】，
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>接著【主要動作與變化】，
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>周圍【環境或光線變化】，
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>鏡頭以【鏡頭方式】呈現，
+<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>最後停在【結果畫面】，
+<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>整體為【氛圍／風格】。
+</code></pre></div>
+<h3 id="_9">圖片延伸模板<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>以這張圖片為視覺基準。
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>保持【角色外觀、服裝、場景、構圖、色彩】不變，
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>只增加【主體動作】、【物件微動】、【光線變化】，
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>鏡頭【推進／平移／環繞】，
+<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>動作自然且幅度小，
+<a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a>不要新增人物，不要改變角色，不要更換場景與風格。
+</code></pre></div>
+<h3 id="_10">跨片段延續模板<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>延續上一個場景與最後動作。
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>保持同一角色的【外觀特徵】、同一【服裝】、
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>同一【色彩、光線、影像風格】。
+<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>角色接著【下一個主要動作】，
+<a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>鏡頭【運動方式】，
+<a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a>本段任務是【建立／推進／轉折／收束】。
+</code></pre></div>
+<h3 id="_11">產生變體模板<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>保留角色、動作、場景與構圖不變，
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>只提供 3 個【光線／鏡頭／節奏】版本：
+<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>版本 A：__________。
+<a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>版本 B：__________。
+<a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>版本 C：__________。
+</code></pre></div>
+<h3 id="_12">負面限制建議<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>避免多餘人物、避免手部扭曲、避免服裝改變、
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>避免突然切換場景、避免過快鏡頭、避免畫面文字、
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>避免角色臉部漂移、避免同時發生過多事件。
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "navigation.top", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1284 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、AI筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/AI%E6%87%89%E7%94%A8/Google_AI%E5%B7%A5%E4%BD%9C%E8%A1%93/AI%E8%B3%87%E6%96%99%E6%95%B4%E7%90%86%E8%A1%93/AI%E8%B3%87%E6%96%99%E6%95%B4%E7%90%86%E8%A1%93/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>AI 資料整理術：免手工整理表格、網頁與會議逐字稿 - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI 資料整理術：免手工整理表格、網頁與會議逐字稿
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../AI%E6%87%89%E7%94%A8/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI應用
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+          
+  
+  
+  日記
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI%E6%87%89%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI應用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    日記
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    手札首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%89%8B%E6%9C%AD/12%E5%A4%A9%E8%A3%9C%E5%85%85%E5%85%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12天補充兵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用 AI 處理複雜的表格資料
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="用 AI 處理複雜的表格資料">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notebooklm-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NotebookLM從複雜 PDF 抓數據、彙整成表格
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NotebookLM從複雜 PDF 抓數據、彙整成表格">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notebooklm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        為什麼使用 NotebookLM？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        全自動抓網頁資料並即時找出洞見
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="全自動抓網頁資料並即時找出洞見">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 比較三家超商的最新活動
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 比較三家航空公司的行李規定
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 比較三家銀行的數位帳戶
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        會議、訪談語音檔轉成逐字稿
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#echoscript-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EchoScript AI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EchoScript AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#echoscript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EchoScript 畫面特色
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        提醒
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 找出會議重點
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 整理訪談內容
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        逐字稿太亂？交給 AI 摘要整理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="逐字稿太亂？交給 AI 摘要整理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 整理會議決議
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 找出討論分歧
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        工具選擇：什麼情境用什麼？
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ai">AI 資料整理術：免手工整理表格、網頁與會議逐字稿<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h1>
+<h2 id="ai_1">用 AI 處理複雜的表格資料<a class="headerlink" href="#ai_1" title="Permanent link">&para;</a></h2>
+<p>傳統做法可能要使用篩選、樞紐分析、SUMIFS 或 Excel 函數；本單元先用 Gemini 快速整理，再把結果貼回 Excel 或匯出到 Google Sheets。</p>
+<p>「AI 的價值不是代替我們理解數據，而是先做第一輪彙整。請注意：『賣最多』可能指數量最多，也可能指營收最高。如果提示詞沒有把指標講清楚，AI 即使算對，也可能答錯我們真正想問的問題。」</p>
+<ul>
+<li>
+<p><a href="../%E4%B8%89%E5%80%8B%E6%9C%88%E9%8A%B7%E5%94%AE%E7%B4%80%E9%8C%84.csv">檔案：三個月銷售紀錄.csv</a></p>
+</li>
+<li>
+<p>開啟 Gemini。</p>
+</li>
+<li>將 Excel 檔拖曳至對話框。</li>
+<li>輸入提示詞：</li>
+<li>檢查 AI 回傳的月統計、商品統計與排序。</li>
+<li>使用結果旁的複製功能貼回 Excel，或匯出至 Google Sheets。</li>
+<li>抽查至少一個月份與一項商品的計算。</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>### 基礎版提示詞
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>你是一位資料分析助理。請僅根據我上傳的銷售明細檔進行分析：
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>1. 統計每個月份的總銷售額。
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>2. 統計每項商品的總銷售數量與總銷售金額。
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>3. 分別指出「銷售數量最高」及「銷售金額最高」的商品。
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>4. 製作 Markdown 表格，金額加上千分位。
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>5. 說明你的分組欄位與計算方式。
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>6. 若資料有空白、重複列或格式異常，請先列出，不要自行猜測或補值。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>### 進階版提示詞
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>請只使用我上傳的銷售資料，先做資料品質檢查，再完成：
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>- 依月份彙總銷售額，計算月增減金額與月增減率。
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>- 依商品彙總數量、金額、平均單價。
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>- 各做一份「依數量排名」與「依金額排名」。
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>- 找出數量排名和金額排名差異最大的商品，說明可能原因。
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>- 最後提出 3 個可以由資料支持的營運觀察。
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>所有觀察都要附對應數字；資料未提供的原因不可寫成事實。
+</code></pre></div>
+<h3 id="problem">Problem.<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h3>
+<p>請學員改寫提示詞，找出：</p>
+<ul>
+<li>哪個月銷售額最低？</li>
+<li>各商品平均每筆銷售數量。</li>
+<li>如果以「營收」規劃促銷，優先關注哪個商品？如果以「出貨量」規劃呢？</li>
+</ul>
+<h2 id="notebooklm-pdf">NotebookLM從複雜 PDF 抓數據、彙整成表格<a class="headerlink" href="#notebooklm-pdf" title="Permanent link">&para;</a></h2>
+<p>資料常分散在多份 PDF 的不同頁面與表格中。原教材以台北市道路交通事故統計為例，將三份不同年度的 PDF 匯入 NotebookLM，請 AI 單獨抓出台北市資料並製成表格。</p>
+<h3 id="notebooklm">為什麼使用 NotebookLM？<a class="headerlink" href="#notebooklm" title="Permanent link">&para;</a></h3>
+<ul>
+<li>回答可限定於匯入來源。</li>
+<li>適合跨多份文件比較。</li>
+<li>可追溯引用來源，較方便人工核查。</li>
+<li>
+<p>比一般聊天機器人更不容易混入未提供的外部資料，但仍非絕對正確。</p>
+</li>
+<li>
+<p><a href="https://tsis.dbas.gov.taipei/statis/webMain.aspx?sys=220&amp;ymf=5700&amp;kind=21&amp;type=0&amp;funid=a05029601&amp;cycle=4&amp;outmode=12&amp;compmode=0&amp;outkind=1&amp;deflst=2&amp;nzo=1">檔案：臺北市道路交通事故時間數列統計資料</a></p>
+</li>
+<li>
+<p><a href="https://www.roadsafety.taipei/News_Content.aspx?n=4F733E48A5ADF724&amp;sms=9B0165E4E41434FF&amp;s=C911309E2C57319E">連結：臺北市各行政區里交通事故統計表(死傷人數)</a></p>
+</li>
+<li>
+<p>進入 NotebookLM：https://notebooklm.google/</p>
+</li>
+<li>建立新筆記本。</li>
+<li>在「新增來源」選擇上傳檔案。</li>
+<li>上傳三份 PDF（原教材示例為 Y32.pdf、Y34.pdf、Y47.pdf）。</li>
+<li>等系統完成來源摘要；此摘要不是本次主要任務，可先略過。</li>
+<li>在對話框貼上提示詞並送出。</li>
+<li>檢查表格內每個數字的引用標記。</li>
+<li>將結果儲存為記事，方便後續使用。</li>
+</ul>
+<p><img alt="" src="../notebookllm%E4%B8%8A%E5%82%B3%E6%AA%94%E6%A1%88.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>### 提示詞
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>你是一位政府統計資料整理員。請僅使用這三份 PDF，分別抓出「台北市」資料，
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>不要混入新北市或全國統計。
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>請按年度製作表格，欄位包含：
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>1. 肇事件數
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>2. 死亡人數
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>3. 受傷人數
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>4. 主要肇事原因及件數
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>5. 資料來源檔名與頁碼
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>規則：
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>- 保留原始單位與定義。
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>- 若不同年度定義不同，請不要硬合併，另加「口徑差異」說明。
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>- 找不到的欄位填「來源未提供」，不可自行推估。
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>- 表格後列出 3 點趨勢，但每點必須附數據依據。
+</code></pre></div>
+<h3 id="problem_1">Problem.<a class="headerlink" href="#problem_1" title="Permanent link">&para;</a></h3>
+<p>請把提示詞改成「比較三年趨勢」，並要求：</p>
+<ul>
+<li>計算肇事件數增減率。</li>
+<li>標出死亡人數最高的年度。</li>
+<li>若統計口徑不同，停止計算增減率並說明原因。</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>### 參考提示詞
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>請比較三份來源中的台北市道路交通事故資料。先檢查三年的統計定義與單位是否一致；
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>只有一致時才計算年增減率。請輸出年度比較表、兩點趨勢與一段資料限制說明。
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>每個數字都要附來源引用；不確定時明確標示，不要推估。
+</code></pre></div>
+<h2 id="_1">全自動抓網頁資料並即時找出洞見<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>這邊以網路書店暢銷榜為例：把多個來源網址貼入 NotebookLM，請 AI 比較榜單、找閱讀趨勢或整理排名。</p>
+<ol>
+<li>新建 NotebookLM 筆記本。</li>
+<li>選擇「網站」來源。</li>
+<li>貼入書店暢銷榜網址；多個網址通常以空格或換行分隔。</li>
+<li>插入來源並等候處理完成。</li>
+<li>查看 AI 自動摘要，但不要把摘要當作唯一答案。</li>
+<li>發問做比較、排序或趨勢分析。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>### 書店暢銷榜
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>博客來-暢銷榜：https://www.books.com.tw/web/sys_saletopb/books/?gad_source=1&amp;gad_campaignid=24030455903&amp;gbraid=0AAAAAD4DKPxCmLso3quUK9N6uoUKSRWbp&amp;gclid=CjwKCAjwvsvTBhBaEiwAmf-3nrUOysTQQlm92lhNqruIuPRcjxys_hvDg3fnNxyR0TG43STViGVfnBoCNAsQAvD_BwE
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>成品線上-暢銷榜：https://www.eslite.com/best-sellers/bookstore?srsltid=AfmBOopP7bBt0iZiqkVl-OG4L1TyxrpZZy4xs_2X8p6L-7kAIBfkgRRW
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>金石堂－網路門市暢銷榜：https://www.kingstone.com.tw/bestseller/shop/book/?srsltid=AfmBOopS8pxLAJGBZsZRXk5X4APHfnDBDBSqI1995QdE2LH-Qn72lI19
+</code></pre></div>
+<p><img alt="" src="../notebookllm%E4%B8%8A%E5%82%B3%E7%B6%B2%E7%AB%99.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>### 提示詞--趨勢分析
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>請只根據已加入的三個中文書暢銷榜來源，分析目前閱讀趨勢。
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>請輸出：
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>1. 各榜單前 10 名（書名、作者、名次、來源）。
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>2. 跨榜重複出現的書籍，依出現次數排序。
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>3. 可由榜單支持的 3 項閱讀趨勢。
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>4. 各來源的資料缺漏或擷取限制。
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>書名請做最小幅度標準化，但套書、續集、限定版不得擅自視為同一本。
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>找不到第 9、10 名時填「來源未擷取」，不可臆測。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>### 提示詞--暢銷榜做成表格
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>請將博客來與誠品線上的榜單並排比較。每列為排名 1～10，
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>欄位為「排名、博客來書名／作者、誠品書名／作者」。
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>請移除網頁中的 &lt;br&gt; 等標記。資料缺漏要寫「來源未提供」。
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>表格後另列：
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>- 兩榜皆出現的作品
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>- 系列作與不同版本的判定說明
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>- 資料擷取時間與限制
+</code></pre></div>
+<h3 id="problem_2">Problem. 比較三家超商的最新活動<a class="headerlink" href="#problem_2" title="Permanent link">&para;</a></h3>
+<p>比較7-ELEVEN、全家、萊爾富：</p>
+<ul>
+<li>整理各家目前活動。</li>
+<li>比較優惠方式(折扣、第二件優惠、會員限定等)。</li>
+<li>找出三家共同推出的活動類型。</li>
+</ul>
+<h3 id="problem_3">Problem. 比較三家航空公司的行李規定<a class="headerlink" href="#problem_3" title="Permanent link">&para;</a></h3>
+<p>比較長榮航空、中華航空、星宇航空：</p>
+<ul>
+<li>整理各家目前活動。</li>
+<li>比較優惠方式(折扣、第二件優惠、會員限定等)。</li>
+<li>找出三家共同推出的活動類型。</li>
+</ul>
+<h3 id="problem_4">Problem. 比較三家銀行的數位帳戶<a class="headerlink" href="#problem_4" title="Permanent link">&para;</a></h3>
+<p>請加入三家銀行官方介紹頁。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>王道數位帳戶：https://myppt.cc/zLwJYo
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>台企Hokii數位帳戶：https://www.tbb.com.tw/zh-tw/digital/hokii/digital-account/intro
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>永豐DAWHO：https://myppt.cc/Bjb0Ub
+</code></pre></div>
+<p>請 AI：</p>
+<ul>
+<li>比較活存利率。</li>
+<li>提款優惠。</li>
+<li>轉帳優惠。</li>
+<li>適合哪些使用情境。</li>
+<li>缺少資料請標示「來源未提供」。</li>
+</ul>
+<h2 id="_2">會議、訪談語音檔轉成逐字稿<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>會議記錄耗時，人工邊聽邊記也容易漏掉內容。</p>
+<ul>
+<li>
+<p><a href="https://www.nhi.gov.tw/ch/dl-22021-ff3cf97acfad477da2531e57951bedbb-1.mp3">連結：健保屬會議實錄錄音檔-111年11月 13報告事項第5案</a></p>
+</li>
+<li>
+<p>建立筆記本並上傳會議錄音。</p>
+</li>
+<li>選取該音檔來源。</li>
+<li>提示 AI 產生完整逐字稿，而非摘要。</li>
+<li>若需要，要求標示「發話者 A／B」。</li>
+<li>複製結果到記事本或儲存為記事。</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>### 提示詞
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>請只根據這份會議錄音製作逐字稿，不要摘要或改寫。
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>要求：
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>- 依發言順序分段。
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>- 能辨識時標示「發言者 A、發言者 B」；無法確定時標「發言者不明」。
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>- 保留專有名詞、數字、日期與決策語句。
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>- 聽不清楚處標示 [聽不清楚 00:00]，不要猜測。
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>- 每 30 秒或每次換人時加入時間戳。
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>&gt; NotebookLM 可能會替逐字稿做少量潤飾，更適合理解內容，不一定是「原汁原味」的法務級逐字稿。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>### 提示詞
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>請把這份錄音轉成逐字稿並標示發話者。先忠實轉錄，再於文末列出：
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>1. 決策事項
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>2. 待辦事項（負責人、期限）
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>3. 尚未解決的問題
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>無法從錄音確認的負責人或期限請填「未指定」。
+</code></pre></div>
+<h2 id="echoscript-ai">EchoScript AI<a class="headerlink" href="#echoscript-ai" title="Permanent link">&para;</a></h2>
+<p>雖然 NotebookLM 和Gemini 在整理摘要與潤飾內容上表現卓越,但有時我們需要的是「最原始、無刪減」的逐字稿,例如在法務存證、學術、訪談…等需要精確標註時間戳記(Timestamp)與發話者的場合。這時候改用Google專門為轉錄設計的EchoScript Al會更為適合。</p>
+<ul>
+<li>
+<p><a href="https://aistudio.google.com/apps/bundled/echoscript">連結：EchoScript AI</a></p>
+</li>
+<li>
+<p>開啟網站並允許麥克風權限。</p>
+</li>
+<li>可選擇直接錄音，或上傳 mp3、wav、m4a 等錄音檔。</li>
+<li>點擊產生逐字稿。</li>
+<li>系統分析音訊並區分 Speaker 0、Speaker 1 等發話者。</li>
+<li>檢查說話時間、語言、語調、逐字稿與英文翻譯。</li>
+</ul>
+<blockquote>
+<p>原教材以約 60 分鐘錄音為例，處理約需 5 分鐘；此為當時示例，不是固定效能保證。</p>
+</blockquote>
+<h3 id="echoscript">EchoScript 畫面特色<a class="headerlink" href="#echoscript" title="Permanent link">&para;</a></h3>
+<ul>
+<li>顯示說話者。</li>
+<li>顯示時間區間。</li>
+<li>偵測語言。</li>
+<li>判斷 Happy／Neutral 等語調。</li>
+<li>提供英文翻譯。</li>
+<li>原教材指出其傾向保留較口語、較接近原始發言的內容。</li>
+</ul>
+<h3 id="_3">提醒<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>語調辨識是模型推測，不能當成員工情緒、態度或績效的客觀證據。</li>
+<li>說話者標籤只是分群，不會自動知道真實姓名。</li>
+<li>法務、醫療、研究訪談等高風險情境必須人工逐段校對。</li>
+<li>若工具沒有一鍵匯出，可選取結果複製到文字編輯器，再交給 AI 做第二階段整理。</li>
+</ul>
+<h3 id="problem_5">Problem. 找出會議重點<a class="headerlink" href="#problem_5" title="Permanent link">&para;</a></h3>
+<p>請上傳一段約 3～10 分鐘的錄音(可自行錄製或使用公開音訊)。</p>
+<p>請 AI：</p>
+<ul>
+<li>整理逐字稿內容。</li>
+<li>標示每位發話者主要討論內容。</li>
+<li>找出 5 個重要結論。</li>
+<li>列出仍未解決的問題。</li>
+<li>不要修改原本逐字稿內容。</li>
+</ul>
+<h3 id="problem_6">Problem. 整理訪談內容<a class="headerlink" href="#problem_6" title="Permanent link">&para;</a></h3>
+<p>請上傳一段兩人以上的訪談錄音。請 AI：</p>
+<ul>
+<li>整理每位發話者提出的重點。</li>
+<li>找出彼此意見相同與不同之處。</li>
+<li>將內容整理成條列式摘要。</li>
+<li>保留重要時間戳記。</li>
+</ul>
+<h2 id="ai_2">逐字稿太亂？交給 AI 摘要整理<a class="headerlink" href="#ai_2" title="Permanent link">&para;</a></h2>
+<p>漫長會議常有偏題、插話、贅詞與語音辨識錯誤。原教材展示一份由 EchoScript 產生、看起來不太能直接使用的技術討論逐字稿，再交給 NotebookLM 做最後整理。</p>
+<p>逐字稿主題涵蓋：</p>
+<ul>
+<li>神經網路資料預處理</li>
+<li>把英文單字轉成一連串數字</li>
+<li>正面評價與負面評價的標記</li>
+<li>從高頻字詞中篩選</li>
+<li>程式碼不同方法執行結果不一致的疑問</li>
+<li>字典還原與資料結構轉換</li>
+</ul>
+<p>「這個案例最重要的不是 AI 把文字變漂亮，而是它建立了可追蹤的結構：誰說了什麼、用了什麼方法、哪裡有疑問。好的摘要不只是縮短，而是讓讀者快速找到決策、分歧與下一步。」</p>
+<ul>
+<li><a href="https://www.nhi.gov.tw/ch/cp-20301-29ab0-4137-1.html">連結：健保署 會議實錄錄音檔-115年7月</a></li>
+<li>
+<p><a href="../%E5%81%A5%E4%BF%9D%E7%BD%B2%E6%9C%83%E8%AD%B0%E5%AF%A6%E9%8C%84%E9%8C%84%E9%9F%B3%E6%AA%94115%E5%B9%B47%E6%9C%88%E8%87%A8%E6%99%82%E5%8B%95%E8%AD%B0%E9%8C%84%E9%9F%B3%E6%96%87%E5%AD%97%E6%AA%94.txt">文字檔：健保署 會議實錄錄音檔-115年7月 臨時動議 錄音文字檔</a></p>
+</li>
+<li>
+<p>將完整逐字稿貼入 NotebookLM 或上傳成文字檔。</p>
+</li>
+<li>在對話中明確要求「整理」，不要只說「摘要」。</li>
+<li>指定要保留的結構：說話者、主題、重點、疑問、待辦。</li>
+<li>要求保留原始引文或時間戳，以便追溯。</li>
+<li>檢查 AI 是否把不同人的話錯誤合併。</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>### 提示詞-結構化整理版
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>你是一位技術會議紀錄員。請僅根據這份逐字稿整理內容，
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>不要加入外部知識，也不要替發言者補上未說過的結論。
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>請依「發言者」分組，每位發言者包含：
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>- 討論主題
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>- 核心觀點
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>- 使用的方法或流程
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>- 提出的疑問
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>- 待確認事項
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>最後再整理：
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>1. 全體共識
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>2. 尚未解決的分歧
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>3. 待辦事項（負責人／期限；未提及則寫未指定）
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>4. 可能的語音辨識錯字
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>每一項後面保留對應時間戳或一小段原句，方便人工核對。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>### 提示詞-保留原貌版
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>請整理這份逐字稿，但保留原始逐字稿內容。
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>輸出分成兩區：
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>A. 原始逐字稿：只修正明顯標點，不刪除內容。
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>B. 結構化摘要：按發言者與主題整理重點。
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>任何你推測的修正都要用〔可能是：___〕標示，不得直接覆蓋原文。
+</code></pre></div>
+<h3 id="problem_7">Problem. 整理會議決議<a class="headerlink" href="#problem_7" title="Permanent link">&para;</a></h3>
+<p>從<a href="https://www.chcg.gov.tw/TSO/ershui/07other/main.aspx?main_id=31211">彰化縣二水鄉第21屆大會召開會議錄音檔</a>中挑選一個音檔轉逐字稿後交給 AI。請 AI：</p>
+<ul>
+<li>找出所有已做出的決議。</li>
+<li>標示是哪位發言者提出。</li>
+<li>若有人表示同意或反對，也請整理。</li>
+<li>每項決議保留原始引文或時間戳。</li>
+</ul>
+<h3 id="problem_8">Problem. 找出討論分歧<a class="headerlink" href="#problem_8" title="Permanent link">&para;</a></h3>
+<p>從<a href="https://www.chcg.gov.tw/TSO/ershui/07other/main.aspx?main_id=31211">彰化縣二水鄉第21屆大會召開會議錄音檔</a>中挑選一個音檔轉逐字稿後交給 AI。請 AI：</p>
+<ul>
+<li>找出不同發言者意見不同的地方。</li>
+<li>整理各自理由。</li>
+<li>標示哪些問題最後沒有共識。</li>
+<li>不要自行判斷哪一方正確。</li>
+</ul>
+<h2 id="_4">工具選擇：什麼情境用什麼？<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>工作情境</th>
+<th>優先工具</th>
+<th>理由</th>
+<th>必做驗證</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>單一 Excel 快速彙整</td>
+<td>Gemini</td>
+<td>上傳後可直接分析與產表</td>
+<td>重算抽樣、確認日期與金額格式</td>
+</tr>
+<tr>
+<td>多份 PDF 跨文件比較</td>
+<td>NotebookLM</td>
+<td>來源受控、方便看引用</td>
+<td>核對頁碼、單位與統計口徑</td>
+</tr>
+<tr>
+<td>多個公開網頁比較</td>
+<td>NotebookLM</td>
+<td>多來源集中分析</td>
+<td>檢查擷取完整度與時間</td>
+</tr>
+<tr>
+<td>音檔快速理解</td>
+<td>Gemini／NotebookLM</td>
+<td>上傳後可轉錄與摘要</td>
+<td>抽聽專有名詞、數字、說話者</td>
+</tr>
+<tr>
+<td>需要時間戳與說話者分離</td>
+<td>EchoScript AI</td>
+<td>專門的音訊轉錄介面</td>
+<td>不把語調判斷當成事實</td>
+</tr>
+<tr>
+<td>雜亂逐字稿重整</td>
+<td>NotebookLM</td>
+<td>適合依來源重組、摘要</td>
+<td>保留原稿與可追溯依據</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "navigation.top", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
