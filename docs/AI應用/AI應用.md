@@ -15,6 +15,7 @@
 ## Google AI工作術
 
 - [AI資料整理術](./Google_AI工作術/AI資料整理術/AI資料整理術.md)
+- [Google Sheets活用術](./Google_AI工作術/Google_Sheets活用術/Google_Sheets活用術.md)
 
 ## 社區大學 GPT應用
 
