@@ -1,0 +1,1188 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、AI筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/AI%E6%87%89%E7%94%A8/Google_AI%E5%B7%A5%E4%BD%9C%E8%A1%93/Google_Sheets%E6%B4%BB%E7%94%A8%E8%A1%93/Google_Sheets%E6%B4%BB%E7%94%A8%E8%A1%93/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Google Sheets 活用術：用 AI 生成函數與公式 - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#google-sheets-ai" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Google Sheets 活用術：用 AI 生成函數與公式
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../AI%E6%87%89%E7%94%A8/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI應用
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+          
+  
+  
+  日記
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI%E6%87%89%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI應用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    日記
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    手札首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%89%8B%E6%9C%AD/12%E5%A4%A9%E8%A3%9C%E5%85%85%E5%85%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12天補充兵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#google-sheets-gemini" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        複製 Google Sheets 資料，直接貼給 Gemini 產生答案
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="複製 Google Sheets 資料，直接貼給 Gemini 產生答案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 客戶資料缺漏檢查
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 員工聯絡資料完整性檢查
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        請 AI 生成函數與公式，輔助整理資料
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        不知道如何下手篩選資料？把檔案交給 AI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="不知道如何下手篩選資料？把檔案交給 AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="google-sheets-ai">Google Sheets 活用術：用 AI 生成函數與公式<a class="headerlink" href="#google-sheets-ai" title="Permanent link">&para;</a></h1>
+<h2 id="google-sheets-gemini">複製 Google Sheets 資料，直接貼給 Gemini 產生答案<a class="headerlink" href="#google-sheets-gemini" title="Permanent link">&para;</a></h2>
+<p>Gemini 擅長處理文字，因此可將 Google Sheets 中的資料複製成純文字，再請 AI 整理。適合的情況包括：</p>
+<ul>
+<li><strong>資料量不大</strong>：幾十列至幾百列通常較適合；數千、數萬列不建議直接貼入聊天框。</li>
+<li><strong>欄位結構單純</strong>：每列是一筆記錄，欄位間沒有複雜關聯。</li>
+<li><strong>原有表格格式不重要</strong>：貼成純文字後，色彩、框線、欄寬及既有公式通常不會保留。</li>
+<li><strong>需求簡單明確</strong>：例如檢查每列是否漏填、替每列加註記。</li>
+</ul>
+<p>不適合的情況：</p>
+<ul>
+<li>資料量很大，可能超過聊天輸入限制或造成瀏覽器負擔。</li>
+<li>同一工作表內有多張表格，欄位間有複雜運算關係。</li>
+<li>必須保留既有公式、格式、驗證規則或合併儲存格。</li>
+<li>涉及跨表格合併、欄位比對與大量資料重組。</li>
+<li>內容包含個資、機密或不得上傳的資料。</li>
+</ul>
+<h3 id="problem">Problem. 客戶資料缺漏檢查<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h3>
+<p>任務是檢查每筆客戶資料的前四個欄位是否皆已填寫；若任一欄空白，就在欄位標示「有資料未填寫」。</p>
+<ul>
+<li>
+<p><a href="../%E5%AE%A2%E6%88%B6%E8%B3%87%E6%96%99%E7%BC%BA%E6%BC%8F%E6%AA%A2%E6%9F%A5.xlsx">檔案：客戶資料缺漏檢查.xlsx</a></p>
+</li>
+<li>
+<p>開啟 Gemini，在輸入框按 <code>Ctrl + V</code> 貼上資料。</p>
+</li>
+<li>貼上需求提示詞。</li>
+<li>送出後檢查 Gemini 是否保留欄位順序。</li>
+<li>確認缺漏資料的列是否被標註。</li>
+<li>複製 AI 整理後的表格，貼回 Google Sheets，或使用「匯出到試算表」。</li>
+</ul>
+<p><img alt="" src="../%E5%AE%A2%E6%88%B6%E8%B3%87%E6%96%99%E7%BC%BA%E6%BC%8F%E6%AA%A2%E6%9F%A5-%E9%81%BA%E6%BC%8F%E6%A0%BC.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>### 提示詞
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>這是一份試算表資料，請檢查前四個欄位是否都有輸入資料，
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>若有空白的儲存格，請在「確認結果」欄標示「有資料未填寫」。
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>### 提示詞--建議改良版
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>你是一位資料品質檢查員。以下是從 Google Sheets 複製的客戶資料。
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>欄位依序為：姓名、生日、手機號碼、地址。
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>請逐列檢查這四個欄位：
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>- 四欄皆有資料：確認結果留白。
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>- 任一欄空白：確認結果填「有資料未填寫」。
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>請保留原資料，不要更改姓名、日期、電話或地址，也不要自行補值。
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>輸出完整表格，新增最後一欄「確認結果」。
+</code></pre></div>
+<p><img alt="" src="../%E5%AE%A2%E6%88%B6%E8%B3%87%E6%96%99%E7%BC%BA%E6%BC%8F%E6%AA%A2%E6%9F%A5-%E9%81%BA%E6%BC%8F%E6%A0%BC%E8%A3%9C%E9%BD%8A.png" /></p>
+<h3 id="problem_1">Problem. 員工聯絡資料完整性檢查<a class="headerlink" href="#problem_1" title="Permanent link">&para;</a></h3>
+<p>任務是檢查每位員工的重要聯絡資料是否完整，若有缺漏，請在最後一欄標示「資料不完整」。</p>
+<ul>
+<li><a href="../%E5%93%A1%E5%B7%A5%E8%81%AF%E7%B5%A1%E8%B3%87%E6%96%99.xlsx">員工聯絡資料.xlsx</a></li>
+</ul>
+<h2 id="ai">請 AI 生成函數與公式，輔助整理資料<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../%E5%AE%A2%E6%88%B6%E8%B3%87%E6%96%99%E7%BC%BA%E6%BC%8F%E6%AA%A2%E6%9F%A5.xlsx">檔案：客戶資料缺漏檢查.xlsx</a></li>
+</ul>
+<p>這是不請AI直接填寫，而是請他寫出公式讓我們帶入。</p>
+<p>若很難用文字描述問題，可將含有欄號、列號、資料與目標欄位的截圖交給 Gemini。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>### 提示詞
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>請提供試算表的公式及函數，我想檢查 B2～E26 儲存格是否都有輸入資料。
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>如果有空白的儲存格，需要在 F2～F26 標示「有資料未填寫」。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>### 截圖提示詞
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>請分析附件中的 Google Sheets 截圖。
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>我要逐列檢查 B、C、D、E 四欄是否皆有資料，並在 F 欄顯示檢查結果。
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>請提供貼在 F2 的公式，向下填滿後要能逐列檢查。
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>請說明每個函數與範圍的作用。
+</code></pre></div>
+<h2 id="ai_1">不知道如何下手篩選資料？把檔案交給 AI<a class="headerlink" href="#ai_1" title="Permanent link">&para;</a></h2>
+<p>假設我們要將原資料中篩出各分類的最後一筆商品</p>
+<ul>
+<li>
+<p><a href="../%E4%BA%BA%E6%B0%A3%E5%AE%B6%E9%9B%BB%E5%95%86%E5%93%81%E5%96%AE%E5%83%B9%E8%A1%A8.xlsx">檔案：人氣家電商品單價表.xlsx</a></p>
+</li>
+<li>
+<p>在 Gemini 對話上傳檔案。</p>
+</li>
+<li>指定檔案名稱。</li>
+<li>描述來源工作表、資料範圍、分類欄與輸出位置。</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>### 提示詞
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>從「人氣家電商品單價表」檔案，
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>篩選出每個「分類」最底下的那一筆資料，統整在 G3 儲存格，
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>並依照 G～I 欄的格式存放。
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>### 提示詞-改良版
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>請讀取「人氣家電商品表」。
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>資料範圍是 A3:C14，欄位依序為分類、商品編號、單價。
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>請找出每個分類在原表中最後出現的一筆資料，結果包含三欄，
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>並從 G3 開始輸出到 G:I。
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>請提供：
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>1. 預期結果表格。
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>2. 可放在 G3、會自動展開的 Google Sheets 公式。
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>3. 公式逐段說明。
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>不要改動原始資料。
+</code></pre></div>
+<ul>
+<li><a href="https://gemini.google.com/app/6fad821ae54eb891">GPT：篩選各分類最後一筆商品資料</a></li>
+</ul>
+<h3 id="problem_2">Problem.<a class="headerlink" href="#problem_2" title="Permanent link">&para;</a></h3>
+<hr />
+<h1 id="2-4-ai">單元 2-4　麻煩的資料篩選與排序，交給 AI 處理<a class="headerlink" href="#2-4-ai" title="Permanent link">&para;</a></h1>
+<h2 id="2-4-1">2-4-1 原教材案例：北區、南區銷售額前五名<a class="headerlink" href="#2-4-1" title="Permanent link">&para;</a></h2>
+<p>資料範圍為 <code>A3:C33</code>，主要欄位包括公司名稱、地區、銷售額。任務是：</p>
+<ul>
+<li>篩選北區與南區。</li>
+<li>各取銷售額最高的前五筆。</li>
+<li>由大至小排序。</li>
+<li>北區結果放 <code>G3:G7</code>，南區結果放 <code>H3:H7</code>。</li>
+</ul>
+<p>原教材示例結果：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">排名</th>
+<th style="text-align: right;">北區銷售額</th>
+<th style="text-align: right;">南區銷售額</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">6,419,300</td>
+<td style="text-align: right;">5,431,200</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">6,008,400</td>
+<td style="text-align: right;">4,812,900</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5,936,200</td>
+<td style="text-align: right;">4,793,800</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5,431,500</td>
+<td style="text-align: right;">4,527,600</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5,410,600</td>
+<td style="text-align: right;">4,527,300</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-4-2">2-4-2 文字＋截圖提示法<a class="headerlink" href="#2-4-2" title="Permanent link">&para;</a></h2>
+<p>原教材建議，複雜表格很難用文字完整描述時，可附截圖，並清楚寫出來源範圍與目標儲存格。</p>
+<h3 id="_1">原教材提示詞概念<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>我有一份 Google 試算表，請從 A3:C33 資料中，
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>分別篩選出北區、南區銷售額前五名的資料並由大至小排序，填入 G3:H7。
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>G3 是北區排名第一、G4 是北區排名第二……G7 是北區排名第五；
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>H3 是南區排名第一、H4 是南區排名第二……H7 是南區排名第五。
+</code></pre></div>
+<h3 id="_2">建議完整提示詞<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>請依附件中的 Google Sheets 截圖產生公式。
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>資料範圍 A3:C33，其中 B 欄是地區、C 欄是銷售額。
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>任務：
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>- 北區銷售額前五名，由大至小，從 G3 向下輸出。
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>- 南區銷售額前五名，由大至小，從 H3 向下輸出。
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>- 忽略空白列。
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>- 若不足五筆，僅顯示現有筆數，不要補 0。
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>請分別提供 G3、H3 的 Google Sheets 公式及函數說明。
+</code></pre></div>
+<h2 id="2-4-3">2-4-3 公式<a class="headerlink" href="#2-4-3" title="Permanent link">&para;</a></h2>
+<p>北區，貼在 <code>G3</code>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>=CHOOSEROWS(SORT(FILTER(C3:C33,B3:B33=&quot;北區&quot;),1,FALSE),SEQUENCE(MIN(5,COUNTIF(B3:B33,&quot;北區&quot;))))
+</code></pre></div>
+<p>南區，貼在 <code>H3</code>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>=CHOOSEROWS(SORT(FILTER(C3:C33,B3:B33=&quot;南區&quot;),1,FALSE),SEQUENCE(MIN(5,COUNTIF(B3:B33,&quot;南區&quot;))))
+</code></pre></div>
+<h3 id="_3">函數拆解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>FILTER</code>：只留下指定地區的銷售額。</li>
+<li><code>SORT(...,1,FALSE)</code>：依第一欄降冪排序。</li>
+<li><code>SEQUENCE</code>：產生要保留的前幾筆列號。</li>
+<li><code>CHOOSEROWS</code>：取出排序後的前五列。</li>
+<li><code>MIN(5,COUNTIF(...))</code>：資料不足五筆時避免索引超出。</li>
+</ol>
+<h3 id="_4">若也要顯示公司名稱<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>=CHOOSEROWS(SORT(FILTER({A3:A33,C3:C33},B3:B33=&quot;北區&quot;),2,FALSE),SEQUENCE(MIN(5,COUNTIF(B3:B33,&quot;北區&quot;))))
+</code></pre></div>
+<h2 id="2-4-4">2-4-4 驗證方式<a class="headerlink" href="#2-4-4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>手動篩選北區，將銷售額由 Z→A 排序，核對前五筆。</li>
+<li>確認公式中的地區欄與金額欄沒有對調。</li>
+<li>檢查金額是否被當成文字；文字金額可能排序錯誤。</li>
+<li>新增一筆更高銷售額，確認動態公式是否自動更新。</li>
+</ul>
+<h2 id="2-4-5">2-4-5 練習題<a class="headerlink" href="#2-4-5" title="Permanent link">&para;</a></h2>
+<p>將公式改為：</p>
+<ol>
+<li>東區前三名。</li>
+<li>北區前五名，但同時顯示公司名稱與銷售額。</li>
+<li>銷售額最低的三筆，由小至大。</li>
+</ol>
+<h3 id="_5">參考答案方向<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>地區條件改為 <code>"東區"</code>。</li>
+<li>篩選範圍改成 <code>{A3:A33,C3:C33}</code>，排序欄改為第 2 欄。</li>
+<li><code>FALSE</code> 改為 <code>TRUE</code>，保留前三筆。</li>
+</ul>
+<hr />
+<h1 id="2-5-ai">單元 2-5　用 AI 解決跨工作表的彙總計算<a class="headerlink" href="#2-5-ai" title="Permanent link">&para;</a></h1>
+<h2 id="2-5-1">2-5-1 原教材案例<a class="headerlink" href="#2-5-1" title="Permanent link">&para;</a></h2>
+<p>銷售資料分別放在 <code>第1週</code>、<code>第2週</code>、<code>第3週</code>、<code>第4週</code>、<code>第5週</code> 工作表，每張表的 <code>E10</code> 是該週總金額。希望在 <code>統計</code> 工作表計算：</p>
+<ol>
+<li><code>B1</code>：第 1 週到第 5 週總銷售額。</li>
+<li><code>B2</code>：第 1 週到第 3 週，商品編號 <code>JAK001</code> 的總金額。</li>
+</ol>
+<h2 id="2-5-2">2-5-2 提示詞<a class="headerlink" href="#2-5-2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>@Google 雲端硬碟 我有一個「銷售資料」檔案。
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>請替 Google Sheets 產生公式：
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>1. 加總「第1週」至「第5週」每張工作表的 E10，結果放在「統計」!B1。
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>2. 加總「第1週」至「第3週」中商品編號 JAK001 的金額，
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>   每張表商品編號在 A 欄、金額在 E 欄，結果放在「統計」!B2。
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>請提供可直接貼上的公式、公式說明，以及 #REF! 時的檢查方式。
+</code></pre></div>
+<h2 id="2-5-3-e10">2-5-3 任務一：加總五張週報的 E10<a class="headerlink" href="#2-5-3-e10" title="Permanent link">&para;</a></h2>
+<h3 id="_6">穩定、容易理解的公式<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>貼在 <code>統計!B1</code>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>=&#39;第1週&#39;!E10+&#39;第2週&#39;!E10+&#39;第3週&#39;!E10+&#39;第4週&#39;!E10+&#39;第5週&#39;!E10
+</code></pre></div>
+<p>也可寫成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>=SUM(&#39;第1週&#39;!E10,&#39;第2週&#39;!E10,&#39;第3週&#39;!E10,&#39;第4週&#39;!E10,&#39;第5週&#39;!E10)
+</code></pre></div>
+<p>原教材示例計算結果為：<code>1,453,656</code>。</p>
+<h3 id="ref">為何原先可能出現 <code>#REF!</code>？<a class="headerlink" href="#ref" title="Permanent link">&para;</a></h3>
+<p>某些 AI 會產生類似：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>=SUM(&#39;第1週:第5週&#39;!E10)
+</code></pre></div>
+<p>這是 Excel 常見的 3D 參照思路，但 Google Sheets 不一定支援相同語法，因此可能出現 <code>#REF!</code>。此時應改成逐張工作表相加。</p>
+<h3 id="ref_1"><code>#REF!</code> 排錯清單<a class="headerlink" href="#ref_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>工作表名稱是否一字不差？<code>第1週</code> 與 <code>第 1 週</code> 不相同。</li>
+<li>工作表順序是否合理？不要把 <code>統計</code> 放入循環範圍。</li>
+<li>名稱含空格或特殊字元時，是否使用單引號包住？</li>
+<li>每張週表的 <code>E10</code> 是否真的是總額，且為數值格式？</li>
+<li>AI 是否使用了 Google Sheets 不支援的 Excel 語法？</li>
+</ol>
+<h2 id="2-5-4-jak001">2-5-4 任務二：跨三張工作表加總 JAK001<a class="headerlink" href="#2-5-4-jak001" title="Permanent link">&para;</a></h2>
+<h3 id="sumif">方法一：逐表 <code>SUMIF</code>，最容易教<a class="headerlink" href="#sumif" title="Permanent link">&para;</a></h3>
+<p>貼在 <code>統計!B2</code>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>=SUMIF(&#39;第1週&#39;!A:A,&quot;JAK001&quot;,&#39;第1週&#39;!E:E)+SUMIF(&#39;第2週&#39;!A:A,&quot;JAK001&quot;,&#39;第2週&#39;!E:E)+SUMIF(&#39;第3週&#39;!A:A,&quot;JAK001&quot;,&#39;第3週&#39;!E:E)
+</code></pre></div>
+<h3 id="_7">方法二：垂直合併後統計<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>=SUM(QUERY({&#39;第1週&#39;!A:E;&#39;第2週&#39;!A:E;&#39;第3週&#39;!A:E},&quot;select Col5 where Col1 = &#39;JAK001&#39;&quot;,0))
+</code></pre></div>
+<p>公式概念：</p>
+<ul>
+<li><code>{範圍1;範圍2;範圍3}</code>：把三張表垂直堆疊。</li>
+<li><code>QUERY</code>：篩選第一欄為 <code>JAK001</code> 的資料，取第五欄金額。</li>
+<li><code>SUM</code>：加總所有符合資料。</li>
+</ul>
+<h3 id="_8">教師提醒<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>「若金額不是 E 欄，<code>Col5</code> 就必須改。假設金額在 B 欄，查詢欄位應改成 <code>Col2</code>。AI 不知道真實欄位時，很容易給出語法正確但欄位錯誤的公式。」</p>
+<h2 id="2-5-5">2-5-5 課堂題目<a class="headerlink" href="#2-5-5" title="Permanent link">&para;</a></h2>
+<ol>
+<li><code>#REF!</code> 是否一定代表函數名稱錯誤？</li>
+<li>為何跨表格計算前要先確認工作表名稱？</li>
+<li><code>SUMIF</code> 與 <code>QUERY</code> 兩種方法如何選擇？</li>
+</ol>
+<h3 id="_9">參考答案<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ol>
+<li>不一定，也可能是工作表名稱、範圍或不支援的參照方式。</li>
+<li>公式引用必須完全符合名稱；空格、全形字元都可能造成錯誤。</li>
+<li>工作表少、需求簡單時 <code>SUMIF</code> 易懂；表多或還要做複雜篩選時，合併後用 <code>QUERY</code> 較有彈性。</li>
+</ol>
+<hr />
+<h1 id="_10">四、提示詞寫法總整理<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h1>
+<h2 id="_11">好提示詞的六個元素<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工具</td>
+<td>請提供 Google Sheets 公式</td>
+</tr>
+<tr>
+<td>來源</td>
+<td>資料位於 A3:C33／指定雲端檔案</td>
+</tr>
+<tr>
+<td>欄位</td>
+<td>B 欄是地區、C 欄是銷售額</td>
+</tr>
+<tr>
+<td>條件</td>
+<td>只取北區、由大至小</td>
+</tr>
+<tr>
+<td>輸出位置</td>
+<td>結果從 G3 開始</td>
+</tr>
+<tr>
+<td>驗證</td>
+<td>請解釋公式並提供測試方式</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_12">通用公式提示詞模板<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>你是一位 Google Sheets 公式顧問。
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>資料位置：
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>- 工作表：【名稱】
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>- 資料範圍：【例如 A3:E100】
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>- 欄位定義：【A 欄是……，B 欄是……】
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>我要完成：【任務】。
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>判斷／篩選條件：【條件】。
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>排序方式：【方式】。
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>結果要放在：【目標儲存格】。
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>請提供：
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>1. 可直接貼入 Google Sheets 的公式。
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>2. 每個函數與範圍的解釋。
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>3. 一組預期結果或驗證方法。
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>4. 可能出現的錯誤與修正方式。
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>若資料資訊不足，請先指出缺少什麼，不要自行假設欄位。
+</code></pre></div>
+<hr />
+<h1 id="ai_2">五、AI 公式的五步驗證法<a class="headerlink" href="#ai_2" title="Permanent link">&para;</a></h1>
+<ol>
+<li><strong>看範圍</strong>：逐列任務是否只檢查該列？</li>
+<li><strong>看欄位</strong>：條件欄、結果欄、加總欄是否正確？</li>
+<li><strong>看方向</strong>：排序是升冪還是降冪？</li>
+<li><strong>做小測試</strong>：準備一筆完整、一筆缺漏、一筆極端值。</li>
+<li><strong>改動原資料</strong>：新增或修改一筆，確認公式是否自動更新。</li>
+</ol>
+<h3 id="_13">教師收尾句<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>「AI 最擅長快速提出第一版公式；使用者最重要的工作，是定義問題與驗證結果。公式可以不知道怎麼寫，但一定要知道自己想算什麼、資料在哪裡，以及答案應該長什麼樣子。」</p>
+<hr />
+<h1 id="_14">六、綜合實作題<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h1>
+<h2 id="a">題目 A：客戶資料品質儀表<a class="headerlink" href="#a" title="Permanent link">&para;</a></h2>
+<p>建立一份含姓名、生日、電話、地址的 20 筆資料，故意留下 5 筆缺漏。要求：</p>
+<ul>
+<li>用公式逐列標示是否完整。</li>
+<li>統計完整資料與缺漏資料各有幾筆。</li>
+<li>將缺漏列篩選到另一區。</li>
+</ul>
+<h2 id="b">題目 B：區域銷售排行<a class="headerlink" href="#b" title="Permanent link">&para;</a></h2>
+<p>使用公司、地區、銷售額資料：</p>
+<ul>
+<li>找出北、南、東三區前 3 名。</li>
+<li>同時顯示公司名稱與金額。</li>
+<li>新增一筆資料後，排名自動更新。</li>
+</ul>
+<h2 id="c">題目 C：跨月份商品彙總<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
+<p>建立 1 月、2 月、3 月三張工作表：</p>
+<ul>
+<li>加總每月總額。</li>
+<li>加總指定商品三個月的金額。</li>
+<li>故意將一張表改名，觀察並修正錯誤。</li>
+</ul>
+<h2 id="100">評量規準（100 分）<a class="headerlink" href="#100" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th style="text-align: right;">配分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>提示詞清楚描述範圍、欄位與輸出位置</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr>
+<td>公式能正確運算</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr>
+<td>能解釋公式主要函數</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr>
+<td>有建立測試案例並驗證</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr>
+<td>能辨識並修正常見錯誤</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td>不洩漏個資且保留原始資料</td>
+<td style="text-align: right;">10</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="_15">七、課末快問快答<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h1>
+<ol>
+<li>
+<p><strong>逐列檢查 B～E 欄時，公式應使用 <code>B2:E2</code> 還是 <code>B2:E26</code>？</strong><br />
+   答：放在 F2 並向下填滿時應使用 <code>B2:E2</code>。</p>
+</li>
+<li>
+<p><strong>AI 公式可直接相信嗎？</strong><br />
+   答：不可。必須檢查範圍、欄位、條件並以測試資料驗證。</p>
+</li>
+<li>
+<p><strong>為什麼截圖要保留欄號與列號？</strong><br />
+   答：AI 才能準確描述公式範圍及目標儲存格。</p>
+</li>
+<li>
+<p><strong>Gemini 沒有把結果寫入 G3，是公式錯誤嗎？</strong><br />
+   答：不一定，可能只是沒有雲端檔案寫入權限；可複製結果或公式貼回試算表。</p>
+</li>
+<li>
+<p><strong>Google Sheets 出現 <code>#REF!</code> 時首先檢查什麼？</strong><br />
+   答：工作表名稱、引用範圍及公式是否用了不支援的語法。</p>
+</li>
+<li>
+<p><strong>要讓篩選結果隨原資料更新，應貼值還是貼公式？</strong><br />
+   答：貼動態公式。</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "navigation.top", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
