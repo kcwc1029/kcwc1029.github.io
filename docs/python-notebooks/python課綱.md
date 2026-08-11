@@ -18,6 +18,7 @@
 - (完成)[Qrcode](./Qrcode/README.md)
 - [海龜繪圖](./海龜繪圖/README.md)
 - [CustomTkinter](./CustomTkinter/README.md)
+- [Word_Cloud](./Word_Cloud/README.md)
 
 ## 虛擬環境
 

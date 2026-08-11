@@ -26,3 +26,15 @@
         alt="頭貼2"
         style="width:200px; height:auto; border-radius:10px;">
 </div>
+
+<!-- 兩張 -->
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <img
+        src="./自我介紹/伽碩-永康AI繪圖.jpg"
+        alt="伽碩-永康AI繪圖"
+        style="width: calc(50% - 10px); height: auto; object-fit: cover;">
+    <img
+        src="./自我介紹/伽碩-高雄python.jpg"
+        alt="伽碩-高雄python"
+        style="width: calc(50% - 10px); height: auto; object-fit: cover;">
+</div>
