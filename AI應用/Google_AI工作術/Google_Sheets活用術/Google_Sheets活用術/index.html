@@ -656,7 +656,107 @@
   <a href="#problem_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem.
+        Problem. 找出各分類第一筆商品
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 只保留單價最高的商品
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 依分類統計商品數量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 依單價由高到低排序
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        麻煩的資料篩選與排序，交給 AI 處理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="麻煩的資料篩選與排序，交給 AI 處理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        提示詞
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用 AI 解決跨工作表的彙總計算
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="用 AI 解決跨工作表的彙總計算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ref" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        排錯清單：#REF!
       
     </span>
   </a>
@@ -795,184 +895,187 @@
 <ul>
 <li><a href="https://gemini.google.com/app/6fad821ae54eb891">GPT：篩選各分類最後一筆商品資料</a></li>
 </ul>
-<h3 id="problem_2">Problem.<a class="headerlink" href="#problem_2" title="Permanent link">&para;</a></h3>
-<hr />
-<h1 id="2-4-ai">單元 2-4　麻煩的資料篩選與排序，交給 AI 處理<a class="headerlink" href="#2-4-ai" title="Permanent link">&para;</a></h1>
-<h2 id="2-4-1">2-4-1 原教材案例：北區、南區銷售額前五名<a class="headerlink" href="#2-4-1" title="Permanent link">&para;</a></h2>
-<p>資料範圍為 <code>A3:C33</code>，主要欄位包括公司名稱、地區、銷售額。任務是：</p>
+<h3 id="problem_2">Problem. 找出各分類第一筆商品<a class="headerlink" href="#problem_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>篩選北區與南區。</li>
-<li>各取銷售額最高的前五筆。</li>
-<li>由大至小排序。</li>
-<li>北區結果放 <code>G3:G7</code>，南區結果放 <code>H3:H7</code>。</li>
+<li><a href="../%E4%BA%BA%E6%B0%A3%E5%AE%B6%E9%9B%BB%E5%95%86%E5%93%81%E5%96%AE%E5%83%B9%E8%A1%A8.xlsx">檔案：人氣家電商品單價表.xlsx</a></li>
 </ul>
-<p>原教材示例結果：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;">排名</th>
-<th style="text-align: right;">北區銷售額</th>
-<th style="text-align: right;">南區銷售額</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">6,419,300</td>
-<td style="text-align: right;">5,431,200</td>
-</tr>
-<tr>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">6,008,400</td>
-<td style="text-align: right;">4,812,900</td>
-</tr>
-<tr>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">5,936,200</td>
-<td style="text-align: right;">4,793,800</td>
-</tr>
-<tr>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">5,431,500</td>
-<td style="text-align: right;">4,527,600</td>
-</tr>
-<tr>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">5,410,600</td>
-<td style="text-align: right;">4,527,300</td>
-</tr>
-</tbody>
-</table>
-<h2 id="2-4-2">2-4-2 文字＋截圖提示法<a class="headerlink" href="#2-4-2" title="Permanent link">&para;</a></h2>
-<p>原教材建議，複雜表格很難用文字完整描述時，可附截圖，並清楚寫出來源範圍與目標儲存格。</p>
-<h3 id="_1">原教材提示詞概念<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>我有一份 Google 試算表，請從 A3:C33 資料中，
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>分別篩選出北區、南區銷售額前五名的資料並由大至小排序，填入 G3:H7。
+<p>資料範圍：A3:C14，請 AI：</p>
+<ul>
+<li>找出每個「分類」第一筆商品。</li>
+<li>將結果從 G3 開始輸出。</li>
+<li>提供預期結果表格。</li>
+<li>提供可自動展開的 Google Sheets 公式。</li>
+<li>說明公式各段功能。</li>
+<li>不修改原始資料。</li>
+</ul>
+<h3 id="problem_3">Problem. 只保留單價最高的商品<a class="headerlink" href="#problem_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../%E4%BA%BA%E6%B0%A3%E5%AE%B6%E9%9B%BB%E5%95%86%E5%93%81%E5%96%AE%E5%83%B9%E8%A1%A8.xlsx">檔案：人氣家電商品單價表.xlsx</a></li>
+</ul>
+<p>資料範圍：A3:C14，請 AI：</p>
+<ul>
+<li>每個分類只保留單價最高的一筆商品。</li>
+<li>若最高單價有重複，只保留原表最先出現的一筆。</li>
+<li>將結果輸出到 G3。</li>
+<li>提供預期結果、公式與說明。</li>
+<li>不修改原始資料。</li>
+</ul>
+<h3 id="problem_4">Problem. 依分類統計商品數量<a class="headerlink" href="#problem_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../%E4%BA%BA%E6%B0%A3%E5%AE%B6%E9%9B%BB%E5%95%86%E5%93%81%E5%96%AE%E5%83%B9%E8%A1%A8.xlsx">檔案：人氣家電商品單價表.xlsx</a></li>
+</ul>
+<p>資料範圍：A3:C14，請 AI：</p>
+<ul>
+<li>統計每個分類共有幾項商品。</li>
+<li>結果包含「分類」與「商品數量」兩欄。</li>
+<li>從 G3 開始輸出。</li>
+</ul>
+<h3 id="problem_5">Problem. 依單價由高到低排序<a class="headerlink" href="#problem_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../%E4%BA%BA%E6%B0%A3%E5%AE%B6%E9%9B%BB%E5%95%86%E5%93%81%E5%96%AE%E5%83%B9%E8%A1%A8.xlsx">檔案：人氣家電商品單價表.xlsx</a></li>
+</ul>
+<p>資料範圍：A3:C14，請 AI：</p>
+<ul>
+<li>將所有商品依單價由高到低排序。</li>
+<li>若單價相同，再依商品編號排序。</li>
+<li>從 G3 開始輸出。</li>
+</ul>
+<h2 id="ai_2">麻煩的資料篩選與排序，交給 AI 處理<a class="headerlink" href="#ai_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../%E5%90%84%E5%9C%B0%E5%8D%80%E9%8A%B7%E5%94%AE%E8%A1%A8.xlsx">檔案：各地區銷售表</a></li>
+</ul>
+<p>想以「銷售額」排序，篩出北區與南區銷售額前五名資料。</p>
+<h3 id="_1">提示詞<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>### 基礎版提示詞
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>[貼上表格]
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>G3 是北區排名第一、G4 是北區排名第二……G7 是北區排名第五；
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>H3 是南區排名第一、H4 是南區排名第二……H7 是南區排名第五。
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>我有一份 Google 試算表，請從 A3:C33 資料中，
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>分別篩選出北區、南區銷售額前五名的資料並由大至小排序，填入 G3:H7。
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>G3 是北區排名第一、G4 是北區排名第二……G7 是北區排名第五；
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>H3 是南區排名第一、H4 是南區排名第二……H7 是南區排名第五。
 </code></pre></div>
-<h3 id="_2">建議完整提示詞<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>請依附件中的 Google Sheets 截圖產生公式。
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>資料範圍 A3:C33，其中 B 欄是地區、C 欄是銷售額。
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>### 進階版提示詞
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>[貼上表格]
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>任務：
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>- 北區銷售額前五名，由大至小，從 G3 向下輸出。
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>- 南區銷售額前五名，由大至小，從 H3 向下輸出。
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>- 忽略空白列。
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>- 若不足五筆，僅顯示現有筆數，不要補 0。
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>請分別提供 G3、H3 的 Google Sheets 公式及函數說明。
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>請依附件中的 Google Sheets 截圖產生公式。
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>資料範圍 A3:C33，其中 B 欄是地區、C 欄是銷售額。
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>任務：
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>- 北區銷售額前五名，由大至小，從 G3 向下輸出。
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>- 南區銷售額前五名，由大至小，從 H3 向下輸出。
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>- 忽略空白列。
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>- 若不足五筆，僅顯示現有筆數，不要補 0。
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>請分別提供 G3、H3 的 Google Sheets 公式及函數說明。
 </code></pre></div>
-<h2 id="2-4-3">2-4-3 公式<a class="headerlink" href="#2-4-3" title="Permanent link">&para;</a></h2>
-<p>北區，貼在 <code>G3</code>：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>=CHOOSEROWS(SORT(FILTER(C3:C33,B3:B33=&quot;北區&quot;),1,FALSE),SEQUENCE(MIN(5,COUNTIF(B3:B33,&quot;北區&quot;))))
-</code></pre></div>
-<p>南區，貼在 <code>H3</code>：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>=CHOOSEROWS(SORT(FILTER(C3:C33,B3:B33=&quot;南區&quot;),1,FALSE),SEQUENCE(MIN(5,COUNTIF(B3:B33,&quot;南區&quot;))))
-</code></pre></div>
-<h3 id="_3">函數拆解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<ol>
-<li><code>FILTER</code>：只留下指定地區的銷售額。</li>
-<li><code>SORT(...,1,FALSE)</code>：依第一欄降冪排序。</li>
-<li><code>SEQUENCE</code>：產生要保留的前幾筆列號。</li>
-<li><code>CHOOSEROWS</code>：取出排序後的前五列。</li>
-<li><code>MIN(5,COUNTIF(...))</code>：資料不足五筆時避免索引超出。</li>
-</ol>
-<h3 id="_4">若也要顯示公司名稱<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>=CHOOSEROWS(SORT(FILTER({A3:A33,C3:C33},B3:B33=&quot;北區&quot;),2,FALSE),SEQUENCE(MIN(5,COUNTIF(B3:B33,&quot;北區&quot;))))
-</code></pre></div>
-<h2 id="2-4-4">2-4-4 驗證方式<a class="headerlink" href="#2-4-4" title="Permanent link">&para;</a></h2>
 <ul>
-<li>手動篩選北區，將銷售額由 Z→A 排序，核對前五筆。</li>
-<li>確認公式中的地區欄與金額欄沒有對調。</li>
-<li>檢查金額是否被當成文字；文字金額可能排序錯誤。</li>
-<li>新增一筆更高銷售額，確認動態公式是否自動更新。</li>
+<li><a href="https://share.gemini.google/19o4aeCimWUG">GPT：篩選銷售額前五名數據</a></li>
 </ul>
-<h2 id="2-4-5">2-4-5 練習題<a class="headerlink" href="#2-4-5" title="Permanent link">&para;</a></h2>
-<p>將公式改為：</p>
+<h3 id="problem_6">Problem<a class="headerlink" href="#problem_6" title="Permanent link">&para;</a></h3>
+<p>將目標改為：</p>
 <ol>
 <li>東區前三名。</li>
 <li>北區前五名，但同時顯示公司名稱與銷售額。</li>
 <li>銷售額最低的三筆，由小至大。</li>
 </ol>
-<h3 id="_5">參考答案方向<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h2 id="ai_3">用 AI 解決跨工作表的彙總計算<a class="headerlink" href="#ai_3" title="Permanent link">&para;</a></h2>
 <ul>
-<li>地區條件改為 <code>"東區"</code>。</li>
-<li>篩選範圍改成 <code>{A3:A33,C3:C33}</code>，排序欄改為第 2 欄。</li>
-<li><code>FALSE</code> 改為 <code>TRUE</code>，保留前三筆。</li>
+<li><a href="../%E9%8A%B7%E5%94%AE%E8%B3%87%E6%96%99.xlsx">檔案：銷售資料.xlsx</a></li>
 </ul>
-<hr />
-<h1 id="2-5-ai">單元 2-5　用 AI 解決跨工作表的彙總計算<a class="headerlink" href="#2-5-ai" title="Permanent link">&para;</a></h1>
-<h2 id="2-5-1">2-5-1 原教材案例<a class="headerlink" href="#2-5-1" title="Permanent link">&para;</a></h2>
 <p>銷售資料分別放在 <code>第1週</code>、<code>第2週</code>、<code>第3週</code>、<code>第4週</code>、<code>第5週</code> 工作表，每張表的 <code>E10</code> 是該週總金額。希望在 <code>統計</code> 工作表計算：</p>
 <ol>
 <li><code>B1</code>：第 1 週到第 5 週總銷售額。</li>
 <li><code>B2</code>：第 1 週到第 3 週，商品編號 <code>JAK001</code> 的總金額。</li>
 </ol>
-<h2 id="2-5-2">2-5-2 提示詞<a class="headerlink" href="#2-5-2" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>@Google 雲端硬碟 我有一個「銷售資料」檔案。
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>請替 Google Sheets 產生公式：
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>1. 加總「第1週」至「第5週」每張工作表的 E10，結果放在「統計」!B1。
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>2. 加總「第1週」至「第3週」中商品編號 JAK001 的金額，
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>   每張表商品編號在 A 欄、金額在 E 欄，結果放在「統計」!B2。
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>請提供可直接貼上的公式、公式說明，以及 #REF! 時的檢查方式。
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>### 提示詞
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>[上傳銷售資料.xlsx]
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>請幫我產生公式：
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>1. 加總「第1週」至「第5週」每張工作表的 E10，結果放在「統計」!B1。
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>2. 加總「第1週」至「第3週」中商品編號 JAK001 的金額，
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>   每張表商品編號在 C 欄、金額在 E 欄，結果放在「統計」!B2。
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>請提供可直接貼上的公式、公式說明，以及 #REF! 時的檢查方式。
 </code></pre></div>
-<h2 id="2-5-3-e10">2-5-3 任務一：加總五張週報的 E10<a class="headerlink" href="#2-5-3-e10" title="Permanent link">&para;</a></h2>
-<h3 id="_6">穩定、容易理解的公式<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>貼在 <code>統計!B1</code>：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>=&#39;第1週&#39;!E10+&#39;第2週&#39;!E10+&#39;第3週&#39;!E10+&#39;第4週&#39;!E10+&#39;第5週&#39;!E10
-</code></pre></div>
-<p>也可寫成：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>=SUM(&#39;第1週&#39;!E10,&#39;第2週&#39;!E10,&#39;第3週&#39;!E10,&#39;第4週&#39;!E10,&#39;第5週&#39;!E10)
-</code></pre></div>
-<p>原教材示例計算結果為：<code>1,453,656</code>。</p>
-<h3 id="ref">為何原先可能出現 <code>#REF!</code>？<a class="headerlink" href="#ref" title="Permanent link">&para;</a></h3>
-<p>某些 AI 會產生類似：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>=SUM(&#39;第1週:第5週&#39;!E10)
-</code></pre></div>
-<p>這是 Excel 常見的 3D 參照思路，但 Google Sheets 不一定支援相同語法，因此可能出現 <code>#REF!</code>。此時應改成逐張工作表相加。</p>
-<h3 id="ref_1"><code>#REF!</code> 排錯清單<a class="headerlink" href="#ref_1" title="Permanent link">&para;</a></h3>
-<ol>
-<li>工作表名稱是否一字不差？<code>第1週</code> 與 <code>第 1 週</code> 不相同。</li>
-<li>工作表順序是否合理？不要把 <code>統計</code> 放入循環範圍。</li>
-<li>名稱含空格或特殊字元時，是否使用單引號包住？</li>
-<li>每張週表的 <code>E10</code> 是否真的是總額，且為數值格式？</li>
-<li>AI 是否使用了 Google Sheets 不支援的 Excel 語法？</li>
-</ol>
-<h2 id="2-5-4-jak001">2-5-4 任務二：跨三張工作表加總 JAK001<a class="headerlink" href="#2-5-4-jak001" title="Permanent link">&para;</a></h2>
-<h3 id="sumif">方法一：逐表 <code>SUMIF</code>，最容易教<a class="headerlink" href="#sumif" title="Permanent link">&para;</a></h3>
-<p>貼在 <code>統計!B2</code>：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>=SUMIF(&#39;第1週&#39;!A:A,&quot;JAK001&quot;,&#39;第1週&#39;!E:E)+SUMIF(&#39;第2週&#39;!A:A,&quot;JAK001&quot;,&#39;第2週&#39;!E:E)+SUMIF(&#39;第3週&#39;!A:A,&quot;JAK001&quot;,&#39;第3週&#39;!E:E)
-</code></pre></div>
-<h3 id="_7">方法二：垂直合併後統計<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>=SUM(QUERY({&#39;第1週&#39;!A:E;&#39;第2週&#39;!A:E;&#39;第3週&#39;!A:E},&quot;select Col5 where Col1 = &#39;JAK001&#39;&quot;,0))
-</code></pre></div>
-<p>公式概念：</p>
 <ul>
-<li><code>{範圍1;範圍2;範圍3}</code>：把三張表垂直堆疊。</li>
-<li><code>QUERY</code>：篩選第一欄為 <code>JAK001</code> 的資料，取第五欄金額。</li>
-<li><code>SUM</code>：加總所有符合資料。</li>
+<li><a href="https://share.gemini.google/Esctz5RyimtJ">GPT：Excel 公式與錯誤排除</a></li>
 </ul>
-<h3 id="_8">教師提醒<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>「若金額不是 E 欄，<code>Col5</code> 就必須改。假設金額在 B 欄，查詢欄位應改成 <code>Col2</code>。AI 不知道真實欄位時，很容易給出語法正確但欄位錯誤的公式。」</p>
-<h2 id="2-5-5">2-5-5 課堂題目<a class="headerlink" href="#2-5-5" title="Permanent link">&para;</a></h2>
-<ol>
-<li><code>#REF!</code> 是否一定代表函數名稱錯誤？</li>
-<li>為何跨表格計算前要先確認工作表名稱？</li>
-<li><code>SUMIF</code> 與 <code>QUERY</code> 兩種方法如何選擇？</li>
-</ol>
-<h3 id="_9">參考答案<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<ol>
-<li>不一定，也可能是工作表名稱、範圍或不支援的參照方式。</li>
-<li>公式引用必須完全符合名稱；空格、全形字元都可能造成錯誤。</li>
-<li>工作表少、需求簡單時 <code>SUMIF</code> 易懂；表多或還要做複雜篩選時，合併後用 <code>QUERY</code> 較有彈性。</li>
-</ol>
-<hr />
-<h1 id="_10">四、提示詞寫法總整理<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h1>
-<h2 id="_11">好提示詞的六個元素<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="ref">排錯清單：#REF!<a class="headerlink" href="#ref" title="Permanent link">&para;</a></h3>
+<h1 id="ref-reference-error-excel">REF! 是 Reference Error（參照錯誤） 的縮寫。這代表 Excel 找不到公式中所引用的儲存格或工作表。<a class="headerlink" href="#ref-reference-error-excel" title="Permanent link">&para;</a></h1>
+<p>常見原因：</p>
+<ul>
+<li>刪除了儲存格、欄或列： 公式原本參照了 A1，但你把整個 A 欄刪除，公式就會變成 =#REF!。</li>
+<li>複製貼上位置超出範圍： 例如公式寫 =A1（參照左邊第一欄），如果把這個公式複製並貼到最左側的 A 欄，因為它的「左邊」已經沒有欄位了，就會出現 #REF!。</li>
+<li>參照的工作表被刪除： 公式引用了 Sheet2!A1，但 Sheet2 被直接刪除了。</li>
+<li>VLOOKUP 或 INDEX 範圍設定錯誤： 例如 VLOOKUP(A1, B:D, 5, FALSE)，搜尋範圍只有 3 欄（B、C、D），卻要求回傳第 5 欄，就會報錯。</li>
+</ul>
+<h3 id="-">排錯清單：-<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
+<p>在 Excel 中看到短橫線 -，通常不是錯誤，而是以下幾種情況：</p>
+<p>常見原因：</p>
+<ul>
+<li>數值格式使用了「會計專用」或「貨幣」格式：</li>
+<li>當儲存格的值為 0 時，若設定為「會計專用 (Accounting)」格式，Excel 會自動將 0 顯示為破折號 -（這是會計記帳上的習慣，方便一眼看出該欄沒有金額，避免與真正的數據混淆）。</li>
+<li>公式計算結果剛好等於 0： 例如 =A1-B1，若兩數相等，結果為 0，在特定格式下就會顯示為 -。</li>
+<li>文字格式的減號： 直接手動輸入了 -，或者公式中加了引號 "-"（例如使用 IF 公式設定當條件不符合時顯示 "-"）。</li>
+</ul>
+<h3 id="problem_7">Problem. 計算指定商品跨週總金額<a class="headerlink" href="#problem_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../%E9%8A%B7%E5%94%AE%E8%B3%87%E6%96%99.xlsx">檔案：銷售資料.xlsx</a></li>
+</ul>
+<p>請 AI：</p>
+<ul>
+<li>計算商品編號 VC-003 在第 2 週到第 5 週的總金額。</li>
+<li>結果放在 統計!B2。</li>
+<li>提供 Excel 公式。</li>
+<li>說明公式。</li>
+</ul>
+<h3 id="problem_8">Problem. 統計商品出現次數<a class="headerlink" href="#problem_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../%E9%8A%B7%E5%94%AE%E8%B3%87%E6%96%99.xlsx">檔案：銷售資料.xlsx</a></li>
+</ul>
+<p>請 AI：</p>
+<ul>
+<li>計算商品 AC-001 一共出現幾次。</li>
+<li>結果放在 統計!B3。</li>
+<li>提供 Excel 公式。</li>
+<li>說明公式。</li>
+</ul>
+<h3 id="problem_9">Problem. 找出最高銷售金額<a class="headerlink" href="#problem_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../%E9%8A%B7%E5%94%AE%E8%B3%87%E6%96%99.xlsx">檔案：銷售資料.xlsx</a></li>
+</ul>
+<p>請 AI：</p>
+<ul>
+<li>找出所有工作表中最高的一筆金額。</li>
+<li>將結果放在 統計!B4。</li>
+<li>提供 Excel 公式。</li>
+<li>說明公式。</li>
+</ul>
+<h3 id="problem_10">Problem. 計算各週平均銷售額<a class="headerlink" href="#problem_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../%E9%8A%B7%E5%94%AE%E8%B3%87%E6%96%99.xlsx">檔案：銷售資料.xlsx</a></li>
+</ul>
+<p>請 AI：</p>
+<ul>
+<li>計算五週平均總銷售額。</li>
+<li>結果放在 統計!B5。</li>
+<li>提供 Excel 公式。</li>
+<li>說明公式。</li>
+</ul>
+<h3 id="problem_11">Problem. 計算指定分類總金額<a class="headerlink" href="#problem_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../%E9%8A%B7%E5%94%AE%E8%B3%87%E6%96%99.xlsx">檔案：銷售資料.xlsx</a></li>
+</ul>
+<p>請 AI：</p>
+<ul>
+<li>加總所有工作表中「冷氣機」的總銷售金額。</li>
+<li>結果放在 統計!B6。</li>
+<li>提供 Excel 公式。</li>
+<li>說明公式。</li>
+</ul>
+<h2 id="_2">提示詞寫法總整理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">好提示詞的六個元素<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1007,124 +1110,27 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_12">通用公式提示詞模板<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>你是一位 Google Sheets 公式顧問。
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>資料位置：
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>- 工作表：【名稱】
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>- 資料範圍：【例如 A3:E100】
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>- 欄位定義：【A 欄是……，B 欄是……】
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>我要完成：【任務】。
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>判斷／篩選條件：【條件】。
-<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>排序方式：【方式】。
-<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>結果要放在：【目標儲存格】。
-<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
-<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>請提供：
-<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>1. 可直接貼入 Google Sheets 的公式。
-<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>2. 每個函數與範圍的解釋。
-<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>3. 一組預期結果或驗證方法。
-<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>4. 可能出現的錯誤與修正方式。
-<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>
-<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>若資料資訊不足，請先指出缺少什麼，不要自行假設欄位。
+<h3 id="_4">通用公式提示詞模板<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>你是一位 Google Sheets 公式顧問。
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>資料位置：
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>- 工作表：【名稱】
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>- 資料範圍：【例如 A3:E100】
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>- 欄位定義：【A 欄是……，B 欄是……】
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>我要完成：【任務】。
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>判斷／篩選條件：【條件】。
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>排序方式：【方式】。
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>結果要放在：【目標儲存格】。
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>請提供：
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>1. 可直接貼入 Google Sheets 的公式。
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>2. 每個函數與範圍的解釋。
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>3. 一組預期結果或驗證方法。
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>4. 可能出現的錯誤與修正方式。
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>若資料資訊不足，請先指出缺少什麼，不要自行假設欄位。
 </code></pre></div>
-<hr />
-<h1 id="ai_2">五、AI 公式的五步驗證法<a class="headerlink" href="#ai_2" title="Permanent link">&para;</a></h1>
-<ol>
-<li><strong>看範圍</strong>：逐列任務是否只檢查該列？</li>
-<li><strong>看欄位</strong>：條件欄、結果欄、加總欄是否正確？</li>
-<li><strong>看方向</strong>：排序是升冪還是降冪？</li>
-<li><strong>做小測試</strong>：準備一筆完整、一筆缺漏、一筆極端值。</li>
-<li><strong>改動原資料</strong>：新增或修改一筆，確認公式是否自動更新。</li>
-</ol>
-<h3 id="_13">教師收尾句<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<p>「AI 最擅長快速提出第一版公式；使用者最重要的工作，是定義問題與驗證結果。公式可以不知道怎麼寫，但一定要知道自己想算什麼、資料在哪裡，以及答案應該長什麼樣子。」</p>
-<hr />
-<h1 id="_14">六、綜合實作題<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h1>
-<h2 id="a">題目 A：客戶資料品質儀表<a class="headerlink" href="#a" title="Permanent link">&para;</a></h2>
-<p>建立一份含姓名、生日、電話、地址的 20 筆資料，故意留下 5 筆缺漏。要求：</p>
-<ul>
-<li>用公式逐列標示是否完整。</li>
-<li>統計完整資料與缺漏資料各有幾筆。</li>
-<li>將缺漏列篩選到另一區。</li>
-</ul>
-<h2 id="b">題目 B：區域銷售排行<a class="headerlink" href="#b" title="Permanent link">&para;</a></h2>
-<p>使用公司、地區、銷售額資料：</p>
-<ul>
-<li>找出北、南、東三區前 3 名。</li>
-<li>同時顯示公司名稱與金額。</li>
-<li>新增一筆資料後，排名自動更新。</li>
-</ul>
-<h2 id="c">題目 C：跨月份商品彙總<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
-<p>建立 1 月、2 月、3 月三張工作表：</p>
-<ul>
-<li>加總每月總額。</li>
-<li>加總指定商品三個月的金額。</li>
-<li>故意將一張表改名，觀察並修正錯誤。</li>
-</ul>
-<h2 id="100">評量規準（100 分）<a class="headerlink" href="#100" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>項目</th>
-<th style="text-align: right;">配分</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>提示詞清楚描述範圍、欄位與輸出位置</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr>
-<td>公式能正確運算</td>
-<td style="text-align: right;">25</td>
-</tr>
-<tr>
-<td>能解釋公式主要函數</td>
-<td style="text-align: right;">15</td>
-</tr>
-<tr>
-<td>有建立測試案例並驗證</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr>
-<td>能辨識並修正常見錯誤</td>
-<td style="text-align: right;">10</td>
-</tr>
-<tr>
-<td>不洩漏個資且保留原始資料</td>
-<td style="text-align: right;">10</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h1 id="_15">七、課末快問快答<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h1>
-<ol>
-<li>
-<p><strong>逐列檢查 B～E 欄時，公式應使用 <code>B2:E2</code> 還是 <code>B2:E26</code>？</strong><br />
-   答：放在 F2 並向下填滿時應使用 <code>B2:E2</code>。</p>
-</li>
-<li>
-<p><strong>AI 公式可直接相信嗎？</strong><br />
-   答：不可。必須檢查範圍、欄位、條件並以測試資料驗證。</p>
-</li>
-<li>
-<p><strong>為什麼截圖要保留欄號與列號？</strong><br />
-   答：AI 才能準確描述公式範圍及目標儲存格。</p>
-</li>
-<li>
-<p><strong>Gemini 沒有把結果寫入 G3，是公式錯誤嗎？</strong><br />
-   答：不一定，可能只是沒有雲端檔案寫入權限；可複製結果或公式貼回試算表。</p>
-</li>
-<li>
-<p><strong>Google Sheets 出現 <code>#REF!</code> 時首先檢查什麼？</strong><br />
-   答：工作表名稱、引用範圍及公式是否用了不支援的語法。</p>
-</li>
-<li>
-<p><strong>要讓篩選結果隨原資料更新，應貼值還是貼公式？</strong><br />
-   答：貼動態公式。</p>
-</li>
-</ol>
 
 
 

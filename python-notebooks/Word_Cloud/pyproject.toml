@@ -1,0 +1,10 @@
+[project]
+name = "word-cloud"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "jieba>=0.42.1",
+    "wordcloud>=1.9.6",
+]
