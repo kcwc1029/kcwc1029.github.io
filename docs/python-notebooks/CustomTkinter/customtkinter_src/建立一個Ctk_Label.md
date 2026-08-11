@@ -1,3 +1,4 @@
+```py
 import customtkinter as ctk
 
 app = ctk.CTk() # 建立一個視窗的原件
@@ -16,3 +17,4 @@ my_label = ctk.CTkLabel(app, text=text) # 建立一個標籤元件
 my_label.pack()  # 放在 app（主視窗）裡面
 
 app.mainloop()
+```

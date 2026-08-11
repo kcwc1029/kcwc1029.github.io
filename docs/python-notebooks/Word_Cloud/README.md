@@ -1,6 +1,7 @@
 # Word_Cloud
 
-==專案下載：https://github.com/kcwc1029/kcwc1029.github.io/tree/main/docs/python-notebooks/Gmail==
+- 專案下載：https://github.com/kcwc1029/kcwc1029.github.io/tree/main/docs/python-notebooks/Word_Cloud
+- [DownGit]：https://downgit.github.io/#/home
 
 想像你讀了一本很厚的書，或是看了一萬則網路留言。如果要把這些文字變成一張圖，該怎麼做？
 
