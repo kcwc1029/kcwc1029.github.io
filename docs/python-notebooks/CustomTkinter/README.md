@@ -3,7 +3,7 @@
 ## 為什麼要學 GUI？
 
 - 專案下載：https://github.com/kcwc1029/kcwc1029.github.io/tree/main/docs/python-notebooks/Word_Cloud
-- [DownGit]：https://downgit.github.io/#/home
+- DownGit：https://downgit.github.io/#/home
 
 你到目前為止寫的 Python 程式，執行結果都是出現在黑色的終端機視窗裡，對嗎？
 
