@@ -1,0 +1,1100 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、AI筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/AI%E6%87%89%E7%94%A8/Google_AI%E5%B7%A5%E4%BD%9C%E8%A1%93/AI%E5%A4%9A%E8%AA%9E%E7%B3%BB%E7%BF%BB%E8%AD%AF%E8%A1%93/AI%E5%A4%9A%E8%AA%9E%E7%B3%BB%E7%BF%BB%E8%AD%AF%E8%A1%93/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>AI多語系翻譯術 - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI多語系翻譯術
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../AI%E6%87%89%E7%94%A8/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI應用
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+          
+  
+  
+  日記
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI%E6%87%89%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI應用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    日記
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    手札首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%89%8B%E6%9C%AD/12%E5%A4%A9%E8%A3%9C%E5%85%85%E5%85%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12天補充兵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        提升 AI 翻譯品質的技巧
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="提升 AI 翻譯品質的技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canvas-aeropure-x1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        範例：使用 Canvas 翻譯長文：AeroPure X1 行銷文案
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        範例：使用 Canvas 翻譯長文：專業領域翻譯
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用 Gem 打造客製化的翻譯機器人
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        案例：中日翻譯達人
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="案例：中日翻譯達人">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gem_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分享 Gem 的安全觀念
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pdfppt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDF、PPT 整份檔案翻譯
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PDF、PPT 整份檔案翻譯">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        範例：Google 翻譯文件模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ai">AI多語系翻譯術<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h1>
+<p>很多人以為翻譯就是「把 A 語言換成 B 語言」。如果每個詞都只有一個固定答案，查字典就夠了；真正困難的是同一句話放在不同情境，意思會改變。</p>
+<p>例如英文 <code>break a leg</code> 若逐字翻譯會變成「打斷一條腿」，但在表演前，它其實是在祝福對方「演出成功」。這表示高品質翻譯至少要同時處理：</p>
+<ul>
+<li>字面意思：每個詞表面上是什麼。</li>
+<li>上下文：前後文正在談什麼。</li>
+<li>使用情境：這是廣告、合約、聊天還是學術文章？</li>
+<li>目標讀者：譯文要給消費者、主管、學生還是專業人士？</li>
+<li>語氣與文化：要口語、正式、活潑，還是符合台灣慣用語？</li>
+<li>專有名詞：HEPA、PM2.5、TVOCs 等是否應保留原文？</li>
+</ul>
+<h2 id="ai_1">提升 AI 翻譯品質的技巧<a class="headerlink" href="#ai_1" title="Permanent link">&para;</a></h2>
+<p>請先把 <code>break a leg</code> 單獨交給一般翻譯，再補上情境：「演員上台前，朋友對他說 break a leg。」比較兩次結果。</p>
+<p><img alt="" src="../break%20a%20leg%20中文翻譯.png" /></p>
+<h3 id="problem">Problem.<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h3>
+<p>請學生說明下列句子不能只逐字翻譯的原因：</p>
+<ol>
+<li><code>It's raining cats and dogs.</code></li>
+<li><code>I'll take a rain check.</code></li>
+<li><code>You nailed it.</code></li>
+<li><code>這個價格很硬。</code></li>
+</ol>
+<h3 id="canvas-aeropure-x1">範例：使用 Canvas 翻譯長文：AeroPure X1 行銷文案<a class="headerlink" href="#canvas-aeropure-x1" title="Permanent link">&para;</a></h3>
+<p>Canvas 適合長文反覆編輯。一般流程是：在 Gemini 新對話選「工具」→「Canvas」，輸入需求與原文，生成後在右側文件區編輯。也可以選取局部文字，再要求改寫、縮短或變更語氣。介面名稱若不同，找「建立文件／Canvas／畫布」等相近入口。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>The AeroPure X1 is designed for modern living, delivering powerful air purification with intelligent control, all wrapped in a quiet, minimalist design.
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Built for medium to large spaces, AeroPure X1 combines a HEPA 13 triple-layer filtration system with real-time air quality monitoring to remove fine particles, odors, and harmful pollutants efficiently. Whether it’s PM2.5, TVOCs, or everyday allergens, X1 works silently in the background to keep your air fresh and balanced.
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>With the MistPeak Home App, you stay in control wherever you are. Monitor air quality, schedule operation times, switch modes, or update its firmware remotely—effortlessly. Voice assistant support and OTA updates ensure your purifier keeps getting smarter over time.
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>From peaceful nights in ultra-quiet sleep mode to powerful purification during busy hours, AeroPure X1 adapts to your lifestyle, not the other way around.
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>### 翻譯提示詞
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>下面內容為新產品的行銷文案，需要使用適當的行銷術語，並避免直譯。
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>請將以下內容翻譯成繁體中文：
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>【貼上翻譯內容或夾檔】
+</code></pre></div>
+<p><img alt="" src="../gemini%E7%BF%BB%E8%AD%AF.png" /></p>
+<h3 id="canvas">範例：使用 Canvas 翻譯長文：專業領域翻譯<a class="headerlink" href="#canvas" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>In today&#39;s global economy, companies must carefully manage their financial resources while responding to changing market conditions. Financial management is not simply about making a profit; it also involves controlling cash flow, managing risk, evaluating investments, and maintaining a healthy balance sheet.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Consider a manufacturing company that plans to expand its business by building a new factory. Before making the investment, the management team must estimate the capital expenditure and calculate the expected return on investment (ROI). They may also analyze the net present value (NPV) of the project and consider interest rates, inflation, and future economic growth. If borrowing costs are high, the company may decide to postpone the project or seek alternative sources of financing.
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Accounting information plays an important role in this decision. The income statement shows the company&#39;s revenue, operating expenses, and net income during a specific period. Meanwhile, the balance sheet provides information about assets, liabilities, and shareholders&#39; equity. The cash flow statement helps managers understand how much cash is generated from operating, investing, and financing activities. A company can report a positive net income but still experience a cash flow problem if customers delay their payments.
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Financial ratios also help investors evaluate a company&#39;s performance. For example, the current ratio measures short-term liquidity, while the debt-to-equity ratio indicates how heavily a company relies on debt financing. Investors may also examine earnings per share (EPS), return on equity (ROE), gross profit margin, and operating margin before deciding whether to purchase the company&#39;s stock.
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>However, company performance is also affected by the broader economy. During a period of economic expansion, consumer spending and business investment usually increase, creating stronger demand for goods and services. In contrast, during a recession, unemployment may rise and consumer confidence may decline. Central banks may respond by lowering interest rates to stimulate borrowing and investment. If inflation becomes too high, they may raise interest rates to reduce demand and stabilize prices.
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>Exchange rates are another important factor for international businesses. If a domestic currency appreciates, imported materials may become cheaper, but exported products may become more expensive for foreign customers. Companies therefore use financial instruments such as futures, options, and forward contracts to hedge against foreign exchange risk.
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>Ultimately, successful financial management requires companies to connect accounting data with financial analysis and economic conditions. Managers cannot rely on revenue or profit alone. They must understand liquidity, debt, investment risk, market trends, inflation, interest rates, and opportunity cost. By combining these perspectives, businesses can make better decisions, allocate resources efficiently, and create sustainable long-term value for shareholders.
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>請將以下內容翻譯成繁體中文：
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>注意所使用的金融、會計、經濟等專有名詞。
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>【貼上翻譯內容或夾檔】
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>### 局部修改指令
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>覺得有點生硬，請潤飾一下。
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>請讓文字更加輕鬆活潑，並加入 7 個適合的表情符號。
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>只改寫我選取的段落，其他內容、標題與專有名詞完全不要更動。
+</code></pre></div>
+<h2 id="gem">用 Gem 打造客製化的翻譯機器人<a class="headerlink" href="#gem" title="Permanent link">&para;</a></h2>
+<p>如果每天都要重複輸入「請用台灣繁體中文、保留術語、附詞彙表」，就適合把規則做成 Gem。</p>
+<p>Gem 可以理解成「已經先接受工作訓練的專屬助理」。一般建立流程：</p>
+<!-- 兩張 -->
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <img
+        src="./gemini中日gem1.png"
+        alt="gemini中日gem1"
+        style="width: calc(50% - 10px); height: auto; object-fit: cover;">
+    <img
+        src="./gemini中日gem2.png"
+        alt="gemini中日gem2"
+        style="width: calc(50% - 10px); height: auto; object-fit: cover;">
+</div>
+
+<h2 id="_1">案例：中日翻譯達人<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../gemini%E4%B8%AD%E6%97%A5gem3.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>### 名稱
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>中日翻譯達人
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>### 說明
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>專業的中日雙向翻譯助手，支援繁體中文與日文互譯。能依照日常對話、旅遊、商務、Email、社群訊息等情境，自動調整語氣與用詞，避免生硬直譯，產出自然、符合母語習慣的翻譯。
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>### 使用說明
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>你是一位專業的「繁體中文 ↔ 日文」雙向翻譯專家。
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>你的任務是將使用者輸入的內容翻譯成自然、正確、符合母語使用習慣的繁體中文或日文。
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>翻譯規則
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>使用者輸入繁體中文時，預設翻譯成日文。
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>使用者輸入日文時，預設翻譯成繁體中文。
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>不要逐字硬翻，優先保留原文真正想表達的意思、語氣與情緒。
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>日文翻譯應符合日本人的自然表達方式，避免中文語序直接套入日文。
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>中文翻譯一律使用台灣繁體中文常用語，不使用中國大陸用語。
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>遇到敬語時，正確判斷「尊敬語、謙讓語、丁寧語」，不要過度使用敬語。
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>根據情境自動調整語氣，例如：
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>朋友聊天：自然、口語
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>旅遊溝通：簡單、清楚、有禮貌
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>商務場合：正式、專業
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>Email：符合日本商務書信習慣
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>社群或 LINE：自然、不過度正式
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>人名、地名、品牌、公司名稱等專有名詞，若無法確定正式譯名，保留原文，不要自行創造翻譯。
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>遇到具有多種意思、可能造成誤解的句子，簡短說明差異。
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>除非使用者要求詳細解釋，否則不要加入冗長的文法教學。
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>輸出方式
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>一般翻譯時：
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>【翻譯】
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>翻譯結果
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>【自然說法】
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>提供更符合母語者習慣的版本。
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>如果兩者已經相同，可以省略「自然說法」。
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>如果使用者要求「正式一點」、「口語一點」、「對長輩說」、「對客戶說」、「朋友之間」等語氣，直接依照指定情境翻譯。
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>如果使用者只貼上一句話，不需要詢問要翻成什麼語言，自動判斷原文語言並翻譯成另一種語言。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>### 測試 Gem
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>今（15）日晚間7點30分，台灣東部海域發生芮氏規模5.2有感地震，震央位在北緯24.5度，東經122.22度，即在宜蘭縣政府東南東方52.8公里處。本次地震深度66.6公里。
+</code></pre></div>
+<p><img alt="" src="../gem%E7%BF%BB%E8%AD%AF1.png" /></p>
+<h3 id="gem_1">分享 Gem 的安全觀念<a class="headerlink" href="#gem_1" title="Permanent link">&para;</a></h3>
+<p>分享前先知道：能存取 Gem 的人可能看到 Gem 指令與附加檔案；擁有編輯權的人還能修改甚至刪除內容。因此：</p>
+<ul>
+<li>不放個資、商業機密、授權不明的全文資料。</li>
+<li>教學用 Gem 只放自製術語表與公開範例。</li>
+<li>分享時依需求設定「檢視者」或「編輯者」。</li>
+<li>發出連結前，先用另一個帳號測試權限。</li>
+</ul>
+<h2 id="pdfppt">PDF、PPT 整份檔案翻譯<a class="headerlink" href="#pdfppt" title="Permanent link">&para;</a></h2>
+<h3 id="google">範例：Google 翻譯文件模式<a class="headerlink" href="#google" title="Permanent link">&para;</a></h3>
+<p>官方文件模式可處理 <code>.docx</code>、<code>.pdf</code>、<code>.pptx</code>、<code>.xlsx</code>。目前官方說明的上限為檔案 10 MB、PDF 300 頁；圖片或掃描 PDF 中找到的文字不會直接翻譯。小螢幕／手機也可能沒有完整文件翻譯功能。</p>
+<p><img alt="" src="../google%E7%BF%BB%E8%AD%AF.png" /></p>
+<ul>
+<li><a href="../A%2BStem-Cell-Centric%2BMulti-Counter%2BTheory%2Bof%2BOrganismal%2BAging.pdf">範例文件：A+Stem-Cell-Centric+Multi-Counter+Theory+of+Organismal+Aging</a></li>
+</ul>
+<h1 id="6-4">單元 6-4　行動翻譯：即時口譯與雙向對談<a class="headerlink" href="#6-4" title="Permanent link">&para;</a></h1>
+<h2 id="6-4-1-google-app">6-4-1 Google 翻譯 App 的基本區域<a class="headerlink" href="#6-4-1-google-app" title="Permanent link">&para;</a></h2>
+<p>從官方 Play 商店或 App Store 下載並核對開發者。常見功能包括：</p>
+<ul>
+<li>原文與譯文語言切換。</li>
+<li>文字、麥克風、手寫輸入。</li>
+<li>即時對話翻譯。</li>
+<li>相機／照片翻譯。</li>
+<li>歷史記錄與已儲存詞彙。</li>
+<li>部分帳號或地區可見的練習／語言學習功能。</li>
+</ul>
+<p>不要要求所有學生畫面完全相同；平台、地區、帳號與版本都可能影響功能。</p>
+<h2 id="6-4-2">6-4-2 原教材案例：中文與日文即時對話<a class="headerlink" href="#6-4-2" title="Permanent link">&para;</a></h2>
+<ol>
+<li>原文選繁體中文，譯文選日文。</li>
+<li>開啟「對話」。</li>
+<li>智慧偵測模式會嘗試判斷誰在說哪種語言；若一直辨識錯，可關閉自動判斷，改由雙方各按自己的麥克風。</li>
+<li>畫面會同步顯示原文與譯文，可按喇叭播放。</li>
+<li>視需要使用面對面分割畫面，讓對方更容易閱讀。</li>
+<li>可在設定中調整自動播放譯文等選項。</li>
+</ol>
+<h3 id="_2">角色扮演腳本<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>甲（旅客）：請問到橫濱車站怎麼走？<br />
+乙（站務員）：沿著這條路直走，到前面的十字路口左轉，再走約五分鐘。<br />
+甲：需要買新的車票嗎？<br />
+乙：不用，原本的交通卡可以使用。</p>
+<h3 id="_3">觀察重點<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>地名是否聽錯？</li>
+<li>「左轉／右轉」是否正確？</li>
+<li>數字與時間是否正確？</li>
+<li>環境噪音是否讓辨識變差？</li>
+</ul>
+<h3 id="_4">安全規則<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>涉及醫療、法律、移民、金錢交易或緊急狀況時，App 只能協助溝通，不應取代合格口譯員或專業意見。關鍵句應重述、打字確認，必要時請真人協助。</p>
+<hr />
+<h1 id="6-5-gemini-live">單元 6-5　對照紙本邊翻譯、邊提問：Gemini Live<a class="headerlink" href="#6-5-gemini-live" title="Permanent link">&para;</a></h1>
+<h2 id="6-5-1-live">6-5-1 語音輸入與 Live 有什麼不同？<a class="headerlink" href="#6-5-1-live" title="Permanent link">&para;</a></h2>
+<ul>
+<li>語音輸入：把聲音轉成文字，送出後以一般文字回答。</li>
+<li>Gemini Live：進入連續的即時語音對談，可插話、追問、暫停，並可能搭配鏡頭或螢幕分享。</li>
+</ul>
+<p>安裝 Gemini App 時要核對官方開發者並登入 Google 帳號。常見入口包括文字輸入、附件、語音與 Live；實際圖示會隨版本調整。</p>
+<h2 id="6-5-2-live">6-5-2 開啟 Live<a class="headerlink" href="#6-5-2-live" title="Permanent link">&para;</a></h2>
+<ol>
+<li>點 Live 圖示。</li>
+<li>第一次使用時閱讀介紹與使用條款。</li>
+<li>選擇偏好的聲音；可用數量會隨版本改變，不要把教材截圖中的數量當成固定規格。</li>
+<li>開始對話。</li>
+<li>依需求開啟鏡頭、分享螢幕、暫停或結束。</li>
+<li>若支援文字顯示，可打開字幕／逐字內容輔助確認。</li>
+</ol>
+<h2 id="6-5-3">6-5-3 原教材案例一：鏡頭對準紙本<a class="headerlink" href="#6-5-3" title="Permanent link">&para;</a></h2>
+<p>先用文字或語音交代工作：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>你是我的日中翻譯助理。接下來我會把鏡頭對準紙本日文。
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>請先逐段辨識，再翻成台灣繁體中文；看不清楚的字請說「無法辨識」，不要猜。
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>每次只處理我指定的段落，並保留人名、書名與數字。
+</code></pre></div>
+<p>接著開鏡頭，說：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>請翻譯畫面中央，從「Lesson 7-1」開始到下一個小標題之前。
+</code></pre></div>
+<p>可追問：</p>
+<ul>
+<li>「第二句的主詞是誰？」</li>
+<li>「這裡的專有名詞請保留日文並加中文括號。」</li>
+<li>「請用一句話說明這段重點。」</li>
+</ul>
+<p>鏡頭要穩、光線要足、紙張不要反光。若辨識不穩，先拍清楚照片或改用文字輸入。</p>
+<h2 id="6-5-4">6-5-4 原教材案例二：分享螢幕翻譯<a class="headerlink" href="#6-5-4" title="Permanent link">&para;</a></h2>
+<ol>
+<li>在 Live 中點螢幕分享。</li>
+<li>確認分享提示；系統可能分享整個畫面。</li>
+<li>切到文件、網頁或 PDF。</li>
+<li>指定範圍，例如：「翻譯第 2 段，不要翻頁首頁尾。」</li>
+<li>完成後停止分享。</li>
+</ol>
+<h3 id="_5">高風險提醒<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>開始前關閉通知、郵件預覽與聊天浮窗；不要顯示密碼、驗證碼、銀行資料、病歷與私人照片。若現場有他人，錄音、錄影或拍攝前要先取得同意。</p>
+<h2 id="6-5-5-live">6-5-5 Live 課堂實作<a class="headerlink" href="#6-5-5-live" title="Permanent link">&para;</a></h2>
+<p>兩人一組：A 拿 <code>09_日本車站公告.jpg</code> 或紙本，B 操作 Live。</p>
+<ol>
+<li>B 先建立翻譯規則。</li>
+<li>A 指定一段翻譯。</li>
+<li>A 故意問一個畫面看不到的問題。</li>
+<li>觀察 AI 是否誠實說不知道，或自行猜測。</li>
+<li>交換角色。</li>
+</ol>
+<h3 id="_6">討論題<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>「即時」會讓人更容易相信 AI。速度快是否等於可信度高？你會如何設計確認步驟？</p>
+<hr />
+<h1 id="_7">綜合實作：建立一套可重複使用的翻譯工作流<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
+<h2 id="_8">專案情境<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>你是校園國際活動小組，要把一份英文活動說明做成：</p>
+<ol>
+<li>台灣繁體中文版。</li>
+<li>日文訪客版。</li>
+<li>雙語 PDF。</li>
+<li>現場手機即時口譯流程。</li>
+</ol>
+<h2 id="_9">建議流程<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>確認用途與受眾
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>→ 建立術語表
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>→ AI 產生第一版
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>→ 數字與專名核對
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>→ 目標語言母語感潤飾
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>→ 版面與漏譯檢查
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>→ 現場口譯備援測試
+</code></pre></div>
+<h2 id="_10">交付物與建議檔名<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>國際活動_翻譯需求說明.md</code></li>
+<li><code>國際活動_術語表_ZH_EN_JA.xlsx</code></li>
+<li><code>國際活動_繁中初稿_v1.docx</code></li>
+<li><code>國際活動_日文校訂版_v2.docx</code></li>
+<li><code>國際活動_雙語定稿.pdf</code></li>
+<li><code>國際活動_現場口譯SOP.md</code></li>
+</ul>
+<h2 id="100">評量規準（100 分）<a class="headerlink" href="#100" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th style="text-align: right;">分數</th>
+<th>判準</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>意思與事實正確</td>
+<td style="text-align: right;">30</td>
+<td>無漏譯、誤譯或自行添加</td>
+</tr>
+<tr>
+<td>術語與專名一致</td>
+<td style="text-align: right;">20</td>
+<td>名稱、數字、單位前後一致</td>
+</tr>
+<tr>
+<td>受眾與語氣合適</td>
+<td style="text-align: right;">20</td>
+<td>符合使用情境與閱讀者</td>
+</tr>
+<tr>
+<td>格式與可讀性</td>
+<td style="text-align: right;">15</td>
+<td>段落、表格、版面清楚</td>
+</tr>
+<tr>
+<td>驗證流程</td>
+<td style="text-align: right;">10</td>
+<td>有對照、抽查與修訂紀錄</td>
+</tr>
+<tr>
+<td>隱私與授權</td>
+<td style="text-align: right;">5</td>
+<td>資料使用方式安全合法</td>
+</tr>
+</tbody>
+</table>
+<h1 id="_11">官方功能參考（授課前建議再確認）<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="https://support.google.com/gemini/answer/16047321?co=GENIE.Platform%3DDesktop&amp;hl=en">Gemini Canvas 說明</a></li>
+<li><a href="https://support.google.com/gemini/answer/15235603?hl=en">建立與使用 Gems</a></li>
+<li><a href="https://support.google.com/gemini/answer/16504957?hl=en&amp;p=rn_share_gem&amp;rd=1">分享 Gem 與權限</a></li>
+<li><a href="https://support.google.com/translate/answer/2534559?co=GENIE.Platform%3DDesktop&amp;hl=en">Google 翻譯：翻譯文件與網站</a></li>
+<li><a href="https://support.google.com/translate/answer/6350850?co=GENIE.Platform%3DAndroid&amp;hl=en">Google 翻譯 App 基本操作</a></li>
+<li><a href="https://support.google.com/translate/answer/10421057?hl=en">Google 翻譯即時對話技巧</a></li>
+<li><a href="https://support.google.com/gemini/answer/15274899?co=GENIE.Platform%3DAndroid&amp;hl=en">Gemini Live、鏡頭與螢幕分享</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "navigation.top", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
