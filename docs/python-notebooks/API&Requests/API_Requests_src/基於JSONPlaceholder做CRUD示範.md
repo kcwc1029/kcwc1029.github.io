@@ -7,26 +7,24 @@ PATCH  /posts/1    局部更新
 DELETE /posts/1    刪除文章
 ```
 
-```python
-"""JSONPlaceholder CRUD 示範。"""
+### JSONPlaceholder CRUD 示範。
 
+```py
+### GET
 import requests
 
 BASE_URL = "https://jsonplaceholder.typicode.com"
-
-# -------------------------
-# GET
-# -------------------------
 print("=== GET ===")
-
 response = requests.get(f"{BASE_URL}/posts/1")
 response.raise_for_status()
-
 print(response.json())
+```
 
-# -------------------------
-# POST
-# -------------------------
+```py
+### POST
+import requests
+
+BASE_URL = "https://jsonplaceholder.typicode.com"
 print("\n=== POST ===")
 
 new_post = {
@@ -40,13 +38,15 @@ response = requests.post(
     json=new_post,
 )
 response.raise_for_status()
-
 print(response.status_code)
 print(response.json())
+```
 
-# -------------------------
-# PUT
-# -------------------------
+```py
+### PUT
+import requests
+
+BASE_URL = "https://jsonplaceholder.typicode.com"
 print("\n=== PUT ===")
 
 updated_post = {
@@ -63,25 +63,13 @@ response = requests.put(
 response.raise_for_status()
 
 print(response.json())
+```
 
-# -------------------------
-# PATCH
-# -------------------------
-print("\n=== PATCH ===")
+```py
+### DELETE
+import requests
 
-response = requests.patch(
-    f"{BASE_URL}/posts/1",
-    json={
-        "title": "只修改標題",
-    },
-)
-response.raise_for_status()
-
-print(response.json())
-
-# -------------------------
-# DELETE
-# -------------------------
+BASE_URL = "https://jsonplaceholder.typicode.com"
 print("\n=== DELETE ===")
 
 response = requests.delete(

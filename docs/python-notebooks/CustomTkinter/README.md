@@ -155,13 +155,15 @@ my_entry.delete(0, "end")  # 從第 0 個字元刪到最後
 - [範例：假登入系統](./customtkinter_src/CTk假登入系統.md)
 - [範例：通靈翻譯](./customtkinter_src/CTk通靈翻譯.md)
 
-## CTkTextbox — 多行文字區域
+## CTkTextbox：多行文字區域
 
 Entry 只能輸入一行文字。當你需要讓使用者輸入或顯示**多行**文字（像記事本、日誌視窗、程式輸出區），就要用 CTkTextbox。
 
 CTK 的 Textbox 與傳統 tkinter 最大的差別是內建捲軸，文字多了會自動出現捲軸，不用另外設定。
 
-## CTkCheckBox（核取方塊）
+- [範例：文章字數統計器](./customtkinter_src/文章字數統計器.md)
+
+## CTkCheckBox：核取方塊
 
 每個 CheckBox 都綁定自己的 `BooleanVar`，勾選時變數為 `True`，取消為 `False`。
 
@@ -195,9 +197,11 @@ def on_select(choice):   # choice 是 CTK 自動傳入的選中值
     print(choice)
 ```
 
+- [範例：CTk飲料點餐機](./customtkinter_src/CTk飲料點餐機.md)
+
 ## 實作：
 
-- [實作：番茄計時器](./customtkinter_projects/實作：番茄計時器.py)
-- [實作：簡易計算機](./customtkinter_projects/實作：簡易計算機.py)
-- [實作：圖片批量修改程式](./customtkinter_projects/實作：圖片批量修改程式.py)
-- [實作：POS系統](./customtkinter_projects/實作：POS系統.py)
+- [實作：CTk番茄計時器](./customtkinter_src/CTk番茄計時器.md)
+- [實作：CTk簡易計算機](./customtkinter_src/CTk簡易計算機.md)
+- [實作：CTk圖片批量修改程式](./customtkinter_src/CTk圖片批量修改程式.md)
+- [實作：CTkPOS機](./customtkinter_src/CTkPOS機.md)

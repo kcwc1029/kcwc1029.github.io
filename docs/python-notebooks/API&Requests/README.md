@@ -232,47 +232,28 @@ print(response.json())
 
 ## [基於JSONPlaceholder做CRUD示範](./API_Requests_src/基於JSONPlaceholder做CRUD示範.md)
 
-## [Cookie與Session](./API_Requests_src/Cookie與Session.md)
+## [補充：Cookie與Session](./API_Requests_src/Cookie與Session.md)
 
-## timeout 與例外處理
-
-網路不是函式直接呼叫，DNS、連線、TLS、Server 與傳輸每一層都可能失敗。
-
-```python
-try:
-    response = requests.get(url, timeout=(3.05, 10))
-    response.raise_for_status()
-    data = response.json()
-except requests.exceptions.Timeout:
-    print("等待逾時")
-except requests.exceptions.ConnectionError:
-    print("連線失敗")
-except requests.exceptions.HTTPError as error:
-    print("HTTP 錯誤", error.response.status_code)
-except requests.exceptions.JSONDecodeError:
-    print("JSON 格式錯誤")
-except requests.exceptions.RequestException as error:
-    print("其他 Requests 錯誤", error)
-```
-
-`timeout=(3.05, 10)`：
-
-- 第一個數字：connect timeout。
-- 第二個數字：read timeout。
-
-read timeout 是等待下一批 bytes 的時間，不是整個工作的絕對總秒數。Requests 預設不會自動 timeout，所以正式程式應明確設定。
+## [timeout與例外處理](./API_Requests_src/timeout與例外處理.md)
 
 ## API實作
 
 - [API lists](https://publicapis.io/category/games-and-comics)
 - [APIList](https://github.com/hsiangfeng/APIList)
+- [public-apis](https://github.com/public-apis/public-apis)
+
+### [實作：Dog CEO API](./API_Requests_src/Dog-CEO-API.md)
+
+### [實作：PokéAPI](./API_Requests_src/PokéAPI.md)
+
+### [實作：水果營養查詢Fruityvice](./API_Requests_src/水果營養查詢Fruityvice.md)
+
+### [(喜歡)實作：iTunes_Search_API](./API_Requests_src/iTunes_Search_API.md)
 
 ### [實作：Open-Meteo](./API_Requests_src/Open-Meteo.md)
 
 ### [實作：Random User](./API_Requests_src/Random-User.md)
 
-### [實作：PokéAPI](./API_Requests_src/PokéAPI.md)
-
-### [實作：Dog CEO API](./API_Requests_src/Dog-CEO-API.md)
-
 ### [實作：TVMaze](./API_Requests_src/TVMaze.md)
+
+### [實作：TDX運輸資料流通服務：以高雄捷運為例](./API_Requests_src/TDX運輸資料流通服務：以高雄捷運為例.md)

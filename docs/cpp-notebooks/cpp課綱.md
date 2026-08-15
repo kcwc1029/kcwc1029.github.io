@@ -5,6 +5,8 @@
 - [指標](./指標/README.md)
 - [函數](./函數/README.md)
 - [前置處理與巨集](./前置處理與巨集/README.md)
+- [自訂資料型態](./自訂資料型態/README.md)
+- [未整理\_OOP類別與進階應用](./OOP類別與進階應用/README.md)
 
 ### ZeroJudge -- 判斷式
 

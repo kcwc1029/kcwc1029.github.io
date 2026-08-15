@@ -176,7 +176,7 @@ NotebookLM 可用探索來源功能尋找相關資料：
 
 - 先開一個新的notebook
 
-![](./Fast%20Research搜尋台灣數位帳戶.png)
+![](../Fast%20Research搜尋台灣數位帳戶.png)
 
 - 嘗試回答：
   - 共找到多少來源？
@@ -203,7 +203,7 @@ NotebookLM 可用探索來源功能尋找相關資料：
 最後整理成比較表。
 ```
 
-![](./Deep%20Research搜尋台灣數位帳戶.png)
+![](../Deep%20Research搜尋台灣數位帳戶.png)
 
 ## 請 AI 做影片重點摘要
 
@@ -259,7 +259,7 @@ Glasp 是一套 Chrome 擴充功能，除了可以擷取 YouTube 字幕之外，
 - 展開 Transcript。
 - 選擇字幕語言。
 
-![](./Glasp_Transcript.png)
+![](../Glasp_Transcript.png)
 
 ### Problem. 請自行找一部 5 分鐘以上 的 YouTube 教學影片。
 
@@ -280,7 +280,7 @@ Glasp 可以利用 AI 快速整理影片重點，幾秒鐘就能知道影片主�
 - 選擇 Summary。
 - 等待 AI 產生摘要。
 
-![](./Glasp_Summary.png)
+![](../Glasp_Summary.png)
 
 ### 用notebookllm突破無字幕的逐字稿
 
@@ -370,9 +370,9 @@ Glasp 可以利用 AI 快速整理影片重點，幾秒鐘就能知道影片主�
 NotebookLM 的核心價值是依匯入來源回答，因此適合將公司內規、法規與流程文件集中成可查詢的知識庫。
 
 1. 使用NotebookLM Fast/Deep Research搜尋相關資料
-
-- [連結：勞動基準法](https://ws-45plus.wda.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvMS9yZWxmaWxlLzEwNTk1LzQyOTUvMjdkYTA1NzItZDUyNC00ODdjLTk1NzUtNjUzZDk2ZTg4ODFiLnBkZg%3D%3D&n=5Yue5YuV5Z%2B65rqW5rOVLnBkZg%3D%3D)
-- [連結：勞動基準法Q&A百問百答第二版](https://www.osha.gov.tw/1106/1196/17870/26052/31849/)
+1. 加入自己找的連結
+   - [連結：勞動基準法](https://ws-45plus.wda.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvMS9yZWxmaWxlLzEwNTk1LzQyOTUvMjdkYTA1NzItZDUyNC00ODdjLTk1NzUtNjUzZDk2ZTg4ODFiLnBkZg%3D%3D&n=5Yue5YuV5Z%2B65rqW5rOVLnBkZg%3D%3D)
+   - [連結：勞動基準法Q&A百問百答第二版](https://www.osha.gov.tw/1106/1196/17870/26052/31849/)
 
 ```text
 ### 提示詞
@@ -386,114 +386,29 @@ NotebookLM 的核心價值是依匯入來源回答，因此適合將公司內規
 - 請假、加班、報到、考核等內部規範。
 ```
 
-```text
+1. 可以在針對AI給的資料去修正
+   - [酒吧新進員工教育與法定合規手冊](https://notebook.google.com/notebook/f138fdac-5ab0-49c6-b129-b37ee347172a/artifact/6a76d73a-d261-4308-bdb5-908d4bc45887?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_)
+   - [酒吧新進員工教育與法定合規手冊v2](https://notebook.google.com/notebook/f138fdac-5ab0-49c6-b129-b37ee347172a/artifact/ef6c6217-52a8-4147-bd25-c99e9aa3f702?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_)
 
-```
-
-
-### 提問示例
-
-- 2 月 28 日固定假日出勤 4 小時，公司應如何計算工資？
-- 平日加班 3 小時如何計算？
-- 員工請職災假需要哪些文件？
-- 試用期、考核與請假規定分別在哪些來源？
-
-> 勞動法規與公司政策會更新。薪資、加班及個案權益必須由人資或法務依最新法規確認，NotebookLM 回答僅供查找與初步理解。
-
-## 3-5-2 原教材加班費測驗案例
-
-原教材產生的員工測驗題：
-
-> 一位員工的月薪總額（包含底薪與全勤獎金等經常性給與）為 NT$36,000，某個平日加班工作 3 小時，應獲得多少加班費？
-
-示例答案為 `NT$650`，原教材計算過程：
-
-- 平日時薪：36,000 ÷ 240 = 150 元。
-- 前 2 小時：150 × 4/3 × 2 = 400 元。
-- 第 3 小時：150 × 5/3 × 1 = 250 元。
-- 合計：400 + 250 = 650 元。
-
-### 教師提醒
-
-此題是原教材的教學示例。正式薪資計算必須確認工資定義、加班日類型、實際時數、公司制度及當時有效法規。
-
-## 3-5-3 分享筆記本
-
-原教材分享流程：
-
-1. 點擊分享。
-2. 輸入指定使用者 Email。
-3. 設定檢視者或編輯者權限。
-4. 視需要開啟歡迎訊息。
-5. 儲存設定；受邀者透過郵件或連結進入。
-
-### 權限原則
-
-- 內部手冊預設只分享給指定帳號。
-- 外部使用者只開放對話／檢視，不應任意新增或刪除來源。
-- 薪資、個資、調查紀錄與法務文件應拆分不同筆記本。
-- 文件不想外流時，不要只依賴「知道連結者」模式。
-
-## 3-5-4 將知識庫轉成新人訓練影片
-
-原教材讓 NotebookLM 把公司規定製作成影片概覽：
-
-1. 勾選所有適用的公司規章來源。
-2. 視需要勾選法規來源。
-3. 在工作室選擇影片摘要／影片概覽。
-4. 選擇說明型影片。
-5. 選擇語言與視覺風格。
-6. 輸入角色與內容要求。
-7. 開始生成。
-
-### 原教材提示詞
+1. 可以依據「酒吧新進員工教育與法定合規手冊」產生測驗
+   - [酒吧新進員工入職合規實務測驗 (Quiz)](https://notebook.google.com/notebook/f138fdac-5ab0-49c6-b129-b37ee347172a/artifact/0323775b-315c-4082-8462-c02353389a2b?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_)
 
 ```text
-請扮演新人導師的角色，針對新進人員整理一份新人訓練教材，
-讓新進員工能快速瞭解公司規定。
-態度要溫馨而理性地介紹公司內部所有規定，
-並適當提醒一些特別要避免踩雷的紅線。
-內容請以公司規定為主，政府法規可作為補充提示。
+幫我針對「酒吧新進員工教育與法定合規手冊v2」設計一份Quiz
 ```
 
-### 改良版
+1. 可以依據「酒吧新進員工教育與法定合規手冊」產生新人訓練影片：
+   - [酒吧新進員工教育與法定合規影片](https://notebook.google.com/notebook/f138fdac-5ab0-49c6-b129-b37ee347172a/artifact/e13fe534-8eb3-4604-9c4e-5d326ef3a132?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_)
 
 ```text
-請製作 8～10 分鐘的新進員工訓練影片腳本。
-
-受眾：到職第一週的新進員工。
-語氣：溫暖、清楚、不恐嚇。
-內容：報到、工時、請假、加班、資訊安全、性平、職災、考核與申訴管道。
-
-要求：
-- 公司規定為主，政府法規只作補充。
-- 每一項規定附來源名稱。
-- 將「必須遵守」與「建議作法」分開。
-- 列出 5 個常見踩雷情境及正確作法。
-- 不要自行新增懲處、薪資或法律規定。
+幫我針對「酒吧新進員工教育與法定合規手冊v2」設計影片摘要
 ```
 
-## 3-5-5 將知識庫轉成測驗
+## Gemini互動式內部查詢網頁
 
-原教材提示詞概念：
+在 NotebookLM 建立的筆記本，除了可以透過 NotebookLM 內建功能轉化成不同形式的內容外，現在也可以連結 Gemini 進行更豐富的應用。透過連結 NotebookLM 筆記本，Gemini 就可以突破附件數量的限制，同時還能控制確保回覆的引用來源，讓應用更加多元。
 
-```text
-針對新進人員將公司內部所有規定設計成測驗考題，
-每次開啟的題目都要有所不同。
-新人完成 10 題，其中選擇題為主，1～2 題為問答題。
-題目偏簡單，但一定要有一題加班費試算題，答題時間 10 分鐘。
-```
-
-### 建議補充
-
-- 每題必須附來源與正確答案解釋。
-- 法規計算題由人資先驗證題幹及答案。
-- 隨機題庫不能讓不同員工面臨不公平難度。
-- 測驗結果不得成為唯一的人事判斷依據。
-
-## 3-5-6 雙劍合璧（一）：互動式內部查詢網頁
-
-原教材示範將 NotebookLM 筆記本連結到 Gemini，突破單純聊天介面的限制，利用 Canvas 產生方便瀏覽與搜尋的內部網站。
+例如：NotebookLM 生成的內容無法匯出，也沒辦法生成網頁之類的格式。現在連結到 Gemini 這些都不是問題了。延續前一個範例，我們已經整理好公司的公司內規和相關法令，一鍵轉成更方便瀏覽、查詢、分享的網站。
 
 ### 流程
 
@@ -502,19 +417,26 @@ NotebookLM 的核心價值是依匯入來源回答，因此適合將公司內規
 3. 選取一個或多個筆記本。
 4. 加入附件。
 5. 開啟 Canvas。
-6. 提示建立內部資訊網頁。
-7. 檢查頁面、搜尋框、分類與問答內容。
-8. 依組織政策分享連結。
+6. 下提示詞，建立內部資訊網頁。
 
-### 原教材提示詞
+<!-- 三張 -->
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <img
+        src="../Gemini互動式內部查詢網頁1.png"
+        alt="Gemini互動式內部查詢網頁1"
+        style="width: calc((100% - 40px) / 3); height: auto; object-fit: cover;">
+    <img
+        src="../Gemini互動式內部查詢網頁2.png"
+        alt="Gemini互動式內部查詢網頁2"
+        style="width: calc((100% - 40px) / 3); height: auto; object-fit: cover;">
+    <img
+        src="../Gemini互動式內部查詢網頁3.png"
+        alt="Gemini互動式內部查詢網頁3"
+        style="width: calc((100% - 40px) / 3); height: auto; object-fit: cover;">
+</div>
 
 ```text
-將公司內部規範和相關法令規定，生成內部資訊網頁，方便查找。
-```
-
-### 改良版
-
-```text
+### 提示詞
 請僅根據附件 NotebookLM 筆記本，建立公司內部規範查詢網頁原型。
 
 頁面包含：
@@ -531,23 +453,14 @@ NotebookLM 的核心價值是依匯入來源回答，因此適合將公司內規
 不要顯示個資、薪資明細或僅限主管的機密內容。
 ```
 
-## 3-5-7 雙劍合璧（二）：互動式新人訓練 App
+- [GPT：公司內部規範查詢網頁原型](https://share.gemini.google/oiDaNHqEMU4A)
 
-原教材把 NotebookLM 中的 AI 工具操作手冊與政府 AI 指引連結到 Gemini Canvas，要求建立互動式教育訓練 App。
+## 互動式新人訓練 App
 
-### 原教材提示詞概念
-
-```text
-將附件的 AI 操作提示，轉換成互動式的教育訓練 App，
-讓同仁可以在 App 中模擬基本操作，並對 AI 的使用規範有所了解。
-
-希望能參照 AI 工具操作手冊，在 App 中模擬接近實際的操作畫面，
-並讓使用者大致模擬基本操作步驟。
-```
-
-### 改良版
+除了靜態的文件查詢網站外，很多公司會有內部教育訓練的課程，如果手邊有現成的教材，也可以先匯入到 NotebookLM 當作教材資料庫，之後再透過 Gemini 生成輔助的教育訓練網站或互動式 App，提高同仁學習成效
 
 ```text
+### 提示詞
 請依附件知識庫建立互動式新人訓練 App 原型。
 
 模組：
@@ -564,48 +477,4 @@ NotebookLM 的核心價值是依匯入來源回答，因此適合將公司內規
 - 產生可分享的展示版，但不要公開內部文件內容。
 ```
 
-## 3-5-8 課堂題目
-
-1. 員工手冊和薪資資料應放在同一個共享筆記本嗎？
-2. AI 產生的加班費題目為何要由人資驗證？
-3. 互動網頁若查不到答案，應怎麼回覆？
-
-### 參考答案
-
-1. 不建議，應依敏感程度與權限拆分。
-2. 工資定義、法規與公司制度可能不同或更新。
-3. 明確顯示來源未提供並引導洽詢負責單位，不可捏造。
-
----
-
-# 五、共通提示詞框架：SOURCE
-
-| 字母 | 意義            | 問題                            |
-| ---- | --------------- | ------------------------------- |
-| S    | Scope 範圍      | 只用哪些文件或網址？            |
-| O    | Objective 目的  | 要摘要、比較、解釋還是做教材？  |
-| U    | User 受眾       | 給主管、新人、客戶還是學生？    |
-| R    | Required format | 表格、時間戳、FAQ、簡報或網頁？ |
-| C    | Citation 引用   | 每個結論如何回到來源？          |
-| E    | Exceptions 例外 | 找不到、衝突或不確定時怎麼辦？  |
-
-## 通用模板
-
-```text
-你是一位【角色】。
-
-資料範圍：只能使用【附件／NotebookLM 來源／指定網址】。
-工作目的：【摘要／比較／解釋／建立教材】。
-目標受眾：【受眾】。
-
-輸出格式：
-- 【表格／條列／FAQ／時間戳／頁面結構】。
-- 每一項結論附【來源名稱、頁碼、時間戳或連結】。
-
-品質規則：
-- 不加入來源沒有的內容。
-- 不同來源衝突時並列差異。
-- 不確定處標示「待確認」。
-- 法律、薪資、健康或安全事項列出需要專業人員確認之處。
-- 最後說明資料限制、更新日期與下一步。
-```
+- [GPT：餐飲酒吧新人訓練與合規模擬 App 原型](https://share.gemini.google/S75vaQv3kexR)

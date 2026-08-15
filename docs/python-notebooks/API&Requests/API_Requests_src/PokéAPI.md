@@ -133,7 +133,7 @@ if __name__ == "__main__":
 
 ### 範例：Streamlit 高完成度圖鑑儀表板
 
-```python
+```py
 import requests
 import pandas as pd
 import plotly.express as px
@@ -141,9 +141,11 @@ import plotly.graph_objects as go
 import streamlit as st
 
 
-BASE_URL = "https://pokeapi.co/api/v2"
+### API 設定
+BASE_URL = "https://pokeapi.co/api/v2" # PokéAPI 的基礎網址
 
 
+### 寶可夢屬性顏色
 TYPE_COLOR = {
     "normal": "#A8A77A",
     "fire": "#EE8130",
@@ -166,13 +168,15 @@ TYPE_COLOR = {
 }
 
 
+### Streamlit 頁面設定
 st.set_page_config(
-    page_title="PokéAPI 寶可夢圖鑑",
-    page_icon="⚡",
-    layout="wide"
+    page_title="PokéAPI 寶可夢圖鑑", # 瀏覽器分頁標題
+    page_icon="⚡", # 瀏覽器分頁圖示
+    layout="wide" # 使用寬版頁面
 )
 
 
+### 自訂 CSS 樣式
 st.markdown(
     """
     <style>
@@ -181,11 +185,13 @@ st.markdown(
         font-weight: 900;
         margin-bottom: 0px;
     }
+
     .subtitle {
         font-size: 18px;
         color: #666;
         margin-bottom: 24px;
     }
+
     .pokemon-card {
         padding: 24px;
         border-radius: 24px;
@@ -193,6 +199,7 @@ st.markdown(
         box-shadow: 0 8px 30px rgba(0,0,0,0.08);
         border: 1px solid rgba(0,0,0,0.06);
     }
+
     .type-badge {
         display: inline-block;
         padding: 6px 14px;
@@ -202,293 +209,747 @@ st.markdown(
         font-weight: 800;
         font-size: 14px;
     }
+
     .small-note {
         color: #777;
         font-size: 14px;
     }
     </style>
     """,
-    unsafe_allow_html=True
+    unsafe_allow_html=True # 允許 Streamlit 執行 HTML 與 CSS
 )
 
 
-@st.cache_data(show_spinner=False)
+### 建立 API GET Request 函式
 def get_json(url: str) -> dict:
-    response = requests.get(url, timeout=10)
+    """
+    向指定 API 網址發送 GET Request，
+    並將回傳的 JSON 資料轉成 Python dict。
+    """
+
+    response = requests.get(
+        url,
+        timeout=10 # API 最多等待 10 秒
+    )
 
     if response.status_code == 404:
-        raise ValueError("找不到資料")
+        raise ValueError("找不到資料") # 查無資料時產生自訂錯誤
 
-    response.raise_for_status()
-    return response.json()
+    response.raise_for_status() # HTTP 狀態碼不是成功狀態時產生例外
+
+    return response.json() # 將 JSON Response 轉成 Python dict
 
 
+### 取得寶可夢基本資料
 @st.cache_data(show_spinner=False)
 def fetch_pokemon(keyword: str) -> dict:
-    keyword = keyword.strip().lower()
-    return get_json(f"{BASE_URL}/pokemon/{keyword}")
+    """
+    根據寶可夢英文名稱或圖鑑編號，
+    取得寶可夢的基本資料。
+    """
+
+    keyword = keyword.strip().lower() # 移除前後空白並統一轉成小寫
+
+    return get_json(
+        f"{BASE_URL}/pokemon/{keyword}"
+    )
 
 
+### 取得寶可夢物種資料
 @st.cache_data(show_spinner=False)
 def fetch_species(url: str) -> dict:
+    """
+    透過 Species API 網址，
+    取得寶可夢的世代、顏色、棲息地等資料。
+    """
+
     return get_json(url)
 
 
+### 取得寶可夢進化鏈資料
 @st.cache_data(show_spinner=False)
 def fetch_evolution_chain(url: str) -> dict:
+    """
+    透過 Evolution Chain API 網址，
+    取得寶可夢完整進化鏈資料。
+    """
+
     return get_json(url)
 
 
-def parse_evolution_chain(chain_data: dict) -> list[str]:
-    result = []
+### 整理寶可夢進化鏈
+def parse_evolution_chain(
+    chain_data: dict
+) -> list[str]:
+
+    result = [] # 儲存整理完成的寶可夢名稱
 
     def walk(node: dict):
-        result.append(node["species"]["name"])
-        for next_node in node["evolves_to"]:
-            walk(next_node)
 
-    walk(chain_data["chain"])
+        result.append(
+            node["species"]["name"]
+        ) # 將目前節點的寶可夢名稱加入結果
+
+        for next_node in node["evolves_to"]:
+            walk(next_node) # 使用遞迴繼續尋找下一階段進化
+
+    walk(
+        chain_data["chain"] # 從進化鏈第一個節點開始處理
+    )
+
     return result
 
 
-def get_official_image(pokemon: dict) -> str | None:
+### 取得寶可夢官方圖片
+def get_official_image(
+    pokemon: dict
+) -> str | None:
+
     return (
         pokemon["sprites"]
         ["other"]
         ["official-artwork"]
         ["front_default"]
-    )
+    ) # 取得 PokéAPI 提供的官方 Artwork 圖片網址
 
 
-def get_type_badges(types: list[str]) -> str:
-    html = ""
+### 建立寶可夢屬性標籤
+def get_type_badges(
+    types: list[str]
+) -> str:
+
+    html = "" # 儲存所有屬性標籤的 HTML
 
     for pokemon_type in types:
-        color = TYPE_COLOR.get(pokemon_type, "#666")
+
+        color = TYPE_COLOR.get(
+            pokemon_type,
+            "#666" # 找不到對應屬性時使用灰色
+        )
+
         html += (
             f"<span class='type-badge' "
-            f"style='background:{color}'>{pokemon_type.upper()}</span>"
+            f"style='background:{color}'>"
+            f"{pokemon_type.upper()}"
+            f"</span>"
         )
 
     return html
 
 
-def build_stats_df(pokemon: dict) -> pd.DataFrame:
-    return pd.DataFrame(
-        [
+### 建立能力值 DataFrame
+def build_stats_df(
+    pokemon: dict
+) -> pd.DataFrame:
+
+    rows = [] # 儲存每一項能力值資料
+
+    for item in pokemon["stats"]:
+
+        rows.append(
             {
                 "能力": item["stat"]["name"],
                 "數值": item["base_stat"]
             }
-            for item in pokemon["stats"]
-        ]
-    )
+        )
+
+    return pd.DataFrame(rows) # 將 list 轉成 Pandas DataFrame
 
 
-def build_moves_df(pokemon: dict) -> pd.DataFrame:
-    rows = []
+### 建立技能 DataFrame
+def build_moves_df(
+    pokemon: dict
+) -> pd.DataFrame:
+
+    rows = [] # 儲存每一個技能的資料
 
     for item in pokemon["moves"]:
-        move = item["move"]["name"]
-        version_details = item["version_group_details"]
 
-        learn_methods = sorted({
-            detail["move_learn_method"]["name"]
-            for detail in version_details
-        })
+        move = item["move"]["name"] # 取得技能名稱
 
-        rows.append({
-            "技能": move,
-            "學習方式": ", ".join(learn_methods[:3])
-        })
+        version_details = (
+            item["version_group_details"]
+        ) # 取得不同版本中的技能學習資料
+
+        learn_methods = sorted(
+            {
+                detail["move_learn_method"]["name"]
+                for detail in version_details
+            }
+        ) # 使用 set 移除重複的技能學習方式，再進行排序
+
+        rows.append(
+            {
+                "技能": move,
+                "學習方式": ", ".join(
+                    learn_methods[:3]
+                ) # 最多顯示前三種學習方式
+            }
+        )
 
     return pd.DataFrame(rows)
 
 
-def render_radar_chart(stats_df: pd.DataFrame, pokemon_name: str):
-    fig = go.Figure()
+### 建立能力值雷達圖
+def render_radar_chart(
+    stats_df: pd.DataFrame,
+    pokemon_name: str
+) -> None:
+
+    fig = go.Figure() # 建立 Plotly Figure
 
     fig.add_trace(
         go.Scatterpolar(
-            r=stats_df["數值"],
-            theta=stats_df["能力"],
-            fill="toself",
+            r=stats_df["數值"], # 雷達圖半徑使用能力值
+            theta=stats_df["能力"], # 雷達圖各軸使用能力名稱
+            fill="toself", # 填滿雷達圖內部區域
             name=pokemon_name
         )
     )
+
+    max_value = max(
+        160,
+        int(
+            stats_df["數值"].max()
+        ) + 20
+    ) # 最大刻度至少 160，若能力值更高則自動增加 20
 
     fig.update_layout(
         polar=dict(
             radialaxis=dict(
                 visible=True,
-                range=[0, max(160, int(stats_df["數值"].max()) + 20)]
+                range=[
+                    0,
+                    max_value
+                ]
             )
         ),
-        showlegend=False,
+        showlegend=False, # 隱藏圖例
         height=430,
-        margin=dict(l=40, r=40, t=40, b=40)
+        margin=dict(
+            l=40,
+            r=40,
+            t=40,
+            b=40
+        )
     )
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(
+        fig,
+        width="stretch" # 圖表寬度自動填滿容器
+    )
 
 
-def render_bar_chart(stats_df: pd.DataFrame):
+### 建立能力值長條圖
+def render_bar_chart(
+    stats_df: pd.DataFrame
+) -> None:
+
     fig = px.bar(
         stats_df,
         x="能力",
         y="數值",
-        text="數值",
+        text="數值", # 在長條上顯示能力值
         title="能力值長條圖"
     )
 
-    fig.update_traces(textposition="outside")
-    fig.update_layout(
-        height=430,
-        yaxis_range=[0, max(160, int(stats_df["數值"].max()) + 20)]
+    fig.update_traces(
+        textposition="outside" # 將數值顯示在長條上方
     )
 
-    st.plotly_chart(fig, use_container_width=True)
+    max_value = max(
+        160,
+        int(
+            stats_df["數值"].max()
+        ) + 20
+    ) # 設定 Y 軸最大值並保留額外顯示空間
+
+    fig.update_layout(
+        height=430,
+        yaxis_range=[
+            0,
+            max_value
+        ]
+    )
+
+    st.plotly_chart(
+        fig,
+        width="stretch"
+    )
 
 
-st.markdown("<div class='main-title'>⚡ PokéAPI 寶可夢圖鑑儀表板</div>", unsafe_allow_html=True)
+### 顯示網站標題
 st.markdown(
-    "<div class='subtitle'>輸入英文名稱或圖鑑編號，即時查詢屬性、能力值、技能、進化鏈與官方圖片。</div>",
+    "<div class='main-title'>⚡ PokéAPI 寶可夢圖鑑儀表板</div>",
     unsafe_allow_html=True
 )
 
+st.markdown(
+    """
+    <div class='subtitle'>
+    輸入英文名稱或圖鑑編號，即時查詢屬性、能力值、技能、進化鏈與官方圖片。
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
+### 建立 Sidebar 查詢設定
 with st.sidebar:
-    st.header("查詢設定")
+
+    st.header(
+        "查詢設定"
+    )
+
     keyword = st.text_input(
         "寶可夢英文名稱或圖鑑編號",
-        value="pikachu",
+        value="pikachu", # 預設查詢皮卡丘
         placeholder="例如 pikachu、charizard、25"
     )
 
-    show_all_moves = st.checkbox("顯示全部技能", value=False)
-    search_button = st.button("開始查詢", type="primary", use_container_width=True)
+    show_all_moves = st.checkbox(
+        "顯示全部技能",
+        value=False # 預設只顯示部分技能
+    )
+
+    search_button = st.button(
+        "開始查詢",
+        type="primary",
+        width="stretch"
+    )
 
     st.divider()
-    st.caption("建議學生先查：pikachu、eevee、charizard、mewtwo、lucario")
+
+    st.caption(
+        "建議學生先查："
+        "pikachu、eevee、charizard、mewtwo、lucario"
+    )
 
 
-if search_button or keyword:
-    try:
-        pokemon = fetch_pokemon(keyword)
-        species = fetch_species(pokemon["species"]["url"])
-        evolution_chain = fetch_evolution_chain(species["evolution_chain"]["url"])
+### 建立 Session State 儲存查詢條件
+# Streamlit 操作元件時會重新執行整份程式
+# 使用 session_state 可以保存使用者目前查詢的寶可夢
+if "search_keyword" not in st.session_state:
+    st.session_state.search_keyword = "pikachu" # 第一次開啟網站預設查詢 pikachu
 
-        pokemon_name = pokemon["name"]
-        pokemon_id = pokemon["id"]
-        image_url = get_official_image(pokemon)
 
-        types = [item["type"]["name"] for item in pokemon["types"]]
-        abilities = [item["ability"]["name"] for item in pokemon["abilities"]]
-        stats_df = build_stats_df(pokemon)
-        moves_df = build_moves_df(pokemon)
-        evolution_names = parse_evolution_chain(evolution_chain)
+### 按下查詢按鈕後更新查詢條件
+if search_button:
 
-        left_col, right_col = st.columns([1, 2])
+    if keyword.strip():
 
-        with left_col:
-            st.markdown("<div class='pokemon-card'>", unsafe_allow_html=True)
+        st.session_state.search_keyword = (
+            keyword.strip()
+        ) # 移除輸入內容前後的空白
 
-            if image_url:
-                st.image(image_url, use_container_width=True)
 
-            st.markdown(f"## #{pokemon_id} {pokemon_name.title()}")
-            st.markdown(get_type_badges(types), unsafe_allow_html=True)
-            st.markdown(
-                f"<p class='small-note'>世代：{species['generation']['name']} ｜ "
-                f"顏色：{species['color']['name']}</p>",
-                unsafe_allow_html=True
+search_keyword = (
+    st.session_state.search_keyword
+) # 取得目前要查詢的寶可夢
+
+
+### 呼叫 API 取得寶可夢資料
+try:
+
+    with st.spinner(
+        f"正在查詢 {search_keyword}..."
+    ):
+
+        pokemon = fetch_pokemon(
+            search_keyword
+        ) # 取得寶可夢基本資料
+
+        species = fetch_species(
+            pokemon["species"]["url"]
+        ) # 使用基本資料中的網址取得 Species 資料
+
+        evolution_chain = (
+            fetch_evolution_chain(
+                species["evolution_chain"]["url"]
             )
+        ) # 使用 Species 資料中的網址取得進化鏈
 
-            st.markdown("</div>", unsafe_allow_html=True)
 
-        with right_col:
-            metric_cols = st.columns(4)
+    ### 整理寶可夢基本資料
+    pokemon_name = (
+        pokemon["name"]
+    )
 
-            metric_cols[0].metric("身高", f"{pokemon['height'] / 10} m")
-            metric_cols[1].metric("體重", f"{pokemon['weight'] / 10} kg")
-            metric_cols[2].metric("基礎經驗", pokemon["base_experience"])
-            metric_cols[3].metric("技能數", len(pokemon["moves"]))
+    pokemon_id = (
+        pokemon["id"]
+    )
 
-            st.markdown("### 特性")
-            st.write("、".join(abilities))
+    image_url = (
+        get_official_image(
+            pokemon
+        )
+    )
 
-            st.markdown("### 進化鏈")
-            st.success(" → ".join(evolution_names))
 
-        tab1, tab2, tab3, tab4 = st.tabs(
-            ["能力分析", "技能資料庫", "原始資料摘要", "教學引導"]
+    ### 整理寶可夢屬性
+    types = [
+        item["type"]["name"]
+        for item in pokemon["types"]
+    ]
+
+
+    ### 整理寶可夢特性
+    abilities = [
+        item["ability"]["name"]
+        for item in pokemon["abilities"]
+    ]
+
+
+    ### 整理寶可夢能力值
+    stats_df = (
+        build_stats_df(
+            pokemon
+        )
+    )
+
+
+    ### 整理寶可夢技能
+    moves_df = (
+        build_moves_df(
+            pokemon
+        )
+    )
+
+
+    ### 整理寶可夢進化鏈
+    evolution_names = (
+        parse_evolution_chain(
+            evolution_chain
+        )
+    )
+
+
+    ### 建立基本資訊左右兩欄
+    left_col, right_col = (
+        st.columns(
+            [1, 2] # 左欄比例 1、右欄比例 2
+        )
+    )
+
+
+    ### 左側顯示寶可夢圖片與基本資料
+    with left_col:
+
+        st.markdown(
+            "<div class='pokemon-card'>",
+            unsafe_allow_html=True
         )
 
-        with tab1:
-            chart_col1, chart_col2 = st.columns(2)
+        if image_url:
 
-            with chart_col1:
-                render_radar_chart(stats_df, pokemon_name)
-
-            with chart_col2:
-                render_bar_chart(stats_df)
-
-            total_score = int(stats_df["數值"].sum())
-            strongest = stats_df.sort_values("數值", ascending=False).iloc[0]
-            weakest = stats_df.sort_values("數值", ascending=True).iloc[0]
-
-            insight_col1, insight_col2, insight_col3 = st.columns(3)
-            insight_col1.metric("總能力值", total_score)
-            insight_col2.metric("最高能力", f"{strongest['能力']} ({strongest['數值']})")
-            insight_col3.metric("最低能力", f"{weakest['能力']} ({weakest['數值']})")
-
-        with tab2:
-            st.markdown("### 技能列表")
-
-            if show_all_moves:
-                st.dataframe(moves_df, use_container_width=True, height=500)
-            else:
-                st.info("目前只顯示前 30 筆。若要看完整技能，請到左側勾選「顯示全部技能」。")
-                st.dataframe(moves_df.head(30), use_container_width=True, height=500)
-
-        with tab3:
-            summary = {
-                "圖鑑編號": pokemon_id,
-                "名稱": pokemon_name,
-                "屬性": ", ".join(types),
-                "特性": ", ".join(abilities),
-                "身高(m)": pokemon["height"] / 10,
-                "體重(kg)": pokemon["weight"] / 10,
-                "世代": species["generation"]["name"],
-                "棲息地": species["habitat"]["name"] if species["habitat"] else "無資料",
-                "進化鏈": " -> ".join(evolution_names),
-                "圖片網址": image_url
-            }
-
-            st.json(summary)
-
-        with tab4:
-            st.markdown(
-                """
-                ### 可以引導學生觀察的問題
-
-                這個範例其實很適合拿來教 REST API。
-                因為學生會很快看到：不是每個資料都在同一個 API 回傳裡。
-
-                例如：
-
-                - 基本能力值來自 `/pokemon/{name}`
-                - 世代、顏色、棲息地來自 species URL
-                - 進化鏈又要再接 evolution chain URL
-                - 圖片不是本機檔案，而是 API 回傳的圖片網址
-                - 技能資料很多，所以要設計表格與篩選策略
-
-                這比單純印出 JSON 有感很多。
-                學生會真的理解「資料串接」不是背語法，而是在拆資料來源。
-                """
+            st.image(
+                image_url,
+                width="stretch"
             )
 
-    except ValueError:
-        st.error("找不到這隻寶可夢。請輸入英文名稱，例如 pikachu，或輸入圖鑑編號，例如 25。")
-    except requests.RequestException as error:
-        st.error(f"API 連線失敗：{error}")
+        st.markdown(
+            f"## #{pokemon_id} "
+            f"{pokemon_name.title()}"
+        )
+
+        st.markdown(
+            get_type_badges(
+                types
+            ),
+            unsafe_allow_html=True
+        )
+
+        st.markdown(
+            f"""
+            <p class='small-note'>
+            世代：{species['generation']['name']} ｜
+            顏色：{species['color']['name']}
+            </p>
+            """,
+            unsafe_allow_html=True
+        )
+
+        st.markdown(
+            "</div>",
+            unsafe_allow_html=True
+        )
+
+
+    ### 右側顯示寶可夢基本數據
+    with right_col:
+
+        metric_cols = (
+            st.columns(4)
+        )
+
+        metric_cols[0].metric(
+            "身高",
+            f"{pokemon['height'] / 10} m" # API 的身高單位為 0.1 公尺，因此除以 10
+        )
+
+        metric_cols[1].metric(
+            "體重",
+            f"{pokemon['weight'] / 10} kg" # API 的體重單位為 0.1 公斤，因此除以 10
+        )
+
+        metric_cols[2].metric(
+            "基礎經驗",
+            pokemon["base_experience"]
+        )
+
+        metric_cols[3].metric(
+            "技能數",
+            len(
+                pokemon["moves"]
+            )
+        )
+
+        st.markdown(
+            "### 特性"
+        )
+
+        st.write(
+            "、".join(
+                abilities
+            )
+        ) # 使用頓號串接所有特性名稱
+
+        st.markdown(
+            "### 進化鏈"
+        )
+
+        st.success(
+            " → ".join(
+                evolution_names
+            )
+        ) # 使用箭頭串接完整進化鏈
+
+
+    ### 建立功能分頁
+    tab1, tab2, tab3, tab4 = (
+        st.tabs(
+            [
+                "能力分析",
+                "技能資料庫",
+                "原始資料摘要",
+                "教學引導"
+            ]
+        )
+    )
+
+
+    ### Tab 1：能力分析
+    with tab1:
+
+        chart_col1, chart_col2 = (
+            st.columns(2)
+        )
+
+        with chart_col1:
+
+            render_radar_chart(
+                stats_df,
+                pokemon_name
+            )
+
+        with chart_col2:
+
+            render_bar_chart(
+                stats_df
+            )
+
+
+        ### 計算能力值摘要
+        total_score = int(
+            stats_df[
+                "數值"
+            ].sum()
+        ) # 加總所有基礎能力值
+
+
+        strongest = (
+            stats_df
+            .sort_values(
+                "數值",
+                ascending=False
+            )
+            .iloc[0]
+        ) # 依照能力值由高到低排序，取得最高能力
+
+
+        weakest = (
+            stats_df
+            .sort_values(
+                "數值",
+                ascending=True
+            )
+            .iloc[0]
+        ) # 依照能力值由低到高排序，取得最低能力
+
+
+        ### 顯示能力值摘要
+        insight_col1, insight_col2, insight_col3 = (
+            st.columns(3)
+        )
+
+        insight_col1.metric(
+            "總能力值",
+            total_score
+        )
+
+        insight_col2.metric(
+            "最高能力",
+            f"{strongest['能力']} "
+            f"({strongest['數值']})"
+        )
+
+        insight_col3.metric(
+            "最低能力",
+            f"{weakest['能力']} "
+            f"({weakest['數值']})"
+        )
+
+
+    ### Tab 2：技能資料庫
+    with tab2:
+
+        st.markdown(
+            "### 技能列表"
+        )
+
+        if show_all_moves:
+
+            st.dataframe(
+                moves_df,
+                width="stretch",
+                height=500,
+                hide_index=True # 不顯示 DataFrame index
+            )
+
+        else:
+
+            st.info(
+                "目前只顯示前 30 筆。"
+                "若要看完整技能，"
+                "請到左側勾選「顯示全部技能」。"
+            )
+
+            st.dataframe(
+                moves_df.head(30), # 只取前 30 筆技能
+                width="stretch",
+                height=500,
+                hide_index=True
+            )
+
+
+    ### Tab 3：原始資料摘要
+    with tab3:
+
+        habitat = (
+            species["habitat"]["name"]
+            if species["habitat"]
+            else "無資料"
+        ) # 如果 API 沒有棲息地資料則顯示「無資料」
+
+
+        ### 建立寶可夢資料摘要
+        summary = {
+            "圖鑑編號":
+                pokemon_id,
+
+            "名稱":
+                pokemon_name,
+
+            "屬性":
+                ", ".join(
+                    types
+                ),
+
+            "特性":
+                ", ".join(
+                    abilities
+                ),
+
+            "身高(m)":
+                pokemon["height"] / 10,
+
+            "體重(kg)":
+                pokemon["weight"] / 10,
+
+            "世代":
+                species[
+                    "generation"
+                ][
+                    "name"
+                ],
+
+            "棲息地":
+                habitat,
+
+            "進化鏈":
+                " -> ".join(
+                    evolution_names
+                ),
+
+            "圖片網址":
+                image_url
+        }
+
+
+        ### 使用 JSON 格式顯示資料摘要
+        st.json(
+            summary
+        )
+
+
+    ### Tab 4：教學引導
+    with tab4:
+
+        st.markdown(
+            """
+            ### 可以引導學生觀察的問題
+
+            這個範例很適合拿來教 REST API，因為學生可以直接看到：
+            一隻寶可夢的完整資料，其實不是從單一 API 一次取得。
+
+            - 基本資料來自 `/pokemon/{name}`
+            - 世代、顏色、棲息地來自 Species API
+            - 進化鏈來自 Evolution Chain API
+            - 圖片來自 API 回傳的圖片網址
+            - 技能資料可以再透過 Pandas 整理
+            - 能力值可以再利用 Plotly 視覺化
+
+            因此整個流程會變成：
+
+            `輸入資料 → 發送 Request → JSON → 整理資料 → DataFrame → 圖表 → Streamlit`
+
+            這樣比單純把 JSON 印出來，更容易理解 API 在實際專案裡怎麼使用。
+            """
+        )
+
+
+### 處理找不到寶可夢的錯誤
+except ValueError:
+
+    st.error(
+        "找不到這隻寶可夢。"
+        "請輸入英文名稱，例如 pikachu，"
+        "或輸入圖鑑編號，例如 25。"
+    )
+
+
+### 處理 API 連線錯誤
+except requests.RequestException as error:
+
+    st.error(
+        f"API 連線失敗：{error}"
+    )
+
+
+### 處理其他程式錯誤
+except Exception as error:
+
+    st.error(
+        f"程式發生錯誤：{error}"
+    )
 ```

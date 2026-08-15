@@ -162,36 +162,25 @@ if __name__ == "__main__":
 ### 範例：Streamlit 狗狗圖片牆
 
 ```python
-"""
-範例：Dog CEO API Streamlit 狗狗圖片牆
-
-功能：
-1. 隨機狗狗圖片牆
-2. 指定品種查詢
-3. 顯示所有品種
-4. 抽卡式狗狗推薦
-5. 可下載圖片網址清單
-
-執行方式：
-uv run streamlit run dog_ceo_streamlit_gallery.py
-"""
-
 import random
 import requests
 import pandas as pd
 import streamlit as st
 
 
-BASE_URL = "https://dog.ceo/api"
+### API 設定
+BASE_URL = "https://dog.ceo/api" # Dog CEO API 的基礎網址
 
 
+### Streamlit 頁面設定
 st.set_page_config(
-    page_title="Dog CEO 狗狗圖片牆",
-    page_icon="🐶",
-    layout="wide"
+    page_title="Dog CEO 狗狗圖片牆", # 瀏覽器分頁標題
+    page_icon="🐶", # 瀏覽器分頁圖示
+    layout="wide" # 使用寬版頁面配置
 )
 
 
+### 自訂 CSS 樣式
 st.markdown(
     """
     <style>
@@ -226,93 +215,203 @@ st.markdown(
     }
     </style>
     """,
-    unsafe_allow_html=True
+    unsafe_allow_html=True # 允許 Streamlit 執行 HTML 與 CSS
 )
 
 
-@st.cache_data(show_spinner=False)
+### 建立 API GET Request 函式
 def get_json(url: str) -> dict:
-    """取得 API JSON 資料。"""
-    response = requests.get(url, timeout=10)
-    response.raise_for_status()
-    return response.json()
+    """
+    向指定 API 網址發送 GET Request，
+    並將回傳的 JSON 資料轉成 Python dict。
+    """
+
+    response = requests.get(
+        url,
+        timeout=10 # 最多等待 API 回應 10 秒
+    )
+
+    response.raise_for_status() # HTTP 狀態碼不是成功狀態時直接產生例外
+
+    return response.json() # 將 JSON Response 轉成 Python dict
 
 
+### 取得所有狗狗品種
 @st.cache_data(show_spinner=False)
 def get_all_breeds() -> dict:
-    """取得所有狗狗品種。"""
-    data = get_json(f"{BASE_URL}/breeds/list/all")
-    return data["message"]
+    """
+    取得 Dog CEO API 提供的所有狗狗品種。
+
+    因為品種資料不常變動，
+    使用 Streamlit cache 避免每次重新呼叫 API。
+    """
+
+    data = get_json(
+        f"{BASE_URL}/breeds/list/all"
+    )
+
+    return data["message"] # message 裡面存放所有品種資料
 
 
+### 取得多張隨機狗狗圖片
 def get_random_images(count: int) -> list[str]:
-    """取得多張隨機狗狗圖片。"""
-    data = get_json(f"{BASE_URL}/breeds/image/random/{count}")
+    """
+    根據指定數量，
+    取得多張隨機狗狗圖片網址。
+    """
+
+    data = get_json(
+        f"{BASE_URL}/breeds/image/random/{count}"
+    )
+
+    return data["message"] # 回傳圖片網址 list
+
+
+### 取得指定品種的多張隨機圖片
+def get_breed_random_images(
+    breed: str,
+    count: int
+) -> list[str]:
+    """
+    根據指定狗狗品種與圖片數量，
+    取得多張隨機圖片網址。
+    """
+
+    data = get_json(
+        f"{BASE_URL}/breed/{breed}/images/random/{count}"
+    )
+
     return data["message"]
 
 
+### 取得指定品種的一張隨機圖片
 def get_breed_random_image(breed: str) -> str:
-    """指定品種取得一張圖片。"""
-    data = get_json(f"{BASE_URL}/breed/{breed}/images/random")
+    """
+    根據指定狗狗品種，
+    取得一張隨機圖片網址。
+    """
+
+    data = get_json(
+        f"{BASE_URL}/breed/{breed}/images/random"
+    )
+
     return data["message"]
 
 
+### 整理狗狗品種資料
 def flatten_breeds(breeds: dict) -> list[str]:
     """
-    把 Dog CEO 的品種資料整理成下拉選單格式。
+    將 Dog CEO API 的品種 dict，
+    整理成 Streamlit 下拉選單可以使用的 list。
 
-    原始資料像這樣：
-    {
-        "hound": ["afghan", "basset"],
-        "shiba": []
-    }
-
-    這裡先處理主品種，讓學生比較好理解。
+    這個版本只顯示主品種，
+    不另外展開子品種。
     """
-    return sorted(breeds.keys())
+
+    return sorted(
+        breeds.keys() # 取得 dict 裡所有主品種名稱並排序
+    )
 
 
-def show_image_grid(image_urls: list[str], columns_count: int = 3) -> None:
-    """用多欄排版顯示圖片牆。"""
-    columns = st.columns(columns_count)
+### 建立狗狗圖片牆函式
+def show_image_grid(
+    image_urls: list[str],
+    columns_count: int = 3
+) -> None:
+    """
+    根據指定欄位數量建立 Streamlit columns，
+    並將狗狗圖片平均排列到不同欄位。
+    """
+
+    columns = st.columns(
+        columns_count
+    )
 
     for index, image_url in enumerate(image_urls):
-        with columns[index % columns_count]:
-            st.image(image_url, use_container_width=True)
-            st.caption(f"Dog #{index + 1}")
+
+        # 使用餘數決定目前這張圖片要放在哪一欄
+        column = columns[
+            index % columns_count
+        ]
+
+        with column:
+
+            st.image(
+                image_url,
+                width="stretch" # 圖片寬度自動填滿目前欄位
+            )
+
+            st.caption(
+                f"Dog #{index + 1}" # 顯示圖片編號
+            )
 
 
-st.markdown("<div class='main-title'>🐶 Dog CEO 狗狗圖片牆</div>", unsafe_allow_html=True)
+### 顯示網站標題
 st.markdown(
-    "<div class='subtitle'>用 REST API 打造一個超療癒的狗狗圖片展示網站。</div>",
+    "<div class='main-title'>🐶 Dog CEO 狗狗圖片牆</div>",
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <div class='subtitle'>
+    用 REST API 打造一個超療癒的狗狗圖片展示網站。
+    </div>
+    """,
     unsafe_allow_html=True
 )
 
 
+### 主程式
 try:
-    breeds = get_all_breeds()
-    breed_options = flatten_breeds(breeds)
 
+    ### 取得所有狗狗品種
+    breeds = get_all_breeds()
+
+    breed_options = flatten_breeds(
+        breeds
+    )
+
+
+    ### 建立 Sidebar 查詢設定
     with st.sidebar:
-        st.header("查詢設定")
+
+        st.header(
+            "🐶 查詢設定"
+        )
 
         mode = st.radio(
             "選擇模式",
-            ["隨機圖片牆", "指定品種", "今日狗狗抽卡", "品種資料表"]
+            [
+                "隨機圖片牆",
+                "指定品種",
+                "今日狗狗抽卡",
+                "品種資料表"
+            ]
         )
 
         image_count = st.slider(
             "圖片數量",
-            min_value=3,
-            max_value=50,
-            value=9,
+            min_value=3, # 最少顯示 3 張
+            max_value=50, # 最多顯示 50 張
+            value=9, # 預設顯示 9 張
             step=1
         )
+
+
+        ### 設定預設狗狗品種
+        default_index = 0 # 找不到 shiba 時預設選擇第一個品種
+
+        if "shiba" in breed_options:
+            default_index = breed_options.index(
+                "shiba"
+            ) # 找到 shiba 在品種清單中的索引位置
+
 
         selected_breed = st.selectbox(
             "選擇狗狗品種",
             breed_options,
-            index=breed_options.index("shiba") if "shiba" in breed_options else 0
+            index=default_index
         )
 
         columns_count = st.slider(
@@ -322,67 +421,222 @@ try:
             value=3
         )
 
-        run_button = st.button("開始產生", type="primary", use_container_width=True)
+        run_button = st.button(
+            "🐾 開始產生",
+            type="primary",
+            width="stretch"
+        )
 
         st.divider()
-        st.caption("建議查詢：shiba、pug、husky、retriever、terrier")
 
+        st.caption(
+            "建議查詢：shiba、pug、husky、retriever、terrier"
+        )
+
+
+    ### 顯示網站統計資訊
     metric_col1, metric_col2, metric_col3 = st.columns(3)
 
-    metric_col1.metric("API 主題", "狗狗圖片")
-    metric_col2.metric("可選品種", len(breed_options))
-    metric_col3.metric("最多隨機張數", "50 張")
+    metric_col1.metric(
+        "API 主題",
+        "狗狗圖片"
+    )
+
+    metric_col2.metric(
+        "可選品種",
+        len(breed_options) # 計算目前 API 提供多少個主品種
+    )
+
+    metric_col3.metric(
+        "最多隨機張數",
+        "50 張"
+    )
 
     st.divider()
 
+
+    ### 模式 1：隨機圖片牆
     if mode == "隨機圖片牆":
-        st.subheader("🎲 隨機狗狗圖片牆")
 
+        st.subheader(
+            "🎲 隨機狗狗圖片牆"
+        )
+
+
+        ### 取得隨機狗狗圖片
         if run_button:
-            image_urls = get_random_images(image_count)
+
+            with st.spinner(
+                "正在召喚狗狗..."
+            ):
+
+                image_urls = get_random_images(
+                    image_count
+                ) # 根據 Sidebar 選擇的圖片數量取得圖片
+
         else:
-            image_urls = get_random_images(9)
 
-        show_image_grid(image_urls, columns_count)
+            image_urls = get_random_images(
+                9
+            ) # 第一次開啟網站時預設顯示 9 張圖片
 
-        df = pd.DataFrame({
-            "編號": range(1, len(image_urls) + 1),
-            "圖片網址": image_urls
-        })
 
-        csv_data = df.to_csv(index=False).encode("utf-8-sig")
+        ### 顯示狗狗圖片牆
+        show_image_grid(
+            image_urls,
+            columns_count
+        )
 
+
+        ### 建立圖片網址 DataFrame
+        df = pd.DataFrame(
+            {
+                "編號": range(
+                    1,
+                    len(image_urls) + 1
+                ),
+                "圖片網址": image_urls
+            }
+        )
+
+
+        ### 將 DataFrame 轉成 CSV
+        csv_data = df.to_csv(
+            index=False # CSV 不加入 DataFrame index
+        ).encode(
+            "utf-8-sig" # 使用 UTF-8 BOM，避免 Excel 開啟中文時出現亂碼
+        )
+
+
+        ### 提供 CSV 下載按鈕
         st.download_button(
-            "下載圖片網址 CSV",
+            label="📥 下載圖片網址 CSV",
             data=csv_data,
             file_name="dog_image_urls.csv",
             mime="text/csv"
         )
 
+
+    ### 模式 2：指定品種
     elif mode == "指定品種":
-        st.subheader(f"🐕 指定品種：{selected_breed}")
 
-        image_urls = []
+        st.subheader(
+            f"🐕 指定品種：{selected_breed}"
+        )
 
+
+        ### 設定要取得的圖片數量
         if run_button:
-            with st.spinner("正在召喚狗狗圖片..."):
-                for _ in range(image_count):
-                    image_urls.append(get_breed_random_image(selected_breed))
+
+            count = image_count # 按下按鈕後使用 Sidebar 選擇的圖片數量
+
         else:
-            for _ in range(6):
-                image_urls.append(get_breed_random_image(selected_breed))
 
-        st.success(f"已取得 {selected_breed} 的狗狗圖片")
-        show_image_grid(image_urls, columns_count)
+            count = 6 # 第一次進入這個模式時預設顯示 6 張
 
+
+        ### 取得指定品種圖片
+        with st.spinner(
+            f"正在尋找 {selected_breed}..."
+        ):
+
+            image_urls = get_breed_random_images(
+                selected_breed,
+                count
+            )
+
+
+        st.success(
+            f"已取得 {count} 張 {selected_breed} 圖片"
+        )
+
+
+        ### 顯示指定品種圖片牆
+        show_image_grid(
+            image_urls,
+            columns_count
+        )
+
+
+        ### 建立指定品種圖片 DataFrame
+        df = pd.DataFrame(
+            {
+                "品種": [
+                    selected_breed
+                ] * len(image_urls), # 每一筆圖片資料都填入相同品種名稱
+
+                "圖片網址":
+                    image_urls
+            }
+        )
+
+
+        ### 將 DataFrame 轉成 CSV
+        csv_data = df.to_csv(
+            index=False
+        ).encode(
+            "utf-8-sig"
+        )
+
+
+        ### 提供 CSV 下載按鈕
+        st.download_button(
+            label="📥 下載圖片網址 CSV",
+            data=csv_data,
+            file_name=f"{selected_breed}_images.csv",
+            mime="text/csv"
+        )
+
+
+    ### 模式 3：今日狗狗抽卡
     elif mode == "今日狗狗抽卡":
-        st.subheader("✨ 今日狗狗抽卡")
 
-        card_col1, card_col2 = st.columns([1, 2])
+        st.subheader(
+            "✨ 今日狗狗抽卡"
+        )
 
-        lucky_breed = random.choice(breed_options)
-        lucky_image = get_breed_random_image(lucky_breed)
 
+        ### 建立 Session State 儲存抽卡結果
+        # Streamlit 每次操作元件都會重新執行程式
+        # 因此使用 session_state 保存目前抽到的狗狗，避免每次重新執行都自動換卡
+        if "lucky_breed" not in st.session_state:
+
+            st.session_state.lucky_breed = random.choice(
+                breed_options
+            ) # 第一次進入頁面時隨機選擇一個品種
+
+            st.session_state.lucky_image = (
+                get_breed_random_image(
+                    st.session_state.lucky_breed
+                )
+            ) # 根據抽到的品種取得一張隨機圖片
+
+
+        ### 按下按鈕重新抽卡
+        if run_button:
+
+            st.session_state.lucky_breed = random.choice(
+                breed_options
+            )
+
+            st.session_state.lucky_image = (
+                get_breed_random_image(
+                    st.session_state.lucky_breed
+                )
+            )
+
+
+        ### 取得目前 Session State 中的抽卡結果
+        lucky_breed = (
+            st.session_state.lucky_breed
+        )
+
+        lucky_image = (
+            st.session_state.lucky_image
+        )
+
+
+        ### 今日狗狗隨機評語
         comments = [
             "今天適合放慢速度，像狗狗曬太陽一樣。",
             "今天的任務是：不要把自己逼太緊。",
@@ -391,49 +645,143 @@ try:
             "今天適合寫程式，也適合看狗。"
         ]
 
+
+        ### 建立抽卡結果左右兩欄
+        card_col1, card_col2 = st.columns(
+            [1, 2] # 左欄寬度 1、右欄寬度 2
+        )
+
+
+        ### 左側顯示狗狗圖片
         with card_col1:
-            st.markdown("<div class='dog-card'>", unsafe_allow_html=True)
-            st.image(lucky_image, use_container_width=True)
-            st.markdown("</div>", unsafe_allow_html=True)
 
-        with card_col2:
-            st.markdown("### 你的今日狗狗")
-            st.markdown(f"<div class='big-number'>{lucky_breed.upper()}</div>", unsafe_allow_html=True)
-            st.write(random.choice(comments))
-
-            st.info(
-                "這個功能可以拿來教學生：API 不只能查資料，"
-                "還可以搭配隨機邏輯做成有互動感的小作品。"
+            st.markdown(
+                "<div class='dog-card'>",
+                unsafe_allow_html=True
             )
 
-            st.code(lucky_image)
+            st.image(
+                lucky_image,
+                width="stretch"
+            )
 
+            st.markdown(
+                "</div>",
+                unsafe_allow_html=True
+            )
+
+
+        ### 右側顯示抽卡資訊
+        with card_col2:
+
+            st.markdown(
+                "### 你的今日狗狗"
+            )
+
+            st.markdown(
+                f"""
+                <div class='big-number'>
+                {lucky_breed.upper()}
+                </div>
+                """,
+                unsafe_allow_html=True
+            ) # 將抽到的狗狗品種轉成大寫顯示
+
+            st.write(
+                random.choice(
+                    comments
+                )
+            ) # 隨機顯示一句今日評語
+
+            st.info(
+                "這個功能可以拿來教學生："
+                "API 不只能查資料，"
+                "還可以搭配隨機邏輯，"
+                "做成有互動感的小作品。"
+            )
+
+            st.markdown(
+                "#### 圖片網址"
+            )
+
+            st.code(
+                lucky_image
+            ) # 顯示目前狗狗圖片的原始網址
+
+
+    ### 模式 4：品種資料表
     elif mode == "品種資料表":
-        st.subheader("📋 Dog CEO 品種資料表")
 
+        st.subheader(
+            "📋 Dog CEO 品種資料表"
+        )
+
+
+        ### 建立品種資料 list
         rows = []
 
         for breed, sub_breeds in breeds.items():
-            rows.append({
-                "主品種": breed,
-                "是否有子品種": "是" if sub_breeds else "否",
-                "子品種": ", ".join(sub_breeds) if sub_breeds else "無"
-            })
 
-        df = pd.DataFrame(rows)
+            rows.append(
+                {
+                    "主品種": breed,
 
-        st.dataframe(df, use_container_width=True, height=520)
+                    "是否有子品種":
+                        "是"
+                        if sub_breeds
+                        else "否",
 
+                    "子品種":
+                        ", ".join(sub_breeds)
+                        if sub_breeds
+                        else "無"
+                }
+            )
+
+
+        ### 將品種資料轉成 DataFrame
+        df = pd.DataFrame(
+            rows
+        )
+
+
+        ### 顯示品種資料表
+        st.dataframe(
+            df,
+            width="stretch", # 表格寬度自動填滿頁面
+            height=520 # 設定表格高度
+        )
+
+
+        ### 將品種資料轉成 CSV
+        csv_data = df.to_csv(
+            index=False
+        ).encode(
+            "utf-8-sig"
+        )
+
+
+        ### 提供 CSV 下載按鈕
         st.download_button(
-            "下載品種資料 CSV",
-            data=df.to_csv(index=False).encode("utf-8-sig"),
+            label="📥 下載品種資料 CSV",
+            data=csv_data,
             file_name="dog_breeds.csv",
             mime="text/csv"
         )
 
-except requests.RequestException as error:
-    st.error(f"API 連線失敗：{error}")
 
+### 處理 API 連線錯誤
+except requests.RequestException as error:
+
+    st.error(
+        f"API 連線失敗：{error}"
+    )
+
+
+### 處理其他程式錯誤
 except Exception as error:
-    st.error(f"程式發生錯誤：{error}")
+
+    st.error(
+        f"程式發生錯誤：{error}"
+    )
 ```
