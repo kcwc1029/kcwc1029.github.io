@@ -694,7 +694,7 @@
   <a href="#ctktextbox" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CTkTextbox — 多行文字區域
+        CTkTextbox：多行文字區域
       
     </span>
   </a>
@@ -705,7 +705,7 @@
   <a href="#ctkcheckbox" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CTkCheckBox（核取方塊）
+        CTkCheckBox：核取方塊
       
     </span>
   </a>
@@ -773,7 +773,7 @@
 <h1 id="customtkinter">Customtkinter<a class="headerlink" href="#customtkinter" title="Permanent link">&para;</a></h1>
 <h2 id="gui">為什麼要學 GUI？<a class="headerlink" href="#gui" title="Permanent link">&para;</a></h2>
 <ul>
-<li>專案下載：https://github.com/kcwc1029/kcwc1029.github.io/tree/main/docs/python-notebooks/Word_Cloud</li>
+<li>專案下載：https://github.com/kcwc1029/kcwc1029.github.io/tree/main/docs/python-notebooks/CustomTkinter</li>
 <li>DownGit：https://downgit.github.io/#/home</li>
 </ul>
 <p>你到目前為止寫的 Python 程式，執行結果都是出現在黑色的終端機視窗裡，對嗎？</p>
@@ -950,10 +950,13 @@ def 我的函式():
 <li><a href="customtkinter_src/CTk%E5%81%87%E7%99%BB%E5%85%A5%E7%B3%BB%E7%B5%B1/">範例：假登入系統</a></li>
 <li><a href="customtkinter_src/CTk%E9%80%9A%E9%9D%88%E7%BF%BB%E8%AD%AF/">範例：通靈翻譯</a></li>
 </ul>
-<h2 id="ctktextbox">CTkTextbox — 多行文字區域<a class="headerlink" href="#ctktextbox" title="Permanent link">&para;</a></h2>
+<h2 id="ctktextbox">CTkTextbox：多行文字區域<a class="headerlink" href="#ctktextbox" title="Permanent link">&para;</a></h2>
 <p>Entry 只能輸入一行文字。當你需要讓使用者輸入或顯示<strong>多行</strong>文字（像記事本、日誌視窗、程式輸出區），就要用 CTkTextbox。</p>
 <p>CTK 的 Textbox 與傳統 tkinter 最大的差別是內建捲軸，文字多了會自動出現捲軸，不用另外設定。</p>
-<h2 id="ctkcheckbox">CTkCheckBox（核取方塊）<a class="headerlink" href="#ctkcheckbox" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="customtkinter_src/%E6%96%87%E7%AB%A0%E5%AD%97%E6%95%B8%E7%B5%B1%E8%A8%88%E5%99%A8/">範例：文章字數統計器</a></li>
+</ul>
+<h2 id="ctkcheckbox">CTkCheckBox：核取方塊<a class="headerlink" href="#ctkcheckbox" title="Permanent link">&para;</a></h2>
 <p>每個 CheckBox 都綁定自己的 <code>BooleanVar</code>，勾選時變數為 <code>True</code>，取消為 <code>False</code>。</p>
 <table>
 <thead>
@@ -992,12 +995,15 @@ def 我的函式():
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">on_select</span><span class="p">(</span><span class="n">choice</span><span class="p">):</span>   <span class="c1"># choice 是 CTK 自動傳入的選中值</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span>
 </code></pre></div>
+<ul>
+<li><a href="customtkinter_src/CTk%E9%A3%B2%E6%96%99%E9%BB%9E%E9%A4%90%E6%A9%9F/">範例：CTk飲料點餐機</a></li>
+</ul>
 <h2 id="_6">實作：<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="customtkinter_projects/%E5%AF%A6%E4%BD%9C%EF%BC%9A%E7%95%AA%E8%8C%84%E8%A8%88%E6%99%82%E5%99%A8.py">實作：番茄計時器</a></li>
-<li><a href="customtkinter_projects/%E5%AF%A6%E4%BD%9C%EF%BC%9A%E7%B0%A1%E6%98%93%E8%A8%88%E7%AE%97%E6%A9%9F.py">實作：簡易計算機</a></li>
-<li><a href="customtkinter_projects/%E5%AF%A6%E4%BD%9C%EF%BC%9A%E5%9C%96%E7%89%87%E6%89%B9%E9%87%8F%E4%BF%AE%E6%94%B9%E7%A8%8B%E5%BC%8F.py">實作：圖片批量修改程式</a></li>
-<li><a href="customtkinter_projects/%E5%AF%A6%E4%BD%9C%EF%BC%9APOS%E7%B3%BB%E7%B5%B1.py">實作：POS系統</a></li>
+<li><a href="customtkinter_src/CTk%E7%95%AA%E8%8C%84%E8%A8%88%E6%99%82%E5%99%A8/">實作：CTk番茄計時器</a></li>
+<li><a href="customtkinter_src/CTk%E7%B0%A1%E6%98%93%E8%A8%88%E7%AE%97%E6%A9%9F/">實作：CTk簡易計算機</a></li>
+<li><a href="customtkinter_src/CTk%E5%9C%96%E7%89%87%E6%89%B9%E9%87%8F%E4%BF%AE%E6%94%B9%E7%A8%8B%E5%BC%8F/">實作：CTk圖片批量修改程式</a></li>
+<li><a href="customtkinter_src/CTkPOS%E6%A9%9F/">實作：CTkPOS機</a></li>
 </ul>
 
 

@@ -1,0 +1,1092 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、AI筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/AI%E6%87%89%E7%94%A8/Google_AI%E5%B7%A5%E4%BD%9C%E8%A1%93/AI%E9%83%B5%E4%BB%B6%E7%AE%A1%E7%90%86%E8%A1%93/AI%E9%83%B5%E4%BB%B6%E7%AE%A1%E7%90%86%E8%A1%93/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>郵件管理術：Gemini × Gmail × Google Calendar - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gemini-gmail-google-calendar" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              郵件管理術：Gemini × Gmail × Google Calendar
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../AI%E6%87%89%E7%94%A8/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI應用
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+          
+  
+  
+  日記
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI%E6%87%89%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI應用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    日記
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    手札首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%89%8B%E6%9C%AD/12%E5%A4%A9%E8%A3%9C%E5%85%85%E5%85%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12天補充兵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gemini-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用 Gemini 快速生成 Email 回覆
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="用 Gemini 快速生成 Email 回覆">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        範例：回覆新書《AI 永生術》新品通報
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        範例：回覆英文洽詢信
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gemini-google-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemini 連動 Google Workspace 統整郵件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gemini 連動 Google Workspace 統整郵件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任務一：整理指定期間的工作郵件
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任務二：找出特定分類——產品諮詢
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="任務二：找出特定分類——產品諮詢">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-sheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任務三：轉成 Google Sheets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-calendar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        從郵件建立 Google Calendar 行程
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        原教材情境
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="原教材情境">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        原教材提示詞
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        管理電子報、會員信件與訂閱(鍵取消訂閱)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gemini" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用 Gemini 統整所有電子報
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        案例：宅宅科技新聞報
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gemini_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemini 排程動作：每週自動整理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        提示詞工具箱
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="gemini-gmail-google-calendar">郵件管理術：Gemini × Gmail × Google Calendar<a class="headerlink" href="#gemini-gmail-google-calendar" title="Permanent link">&para;</a></h1>
+<p>每天真正拖慢工作的，常常不是某一封特別困難的郵件，而是郵件不斷進來：客戶詢問、主管交辦、會議通知、供應商往來、電子報、系統通知。每封只花三分鐘，一天四十封就可能用掉兩小時。</p>
+<p>AI 適合協助四類工作：</p>
+<ol>
+<li>讀信：摘要長信與討論串，抓出行動事項。</li>
+<li>擬信：根據原信、對象與語氣產生回覆草稿。</li>
+<li>整理：跨信件搜尋、分類、抽取欄位及轉成表格。</li>
+<li>管理：從信件建立日曆事件、整理訂閱與建立定期報告。</li>
+</ol>
+<p>但 AI 不是郵件的最終責任人。寄件者、收件者、日期、數字、附件、承諾、付款方式與機密資料，都要由人確認後才能送出。</p>
+<p><img alt="" src="../課前檢查.png" /></p>
+<p><img alt="" src="../必講限制.png" /></p>
+<p><img alt="" src="../gemini串接外部應用程式1.png" />
+<img alt="" src="../gemini串接外部應用程式2.png" />
+<img alt="" src="../gemini串接外部應用程式3.png" /></p>
+<h2 id="gemini-email">用 Gemini 快速生成 Email 回覆<a class="headerlink" href="#gemini-email" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>### 提示詞公式
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>資料來源 + 郵件定位 + 寫信身分 + 回覆目的 + 必須包含 + 不可承諾 +
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>語氣 + 篇幅 + 輸出格式 + 寄出前檢查
+</code></pre></div>
+<h3 id="ai">範例：回覆新書《AI 永生術》新品通報<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h3>
+<p>業務收到新書《AI 永生術》的新品通報。產品結合 AI 科技與健康長壽議題，需要提出有創意但可行的通路與行銷建議。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>### 講師可以先發送給學生
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>主旨：新品通報｜新書《AI 永生術》正式上市
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>您好：
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>向您通報最新出版品《AI 永生術》，本書現已正式上市！
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>《AI 永生術》聚焦於 AI 技術與數位生命的發展，帶領讀者認識人工智慧如何保存個人記憶、聲音、影像與數位足跡，並進一步思考「數位分身」、「AI 復刻」與「數位永生」可能帶來的應用與影響。
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>📖 新書資訊
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>書名：《AI 永生術》
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>類型：人工智慧／科技趨勢
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>適合讀者：對 AI、數位科技與未來趨勢有興趣的讀者
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>上市狀態：新品上市
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>如果您正在關注生成式 AI 的最新發展，或想了解 AI 除了聊天、工作輔助之外，還可能如何改變我們保存記憶與延續數位身分的方式，《AI 永生術》會是一個很有意思的切入點。
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>歡迎參考新書資訊，也期待與您分享更多 AI 時代的新知！
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>謝謝您。
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>敬祝 順心
+</code></pre></div>
+<ol>
+<li>在 Gemini 輸入 <code>@</code> 並選 Gmail。</li>
+<li>貼上提示詞。</li>
+<li>檢查 AI 找到的是不是最新一封信。</li>
+<li>修改草稿直到內容符合需求。</li>
+<li>最後才按寄出。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>@Gmail 找出主旨「新品通報｜新書《AI 永生術》正式上市」郵件。
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>先完成兩件事：
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>1. 用 5 點整理原信已確認的產品資訊。
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>2. 列出原信沒有提供、不可自行假設的資訊。
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>接著以業務部同仁身分起草回覆信：
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>- 對象：產品部與業務部同仁。
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>- 目的：提出新通路及行銷配合建議。
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>- 可討論方向：高端醫療中心與抗衰老診所、科技園區企業福委、
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  Garmin／Apple Watch 等穿戴裝置合作、科技人群眾募或預購。
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>- 每項建議包含目標客群、合作方式與第一步行動。
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>- 不得捏造預算、合約、銷量或已談妥的合作。
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>- 語氣務實、直接、友善，300～450 字。
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>- 輸出主旨、稱呼、正文、結尾與待確認事項。
+</code></pre></div>
+<p><img alt="" src="../gemini回覆郵件.png" /></p>
+<h3 id="_1">範例：回覆英文洽詢信<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>### 講師可以先發送給學生
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>標題：Book Delivery and Event Arrangements
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Hi Wei-Cheng,
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Thanks for the update. Everything looks good on our side.
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>We can confirm that the books can be delivered to the designated location before the event, so there should be no issue with the delivery arrangement.
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>We also like the idea of creating a landing page for the event. Please let us know what materials you need from us, and we will prepare them accordingly.
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>Regarding payment at the venue, could you please check with the climbing gym to see if Line Pay can be used there? If Line Pay is not available, we may need to handle most of the payments in cash.
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>Please keep us updated once you hear back from the climbing gym.
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>Best regards,
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>Emily
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>### 來信重點
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>- 對方確認書籍運送沒有問題，會在活動前送至指定地點。
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>- 對活動 landing page 表示支持。
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>- 需要確認攀岩館是否可設置 Line Pay；若不行，現場以現金交易為主。
+</code></pre></div>
+<ul>
+<li><a href="https://share.gemini.google/eQak77dbSwBc">GPT：尋找書本寄送事件郵件</a></li>
+</ul>
+<h2 id="gemini-google-workspace">Gemini 連動 Google Workspace 統整郵件<a class="headerlink" href="#gemini-google-workspace" title="Permanent link">&para;</a></h2>
+<h3 id="_2">任務一：整理指定期間的工作郵件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>### 提示詞
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>@Gmail 請幫我整理 7月份的工作郵件。
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>依下列分類輸出：
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>1. 工作與出版業務
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>2. 帳單與付款通知
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>3. 電子報與訂閱
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>4. 會議與活動
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>5. 需要我回覆或採取行動
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>每封列出：收信日期、寄件者、主旨、一句摘要、期限、我的待辦、原信連結。
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>同一討論串合併，但若內容互相矛盾要明確標示。
+</code></pre></div>
+<ul>
+<li><a href="https://share.gemini.google/IGPnEwxhdFxN">GPT：整理七月工作郵件分類</a></li>
+</ul>
+<h2 id="_3">任務二：找出特定分類——產品諮詢<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>### 提示詞
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>@Gmail 尋找與「產品諮詢、程式範例下載、軟體連線、刷卡、機器人產品」
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>相關的客服郵件。
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>請依問題類型分組，每封列出：
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>- 原始收信時間
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>- 寄件者
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>- 郵件主旨
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>- 產品編號
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>- 產品名稱
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>- 問題摘要
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>- 是否已有回覆紀錄
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>- 建議下一步
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>- 原信連結
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>無法從信中確認的欄位請寫「未註明」，不要猜測。
+</code></pre></div>
+<ul>
+<li><a href="https://share.gemini.google/IGPnEwxhdFxN">GPT：整理七月工作郵件分類</a></li>
+</ul>
+<h3 id="google-sheets">任務三：轉成 Google Sheets<a class="headerlink" href="#google-sheets" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>將以上產品諮詢內容整理成表格。
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>欄位依序為：原始收件時間、寄件者、郵件主旨、產品編號、產品名稱、
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>問題分類、問題摘要、是否有回覆紀錄、負責人、處理狀態、原信連結。
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>缺值填「待確認」，不要補猜。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>若介面提供匯出至試算表，可建立 Sheets；若沒有，使用 Markdown／CSV 格式複製貼上。匯出後可計算回覆率：
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>回覆率 = 已有回覆紀錄數 ÷ 全部諮詢數
+</code></pre></div>
+<h2 id="google-calendar">從郵件建立 Google Calendar 行程<a class="headerlink" href="#google-calendar" title="Permanent link">&para;</a></h2>
+<h2 id="_4">原教材情境<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>從未來會議通知郵件中擷取會議名稱、日期、時間、地點與議程，再建立多筆 Calendar 活動。</p>
+<h3 id="_5">原教材提示詞<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>@Gmail 請幫我找出未來會議通知的郵件，並整理出議程的詳細時間。
+</code></pre></div>
+<ul>
+<li><a href="https://share.gemini.google/O1Xyc8uUIq2i">GPT：整理未來會議議程時間</a></li>
+</ul>
+<p>接續：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>@Google 日曆 將【HITCON 2026 台灣駭客年會】記錄到我的 Calendar 中。
+</code></pre></div>
+<ul>
+<li><a href="https://share.gemini.google/qbnsXnRFBnlW">GPT：整理未來會議議程時間</a></li>
+</ul>
+<h2 id="_6">管理電子報、會員信件與訂閱(鍵取消訂閱)<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Gmail 的「管理訂閱項目」可集中列出訂閱寄件者及寄信頻率。一般操作概念：</p>
+<ol>
+<li>開啟 Gmail 網頁版。</li>
+<li>左側選單按「更多」。</li>
+<li>開啟「管理訂閱項目」。</li>
+<li>先點寄件者，查看過去寄來的郵件。</li>
+<li>確認確實不再需要，才按「取消訂閱」。</li>
+</ol>
+<p>此功能仍可能分階段推出；若帳號沒有，可開啟單封電子報，在寄件者旁使用「取消訂閱」，或依寄件者提供的網站操作。</p>
+<p><img alt="" src="../管理訂閱項目1.png" /></p>
+<p><img alt="" src="../管理訂閱項目2.png" /></p>
+<h2 id="gemini">用 Gemini 統整所有電子報<a class="headerlink" href="#gemini" title="Permanent link">&para;</a></h2>
+<h2 id="_7">案例：宅宅科技新聞報<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>要求 Gemini 整理最近一週所有訂閱電子報中的科技新聞，而不是只看某一封；再用「宅宅科技新聞報」的個人風格輸出，每則新聞附來源。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>### 提示詞
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>@Gmail 整理最近 7 天收到的科技類訂閱電子報。
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>規則：
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>1. 排除廣告、純促銷、重複轉載與沒有實質內容的郵件。
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>2. 同一事件若多封郵件提及，合併成一則並保留全部來源。
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>3. 分成 AI、軟體開發、硬體／機器人、資安、產業動態五類。
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>4. 每則包含：標題、80～120 字摘要、為何值得關注、來源寄件者、日期、原信連結。
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>5. 區分原信事實與你的推論，不要捏造數字。
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>6. 最後以新聞科技自媒體 KOL，發布成有個人風格的「宅宅科技新聞報」。
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>7. 若來源彼此矛盾，列出差異，不自行裁決。
+</code></pre></div>
+<ul>
+<li><a href="https://share.gemini.google/xgzO90k3KCUA">GPT：科技電子報：AI、資安、開發趨勢</a></li>
+</ul>
+<h2 id="gemini_1">Gemini 排程動作：每週自動整理<a class="headerlink" href="#gemini_1" title="Permanent link">&para;</a></h2>
+<p>先讓 Gemini 成功完成一次「宅宅科技新聞報」，確認格式後，再建立定期排程：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>### 提示詞
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>請建立排程動作：每週一台北時間 17:00 執行。
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>任務：
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>@Gmail 整理最近 7 天收到的科技類訂閱電子報。
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>規則：
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>1. 排除廣告、純促銷、重複轉載與沒有實質內容的郵件。
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>2. 同一事件若多封郵件提及，合併成一則並保留全部來源。
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>3. 分成 AI、軟體開發、硬體／機器人、資安、產業動態五類。
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>4. 每則包含：標題、80～120 字摘要、為何值得關注、來源寄件者、日期、原信連結。
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>5. 區分原信事實與你的推論，不要捏造數字。
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>6. 最後以新聞科技自媒體 KOL，發布成有個人風格的「宅宅科技新聞報」。
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>7. 若來源彼此矛盾，列出差異，不自行裁決。
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>只產生報告並通知我，不得自動寄信、刪信、移動郵件或取消訂閱。
+</code></pre></div>
+<ul>
+<li><a href="https://share.gemini.google/xgzO90k3KCUA">GPT：科技電子報：AI、資安、開發趨勢</a></li>
+</ul>
+<h2 id="_8">提示詞工具箱<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>### 長信摘要
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>請摘要目前郵件討論串，分成：背景、已確認決策、仍有爭議、我的待辦、
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>負責人、期限、數字與附件。每一點附上對應寄件者與日期。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>### 找未回覆郵件
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>@Gmail 找出過去 14 天寄給我的工作郵件中，看起來需要我回覆、但目前討論串
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>尚未看到我回覆的信。請列主旨、寄件者、收信時間、判斷理由及原信連結。
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>只做清單，不要代我寄信。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>### 禮貌拒絕
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>根據原信起草婉拒回覆。先表達感謝，再清楚說明目前無法配合；不要編造理由，
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>不要留下虛假期待。若原信存在替代方案，可提出一項。控制在 180 字內。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>### 催款或進度追蹤
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>根據討論串起草進度追蹤信。列出先前已確認事項、原訂期限與目前待回覆問題。
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>語氣堅定但不指責。任何金額與日期都必須直接取自信件並附在草稿前供我核對。
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "navigation.top", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

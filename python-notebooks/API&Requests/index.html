@@ -754,7 +754,7 @@
   <a href="#cookiesession" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cookie與Session
+        補充：Cookie與Session
       
     </span>
   </a>
@@ -765,7 +765,7 @@
   <a href="#timeout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        timeout 與例外處理
+        timeout與例外處理
       
     </span>
   </a>
@@ -783,6 +783,50 @@
   
     <nav class="md-nav" aria-label="API實作">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dog-ceo-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        實作：Dog CEO API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokeapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        實作：PokéAPI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fruityvice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        實作：水果營養查詢Fruityvice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#itunes_search_api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (喜歡)實作：iTunes_Search_API
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#open-meteo" class="md-nav__link">
@@ -807,32 +851,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pokeapi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        實作：PokéAPI
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dog-ceo-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        實作：Dog CEO API
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#tvmaze" class="md-nav__link">
     <span class="md-ellipsis">
       
         實作：TVMaze
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        實作：TDX運輸資料流通服務：以高雄捷運為例
       
     </span>
   </a>
@@ -1180,40 +1213,22 @@
 <a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 </code></pre></div>
 <h2 id="jsonplaceholdercrud"><a href="API_Requests_src/%E5%9F%BA%E6%96%BCJSONPlaceholder%E5%81%9ACRUD%E7%A4%BA%E7%AF%84/">基於JSONPlaceholder做CRUD示範</a><a class="headerlink" href="#jsonplaceholdercrud" title="Permanent link">&para;</a></h2>
-<h2 id="cookiesession"><a href="API_Requests_src/Cookie%E8%88%87Session/">Cookie與Session</a><a class="headerlink" href="#cookiesession" title="Permanent link">&para;</a></h2>
-<h2 id="timeout">timeout 與例外處理<a class="headerlink" href="#timeout" title="Permanent link">&para;</a></h2>
-<p>網路不是函式直接呼叫，DNS、連線、TLS、Server 與傳輸每一層都可能失敗。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">try</span><span class="p">:</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="p">(</span><span class="mf">3.05</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">Timeout</span><span class="p">:</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;等待逾時&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">:</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;連線失敗&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">HTTPError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HTTP 錯誤&quot;</span><span class="p">,</span> <span class="n">error</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">JSONDecodeError</span><span class="p">:</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;JSON 格式錯誤&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;其他 Requests 錯誤&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
-</code></pre></div>
-<p><code>timeout=(3.05, 10)</code>：</p>
-<ul>
-<li>第一個數字：connect timeout。</li>
-<li>第二個數字：read timeout。</li>
-</ul>
-<p>read timeout 是等待下一批 bytes 的時間，不是整個工作的絕對總秒數。Requests 預設不會自動 timeout，所以正式程式應明確設定。</p>
+<h2 id="cookiesession"><a href="API_Requests_src/Cookie%E8%88%87Session/">補充：Cookie與Session</a><a class="headerlink" href="#cookiesession" title="Permanent link">&para;</a></h2>
+<h2 id="timeout"><a href="API_Requests_src/timeout%E8%88%87%E4%BE%8B%E5%A4%96%E8%99%95%E7%90%86/">timeout與例外處理</a><a class="headerlink" href="#timeout" title="Permanent link">&para;</a></h2>
 <h2 id="api_3">API實作<a class="headerlink" href="#api_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://publicapis.io/category/games-and-comics">API lists</a></li>
 <li><a href="https://github.com/hsiangfeng/APIList">APIList</a></li>
+<li><a href="https://github.com/public-apis/public-apis">public-apis</a></li>
 </ul>
+<h3 id="dog-ceo-api"><a href="API_Requests_src/Dog-CEO-API/">實作：Dog CEO API</a><a class="headerlink" href="#dog-ceo-api" title="Permanent link">&para;</a></h3>
+<h3 id="pokeapi"><a href="API_Requests_src/Pok%C3%A9API/">實作：PokéAPI</a><a class="headerlink" href="#pokeapi" title="Permanent link">&para;</a></h3>
+<h3 id="fruityvice"><a href="API_Requests_src/%E6%B0%B4%E6%9E%9C%E7%87%9F%E9%A4%8A%E6%9F%A5%E8%A9%A2Fruityvice/">實作：水果營養查詢Fruityvice</a><a class="headerlink" href="#fruityvice" title="Permanent link">&para;</a></h3>
+<h3 id="itunes_search_api"><a href="API_Requests_src/iTunes_Search_API/">(喜歡)實作：iTunes_Search_API</a><a class="headerlink" href="#itunes_search_api" title="Permanent link">&para;</a></h3>
 <h3 id="open-meteo"><a href="API_Requests_src/Open-Meteo/">實作：Open-Meteo</a><a class="headerlink" href="#open-meteo" title="Permanent link">&para;</a></h3>
 <h3 id="random-user"><a href="API_Requests_src/Random-User/">實作：Random User</a><a class="headerlink" href="#random-user" title="Permanent link">&para;</a></h3>
-<h3 id="pokeapi"><a href="API_Requests_src/Pok%C3%A9API/">實作：PokéAPI</a><a class="headerlink" href="#pokeapi" title="Permanent link">&para;</a></h3>
-<h3 id="dog-ceo-api"><a href="API_Requests_src/Dog-CEO-API/">實作：Dog CEO API</a><a class="headerlink" href="#dog-ceo-api" title="Permanent link">&para;</a></h3>
 <h3 id="tvmaze"><a href="API_Requests_src/TVMaze/">實作：TVMaze</a><a class="headerlink" href="#tvmaze" title="Permanent link">&para;</a></h3>
+<h3 id="tdx"><a href="API_Requests_src/TDX%E9%81%8B%E8%BC%B8%E8%B3%87%E6%96%99%E6%B5%81%E9%80%9A%E6%9C%8D%E5%8B%99%EF%BC%9A%E4%BB%A5%E9%AB%98%E9%9B%84%E6%8D%B7%E9%81%8B%E7%82%BA%E4%BE%8B/">實作：TDX運輸資料流通服務：以高雄捷運為例</a><a class="headerlink" href="#tdx" title="Permanent link">&para;</a></h3>
 
 
 

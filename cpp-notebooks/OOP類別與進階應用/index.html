@@ -1,0 +1,1535 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、AI筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/cpp-notebooks/OOP%E9%A1%9E%E5%88%A5%E8%88%87%E9%80%B2%E9%9A%8E%E6%87%89%E7%94%A8/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>C++ OOP 類別與進階應用 - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c-oop" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              C++ OOP 類別與進階應用
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cpp%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/AI%E6%87%89%E7%94%A8/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI應用
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+          
+  
+  
+  日記
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/AI%E6%87%89%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI應用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    日記
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    手札首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%89%8B%E6%9C%AD/12%E5%A4%A9%E8%A3%9C%E5%85%85%E5%85%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12天補充兵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        為什麼需要物件導向？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        開場問題
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        可直接照讀的講稿
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三個核心名詞
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        類別不是物件
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        與 struct 的關係
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一個示範
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一個示範">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        延伸修改
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="c-oop">C++ OOP 類別與進階應用<a class="headerlink" href="#c-oop" title="Permanent link">&para;</a></h1>
+<h2 id="_1">為什麼需要物件導向？<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_2">開場問題<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>問學生：「一個遊戲角色只有名字嗎？」</p>
+<p>學生通常會回答：還有血量、等級、攻擊力、裝備，而且角色可以攻擊、補血、升級。</p>
+<h2 id="_3">可直接照讀的講稿<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>「傳統程式常把資料和函式分開。角色名字放一個變數、血量放另一個變數，攻擊是一個函式、補血又是另一個函式。程式小時沒問題；角色一多，函式可能收到錯的資料，任何地方也都能直接把血量改成負一萬。」</p>
+<p>「物件導向做的第一件事，是把描述同一件東西的資料與行為放在一起。角色物件自己保存名字和血量，也提供受傷與補血的操作。外界不必知道血量怎麼保存，只需照規則使用角色。」</p>
+<h2 id="_4">三個核心名詞<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>名詞</th>
+<th>高中程度解釋</th>
+<th>程式例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>類別 class</td>
+<td>設計圖、規格書</td>
+<td><code>class GameCharacter</code></td>
+</tr>
+<tr>
+<td>物件 object</td>
+<td>依設計圖做出的實體</td>
+<td><code>GameCharacter may;</code></td>
+</tr>
+<tr>
+<td>成員 member</td>
+<td>物件擁有的資料或能力</td>
+<td><code>hp</code>、<code>takeDamage()</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">類別不是物件<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>同一張手機規格可以生產很多支手機；同一個類別也能建立很多個物件。每個物件通常各有自己的普通資料成員。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>GameCharacter 類別（藍圖）
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    ├── May 物件：HP 80
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    ├── John 物件：HP 35
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    └── Amy 物件：HP 100
+</code></pre></div>
+<h2 id="struct">與 struct 的關係<a class="headerlink" href="#struct" title="Permanent link">&para;</a></h2>
+<p>C++ 的 <code>struct</code> 也能有函式、建構子與存取控制。主要語法差異是：</p>
+<ul>
+<li><code>class</code> 預設成員為 <code>private</code>。</li>
+<li><code>struct</code> 預設成員為 <code>public</code>。</li>
+</ul>
+<p>教學慣例：單純資料集合常用 struct；具有規則與行為、希望強調封裝時常用 class。這是慣例，不是硬性限制。</p>
+<h2 id="_6">第一個示範<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>檔名：<code>01_social_profile_class.cpp</code></p>
+<p>執行前提問：</p>
+<ol>
+<li><code>SocialProfile</code> 是帳號本身，還是帳號藍圖？</li>
+<li><code>profile</code> 建立後，<code>followers</code> 初始值是多少？</li>
+<li>為何不直接公開 followers？</li>
+</ol>
+<h3 id="_7">延伸修改<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>加入 <code>unfollow()</code>。追蹤者為 0 時不能再減。學生會立刻看見：把規則寫在類別裡，所有使用者都得到同一套保護。</p>
+<hr />
+<h1 id="2">2. 資料成員、成員函式與封裝<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
+<h2 id="_8">類別基本骨架<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">類別名稱</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="c1">// 私有資料：類別內部細節</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="c1">// 公開操作：提供外界使用</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">};</span>
+</code></pre></div>
+<p>類別結尾的分號不能漏掉。</p>
+<h2 id="_9">封裝不是「全部藏起來」<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>封裝的意思是：物件自己保管狀態，外界透過清楚的操作使用它。像提款機不讓使用者打開機器直接改帳戶餘額，而是提供存款、提款與查詢按鈕。</p>
+<h2 id="privatepublicprotected">private、public、protected<a class="headerlink" href="#privatepublicprotected" title="Permanent link">&para;</a></h2>
+<h3 id="private">private<a class="headerlink" href="#private" title="Permanent link">&para;</a></h3>
+<ul>
+<li>本類別的成員函式可以存取。</li>
+<li>外部程式不能直接存取。</li>
+<li>class 的預設權限。</li>
+<li>適合必須維持規則的資料。</li>
+</ul>
+<h3 id="public">public<a class="headerlink" href="#public" title="Permanent link">&para;</a></h3>
+<ul>
+<li>外界可呼叫或存取。</li>
+<li>是類別提供給使用者的操作介面。</li>
+<li>通常公開行為，不直接公開可任意破壞的資料。</li>
+</ul>
+<h3 id="protected">protected<a class="headerlink" href="#protected" title="Permanent link">&para;</a></h3>
+<ul>
+<li>外界不能直接存取。</li>
+<li>本類別及衍生類別可使用。</li>
+<li>主要與繼承有關；本單元先建立概念，繼承章再深入。</li>
+</ul>
+<h2 id="_10">共鳴案例：遊戲血量<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>檔名：<code>02_game_character_access.cpp</code></p>
+<p>如果 hp 是 public：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">player</span><span class="p">.</span><span class="n">hp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-500</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">player</span><span class="p">.</span><span class="n">hp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">999999</span><span class="p">;</span>
+</code></pre></div>
+<p>語法合法，但遊戲規則已壞。改由 <code>takeDamage()</code> 與 <code>heal()</code> 控制後，類別可保證 0 ≤ hp ≤ 100。</p>
+<h2 id="getter-setter">Getter 與 Setter 不是必須成對<a class="headerlink" href="#getter-setter" title="Permanent link">&para;</a></h2>
+<p>不要機械式地替每個 private 成員建立可任意讀寫的 get/set。若 <code>setHp(-500)</code> 仍完全接受，封裝只是換了寫法，沒有保護規則。</p>
+<p>較好的問題是：使用者真正想做的是「設定血量」，還是「受到傷害／使用補包」？以行為命名通常更接近真實需求。</p>
+<h2 id="const">成員函式最後的 const<a class="headerlink" href="#const" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">getHp</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">show</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+</code></pre></div>
+<p>這個 <code>const</code> 表示函式承諾不改變物件的可觀察狀態。讀取與顯示函式通常應標 const。好處包括：</p>
+<ul>
+<li>編譯器協助防止誤改。</li>
+<li>const 物件也能呼叫。</li>
+<li>閱讀介面時立刻知道函式是否會改資料。</li>
+</ul>
+<h2 id="_11">課堂練習<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>檔名：<code>practice_01_battery.cpp</code></p>
+<p>設計 <code>PhoneBattery</code>：</p>
+<ul>
+<li>private：<code>percent</code>。</li>
+<li>public：<code>charge(int)</code>、<code>use(int)</code>、<code>show() const</code>。</li>
+<li>電量不得低於 0 或高於 100。</li>
+</ul>
+<h3 id="_12">討論題<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ol>
+<li>直接把 percent 設 public 有什麼後果？</li>
+<li><code>show()</code> 為何應加 const？</li>
+<li>使用負數 charge 應忽略、報錯還是拋出例外？不同選擇代表不同介面設計。</li>
+</ol>
+<hr />
+<h1 id="3">3. 成員函式：類內與類外定義<a class="headerlink" href="#3" title="Permanent link">&para;</a></h1>
+<h2 id="_13">類內定義<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>函式直接寫在 class 大括號中，適合很短、很清楚的函式。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">total</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">quantity</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<h2 id="_14">類外定義與範圍解析運算子<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">FoodOrder</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">total</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">};</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">FoodOrder::total</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">quantity</span><span class="p">;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
+</code></pre></div>
+<p><code>FoodOrder::</code> 表示「接下來這個 total 屬於 FoodOrder」。<code>::</code> 像完整地址，避免全域函式與其他類別的同名函式混淆。</p>
+<h2 id="_15">為何要分開？<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<p>大型專案通常把介面放 <code>.h</code>，實作放 <code>.cpp</code>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>FoodOrder.h    → 使用者需要知道有哪些操作
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>FoodOrder.cpp  → 操作內部怎麼完成
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>main.cpp       → 使用 FoodOrder
+</code></pre></div>
+<p>這能降低閱讀負擔與編譯耦合，但初學單檔示範可先寫在一起。</p>
+<h2 id="_16">示範<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<p>檔名：<code>03_food_order_methods.cpp</code></p>
+<h3 id="_17">逐行問題<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<ul>
+<li>建構子為何沒有回傳型別？</li>
+<li><code>total()</code> 能直接使用 private 的 price 嗎？可以，因為它是成員。</li>
+<li><code>showReceipt()</code> 呼叫 <code>total()</code> 時為何不需傳入 order？因為它處理目前物件。</li>
+</ul>
+<h2 id="_18">練習<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<p>檔名：<code>practice_02_ride_fare.cpp</code></p>
+<p>建立共享機車租借類別：分鐘數、解鎖費、每分鐘費率；把 <code>calculateFare()</code> 與 <code>showReceipt()</code> 寫在類別外。</p>
+<hr />
+<h1 id="4">4. 建立物件與物件指標<a class="headerlink" href="#4" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">FoodOrder</span><span class="w"> </span><span class="n">order</span><span class="p">(</span><span class="s">&quot;雞排便當&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">110</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">order</span><span class="p">.</span><span class="n">showReceipt</span><span class="p">();</span><span class="w">              </span><span class="c1">// 物件用 .</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">FoodOrder</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">order</span><span class="p">;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">p</span><span class="o">-&gt;</span><span class="n">showReceipt</span><span class="p">();</span><span class="w">                 </span><span class="c1">// 指標用 -&gt;</span>
+</code></pre></div>
+<h2 id="_19">心智模型<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<ul>
+<li>物件變數保存物件本身。</li>
+<li>指標保存物件位址。</li>
+<li><code>.</code>：直接進入手上的物件。</li>
+<li><code>-&gt;</code>：先沿位址找到物件，再進入它。</li>
+</ul>
+<h2 id="_20">常見錯誤<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">order</span><span class="o">-&gt;</span><span class="n">showReceipt</span><span class="p">();</span><span class="w"> </span><span class="c1">// 錯：order 不是指標</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">p</span><span class="p">.</span><span class="n">showReceipt</span><span class="p">();</span><span class="w">      </span><span class="c1">// 錯：p 是指標</span>
+</code></pre></div>
+<h2 id="_21">何時需要指標？<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<ul>
+<li>物件可能不存在，以 nullptr 表示。</li>
+<li>動態生命週期。</li>
+<li>多型與執行期選擇。</li>
+<li>資料結構需要互相連結。</li>
+</ul>
+<p>不應只為了「看起來進階」而使用指標。</p>
+<hr />
+<h1 id="5">5. 建構子：讓物件出生時就合理<a class="headerlink" href="#5" title="Permanent link">&para;</a></h1>
+<h2 id="_22">生活比喻<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h2>
+<p>辦學生證時不能只拿到一張完全空白、甚至有亂碼的卡。建立物件也是一樣：物件一出生就應處於可使用狀態。建構子就是物件的出生流程。</p>
+<h2 id="_23">四項特性<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
+<ol>
+<li>名稱與類別相同。</li>
+<li>沒有回傳型別，連 void 都不能寫。</li>
+<li>建立物件時自動呼叫。</li>
+<li>可以多載。</li>
+</ol>
+<h2 id="_24">成員初始化串列<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">StreamingAccount</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">plan</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">screens</span><span class="p">)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">owner</span><span class="p">(</span><span class="n">name</span><span class="p">),</span><span class="w"> </span><span class="n">plan</span><span class="p">(</span><span class="n">plan</span><span class="p">),</span><span class="w"> </span><span class="n">screens</span><span class="p">(</span><span class="n">screens</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</code></pre></div>
+<p>冒號後不是「先指定再覆蓋」，而是在成員建立時直接初始化。對 const 成員、參考成員與沒有預設建構子的成員尤其必要，也通常比在函式本體賦值更清楚。</p>
+<h2 id="_25">預設建構子是否一定存在？<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h2>
+<p>如果完全沒有宣告任何建構子，編譯器可能生成預設建構子。但一旦自行宣告其他建構子，無參數版本不會必然自動存在；需要就明確寫出或使用 <code>= default</code>。</p>
+<h2 id="1">示範 1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p><code>04_streaming_constructor.cpp</code></p>
+<p>問學生：<code>guest</code> 與 <code>may</code> 分別呼叫哪個版本？為什麼建立後不需再逐欄設定？</p>
+<h2 id="_26">建構子多載<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h2>
+<p>同一類別可以有同名建構子，只要參數列不同。編譯器依實際參數選擇版本。</p>
+<p>示範：<code>05_concert_constructor_overload.cpp</code></p>
+<h3 id="_27">委派建構<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">ConcertTicket</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">event</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">ConcertTicket</span><span class="p">(</span><span class="n">event</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;一般區&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1800</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</code></pre></div>
+<p>短版把初始化交給完整版，避免三個建構子各複製一份規則。</p>
+<h2 id="explicit">explicit<a class="headerlink" href="#explicit" title="Permanent link">&para;</a></h2>
+<p>只有一個參數的建構子有時會造成意外隱式轉換。加 <code>explicit</code> 表示必須清楚寫出建立物件的意圖。</p>
+<h2 id="_28">練習<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h2>
+<p>檔名：<code>practice_03_gym_membership.cpp</code></p>
+<p>設計健身房會員：姓名、方案、月費。提供訪客、學生方案、完整自訂三種建構方式，使用委派建構避免重複。</p>
+<hr />
+<h1 id="6">6. 解構子與物件生命週期<a class="headerlink" href="#6" title="Permanent link">&para;</a></h1>
+<h2 id="_29">生活比喻<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h2>
+<p>建構子像入住旅館時領房卡；解構子像退房時歸還房卡、結清費用。物件取得檔案、網路連線或記憶體等資源後，生命結束時需要釋放。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="o">~</span><span class="n">ClassName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="c1">// 清理工作</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="_30">解構子特性<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h2>
+<ul>
+<li>名稱是 <code>~</code> 加類別名稱。</li>
+<li>沒有回傳型別。</li>
+<li>沒有參數。</li>
+<li>不能多載；一個類別只有一個解構子。</li>
+<li>自動物件離開作用域時自動執行。</li>
+</ul>
+<h2 id="_31">解構順序<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h2>
+<p>同一作用域內，通常後建立者先解構，像疊盤子：最後放上去的先拿走。</p>
+<p>示範：<code>06_study_timer_destructor.cpp</code></p>
+<p>請學生先畫：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>建立 math
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>建立 cpp
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>離開內層：解構 cpp
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>離開 main：解構 math
+</code></pre></div>
+<h2 id="raii">RAII<a class="headerlink" href="#raii" title="Permanent link">&para;</a></h2>
+<p>RAII 是 C++ 很重要的思想：資源綁定物件生命週期。建構時取得，解構時釋放。即使中途 return 或發生例外，也可依物件生命週期清理。</p>
+<h2 id="delete">不能只看「有沒有 delete」<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h2>
+<p>如果類別自己管理裸資源，就必須考慮複製、指定與解構，容易發生重複釋放或記憶體洩漏。現代 C++ 優先使用 <code>string</code>、<code>vector</code>、<code>unique_ptr</code> 等會自行管理資源的類型。</p>
+<hr />
+<h1 id="7-newdelete">7. 動態物件：new/delete 與現代寫法<a class="headerlink" href="#7-newdelete" title="Permanent link">&para;</a></h1>
+<p>圖片教材示範：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">Student</span><span class="o">*</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">student</span><span class="o">-&gt;</span><span class="n">input</span><span class="p">();</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">delete</span><span class="w"> </span><span class="n">student</span><span class="p">;</span>
+</code></pre></div>
+<p>這是理解堆積區與手動生命週期的重要語法，但實務風險包括：</p>
+<ul>
+<li>忘記 delete，造成洩漏。</li>
+<li>delete 後繼續使用，成為懸空指標。</li>
+<li>同一地址 delete 兩次。</li>
+<li>中途 return 或例外導致清理沒執行。</li>
+</ul>
+<h2 id="c">現代 C++ 優先方案<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Player</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;May&quot;</span><span class="p">);</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">player</span><span class="o">-&gt;</span><span class="n">play</span><span class="p">();</span>
+</code></pre></div>
+<p><code>unique_ptr</code> 表示單一擁有權，離開作用域自動 delete。</p>
+<p>示範檔：</p>
+<ul>
+<li><code>07_dynamic_game_player.cpp</code></li>
+<li><code>15_smart_pointer_pet_adoption.cpp</code></li>
+</ul>
+<h2 id="_32">教學對照<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>問題</th>
+<th>裸指標</th>
+<th>unique_ptr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>建立</td>
+<td><code>new T</code></td>
+<td><code>make_unique&lt;T&gt;()</code></td>
+</tr>
+<tr>
+<td>釋放</td>
+<td>手動 <code>delete</code></td>
+<td>自動</td>
+</tr>
+<tr>
+<td>可複製</td>
+<td>位址可被隨意複製</td>
+<td>不可複製擁有權</td>
+</tr>
+<tr>
+<td>適合</td>
+<td>舊介面、非擁有觀察</td>
+<td>單一擁有動態物件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_33">練習<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h2>
+<p>檔名：<code>practice_04_download_task.cpp</code></p>
+<p>建立下載任務物件，在建構子輸出「開始」、解構子輸出「清理暫存」。分別用區域物件與 unique_ptr 觀察生命週期。</p>
+<hr />
+<h1 id="8">8. 物件陣列<a class="headerlink" href="#8" title="Permanent link">&para;</a></h1>
+<p>物件陣列不是「一個物件有很多欄位」，而是很多個同型別物件排在一起。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">Song</span><span class="w"> </span><span class="n">playlist</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="p">{</span><span class="s">&quot;歌 A&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">},</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="p">{</span><span class="s">&quot;歌 B&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">180</span><span class="p">}</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="p">};</span>
+</code></pre></div>
+<p>每個元素建立時都會呼叫建構子，陣列結束生命時每個元素都會被解構，順序與建立相反。</p>
+<p>示範：<code>08_playlist_object_array.cpp</code></p>
+<h2 id="_34">圖片棒球案例的現代轉化<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h2>
+<p>原圖以三位打者計算打擊率。可改成學生較熟悉的遊戲戰績：玩家名稱、出賽場數、勝場，成員函式計算勝率。核心仍是物件陣列與逐一呼叫成員函式。</p>
+<h2 id="_35">練習<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h2>
+<p>檔名：<code>practice_05_game_team.cpp</code></p>
+<p>建立五位玩家物件，輸出勝率最高者。要求處理出賽 0 場，避免除以 0。</p>
+<hr />
+<h1 id="9">9. 朋友函式與朋友類別<a class="headerlink" href="#9" title="Permanent link">&para;</a></h1>
+<h2 id="_36">先說結論<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h2>
+<p>friend 是封裝的「受控例外」，不是一般成員，也不是繼承。它讓指定函式或類別存取 private/protected 成員。</p>
+<h2 id="_37">朋友函式<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Wallet</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">splitDinner</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Wallet</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Wallet</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="p">};</span>
+</code></pre></div>
+<p>它在類別中被宣告為 friend，但呼叫時仍是普通函式：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">splitDinner</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="mi">700</span><span class="p">);</span>
+</code></pre></div>
+<p>不是 <code>a.splitDinner()</code>。</p>
+<p>示範：<code>09_friend_split_bill.cpp</code></p>
+<h2 id="_38">朋友類別<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">friend</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">DeliveryPlatform</span><span class="p">;</span>
+</code></pre></div>
+<p>這會讓對方所有成員函式都能存取 private，權限很大。示範：<code>10_friend_class_delivery.cpp</code>。</p>
+<h2 id="friend">friend 的規則<a class="headerlink" href="#friend" title="Permanent link">&para;</a></h2>
+<ul>
+<li>不是雙向：A 把 B 當朋友，不代表 B 也把 A 當朋友。</li>
+<li>不會自動傳遞：A 的朋友的朋友不是 A 的朋友。</li>
+<li>不會自動繼承。</li>
+<li>宣告位置不改變其 friend 本質，但通常放 private 區附近便於閱讀。</li>
+</ul>
+<h2 id="friend_1">何時不用 friend？<a class="headerlink" href="#friend_1" title="Permanent link">&para;</a></h2>
+<p>如果普通 public 成員函式已能完成需求，就不需打開 private 權限。大量 friend 會增加類別間耦合，使內部修改影響更多程式。</p>
+<h2 id="_39">課堂辯論<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h2>
+<p>題目：「外送平台是否應看得到店家的秘密配方？」</p>
+<p>讓學生理解技術上做得到，不代表設計上應授權。權限設計與真實世界的最小權限原則相同。</p>
+<hr />
+<h1 id="10-this">10. this 指標<a class="headerlink" href="#10-this" title="Permanent link">&para;</a></h1>
+<h2 id="_40">高中程度解釋<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h2>
+<p>同一份成員函式會被很多物件使用。當 <code>cartA.add(60)</code> 執行時，函式怎麼知道要修改 cartA 而不是 cartB？編譯器暗中提供 <code>this</code>，它指向「目前呼叫此函式的物件」。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>cartA.add(60) → this 指向 cartA
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>cartB.add(60) → this 指向 cartB
+</code></pre></div>
+<h2 id="_41">兩種成員寫法<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">this</span><span class="o">-&gt;</span><span class="n">totalPrice</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">).</span><span class="n">totalPrice</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+</code></pre></div>
+<p>兩者概念相同；<code>.</code> 優先於 <code>*</code>，所以第二種一定要括號。一般成員函式通常可省略 <code>this-&gt;</code>。</p>
+<h2 id="_42">參數與成員同名<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setPrice</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">    </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="p">}</span>
+</code></pre></div>
+<p>左側是目前物件的成員，右側是參數。</p>
+<h2 id="this">回傳 *this 與鏈式呼叫<a class="headerlink" href="#this" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">ShoppingCart</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="n">totalPrice</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="p">}</span>
+</code></pre></div>
+<p>因回傳目前物件的參考，可以寫：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">cart</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mi">60</span><span class="p">).</span><span class="n">add</span><span class="p">(</span><span class="mi">35</span><span class="p">).</span><span class="n">checkout</span><span class="p">();</span>
+</code></pre></div>
+<p>示範：<code>11_this_shopping_cart.cpp</code></p>
+<h2 id="this_1">this 的限制<a class="headerlink" href="#this_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>只能在非 static 成員函式中使用。</li>
+<li>static 函式不屬於某一特定物件，所以沒有 this。</li>
+<li><code>return this;</code> 回傳指標；<code>return *this;</code> 回傳物件或參考，需配合函式回傳型別。</li>
+</ul>
+<h2 id="_43">練習<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h2>
+<p>檔名：<code>practice_06_video_settings.cpp</code></p>
+<p>建立影片播放器設定，支援：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">settings</span><span class="p">.</span><span class="n">setVolume</span><span class="p">(</span><span class="mi">70</span><span class="p">).</span><span class="n">setSpeed</span><span class="p">(</span><span class="mf">1.25</span><span class="p">).</span><span class="n">enableSubtitle</span><span class="p">().</span><span class="n">show</span><span class="p">();</span>
+</code></pre></div>
+<hr />
+<h1 id="11-static">11. static 靜態資料成員<a class="headerlink" href="#11-static" title="Permanent link">&para;</a></h1>
+<h2 id="static">普通成員與 static 成員<a class="headerlink" href="#static" title="Permanent link">&para;</a></h2>
+<p>普通成員每個物件各有一份；static 成員屬於整個類別，所有物件共用一份。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>Viewer May  ─┐
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>Viewer John ─┼──→ Viewer::onlineCount
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>Viewer Amy  ─┘
+</code></pre></div>
+<h2 id="_44">常見用途<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h2>
+<ul>
+<li>計算目前或累計建立多少物件。</li>
+<li>共用設定。</li>
+<li>發號器。</li>
+<li>類別層級常數。</li>
+</ul>
+<p>示範：<code>12_static_live_stream.cpp</code></p>
+<h2 id="_45">初始化與存取<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h2>
+<p>傳統常見寫法：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">Viewer</span><span class="o">::</span><span class="n">onlineCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</code></pre></div>
+<p>存取可用：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">Viewer</span><span class="o">::</span><span class="n">getOnlineCount</span><span class="p">();</span>
+</code></pre></div>
+<p>比透過某個物件呼叫更能表達「這屬於類別整體」。C++17 也可用 <code>inline static int onlineCount = 0;</code> 放在類別內。</p>
+<h2 id="static_1">static 成員函式限制<a class="headerlink" href="#static_1" title="Permanent link">&para;</a></h2>
+<p>它沒有 this，不能直接讀取某一物件的普通成員；除非另外取得該物件參考或指標。</p>
+<h2 id="_46">計數器陷阱<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h2>
+<p>若建構子加一、解構子減一，還要思考複製建構：複製物件是否也算新在線者？真正專案必須明確定義語意，而不只是機械加減。</p>
+<h2 id="_47">練習<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h2>
+<p>檔名：<code>practice_07_queue_number.cpp</code></p>
+<p>設計飲料店訂單，每張單自動取得 101、102、103……取餐號。static 保存下一號，普通成員保存每張單自己的號碼。</p>
+<hr />
+<h1 id="12">12. 巢狀類別<a class="headerlink" href="#12" title="Permanent link">&para;</a></h1>
+<p>巢狀類別是在某類別內宣告另一類別。它適合表達「內層概念主要只服務外層概念」。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Course</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">Enrollment</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="p">};</span>
+</code></pre></div>
+<p>完整名稱是 <code>Course::Enrollment</code>。</p>
+<p>示範：<code>13_nested_course_registration.cpp</code></p>
+<h2 id="_48">與一般包含物件的差別<a class="headerlink" href="#_48" title="Permanent link">&para;</a></h2>
+<ul>
+<li>巢狀類別：型別名稱被放進外層類別作用域。</li>
+<li>組合：外層物件擁有內層物件作為資料成員。</li>
+</ul>
+<p>兩者可同時存在，但概念不同。內層類別也不會因為「住在裡面」就自動擁有外層某個物件；若需要操作外層物件，仍要有參考或指標。</p>
+<h2 id="_49">原圖書架案例的安全改寫<a class="headerlink" href="#_49" title="Permanent link">&para;</a></h2>
+<p>原圖以 <code>new char[]</code>、物件指標陣列及巢狀 Book 實作書架。現代版本可使用：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Bookshelf</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">Book</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">title</span><span class="p">;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">price</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Book</span><span class="o">&gt;</span><span class="w"> </span><span class="n">books</span><span class="p">;</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="p">};</span>
+</code></pre></div>
+<p>由 string 和 vector 自動管理資源，可避免缺少解構子、複製控制與容量越界。</p>
+<h2 id="_50">練習<a class="headerlink" href="#_50" title="Permanent link">&para;</a></h2>
+<p>檔名：<code>practice_08_chat_room.cpp</code></p>
+<p>外層 ChatRoom、內層 Message；Message 保存發言者與文字，ChatRoom 保存訊息清單並顯示紀錄。</p>
+<hr />
+<h1 id="13">13. 函式與物件傳遞<a class="headerlink" href="#13" title="Permanent link">&para;</a></h1>
+<p>這一節可用「交作業」比喻。</p>
+<h2 id="_51">傳值：交影印本<a class="headerlink" href="#_51" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">byValue</span><span class="p">(</span><span class="n">PhonePlan</span><span class="w"> </span><span class="n">plan</span><span class="p">);</span>
+</code></pre></div>
+<p>函式拿到副本；修改副本不影響原物件。大型物件會有複製成本。</p>
+<h2 id="_52">傳址：交地址<a class="headerlink" href="#_52" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">byPointer</span><span class="p">(</span><span class="n">PhonePlan</span><span class="o">*</span><span class="w"> </span><span class="n">plan</span><span class="p">);</span>
+</code></pre></div>
+<p>可以修改原物件，也可以傳 nullptr，所以函式通常要檢查。成員用 <code>-&gt;</code>。</p>
+<h2 id="_53">傳參考：替原件取別名<a class="headerlink" href="#_53" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">byReference</span><span class="p">(</span><span class="n">PhonePlan</span><span class="o">&amp;</span><span class="w"> </span><span class="n">plan</span><span class="p">);</span>
+</code></pre></div>
+<p>修改會影響原物件；語法像普通物件，不需解參考。</p>
+<h2 id="const_1">const 參考：借原件看，不准塗改<a class="headerlink" href="#const_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">readOnly</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">PhonePlan</span><span class="o">&amp;</span><span class="w"> </span><span class="n">plan</span><span class="p">);</span>
+</code></pre></div>
+<p>這是唯讀大型物件常用方式：不複製、不修改、也沒有一般空參考問題。</p>
+<p>示範：<code>14_object_passing_phone_plan.cpp</code></p>
+<h2 id="_54">比較表<a class="headerlink" href="#_54" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>參數</th>
+<th style="text-align: right;">是否複製</th>
+<th style="text-align: right;">可改原物件</th>
+<th style="text-align: right;">可表達沒有物件</th>
+<th>成員語法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>T value</code></td>
+<td style="text-align: right;">是</td>
+<td style="text-align: right;">否</td>
+<td style="text-align: right;">否</td>
+<td><code>.</code></td>
+</tr>
+<tr>
+<td><code>T* pointer</code></td>
+<td style="text-align: right;">否</td>
+<td style="text-align: right;">是</td>
+<td style="text-align: right;">是，nullptr</td>
+<td><code>-&gt;</code></td>
+</tr>
+<tr>
+<td><code>T&amp; reference</code></td>
+<td style="text-align: right;">否</td>
+<td style="text-align: right;">是</td>
+<td style="text-align: right;">一般否</td>
+<td><code>.</code></td>
+</tr>
+<tr>
+<td><code>const T&amp; reference</code></td>
+<td style="text-align: right;">否</td>
+<td style="text-align: right;">否</td>
+<td style="text-align: right;">一般否</td>
+<td><code>.</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_55">選擇口訣<a class="headerlink" href="#_55" title="Permanent link">&para;</a></h2>
+<ul>
+<li>要副本：傳值。</li>
+<li>只讀且物件一定存在：const 參考。</li>
+<li>要修改且物件一定存在：參考。</li>
+<li>物件可能不存在：指標或更能表達語意的型別。</li>
+</ul>
+<h2 id="_56">練習<a class="headerlink" href="#_56" title="Permanent link">&para;</a></h2>
+<p>檔名：<code>practice_09_trade_game_item.cpp</code></p>
+<p>兩位玩家交換道具。先用傳值故意失敗，再改成參考；說明為何交換必須改原物件。</p>
+<hr />
+<h1 id="14-app">14. 綜合實作：校園訂餐 App<a class="headerlink" href="#14-app" title="Permanent link">&para;</a></h1>
+<p>示範：<code>16_capstone_campus_food_app.cpp</code></p>
+<h2 id="_57">技術對照<a class="headerlink" href="#_57" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>需求</th>
+<th>技術</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每張訂單保存自己的學生與品項</td>
+<td>普通資料成員</td>
+</tr>
+<tr>
+<td>取餐號全班共用遞增</td>
+<td>static</td>
+</tr>
+<tr>
+<td>訂單狀態有限</td>
+<td>enum class</td>
+</tr>
+<tr>
+<td>加品項後繼續操作</td>
+<td><code>return *this</code></td>
+</tr>
+<tr>
+<td>total 不修改訂單</td>
+<td>const 成員函式</td>
+</tr>
+<tr>
+<td>多個價格</td>
+<td>vector</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_58">分階段改造<a class="headerlink" href="#_58" title="Permanent link">&para;</a></h2>
+<ol>
+<li>加入餐點名稱與價格。</li>
+<li>拒絕負價格。</li>
+<li>顯示 preparing、ready、completed 中文狀態。</li>
+<li>completed 後禁止新增品項。</li>
+<li>支援折價券，但總價不得小於 0。</li>
+<li>建立多張訂單，依取餐號查詢。</li>
+<li>將類別拆成 <code>.h</code> 與 <code>.cpp</code>。</li>
+</ol>
+<h2 id="_59">專題檔名<a class="headerlink" href="#_59" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>project_01_campus_food_basic.cpp</code></li>
+<li><code>project_02_campus_food_status.cpp</code></li>
+<li><code>project_03_campus_food_coupon.cpp</code></li>
+<li><code>project_04_campus_food_multi_order.cpp</code></li>
+<li><code>CampusOrder.h</code></li>
+<li><code>CampusOrder.cpp</code></li>
+<li><code>main.cpp</code></li>
+</ul>
+<hr />
+<h1 id="15">15. 大量短練習題材與檔名<a class="headerlink" href="#15" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>檔名</th>
+<th>題材</th>
+<th>練習技術</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>practice_10_instagram_post.cpp</code></td>
+<td>貼文按讚、取消讚</td>
+<td>private、規則</td>
+</tr>
+<tr>
+<td><code>practice_11_youbike_rental.cpp</code></td>
+<td>租借分鐘與費用</td>
+<td>成員函式</td>
+</tr>
+<tr>
+<td><code>practice_12_gacha_character.cpp</code></td>
+<td>角色稀有度與戰力</td>
+<td>enum class</td>
+</tr>
+<tr>
+<td><code>practice_13_exam_countdown.cpp</code></td>
+<td>考試倒數</td>
+<td>建構／解構</td>
+</tr>
+<tr>
+<td><code>practice_14_subscription.cpp</code></td>
+<td>串流續訂</td>
+<td>建構子多載</td>
+</tr>
+<tr>
+<td><code>practice_15_concert_queue.cpp</code></td>
+<td>搶票排隊號</td>
+<td>static</td>
+</tr>
+<tr>
+<td><code>practice_16_group_buy.cpp</code></td>
+<td>團購訂單</td>
+<td>物件陣列</td>
+</tr>
+<tr>
+<td><code>practice_17_shared_scooter.cpp</code></td>
+<td>騎乘扣款</td>
+<td>參考傳遞</td>
+</tr>
+<tr>
+<td><code>practice_18_dorm_washing.cpp</code></td>
+<td>洗衣機排程</td>
+<td>類別狀態</td>
+</tr>
+<tr>
+<td><code>practice_19_pet_hotel.cpp</code></td>
+<td>寵物入住／退房</td>
+<td>生命週期</td>
+</tr>
+<tr>
+<td><code>practice_20_playlist.cpp</code></td>
+<td>播放清單</td>
+<td>vector 物件</td>
+</tr>
+<tr>
+<td><code>practice_21_chat_message.cpp</code></td>
+<td>聊天室訊息</td>
+<td>巢狀類別</td>
+</tr>
+<tr>
+<td><code>practice_22_split_bill.cpp</code></td>
+<td>AA 制分帳</td>
+<td>friend 討論</td>
+</tr>
+<tr>
+<td><code>practice_23_mobile_plan.cpp</code></td>
+<td>資費比較</td>
+<td>物件參數</td>
+</tr>
+<tr>
+<td><code>practice_24_delivery_order.cpp</code></td>
+<td>訂單狀態</td>
+<td>封裝、enum</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="16">16. 常見錯誤診斷<a class="headerlink" href="#16" title="Permanent link">&para;</a></h1>
+<h2 id="1_1">1. 類別結尾漏分號<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p>修正：<code>class User { };</code></p>
+<h2 id="2-void">2. 建構子寫了 void<a class="headerlink" href="#2-void" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">User</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</code></pre></div>
+<p>這是名為 User 的普通成員函式，不是建構子。建構子沒有回傳型別。</p>
+<h2 id="3-const">3. const 函式修改成員<a class="headerlink" href="#3-const" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">show</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">score</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p>違反唯讀承諾；應重新思考 show 是否真的需要修改。</p>
+<h2 id="4_1">4. 忘記類別範圍<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">total</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p>類外定義應為 <code>int FoodOrder::total() const</code>。</p>
+<h2 id="5-new-delete">5. 裸 new 忘記 delete<a class="headerlink" href="#5-new-delete" title="Permanent link">&para;</a></h2>
+<p>優先改用區域物件或 <code>make_unique</code>。</p>
+<h2 id="6-static-this">6. static 函式使用 this<a class="headerlink" href="#6-static-this" title="Permanent link">&para;</a></h2>
+<p>static 不屬於某個物件，所以沒有 this。</p>
+<h2 id="7">7. 傳值卻期待原物件改變<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<p>若需求是修改原物件，考慮參考或指標。</p>
+<h2 id="8-friend">8. friend 當成成員呼叫<a class="headerlink" href="#8-friend" title="Permanent link">&para;</a></h2>
+<p>朋友函式仍是非成員，通常直接以函式名稱呼叫。</p>
+<hr />
+<h1 id="17">17. 課堂口頭題庫<a class="headerlink" href="#17" title="Permanent link">&para;</a></h1>
+<ol>
+<li>class 是物件還是物件藍圖？</li>
+<li>每個物件會共用普通資料成員嗎？</li>
+<li>private 解決什麼問題？</li>
+<li>public 是不是越多越方便？</li>
+<li>成員函式為何可直接讀 private？</li>
+<li>類外定義為何需要 <code>::</code>？</li>
+<li>物件與指標分別使用什麼存取符號？</li>
+<li>建構子何時執行？</li>
+<li>建構子能否有回傳型別？</li>
+<li>自訂有參數建構子後，預設建構子一定存在嗎？</li>
+<li>解構子能多載嗎？</li>
+<li>為何後建立物件通常先解構？</li>
+<li>new 物件由誰負責釋放？</li>
+<li>unique_ptr 解決什麼風險？</li>
+<li>friend 是不是類別成員？</li>
+<li>friend 關係是否雙向？</li>
+<li>this 指向誰？</li>
+<li>static 成員有幾份？</li>
+<li>static 函式有沒有 this？</li>
+<li>傳值、傳指標、傳參考如何選擇？</li>
+</ol>
+<hr />
+<h1 id="18">18. 紙筆測驗與答案<a class="headerlink" href="#18" title="Permanent link">&para;</a></h1>
+<h2 id="_60">選擇題<a class="headerlink" href="#_60" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>哪個最能描述 class？<br />
+   A. 單一整數　B. 物件藍圖　C. 迴圈　D. 標頭檔</p>
+</li>
+<li>
+<p>哪一項通常用來保護物件規則？<br />
+   A. private　B. cout　C. include　D. return</p>
+</li>
+<li>
+<p>指標 p 呼叫成員函式應使用：<br />
+   A. <code>p.show()</code>　B. <code>p-&gt;show()</code>　C. <code>p::show()</code>　D. <code>&amp;p.show()</code></p>
+</li>
+<li>
+<p>哪個函式在物件離開作用域時自動呼叫？<br />
+   A. main　B. friend　C. 解構子　D. static</p>
+</li>
+<li>
+<p>所有物件共用一份的資料應宣告為：<br />
+   A. const　B. static　C. friend　D. virtual</p>
+</li>
+<li>
+<p>唯讀且避免複製大型物件，適合：<br />
+   A. <code>T</code>　B. <code>T*</code>　C. <code>const T&amp;</code>　D. <code>int&amp;</code></p>
+</li>
+</ol>
+<p>答案：1-B、2-A、3-B、4-C、5-B、6-C。</p>
+<h2 id="_61">讀程式題<a class="headerlink" href="#_61" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">Cart</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="n">Cart</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="n">a</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="n">b</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+</code></pre></div>
+<p>若 total 是普通成員，a 與 b 的 total 是否共用？答：不共用。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">Cart</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="w">    </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span>
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="p">}</span>
+</code></pre></div>
+<p>為何能連續 <code>.add()</code>？答：每次回傳目前物件的參考。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "navigation.top", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
