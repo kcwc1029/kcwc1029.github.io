@@ -257,3 +257,16 @@ print(response.json())
 ### [實作：TVMaze](./API_Requests_src/TVMaze.md)
 
 ### [實作：TDX運輸資料流通服務：以高雄捷運為例](./API_Requests_src/TDX運輸資料流通服務：以高雄捷運為例.md)
+
+### Problem
+
+恩...這邊我有先列一些方向，我希望你可以去試著做做看API相關專題：
+
+- 🍔 食物
+- 🌤️ 天氣
+- 💰 金融/幣價
+- 🗺️ 地圖
+- 🚆 交通
+
+- 要做網頁，套件可以跟GPT說gradio、streamlit
+- 要做桌面小程式，套件可以跟GPT說customtkinter

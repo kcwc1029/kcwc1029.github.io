@@ -39,6 +39,11 @@
 - [GPT：Caffeine Genetics and Liver Health: Metabolism, Risks, and Safety](https://notebook.google.com/notebook/9a5a2a7d-f450-4c05-a619-eeb5f606b64d)
 - [簡報：規律飲用咖啡對人體健康的雙向生理效應](https://notebook.google.com/notebook/9a5a2a7d-f450-4c05-a619-eeb5f606b64d/artifact/665f1478-964e-4a19-98ed-33cf11a573d7?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_)
 
+## Canva製作簡報
+
+![](<../canva_ai%20(1).png>)
+![](<../canva_ai%20(2).png>)
+
 ### Problem.
 
 - 打電動真的只是浪費時間嗎？

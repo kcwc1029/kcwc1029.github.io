@@ -8,6 +8,15 @@
 - 要去得Client ID與Client Secret
   - 【會員中心】->左側【資料服務】->【資料存取金要】
 
+```text
+### 註冊練習的
+# Client ID
+n96144250-55b41d4f-c6a6-4bd6
+
+# Client Secret
+9a92a379-1210-47d0-bf0c-b9cf0e2414a3
+```
+
 ### 完整程式碼
 
 ```py
