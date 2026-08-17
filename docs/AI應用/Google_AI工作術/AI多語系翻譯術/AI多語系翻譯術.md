@@ -168,9 +168,7 @@ Email：符合日本商務書信習慣
 
 - [範例文件：A+Stem-Cell-Centric+Multi-Counter+Theory+of+Organismal+Aging](./A+Stem-Cell-Centric+Multi-Counter+Theory+of+Organismal+Aging.pdf)
 
-# 單元 6-4　行動翻譯：即時口譯與雙向對談
-
-## 6-4-1 Google 翻譯 App 的基本區域
+## 行動翻譯：即時口譯與雙向對談
 
 從官方 Play 商店或 App Store 下載並核對開發者。常見功能包括：
 
@@ -182,6 +180,8 @@ Email：符合日本商務書信習慣
 - 部分帳號或地區可見的練習／語言學習功能。
 
 不要要求所有學生畫面完全相同；平台、地區、帳號與版本都可能影響功能。
+
+## 從這邊開始(剩google翻譯、gemini live)
 
 ## 6-4-2 原教材案例：中文與日文即時對話
 
@@ -210,11 +210,9 @@ Email：符合日本商務書信習慣
 
 涉及醫療、法律、移民、金錢交易或緊急狀況時，App 只能協助溝通，不應取代合格口譯員或專業意見。關鍵句應重述、打字確認，必要時請真人協助。
 
----
+## Gemini Live：對照紙本邊翻譯、邊提問
 
-# 單元 6-5　對照紙本邊翻譯、邊提問：Gemini Live
-
-## 6-5-1 語音輸入與 Live 有什麼不同？
+### 語音輸入與 Live 有什麼不同？
 
 - 語音輸入：把聲音轉成文字，送出後以一般文字回答。
 - Gemini Live：進入連續的即時語音對談，可插話、追問、暫停，並可能搭配鏡頭或螢幕分享。
@@ -265,72 +263,3 @@ Email：符合日本商務書信習慣
 ### 高風險提醒
 
 開始前關閉通知、郵件預覽與聊天浮窗；不要顯示密碼、驗證碼、銀行資料、病歷與私人照片。若現場有他人，錄音、錄影或拍攝前要先取得同意。
-
-## 6-5-5 Live 課堂實作
-
-兩人一組：A 拿 `09_日本車站公告.jpg` 或紙本，B 操作 Live。
-
-1. B 先建立翻譯規則。
-2. A 指定一段翻譯。
-3. A 故意問一個畫面看不到的問題。
-4. 觀察 AI 是否誠實說不知道，或自行猜測。
-5. 交換角色。
-
-### 討論題
-
-「即時」會讓人更容易相信 AI。速度快是否等於可信度高？你會如何設計確認步驟？
-
----
-
-# 綜合實作：建立一套可重複使用的翻譯工作流
-
-## 專案情境
-
-你是校園國際活動小組，要把一份英文活動說明做成：
-
-1. 台灣繁體中文版。
-2. 日文訪客版。
-3. 雙語 PDF。
-4. 現場手機即時口譯流程。
-
-## 建議流程
-
-```text
-確認用途與受眾
-→ 建立術語表
-→ AI 產生第一版
-→ 數字與專名核對
-→ 目標語言母語感潤飾
-→ 版面與漏譯檢查
-→ 現場口譯備援測試
-```
-
-## 交付物與建議檔名
-
-- `國際活動_翻譯需求說明.md`
-- `國際活動_術語表_ZH_EN_JA.xlsx`
-- `國際活動_繁中初稿_v1.docx`
-- `國際活動_日文校訂版_v2.docx`
-- `國際活動_雙語定稿.pdf`
-- `國際活動_現場口譯SOP.md`
-
-## 評量規準（100 分）
-
-| 項目           | 分數 | 判準                     |
-| -------------- | ---: | ------------------------ |
-| 意思與事實正確 |   30 | 無漏譯、誤譯或自行添加   |
-| 術語與專名一致 |   20 | 名稱、數字、單位前後一致 |
-| 受眾與語氣合適 |   20 | 符合使用情境與閱讀者     |
-| 格式與可讀性   |   15 | 段落、表格、版面清楚     |
-| 驗證流程       |   10 | 有對照、抽查與修訂紀錄   |
-| 隱私與授權     |    5 | 資料使用方式安全合法     |
-
-# 官方功能參考（授課前建議再確認）
-
-- [Gemini Canvas 說明](https://support.google.com/gemini/answer/16047321?co=GENIE.Platform%3DDesktop&hl=en)
-- [建立與使用 Gems](https://support.google.com/gemini/answer/15235603?hl=en)
-- [分享 Gem 與權限](https://support.google.com/gemini/answer/16504957?hl=en&p=rn_share_gem&rd=1)
-- [Google 翻譯：翻譯文件與網站](https://support.google.com/translate/answer/2534559?co=GENIE.Platform%3DDesktop&hl=en)
-- [Google 翻譯 App 基本操作](https://support.google.com/translate/answer/6350850?co=GENIE.Platform%3DAndroid&hl=en)
-- [Google 翻譯即時對話技巧](https://support.google.com/translate/answer/10421057?hl=en)
-- [Gemini Live、鏡頭與螢幕分享](https://support.google.com/gemini/answer/15274899?co=GENIE.Platform%3DAndroid&hl=en)
