@@ -1,0 +1,1471 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="程式教材、AI筆記、專案紀錄與日常書寫">
+      
+      
+        <meta name="author" content="陳維誠">
+      
+      
+        <link rel="canonical" href="https://kcwc1029.github.io/AI%E6%87%89%E7%94%A8/%E7%A4%BE%E5%8D%80%E5%A4%A7%E5%AD%B8_GPT%E6%87%89%E7%94%A8/%E6%A8%82%E9%BD%A1%E6%89%8B%E4%BD%9C%E7%83%98%E7%84%99%E8%81%B7%E4%BA%BA%E7%8F%AD_%E7%94%9F%E7%A8%8B%E5%BC%8FAI%E7%B5%90%E5%90%88%E9%A1%A7%E5%AE%A2%E4%BA%92%E5%8B%95%E6%8A%80%E5%B7%A701/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>樂齡手作烘焙職人班 生程式AI結合顧客互動技巧01 - 維誠的筆記</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chatgpt-gemini" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../.." title="維誠的筆記" class="md-header__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            維誠的筆記
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              樂齡手作烘焙職人班 生程式AI結合顧客互動技巧01
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="切換為深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換為深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切換為淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換為淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C++教材
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI應用
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-tabs__link">
+          
+  
+  
+  日記
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="維誠的筆記" class="md-nav__button md-logo" aria-label="維誠的筆記" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    維誠的筆記
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python-notebooks/python%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp-notebooks/cpp%E8%AA%B2%E7%B6%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++教材
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI%E6%87%89%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI應用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日記
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    日記
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%89%8B%E6%9C%AD/%E6%89%8B%E6%9C%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    手札首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%89%8B%E6%9C%AD/12%E5%A4%A9%E8%A3%9C%E5%85%85%E5%85%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12天補充兵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chatgpt-gemini" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ChatGPT / Gemini 基本操作
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ChatGPT / Gemini 基本操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 推薦 3 種適合早餐吃的食物。
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 問自己有興趣的問題
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 在同一個對話繼續問
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 要求 AI 改變回答方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 要求 AI 縮短回答
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-ai_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 複製 AI 的回答
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 修改已送出的問題
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文字與語音問 AI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文字與語音問 AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-ai_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 第一次用語音問 AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 用語音詢問烘焙問題
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 說出比較長的問題
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 修改語音辨識的文字
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-ai_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 把冰箱裡的材料說給 AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 把烘焙失敗的情況完整說出來
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 用自己的話描述問題
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        拍照問 AI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="拍照問 AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-ai_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 拍一種食材問 AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 拍食品包裝找重要資訊
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-ai_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 拍營養標示問 AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-ai_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 拍烘焙器具問 AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-ai_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 拍一份食譜給 AI 看
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-ai_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 看不懂食譜，拍給 AI 解釋
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 拍烘焙成品找問題
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-ai_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 自己找一樣東西拍給 AI ⭐
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何把問題問清楚
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="如何把問題問清楚">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 比較「模糊問題」和「完整問題」
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 把模糊的問題說清楚
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-ai_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 告訴 AI「你是誰」
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 加入自己的需求
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 加入自己的限制條件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-ai_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 告訴 AI「我要什麼樣的回答」
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-ai_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. AI 回答看不懂怎麼辦？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem. 幫「問不清楚的人」修改問題
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        認識生成式 AI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI × 烘焙問題解決
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>樂齡手作烘焙職人班 生程式AI結合顧客互動技巧01</h1>
+
+<h2 id="chatgpt-gemini">ChatGPT / Gemini 基本操作<a class="headerlink" href="#chatgpt-gemini" title="Permanent link">&para;</a></h2>
+<p>開啟 AI、登入、輸入問題、新對話、繼續追問、修改問題、複製回答、重新產生回答、查看聊天紀錄</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=KxzHN8nAnMs">YT：【保姆級】長輩AI教學！一部手機讓中老年學會買機票、辨詐騙、修老照片，Gemini完整教學，免費好用</a></li>
+</ul>
+<h3 id="problem-3">Problem. 推薦 3 種適合早餐吃的食物。<a class="headerlink" href="#problem-3" title="Permanent link">&para;</a></h3>
+<p>請開啟 ChatGPT 或 Gemini，輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>我年齡OO
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>有OO疾病(填入自己的)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>請推薦 3 種適合早餐吃的食物。
+</code></pre></div>
+<h3 id="problem">Problem. 問自己有興趣的問題<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h3>
+<p>請選一個你有興趣的主題，並丟給AI詢問：</p>
+<table>
+<thead>
+<tr>
+<th>主題</th>
+<th>可以問 AI 的問題</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🧳 旅遊</td>
+<td>高雄有哪些適合長輩一日遊的地方？</td>
+</tr>
+<tr>
+<td>🍳 料理</td>
+<td>家裡有雞蛋、豆腐和青菜，可以做什麼簡單料理？</td>
+</tr>
+<tr>
+<td>🩺 健康</td>
+<td>每天散步 30 分鐘，對身體有哪些好處？</td>
+</tr>
+<tr>
+<td>🌱 園藝</td>
+<td>新手在家裡陽台適合種什麼植物？</td>
+</tr>
+<tr>
+<td>🏃 運動</td>
+<td>適合 60 歲以上長輩在家做的簡單運動有哪些？</td>
+</tr>
+</tbody>
+</table>
+<h3 id="problem_1">Problem. 在同一個對話繼續問<a class="headerlink" href="#problem_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>請推薦 3 種簡單的家常菜。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>哪一道最適合新手？
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>告訴我需要準備哪些材料。
+</code></pre></div>
+<h3 id="problem-ai">Problem. 要求 AI 改變回答方式<a class="headerlink" href="#problem-ai" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>什麼是人工智慧？
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>我看不太懂，請用更簡單的方式說明，並舉一個生活中的例子。
+</code></pre></div>
+<h3 id="problem-ai_1">Problem. 要求 AI 縮短回答<a class="headerlink" href="#problem-ai_1" title="Permanent link">&para;</a></h3>
+<p>輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>請介紹台灣夜市文化。
+</code></pre></div>
+<p>等 AI 回答後輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>太長了，請縮短成 3 個重點。
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>每個重點不要超過 20 個字。
+</code></pre></div>
+<h3 id="problem-ai_2">Problem. 複製 AI 的回答<a class="headerlink" href="#problem-ai_2" title="Permanent link">&para;</a></h3>
+<p>輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>請告訴我蒸蛋需要哪些材料，簡單列出即可。
+</code></pre></div>
+<p>AI 回答後：</p>
+<ul>
+<li>找到「複製」功能。複製 AI 的回答。</li>
+<li>開啟手機的記事本或 LINE。把剛才的內容貼上。</li>
+</ul>
+<h3 id="problem_2">Problem. 修改已送出的問題<a class="headerlink" href="#problem_2" title="Permanent link">&para;</a></h3>
+<p>先輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>推薦我台灣旅遊景點。
+</code></pre></div>
+<p>送出後，找到剛才自己的問題並使用修改功能，改成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>推薦我 3 個台南適合長輩輕鬆散步的景點。
+</code></pre></div>
+<h2 id="ai">文字與語音問 AI<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h2>
+<p>打字提問、手機語音輸入、口語轉文字、如何修正辨識錯誤、長問題直接用說的</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=11P0mBHvUcU">YT：出國必備！實測 ChatGPT 最新語音模型，零延遲即時口譯太神啦！</a></li>
+<li><a href="https://www.youtube.com/watch?v=TfScJINSddk">YT：我讓 ChatGPT GPT‑Live 跟著跑外送，它竟然自己取名叫「小雨」</a></li>
+<li><a href="https://www.youtube.com/watch?v=nmUzvJIhzOc">YT：Google Gemini Live 全新體驗，有眼睛的AI助理~實測功能亮點與操作教學，一次看懂</a></li>
+<li><a href="https://www.youtube.com/watch?v=QigsRgkf8r0">YT：快速開啟Google Gemini Live對話功能 ，2分鐘教學與捷徑分享！</a></li>
+</ul>
+<h3 id="problem-ai_3">Problem. 第一次用語音問 AI<a class="headerlink" href="#problem-ai_3" title="Permanent link">&para;</a></h3>
+<p>這次不要打字，找到手機的「麥克風」功能，用說的輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>請推薦 3 種適合下午吃的簡單點心。
+</code></pre></div>
+<p>說完後，先看看手機有沒有正確辨識你的話，再送出問題。</p>
+<h3 id="problem_3">Problem. 用語音詢問烘焙問題<a class="headerlink" href="#problem_3" title="Permanent link">&para;</a></h3>
+<p>按下麥克風，用說的輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>我做的餅乾烤完太硬了，
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>請告訴我 3 個可能的原因。
+</code></pre></div>
+<p>看看 AI 能不能理解你的問題。</p>
+<h3 id="problem_4">Problem. 說出比較長的問題<a class="headerlink" href="#problem_4" title="Permanent link">&para;</a></h3>
+<p>不要一個字一個字打，直接用語音說：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>我是烘焙新手，
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>家裡只有一台小烤箱，
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>我想做簡單的巧克力蛋糕，
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>請推薦適合新手的做法。
+</code></pre></div>
+<p>比較看看，講完整條件後，AI 的回答是不是更符合需求。</p>
+<h3 id="problem_5">Problem. 修改語音辨識的文字<a class="headerlink" href="#problem_5" title="Permanent link">&para;</a></h3>
+<p>用語音說：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>我想做 6 人份的布丁，
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>請告訴我需要哪些材料。
+</code></pre></div>
+<p>先不要送出。</p>
+<p>找到「6 人份」，用鍵盤改成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>10 人份
+</code></pre></div>
+<p>修改完成後再送給 AI。</p>
+<h3 id="problem-ai_4">Problem. 把冰箱裡的材料說給 AI<a class="headerlink" href="#problem-ai_4" title="Permanent link">&para;</a></h3>
+<p>想像你家的冰箱剩下雞蛋、牛奶、香蕉、吐司、砂糖</p>
+<p>不要打字，直接用語音告訴 AI：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>我家裡現在有雞蛋、牛奶、香蕉、
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>吐司和砂糖，我不想再出去買材料，
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>請推薦 3 種可以做的簡單點心。
+</code></pre></div>
+<p>看看 AI 能不能從一大段話裡找出你的需求。</p>
+<h3 id="problem_6">Problem. 把烘焙失敗的情況完整說出來<a class="headerlink" href="#problem_6" title="Permanent link">&para;</a></h3>
+<p>請用語音輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>我昨天第一次做蛋糕，
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>放進烤箱的時候有膨起來，
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>可是拿出來沒多久就塌下去了，
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>而且中間還有一點濕，
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>請問可能是哪裡出了問題？
+</code></pre></div>
+<p>AI 回答後，找出它認為最可能的 3 個原因。</p>
+<h3 id="problem_7">Problem. 用自己的話描述問題<a class="headerlink" href="#problem_7" title="Permanent link">&para;</a></h3>
+<p>下面只提供「情況」，<strong>不要照著固定句子念</strong>。</p>
+<blockquote>
+<p>星期日有 5 位家人要來家裡，你想準備一份簡單的甜點，但自己不太會烘焙。</p>
+</blockquote>
+<p>請直接用語音跟 AI 說明你的需求。</p>
+<p>說話時至少告訴 AI：</p>
+<ul>
+<li>有幾個人</li>
+<li>自己會不會烘焙</li>
+<li>想做什麼</li>
+<li>家裡有什麼設備</li>
+<li>希望 AI 怎麼幫你</li>
+</ul>
+<p>說完之後，檢查文字有沒有辨識錯誤，再送出。</p>
+<h2 id="ai_1">拍照問 AI<a class="headerlink" href="#ai_1" title="Permanent link">&para;</a></h2>
+<p>拍食材、器具、成品、食譜、包裝標示，讓 AI 分析照片；照片怎麼拍比較容易辨識</p>
+<h3 id="problem-ai_5">Problem. 拍一種食材問 AI<a class="headerlink" href="#problem-ai_5" title="Permanent link">&para;</a></h3>
+<p>請在教室裡找一種烘焙食材，例如麵粉、砂糖、奶油、雞蛋。</p>
+<p>拍照上傳給 ChatGPT 或 Gemini，輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>請告訴我照片中是什麼食材，
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>以及它在烘焙時有什麼用途。
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>請用簡單的方式說明。
+</code></pre></div>
+<p>看看 AI 能不能正確辨認。</p>
+<h3 id="problem_8">Problem. 拍食品包裝找重要資訊<a class="headerlink" href="#problem_8" title="Permanent link">&para;</a></h3>
+<p>找一個有完整包裝的食品或烘焙材料，拍下包裝上的文字。</p>
+<p>上傳照片後輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>請根據照片上的文字，
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>幫我找出：
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>1. 品名
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>2. 保存方式
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>3. 有效日期
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>4. 主要成分
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>照片看不清楚的地方請告訴我，不要自己猜。
+</code></pre></div>
+<p>完成後，自己拿包裝核對 AI 有沒有看錯。</p>
+<h3 id="problem-ai_6">Problem. 拍營養標示問 AI<a class="headerlink" href="#problem-ai_6" title="Permanent link">&para;</a></h3>
+<p>找一個有「營養標示」的食品包裝，將營養標示完整拍下來。</p>
+<p>上傳後輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>請讀取這張照片的營養標示，
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>告訴我每份的：
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>1. 熱量
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>2. 蛋白質
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>3. 脂肪
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>4. 碳水化合物
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>5. 糖
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>6. 鈉
+</code></pre></div>
+<p>請自己對照照片上的數字，確認 AI 有沒有讀錯。</p>
+<h3 id="problem-ai_7">Problem. 拍烘焙器具問 AI<a class="headerlink" href="#problem-ai_7" title="Permanent link">&para;</a></h3>
+<p>找一個自己不熟悉的烘焙器具，例如刮刀、打蛋器、量杯、篩網、烤模。</p>
+<p>拍照後輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>照片中的工具叫什麼？
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>它通常在烘焙的哪個步驟使用？
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>請簡單告訴我使用方法。
+</code></pre></div>
+<p>如果 AI 認錯，可以換一個角度重新拍照再問一次。</p>
+<h3 id="problem-ai_8">Problem. 拍一份食譜給 AI 看<a class="headerlink" href="#problem-ai_8" title="Permanent link">&para;</a></h3>
+<p>老師提供一份紙本食譜，請將整份食譜拍清楚。</p>
+<p>上傳後輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>請只根據照片中的食譜，
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>幫我整理成：
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>1. 需要準備的材料
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>2. 材料份量
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>3. 製作步驟
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>照片沒有寫的內容不要自己增加。
+</code></pre></div>
+<p>整理完成後，拿原本的紙本食譜逐項核對。</p>
+<h3 id="problem-ai_9">Problem. 看不懂食譜，拍給 AI 解釋<a class="headerlink" href="#problem-ai_9" title="Permanent link">&para;</a></h3>
+<p>使用上一題的食譜照片，這次不要重新上傳，在同一個對話繼續問：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>我是烘焙新手，
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>有些步驟看不太懂。
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>請把這份食譜改成更簡單的說明，
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>一步一步告訴我怎麼做。
+</code></pre></div>
+<p>如果還有看不懂的地方，可以繼續指定：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>第 3 個步驟我還是不懂，
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>請再說簡單一點。
+</code></pre></div>
+<h3 id="problem_9">Problem. 拍烘焙成品找問題<a class="headerlink" href="#problem_9" title="Permanent link">&para;</a></h3>
+<p>老師提供一張「烘焙成品」照片，例如蛋糕、餅乾或麵包。</p>
+<p>上傳照片後詢問：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>請觀察這張烘焙成品的照片。
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>從外觀看起來有沒有明顯問題？
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>請告訴我你從照片中「看得到的現象」。
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>無法只靠照片確定的原因，
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>請不要直接下結論。
+</code></pre></div>
+<p>接著追問：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>如果我要找出真正原因，
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>還需要告訴你哪些資訊？
+</code></pre></div>
+<p>這題可以順便讓學員知道：AI 看到一張蛋糕照片，不代表它知道整個製作過程。</p>
+<h3 id="problem-ai_10">Problem. 自己找一樣東西拍給 AI ⭐<a class="headerlink" href="#problem-ai_10" title="Permanent link">&para;</a></h3>
+<p>請自己選擇一樣教室裡找得到的東西：</p>
+<ul>
+<li>🥚 食材</li>
+<li>🧈 食品包裝</li>
+<li>🥣 烘焙器具</li>
+<li>🍞 烘焙成品</li>
+<li>📄 食譜</li>
+<li>🏷️ 商品標示</li>
+</ul>
+<p>自己拍照上傳。請自己告訴 AI：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>這張照片是我剛剛拍的。
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>請先告訴我你從照片中看到了什麼，
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>再回答我想知道的問題：
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>(自己填寫問題)
+</code></pre></div>
+<p>回答出來之後，不要直接相信 AI。再看看手上的實物，檢查 AI 有沒有認錯、看錯文字或看錯數字。</p>
+<h2 id="_1">如何把問題問清楚<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>模糊問題與完整問題差異、加入角色/需求/條件/輸出方式、繼續追問、要求 AI 改簡單</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=W_t_jO3M_Q0">YT：AI回答很普通？可能不是AI不行，而是你的問題太模糊｜零基礎提問4步驟</a></li>
+<li><a href="https://www.youtube.com/watch?v=4zYjvY2R79g">YT：【國外瘋傳】6 大隱藏AI提問技巧，可能95%的人都不會！ChatGPT、Gemini、Deepseek 等 AI 均適用</a></li>
+<li><a href="https://www.youtube.com/watch?v=UonyAFnBGXw">YT：AI五問法：2025最簡單的AI提問技巧｜不用背提示詞也能玩轉AI</a></li>
+</ul>
+<h3 id="problem_10">Problem. 比較「模糊問題」和「完整問題」<a class="headerlink" href="#problem_10" title="Permanent link">&para;</a></h3>
+<p>請先輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>教我做蛋糕。
+</code></pre></div>
+<p>看完 AI 的回答後，再開一個新對話輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>我是第一次做蛋糕的新手，
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>想做一個 6 吋巧克力蛋糕，
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>家裡只有一般小烤箱，
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>請用簡單的方式告訴我材料和步驟。
+</code></pre></div>
+<p>比較兩次回答有什麼不同。</p>
+<h3 id="problem_11">Problem. 把模糊的問題說清楚<a class="headerlink" href="#problem_11" title="Permanent link">&para;</a></h3>
+<p>原本的問題：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>推薦我出去玩。
+</code></pre></div>
+<p>請加入自己的條件，例如：</p>
+<ul>
+<li>想去哪個縣市</li>
+<li>跟誰一起去</li>
+<li>玩幾天</li>
+<li>想去什麼地方</li>
+<li>交通方式</li>
+</ul>
+<p>改寫完成後再問 AI。例如：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>我想和家人去台南一日遊，
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>我們自己開車，
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>不想走太多路，
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>請推薦 3 個適合的景點。
+</code></pre></div>
+<h3 id="problem-ai_11">Problem. 告訴 AI「你是誰」<a class="headerlink" href="#problem-ai_11" title="Permanent link">&para;</a></h3>
+<p>先輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>教我做餅乾。
+</code></pre></div>
+<p>看完回答後，再輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>我是第一次做餅乾的烘焙新手，
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>請教我做最簡單的奶油餅乾，
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>步驟不要太複雜。
+</code></pre></div>
+<p>觀察告訴 AI「自己的情況」之後，回答有沒有改變。</p>
+<h3 id="problem_12">Problem. 加入自己的需求<a class="headerlink" href="#problem_12" title="Permanent link">&para;</a></h3>
+<p>請輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>請推薦 3 種甜點。
+</code></pre></div>
+<p>接著把自己的需求加入問題：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>請推薦 3 種適合在家製作的甜點，
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>我希望材料容易購買，
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>製作步驟不要太多。
+</code></pre></div>
+<p>看看兩次推薦的甜點有沒有不同。</p>
+<h3 id="problem_13">Problem. 加入自己的限制條件<a class="headerlink" href="#problem_13" title="Permanent link">&para;</a></h3>
+<p>想像你想做甜點，但是：</p>
+<ul>
+<li>家裡沒有烤箱</li>
+<li>只有電鍋</li>
+<li>第一次做甜點</li>
+</ul>
+<p>請自己組合成一個完整問題，再問 AI。</p>
+<p>可以參考：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>我是第一次做甜點，
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>家裡沒有烤箱，只有電鍋，
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>請推薦 3 種適合我的簡單甜點。
+</code></pre></div>
+<h3 id="problem-ai_12">Problem. 告訴 AI「我要什麼樣的回答」<a class="headerlink" href="#problem-ai_12" title="Permanent link">&para;</a></h3>
+<p>先輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>請介紹鳳梨酥。
+</code></pre></div>
+<p>看完回答後，再輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>請介紹鳳梨酥，
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>只要告訴我：
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>1. 主要材料
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>2. 特色
+<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a>3. 保存方式
+<a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a>
+<a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a>請用簡單的條列方式回答。
+</code></pre></div>
+<p>比較哪一種回答比較容易閱讀。</p>
+<h3 id="problem-ai_13">Problem. AI 回答看不懂怎麼辦？<a class="headerlink" href="#problem-ai_13" title="Permanent link">&para;</a></h3>
+<p>請輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>請告訴我酵母在做麵包時有什麼作用？
+</code></pre></div>
+<p>如果 AI 的回答比較複雜，繼續輸入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>我看不太懂，
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>請不要使用太多專業名詞，用簡單的方式重新解釋。
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>請再舉一個生活中的例子。
+</code></pre></div>
+<p>看看經過兩次追問後，是不是比較容易理解。</p>
+<h3 id="problem_14">Problem. 幫「問不清楚的人」修改問題<a class="headerlink" href="#problem_14" title="Permanent link">&para;</a></h3>
+<p>下面有 4 個模糊的問題：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>- 蛋糕怎麼做？
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>- 我要出去玩。
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>- 晚餐吃什麼？
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>- 我想運動。
+</code></pre></div>
+<p>請選擇其中 2 題，加入至少 3 個條件，把它改成更完整的問題，再交給 AI。</p>
+<p>可以想想：</p>
+<blockquote>
+<p>誰？要做什麼？有什麼限制？希望 AI 怎麼回答？</p>
+</blockquote>
+<h2 id="ai_2">認識生成式 AI<a class="headerlink" href="#ai_2" title="Permanent link">&para;</a></h2>
+<p>AI 是什麼、生成式 AI 是什麼、ChatGPT/Gemini 能做什麼、跟 Google 有什麼差別、AI 為什麼會回答錯</p>
+<h2 id="ai_3">AI × 烘焙問題解決<a class="headerlink" href="#ai_3" title="Permanent link">&para;</a></h2>
+<p>烘焙失敗原因、食材替換、剩餘材料利用、份量換算、器具替代、製作流程整理</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Wg4DpuFwsSA">YT：【國語】給小學生的人工智能啟蒙課 | 甚麼是AI | 正確使用AI | 建立AI | 機器學習</a></li>
+<li><a href="https://www.youtube.com/watch?v=r1O-guROtWQ&amp;t=612s">YT：給非專業人士製作的 AI概念解析 | 從零入門，講講人與AI的故事</a></li>
+</ul>
+<!--
+
+## AI × 食譜閱讀
+
+複雜食譜簡化、英文食譜翻譯、專有名詞解釋、份量調整、步驟整理、食材整理
+
+## AI 會騙你？
+
+AI 幻覺、錯誤資訊、怎麼要求來源、Google 交叉確認、個資、照片、食品安全、哪些問題不能完全相信 AI
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div style="text-align:center; padding: 12px 0;">
+    Copyright © 2026 Wei-Cheng Chen
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "navigation.top", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
