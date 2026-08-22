@@ -21,6 +21,7 @@
 - [AI簡報生成術](./Google_AI工作術/AI簡報生成術/AI簡報生成術.md)
 - [AI多語系翻譯術](./Google_AI工作術/AI多語系翻譯術/AI多語系翻譯術.md)
 - [AI客服協作術](./Google_AI工作術/AI客服協作術/AI客服協作術.md)
+- [AI資料分析術](./Google_AI工作術/AI資料分析術/AI資料分析術.md)
 
 ## 社區大學 GPT應用
 

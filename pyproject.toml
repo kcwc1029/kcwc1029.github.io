@@ -12,4 +12,6 @@ dependencies = [
 [tool.uv.workspace]
 members = [
     "docs/python-notebooks/Word_Cloud",
+    "docs/python-notebooks/Scraping&BeautifulSoup",
+    "docs/python-notebooks/Scraping&Selenium",
 ]
