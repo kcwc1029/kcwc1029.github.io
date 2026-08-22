@@ -158,7 +158,16 @@ Select(driver.find_element(By.ID, "city")).select_by_visible_text("臺中市")
 - [第二種：隱含等待implicitly_wait](./Scraping&Selenium_src/隱含等待implicitly_wait.md)
 - [(推薦)第三種：明確等待WebDriverWait](./Scraping&Selenium_src/明確等待WebDriverWait.md)
 
-## 實作
+## 實作&作業
 
-- [基於selenium對104爬蟲](./Scraping&Selenium_src/基於s\elenium對104爬蟲.md)
+- [基於selenium對104爬蟲](./Scraping&Selenium_src/基於selenium對104爬蟲.md)
 - [Quotes_to_Scrape延遲載入頁面](./Scraping&Selenium_src/Quotes_to_Scrape延遲載入頁面.md)
+- [基於BeautifulSoup對Quotes to Scrape爬蟲](./Scraping&Selenium_src/基於BeautifulSoup對Quotes_to_Scrape爬蟲.md)
+- [基於BeautifulSoup對Quotes to Scrape自動翻頁](./Scraping&Selenium_src/基於BeautifulSoup對Quotes_to_Scrape自動翻頁.md)
+- [基於BeautifulSoup對Scrape This Site爬蟲](./Scraping&Selenium_src/基於BeautifulSoup對Scrape_This_Site爬蟲.md)
+- [基於BeautifulSoup對Books to Scrape爬蟲](./Scraping&Selenium_src/基於BeautifulSoup對Books_to_Scrape爬蟲.md)
+- [基於BeautifulSoup對PTT Stock文章列表爬蟲](./Scraping&Selenium_src/基於BeautifulSoup對PTT_Stock文章列表爬蟲.md)
+- [基於Selenium對AJAX奧斯卡電影資料爬蟲](./Scraping&Selenium_src/基於Selenium對AJAX奧斯卡電影資料爬蟲.md)
+- [基於Selenium做Dynamic Loading](./Scraping&Selenium_src/基於Selenium做Dynamic_Loading.md)
+- [基於Selenium做Dynamic Controls](./Scraping&Selenium_src/基於Selenium做Dynamic_Controls.md)
+- [基於Selenium對Web Scraper Test Sites爬蟲](./Scraping&Selenium_src/基於Selenium對Web_Scraper_Test_Sites爬蟲.md)
